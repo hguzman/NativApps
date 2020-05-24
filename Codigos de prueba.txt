@@ -1,0 +1,30 @@
+<div class="dropdown-menu show" style="position: absolute; 
+transform: translate3d(0px, 42px, 0px); 
+top: 0px; 
+left: 0px; 
+will-change: transform;" 
+
+    x-placement="bottom-start">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+
+
+                        <li class="nav-item dropdown">
+                        <a id="menu" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">proyectos </a>
+                        <div class="dropdown-menu show" style="position: absolute; 
+                                    transform: translate3d(0px, 42px, 0px); 
+                                    top: 0px; 
+                                    left: 0px; 
+                                    will-change: transform;" x-placement="bottom-start">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
