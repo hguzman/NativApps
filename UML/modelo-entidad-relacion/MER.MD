@@ -1,5 +1,5 @@
 #  **MODELO ENTIDAD RELACION**
-![Foto](UML/modelo-entidad-relacion/img/modelo-entiedad-relacion.jpg)
+![Foto](https://github.com/Dimiorz/NativApps/blob/master/UML/modelo-entidad-relacion/img/modelo-entiedad-relacion.jpg)
 
 ___
 #### **Informacion aclaratoria: **
