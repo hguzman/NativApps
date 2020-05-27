@@ -1,0 +1,54 @@
+#contenedor{
+    margin-top: 2%;
+    border: 2px solid rgba(245, 137, 13, 0.979);
+    width: 60%;
+    border-color: rgb(17, 24, 82);
+    background-color: rgb(17, 24, 82);
+}
+
+.cabecera{
+    background-color: black;
+}
+
+.nav-link{
+
+}
+
+.on-visibily{
+    visibility: visible;
+}
+
+.off-visibily{
+    visibility: hidden;
+}
+
+#menu::after{
+    position: absolute; 
+    transform: translate3d(0px, 42px, 0px); 
+    top: 0px; left: 0px; 
+    will-change: transform;    
+}
+
+.a-actual{
+    background-color: blue;
+    border-radius: 15%;
+    border: blue solid 1px;
+}
+
+.a-menu{
+    color: blue;
+}
+.text-1{
+    color: cornsilk;
+    font-size: larger;
+}
+nav{
+    background-color: black;
+}
+
+.formulario{
+    background-color: #4d4d4d;
+}
+body{
+    background-color: rgba(245, 137, 13, 0.979);
+}
