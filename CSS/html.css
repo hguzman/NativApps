@@ -1,0 +1,71 @@
+*{
+    margin: 0pc;
+    padding: 0pc;
+
+}
+    
+.container{
+   width: 750px;
+   height: 850px;
+   margin: auto;
+   border-radius: 10px 10px 10px 10px;
+ 
+}  
+aside {
+    background: rgb(209, 73, 10);
+    border-radius: 10px 10px 0 0;
+    width: 300px;
+    height: 515px;
+    
+}
+
+
+#formulario{
+	margin-top: 2px;
+	text-align: left;
+	margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+   
+
+}
+
+input{
+	width: 100px;
+	height: 20px;
+    margin-right: 5px;
+    border-radius: 0px 0px;
+    margin-top: 10px;
+    float: right;
+
+}
+
+label{
+	width: 100px;
+	height: 20px;
+    margin-right: 5px;
+    border-radius: 0px 0px;
+    margin-top: 14px;
+    float: left;
+
+}
+
+
+
+aside h2 {
+    background: rgb(8, 7, 68);
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+main .secciones {
+    width: 60%;
+    margin-right: 10px;
+    float: left;
+
+}
+
+main aside {
+    float: left;
+}
