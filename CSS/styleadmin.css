@@ -4,6 +4,7 @@
     width: 60%;
     border-color: rgb(17, 24, 82);
     background-color: rgb(17, 24, 82);
+    height: 750px;
 }
 
 .cabecera{
@@ -20,6 +21,23 @@
 
 .off-visibily{
     visibility: hidden;
+}
+
+.position-absolute-actual{
+    position: absolute;
+    top: 2px;
+    
+}
+
+.position-absolute-pasada{
+    position: absolute;
+    bottom: 0px;
+    
+}
+
+.position-relative{
+    position: relative;
+
 }
 
 #menu::after{
