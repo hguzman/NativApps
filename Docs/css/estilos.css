@@ -4,3 +4,23 @@
     margin-top: 6rem;
     
 }
+
+/* Estilos Diagramas UML */
+
+.alto-250{
+height: 16rem;
+}
+
+.botones{
+    margin: 2rem 0 2rem 0;
+}
+/* Modal */
+.texto-modal{
+    text-align: justify;
+    margin: auto;
+    width: 35rem;
+}
+
+.card-header{
+    cursor: pointer;
+}
