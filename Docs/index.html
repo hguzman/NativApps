@@ -24,17 +24,52 @@
 
 <body>
   <div class="container">
-    <div class="cajas row">
+    <!-- Barra de navegacion -->
+    <div class="nav-bar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="diagramas.html">Diagramas <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="nosotros.html">A cerca de nosotros <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+     <!-- Banner-Imagen -->
+  <div class="card bg-dark text-white">
+    <img src="img/bannerinicio.jpg" class="card-img imagen" alt="..." height="300rem">
+    <div class="card-img-overlay">
+      <h5 class="card-title">DVLeasy</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.</p>
+        <p class="card-text pt-4">Ultima actualizacion 6/18/2020</p>
+    </div>
+  </div>
+
+  </div>
+  <div class="container">
+    <div class="cajas row mb-5 mt-4">
       <!-- Collapse -->
       <div class="col-12 col-md-8" id="accordion" style="
       width: 71%;
   ">
         <!-- Card justificacion -->
         <div class="card">
-          <div class="card-header" id="headingOne">
+          <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                aria-controls="collapseOne">
+              <button class="btn btn-link no-decoration" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
                 Justificacion.
               </button>
             </h5>
@@ -67,9 +102,9 @@
 
         <!-- Card ALCANCE DE LOS SERVICIIOS.-->
         <div class="card">
-          <div class="card-header" id="headingTwo">
+          <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+              <button class="btn btn-link collapsed no-decoration" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="false" aria-controls="collapseTwo">
                 Alcance de los servicios
               </button>
@@ -101,9 +136,9 @@
 
         <!-- PERFIL DE LA EMPRESA O CONSULTOR. -->
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+              <button class="btn btn-link collapsed no-decoration" data-toggle="collapse" data-target="#collapseThree"
                 aria-expanded="false" aria-controls="collapseThree">
                 Perfil de la empresa o consultor
               </button>
@@ -122,9 +157,9 @@
 
         <!-- Card Condiciones contraactuales.-->
         <div class="card">
-          <div class="card-header" id="headingFour">
+          <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+              <button class="btn btn-link collapsed no-decoration" data-toggle="collapse" data-target="#collapseFour"
                 aria-expanded="false" aria-controls="collapseFour">
                 Condiciones contraactuales
               </button>
@@ -161,9 +196,9 @@
 
         <!-- DOCUMENTO DE ESPECIFICACIÓN DE REQUISITOS.-->
         <div class="card">
-          <div class="card-header" id="headingFive">
+          <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+              <button class="btn btn-link collapsed no-decoration" data-toggle="collapse" data-target="#collapseFive"
                 aria-expanded="false" aria-controls="collapseFive">
                 Documento de especificacion de requisitos
               </button>
@@ -223,9 +258,9 @@
         </div>
         <!-- INFORME SOBRE LAS NECESIDADES INFORMÁTICAS.-->
         <div class="card">
-          <div class="card-header" id="headingSix">
+          <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix"
+              <button class="btn btn-link collapsed no-decoration" data-toggle="collapse" data-target="#collapseSix"
                 aria-expanded="false" aria-controls="collapseSix">
                 Necesidades informaticas
               </button>
@@ -329,7 +364,7 @@
 
 
       <!-- UML Card -->
-      
+
       <div class="card col-12 col-md-4" style="width: 29%;">
         <img class="card-img-top" src="img/uml.jpg" alt="Card image cap">
         <div class="card-body">
