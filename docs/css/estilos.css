@@ -1,3 +1,6 @@
+body{
+    background-color: #9cd6d642;
+}
 .cajas {
     display: flex;
     justify-content: space-between;
