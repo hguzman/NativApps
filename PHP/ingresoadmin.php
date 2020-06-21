@@ -11,6 +11,7 @@
 </head>
 <script src="..\JS\jquery-3.4.1.min.js"></script>
 <script src="..\JS\menu-equipo.js"></script>
+<script src="..\JS\menu-perifericos.js"></script>
 
 <body>
 
@@ -70,10 +71,9 @@
         <div style="position: relative; background-color: chartreuse; width: 60">
             <div id="inicial" class="position-absolute-pasada"></div>
 
-            <div id="ingresar-equipos" class="off-visibily position-absolute-pasada" style="background-color: red;">
+            <div id="ingresar-equipos" class="off-visibily position-absolute-pasada">
 
                 <h2 class="text-center" style="color: gainsboro">REGISTRO</h2>
-                <br>
                 <form action="formulario.php" method="post" class="validate" id="formulario">
                     <div class="row">
                         <div class="col-lg-6">
@@ -135,24 +135,102 @@
 
                     </div>
                     <br>
-                    <div class="row" class="border border-danger" style="width: 100%; height: 300px;">
-                        <div class="col-lg-12">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                                <button id="tec" type="button" class="btn btn-secondary">Teclado</button>
-                                <button id="mou" type="button" class="btn btn-secondary">Mouse</button>
-                                <button id="enf" type="button" class="btn btn-secondary">Enfriadora</button>
+                    <div class="card text-center">
+                        <div class="card-header btn-group" role="group">
+                            <ul class="nav nav-pills card-header-pills">
+                                <li class="nav-item">
+                                    <a id="ini" class="nav-link text-2 active" href="#inicio"> Inicio </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="mou" class="nav-link text-2" href="#mouse"> Mouse </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="tec" class="nav-link text-2 " href="#teclado"> Teclado </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a id="enf" class="nav-link text-2" href="#enfriadora"> Enfriadora </a>
+                                </li>
+                            </ul>
                         </div>
-                        </div>
-</div>
-<br>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <button id="valid" class="control-form btn btn-success btn-block" type="submit" value="">REGISTRAR </button>
+
+                        <div id="perifericos" class="card-body off-visibily position-relative">
+
+                            <div id="inicio" class="row position-absolute-actual off-visibily" style="margin-top: 1%;">
+                                <h5>Aqui podras editar los perifericos</h5>
                             </div>
-                            <div class="col-lg-6">
-                                <button id="valid" class="control-form btn btn-danger btn-block" type="submit" value="">LIMPIAR FORM</button>
+
+                            <div id="mouse" class="card-body off-visibily position-absolute-pasada">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">marca</label>
+                                        <input class="form-control" type="text" name="mou-marca" id="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">modelo</label>
+                                        <input class="form-control" type="text" name="mou-modelo" id="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">linea</label>
+                                        <input class="form-control" type="text" name="mou-linea" id="">
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
+                            <div id="teclado" class="card-body off-visibily position-absolute-pasada">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">marca</label>
+                                        <input class="form-control" type="text" name="tec-marca" id="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">modelo</label>
+                                        <input class="form-control" type="text" name="tec-modelo" id="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">linea</label>
+                                        <input class="form-control" type="text" name="tec-linea" id="">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="enfriadora" class="card-body off-visibily position-absolute-pasada">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">marca</label>
+                                        <input class="form-control" type="text" name="enf-marca" id="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">modelo</label>
+                                        <input class="form-control" type="text" name="enf-modelo" id="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">linea</label>
+                                        <input class="form-control" type="text" name="enf-linea" id="">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button id="valid" class="control-form btn btn-success btn-block" type="submit" value="">REGISTRAR </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button id="valid" class="control-form btn btn-danger btn-block" type="submit" value="">LIMPIAR FORM</button>
+                                </div>
+                            </div>
 
                 </form>
 
@@ -176,28 +254,12 @@
                 <br>
                 <form action="formulario.php" method="post" class="validate" id="formulario">
 
-<script>
-    $(Document).ready(function() {
-    alert("Ya puedes editar el jquery");
-
-    $('#tec').click(function() {
-            $('#enf').removeClass("on-visibily")
-            $('#buscar-equipos').addClass("off-visibily")
-
-            $('#modificar-equipos').removeClass("on-visibily")
-            $('#modificar-equipos').addClass("off-visibily")
-
-            $('#ingresar-equipos').addClass("position-absolute-actual");
-            $('#ingresar-equipos').removeClass("off-visibily")
-            $('#ingresar-equipos').addClass("on-visibily")
-        }
-
-    )
-    });
-</script>
 
 
             </div>
+
+
+
         </div>
 
 
