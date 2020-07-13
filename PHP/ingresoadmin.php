@@ -65,132 +65,132 @@
             </nav>
         </header>
 
-        
+
         <div style="position: relative; background-color: chartreuse; width: 60">
             <div id="inicial" class="position-absolute-pasada"></div>
-           
+
             <div id="ingresar-equipos" class="off-visibily position-absolute-pasada">
-               
+
                 <h2 class="text-center" style="color: gainsboro">REGISTRO</h2>
                 <br>
                 <form action="formulario.php" method="post" class="validate" id="formulario">
 
-            <label for="mascota"> Equipo:</label> 
-            <input type="text" placeholder="">
-            <P></P>
-     <label for="Serial"> Serial:</label>
-            <input type="number" placeholder="">
-            <P></P>
-            <label for="Marca"> Marca:</label>
-            <input type="text" placeholder="">
-            <P></P>
-            <label for="Nombre"> Nombre:</label>
-            <input type="text" placeholder="">
-            <p></p>
-            <label for="Tipo"> Tipodeequipo:</label>
-            <input type="text" placeholder="">
-            <p></p>
-            <label for="Modelo"> Modelodelequipo:</label>
-            <input type="number" placeholder="">
-            <P></P>
-            <label for="Procesador"> Procesador:</label>
-            <input type="text" placeholder="">
-            <P></P>
-            <label for="RAM"> RAM:</label>
-            <input type="number" placeholder="">
-            <P></P>
-            <label for="Disco"> Disco:</label>
-            <input type="text" placeholder="">
-            <P></P>
-            <label for="Licencia"> Lic_Windows:</label>
-            <input type="text" placeholder="">
-            <P></P>
+                    <label for="mascota"> Equipo:</label>
+                    <input type="text" placeholder="">
+                    <P></P>
+                    <label for="Serial"> Serial:</label>
+                    <input type="number" placeholder="">
+                    <P></P>
+                    <label for="Marca"> Marca:</label>
+                    <input type="text" placeholder="">
+                    <P></P>
+                    <label for="Nombre"> Nombre:</label>
+                    <input type="text" placeholder="">
+                    <p></p>
+                    <label for="Tipo"> Tipodeequipo:</label>
+                    <input type="text" placeholder="">
+                    <p></p>
+                    <label for="Modelo"> Modelodelequipo:</label>
+                    <input type="number" placeholder="">
+                    <P></P>
+                    <label for="Procesador"> Procesador:</label>
+                    <input type="text" placeholder="">
+                    <P></P>
+                    <label for="RAM"> RAM:</label>
+                    <input type="number" placeholder="">
+                    <P></P>
+                    <label for="Disco"> Disco:</label>
+                    <input type="text" placeholder="">
+                    <P></P>
+                    <label for="Licencia"> Lic_Windows:</label>
+                    <input type="text" placeholder="">
+                    <P></P>
 
-            <input id="valid" type="submit" value="REGISTRAR">
-                 </form>
-            
+                    <input id="valid" type="submit" value="REGISTRAR">
+                </form>
+
             </div>
 
             <div id="buscar-equipos" class="off-visibily position-absolute-pasada">
-                
+
                 <h2 class="text-center" style="color: gainsboro">BUSCAR EQUIPO</h2>
                 <br>
                 <form action="formulario.php" method="post" class="validate" id="formulario">
 
-                  
-                
+
+
             </div>
 
 
             <div id="modificar-equipos" class="off-visibily position-absolute-pasada">
-                
+
 
                 <h2 class="text-center" style="color: gainsboro">MODIFICAR EQUIPO</h2>
                 <br>
                 <form action="formulario.php" method="post" class="validate" id="formulario">
 
-                  
-                
 
+
+
+            </div>
         </div>
-    </div>
 
 
 
-    <script>
-        $(Document).ready(function() {
-            alert("Ya puedes editar el jquery");
+        <script>
+            $(Document).ready(function() {
+                alert("Ya puedes editar el jquery");
 
-            $('#ingre-equip').click(function() {
-                    $('#buscar-equipos').removeClass("on-visibily")
-                    $('#buscar-equipos').addClass("off-visibily")
+                $('#ingre-equip').click(function() {
+                        $('#buscar-equipos').removeClass("on-visibily")
+                        $('#buscar-equipos').addClass("off-visibily")
+
+                        $('#modificar-equipos').removeClass("on-visibily")
+                        $('#modificar-equipos').addClass("off-visibily")
+
+                        $('#ingresar-equipos').addClass("position-absolute-actual");
+                        $('#ingresar-equipos').removeClass("off-visibily")
+                        $('#ingresar-equipos').addClass("on-visibily")
+                    }
+
+                )
+
+                $('#busc-equip').click(function() {
+
+                    $('#ingresar-equipos').removeClass("on-visibily")
+                    $('#ingresar-equipos').addClass("off-visibily")
 
                     $('#modificar-equipos').removeClass("on-visibily")
                     $('#modificar-equipos').addClass("off-visibily")
 
-                    $('#ingresar-equipos').addClass("position-absolute-actual");
-                    $('#ingresar-equipos').removeClass("off-visibily")
-                    $('#ingresar-equipos').addClass("on-visibily")
-                }
+                    $('#buscar-equipos').addClass("position-absolute-actual");
+                    $('#buscar-equipos').removeClass("off-visibily")
+                    $('#buscar-equipos').addClass("on-visibily")
 
-            )
+                })
 
-            $('#busc-equip').click(function() {
+                $('#modif-equip').click(function() {
+                    $('#buscar-equipos').removeClass("on-visibily")
+                    $('#buscar-equipos').addClass("off-visibily")
 
-                $('#ingresar-equipos').removeClass("on-visibily")
-                $('#ingresar-equipos').addClass("off-visibily")
+                    $('#ingresar-equipos').removeClass("on-visibily")
+                    $('#ingresar-equipos').addClass("off-visibily")
 
-                $('#modificar-equipos').removeClass("on-visibily")
-                $('#modificar-equipos').addClass("off-visibily")
+                    $('#modificar-equipos').addClass("position-absolute-actual");
+                    $('#modificar-equipos').removeClass("off-visibily");
+                    $('#modificar-equipos').addClass("on-visibily");
 
-                $('#buscar-equipos').addClass("position-absolute-actual");
-                $('#buscar-equipos').removeClass("off-visibily")
-                $('#buscar-equipos').addClass("on-visibily")
-
-            })
-
-            $('#modif-equip').click(function() {
-                $('#buscar-equipos').removeClass("on-visibily")
-                $('#buscar-equipos').addClass("off-visibily")
-                
-                $('#ingresar-equipos').removeClass("on-visibily")
-                $('#ingresar-equipos').addClass("off-visibily")
-
-                $('#modificar-equipos').addClass("position-absolute-actual");
-                $('#modificar-equipos').removeClass("off-visibily");
-                $('#modificar-equipos').addClass("on-visibily");
-
-            })
-        });
-    </script>
+                })
+            });
+        </script>
 
 
 
-    <!--Archivos de javascript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!--Archivos de javascript-->
+        <!--Archivos de javascript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--Archivos de javascript-->
 </body>
 
 </html>
