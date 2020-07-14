@@ -4,7 +4,7 @@
     width: 60%;
     border-color: rgb(17, 24, 82);
     background-color: rgb(17, 24, 82);
-    height: 750px;
+    height: 900px;
 }
 
 .cabecera{
@@ -26,12 +26,19 @@
 .position-absolute-actual{
     position: absolute;
     top: 2px;
+    width: 100%;
+    
+}
+.position-absolute-actual-2{
+    position: absolute;
+    top: -510px;
+    width: 100%;
     
 }
 
 .position-absolute-pasada{
     position: absolute;
-    bottom: 0px;
+    
     
 }
 
@@ -59,6 +66,17 @@
 .text-1{
     color: cornsilk;
     font-size: larger;
+
+}
+
+.text-2{
+    color: black;
+    font-size: larger;
+
+}
+.text-label{
+    color: cornsilk;
+    width: 100%;
 }
 nav{
     background-color: black;
@@ -69,4 +87,8 @@ nav{
 }
 body{
     background-color: rgba(245, 137, 13, 0.979);
+}
+
+#valid{
+ 
 }
