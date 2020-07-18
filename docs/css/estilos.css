@@ -1,0 +1,50 @@
+body{
+    background-color: #9cd6d642;
+}
+.cajas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6rem;
+    
+}
+
+/* Estilos Diagramas UML */
+
+.alto-250{
+height: 16rem;
+}
+
+.botones{
+    margin: 2rem 0 2rem 0;
+}
+/* Modal */
+.texto-modal{
+    text-align: justify;
+    margin: auto;
+    width: 35rem;
+}
+
+.card-header{
+    cursor: pointer;
+}
+
+.no-decoration{
+    text-decoration: none!important;
+}
+
+.card{
+    color: black;
+}
+
+.card-body{
+    background: linear-gradient(101deg, rgba(183, 205, 202, 0.15) 35%, rgba(116, 194, 185, 0.4) 100%)
+}
+
+.opacity{
+   background: linear-gradient(101deg, rgba(183, 205, 202, 0.15) 35%, rgba(116, 194, 185, 0.4) 100%)
+}
+
+.imagen{
+    height: 22rem;
+    overflow: hidden;
+}
