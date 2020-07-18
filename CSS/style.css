@@ -1,47 +1,236 @@
-#contenedor{
-    margin-top: 2%;
-    border: 2px solid rgba(245, 137, 13, 0.979);
-    width: 50%;
-    border-color: rgb(17, 24, 82);
-    background-color: rgb(17, 24, 82);
+
+/* Estilos pagina de inicio */
+
+/* ESTILOS PARA EL HEADER*/
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    /* background: linear-gradient(90deg, rgba(0,0,0,0.8883928571428571) 41%, rgba(0,0,0,0.5158438375350141) 100%); */
+
+    background: linear-gradient(90deg, rgba(157,92,6,0.6951155462184874) 24%, rgba(0,0,0,0.5158438375350141) 65%);
+
+    
+}
+/* Imagenes */
+.banner{
+    position: relative;
+}
+.img-logo{
+    border-radius: 50px;
 }
 
-.cabecera{
-    background-color: black;
+.img-banner{
+    max-width: 101%;
+    width: 101%;
+    height: 30rem;
 }
 
-.nav-link{
-
-}
-
-#menu::after{
-    position: absolute; 
-    transform: translate3d(0px, 42px, 0px); 
-    top: 0px; left: 0px; 
-    will-change: transform;    
+.nav{
+    width: 54%;
 }
 
 .a-actual{
-    background-color: blue;
+    background-color: #151f4599;
     border-radius: 15%;
-    border: blue solid 1px;
+  
 }
 
-a-menu{
+.a-menu{
     color: blue;
 }
 .text-1{
     color: cornsilk;
-    
-}
-
-nav{
-    background-color: black;
 }
 
 .formulario{
-    background-color: rgb(17, 24, 82);
+    width: 100%;
+    padding: 5rem;
 }
-body{
-    background-color: rgba(245, 137, 13, 0.979);
+.contenedor-form{
+
+    display: flex;
+    justify-content: space-between;
 }
+
+.texto{
+    padding: 5rem;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: rgba(216, 214, 212, 0.178);
+    height: auto;
+}
+
+/* Botones */
+.contactanos-btn{
+    position: absolute;
+    top: 25.5rem;
+    left: 45rem;
+/* inside */
+    color: cornsilk;
+    width: 18%;
+    height: 11%;
+    font-size: larger;
+    background-color:#160b04c4 ;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    color: wheat!important;
+}
+
+.color-blanco{
+    font-family: 'Oswald', sans-serif;
+    color: wheat!important;
+}
+.boton-productos{
+    position: absolute;
+    top: 25.5rem;
+    left: 15rem;
+/* inside */
+    width: 18%;
+    height: 11%;
+    font-size: larger;
+    background-color:#160b04c4 ;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+     color: wheat!important;
+}
+
+.boton-largo{
+    width: 100%;
+    background-color:#e9701f;
+    border: none;
+}
+
+.boton-medio{
+    width: 50%;
+}
+.boton-enviar-opinion{
+    display: block;
+    margin-left: 33%;
+}
+/* Cajas */
+.cajas{
+    margin: 1rem;
+}
+
+
+/* MARIO */
+
+/* productos.php */
+/* body{
+    background-color: #9b04fa; 
+ } */
+ /*Contenedor*/
+ .h-texto{
+     font-family: 'Oswald', sans-serif;
+     color: aliceblue;
+ }
+ 
+ 
+ /*FIN Contenedor*/
+ 
+ /* tarjetas de los productos */
+ 
+ /* .imagenes{
+     width: 10%;
+     height: auto;
+ } */
+ 
+ .tarjeta-titulo{
+     font-weight: 600;
+     font-family: 'Oswald', sans-serif;
+ 
+ }
+ 
+ .tarjeta-texto{
+     font-family: 'Oswald', sans-serif;
+     font-size: large;
+     
+ }
+ 
+ .tarjeta-sin-bordes{
+     border: 1px hidden;
+     background-color: darkgreen;
+     background: linear-gradient(90deg, rgba(157,92,6,0.6951155462184874) 24%, rgba(0,0,0,0.5158438375350141) 65%);
+ }
+ 
+ 
+ /* FIN tarjetas de los productos */
+ 
+ .otros-clientes{
+     font-size: x-large;
+ }
+ /* FIN productos.php */
+ 
+ /* Opiniones */
+ 
+ /* Contenido */
+ 
+ /* contenedor-iconos */
+
+
+ .contenedor-iconos{
+     width: 50%;
+ }
+
+ .texto-iconos{
+     font-size: xx-large;
+     margin-left: 10
+ }
+ /* FIN contenedor-iconos */
+ 
+
+ 
+ /* Fin Contenido */
+ 
+ /* Fin Opiniones*/
+
+ /* Footer */
+ footer {
+    /* background-color: hsl(260, 8%, 14%); */
+    background: linear-gradient(90deg, rgba(33,29,24,0.6951155462184874) 20%, rgba(0,0,0,0.7819502801120448) 76%);
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 25% 20% 20% 20% 15%;
+    padding: 50px 15px;
+    color: white;
+  }
+  
+  .footer h2 {
+    font-weight: 700;
+    font-size: 2.2em;
+  }
+  .footer__features,
+  .footer__resources,
+  .footer__company,
+  .footer__redes {
+    list-style: none;
+  }
+  
+  .footer__features--title,
+  .footer__resources--title,
+  .footer__company--title {
+    font-size: 20px;
+  }
+  
+  .footer__features--item,
+  .footer__resources--item,
+  .footer__company--item,
+  .footer__redes--item {
+    font-size: 15px;
+    color: #ffffff9e;
+  }
+  
+  .msg-error {
+    margin-top: -40px;
+  }
+  
+  .attribution {
+    margin: auto;
+    font-size: 11px;
+    text-align: center;
+    color: #ffffff9e;
+  }
+  
