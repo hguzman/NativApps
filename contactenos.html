@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\CSS\bootstrap.css">
-    <link rel="stylesheet" href="..\CSS\style.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
     <script src="..\JS\bootstrap.bundle.js">
     </script>
@@ -24,7 +24,7 @@
             </a>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link a-actual" href="index.html">Inicio</a>
+                    <a class="nav-link" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
@@ -36,38 +36,39 @@
                     <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactenos.html">Contactenos</a>
+                    <a class="nav-link a-actual" href="contactenos.html">Contactenos</a>
                 </li>
             </ul>
         </nav>
     </header>
-<!-- Form -->
+    <!-- Form -->
     <div class="contenedor-form">
         <div class="formulario">
             <form class="">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Andres">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Apellido</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="perez">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telefono</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="3001234567">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dirección e-mail</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Jancho_perez@correo.com">
+                        placeholder="corre@correo.com">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Hola, quiero contactarme con DLVeasy"></textarea>
                 </div>
             </form>
-            <button type="button" id="enviar" class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
+            <button type="button" id="enviar" class="btn btn-secondary btn-lg boton-largo color-blanco">Enviar
                 datos</button>
         </div>
         <div class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore ad deserunt minima
@@ -80,7 +81,7 @@
     <!-- Pie de pagina -->
     <footer>
         <div class="container footer">
-            <h2>Shortly</h2>
+            <h2>DVLeasy</h2>
             <ul class="footer__features">
                 <h3 class="footer__features--title">Features</h3>
                 <li class="footer__features--item">Link Shortening</li>
