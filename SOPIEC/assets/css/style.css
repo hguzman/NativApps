@@ -161,13 +161,18 @@ background-color: #8B7BFF;
 /*==============================================
     LOGIN STYLES     
     =============================================*/
+    #body{
+        background-color: seashell;
+    }
 
     #contenedor{
-        margin-top: 2%;
+        margin-top: 10%;
         border: 2px solid rgba(245, 137, 13, 0.979);
-        width: 50%;
-        border-color: rgb(17, 24, 82);
-        background-color: rgb(17, 24, 82);
+        width: 30%;
+        height: 400px;
+        border-color: #C0C0C0;
+        background-color: #C0C0C0;
+        
     }
     
     .cabecera{
@@ -198,7 +203,8 @@ background-color: #8B7BFF;
     }
     
     .formulario{
-        background-color: rgb(17, 24, 82);
+        background-color: rgb(192, 192, 192);
+
     }
     
     
