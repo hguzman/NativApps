@@ -31,7 +31,7 @@ include('assets/php/db.php');
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="index.php"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
@@ -53,7 +53,7 @@ include('assets/php/db.php');
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>

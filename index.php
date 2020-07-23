@@ -1,8 +1,7 @@
 <?php
 if (isset($_SESSION['login'])) {
-    session_destroy();    
-}else{
-
+    session_destroy();
+} else {
 }
 
 ?>
@@ -24,8 +23,7 @@ if (isset($_SESSION['login'])) {
         <!-- Barra de navegacion -->
         <nav class="navbar">
             <a class="navbar-brand" href="index.php">
-                <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
-                    loading="lazy">
+                <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo" loading="lazy">
                 DVLeasy
             </a>
             <ul class="nav">
@@ -54,8 +52,8 @@ if (isset($_SESSION['login'])) {
         <div class="banner">
             <!-- Botones dentro del banner -->
             <div class="imagen-banner">
-            <img src="img/1755.jpg" class="img-fluid img-banner" alt="Responsive image">
-        </div>
+                <img src="img/1755.jpg" class="img-fluid img-banner" alt="Responsive image">
+            </div>
             <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
             <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
                 productos</a>
@@ -73,8 +71,7 @@ if (isset($_SESSION['login'])) {
                         y todo lo referente a nuestro trabajo</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco"
-                        href="https://kelvinmr1997.github.io/NativApps/diagramas.html">Ver más
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="https://kelvinmr1997.github.io/NativApps/diagramas.html">Ver más
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -98,13 +95,13 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Un software de inventariado de equipos de computo con niveles de acceso</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/index.php">Ver más
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.html">Ver más
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    
+
 
 
     <!-- Pie de pagina -->
@@ -135,17 +132,24 @@ if (isset($_SESSION['login'])) {
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
                     <a href="#">
-                        <img src="/img/icon-facebook.svg" alt="icon-facebook" />
+                        <i class="fab fa-facebook-square texto-iconos"></i>
                     </a>
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img//icon-twitter.svg" alt="icon-twitter" />
+                    <a href="#">
+                        <i class="fab fa-twitter-square texto-iconos"></i>
+                    </a>
+                </li>
+
+                <li class="footer__redes--item">
+                    <a href="#">
+                        <i class="fab fa-pinterest-square texto-iconos"></i>
+                    </a>
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img/icon-pinterest.svg" alt=" icon-pinterest" />
-                </li>
-                <li class="footer__redes--item">
-                    <img src="/img/icon-instagram.svg" alt="icon-instagram" />
+                    <a href="#">
+                        <i class="fab fa-instagram-square texto-iconos"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -155,10 +159,8 @@ if (isset($_SESSION['login'])) {
             <a href="#" target="_blank">Pepito peres</a>.
         </div>
     </footer>
-<!-- CDN de Fontawesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
-        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
-        crossorigin="anonymous"></script>
+    <!-- CDN de Fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
 </body>
 
 </html>
