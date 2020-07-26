@@ -1,15 +1,4 @@
-<<<<<<< HEAD
 ﻿<!DOCTYPE html>
-=======
-﻿<?php
-session_start();
-
-if(isset($_SESSION['login'])) {
-    
-?>
-
-<!DOCTYPE html>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 <html>
 
 <head>
@@ -45,29 +34,15 @@ if(isset($_SESSION['login'])) {
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
                         <li><a href="#">Cerrar sesión</a></li>
-=======
-                        <li><a><?php echo "Session: ".$_SESSION['login'];
-                        } else { header("location: login.html");
-                            
-                        }; ?></a></li>
-                        <li><a href="../index.php">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                     </ul>
                 </div>
             </div>
         </div>
 
-<<<<<<< HEAD
         <!--  Sidebar de opciones  -->
-=======
-        <!-- /. NAV TOP  -->
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -76,11 +51,7 @@ if(isset($_SESSION['login'])) {
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-<<<<<<< HEAD
                         <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
-=======
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
@@ -91,14 +62,7 @@ if(isset($_SESSION['login'])) {
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-<<<<<<< HEAD
                                 <a href="usuarios.php">Ver usuarios registrados</a>
-=======
-                                <a href="#">Eliminar Usuario</a>
-                            </li>
-                            <li>
-                                <a href="#">Modificar usuario</a>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                             </li>
                         </ul>
                     </li>
@@ -107,13 +71,6 @@ if(isset($_SESSION['login'])) {
                         <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
                     </li>
 
-<<<<<<< HEAD
-=======
-                    <!-- Ver usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver usuarios</a>
-                    </li>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
@@ -153,11 +110,7 @@ if(isset($_SESSION['login'])) {
 
         </nav>
 
-<<<<<<< HEAD
         <!-- Contenido de la pagina, lado derecho ancho  -->
-=======
-        <!-- /. NAV SIDE  -->
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">

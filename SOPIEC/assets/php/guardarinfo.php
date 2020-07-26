@@ -7,22 +7,14 @@ if (isset($_POST['registrar'])) {
     $area = $_POST['area'];
     $primer_nombre = $_POST['primer_nombre'];
     $segundo_nombre = $_POST['segundo_nombre'];
-<<<<<<< HEAD
     $primer_apellido = $_POST['primer_apellido'];
     $segundo_apellido = $_POST['segundo_apellido'];
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
-=======
-    $primer_apellido= $_POST['primer_apellido'];
-    $segundo_apellido= $_POST['segundo_apellido'];
-    $email= $_POST['email'];
-    $contrasena= $_POST['contrasena'];
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 
 
     // Validaciones
 
-<<<<<<< HEAD
     if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
 
         $_SESSION ['mensaje'] = 'Por favor, llene los campos requeridos';
@@ -31,14 +23,6 @@ if (isset($_POST['registrar'])) {
         $_POST['registrar']; 
         
         header('Location: ../../nuevousuario.php');   
-=======
-    if ($cedula == "" || $nombre == "" || $area == "" || $email == "" || $contrasena == ""){
-        $_SESSION ['mensaje'] = 'Por favor, llene los campos requeridos';
-        $_SESSION ['tipo_mensaje'] = 'danger';
-
-        $_POST['enviar'];
-        header('Location: ../nuevousuario.php');   
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
         die();
     }
 
@@ -51,7 +35,6 @@ if (isset($_POST['registrar'])) {
     if (!$resultado) {
         die('Algo anda mal');
     }
-<<<<<<< HEAD
     // mostrar mensaje
     
     $_SESSION['mensaje'] = '¡Listo, Tu mensaje fue enviado 😀!';
@@ -59,10 +42,3 @@ if (isset($_POST['registrar'])) {
     header('Location: ../../nuevousuario.php');
 }
 
-=======
-    //mostrar mensaje
-    $_SESSION['mensaje'] = '¡Listo, Tu mensaje fue enviado 😀!';
-    $_SESSION['tipo_mensaje'] = 'success';
-    header('Location: ../nuevousuario.php');   
-}
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
