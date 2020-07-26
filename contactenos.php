@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\CSS\bootstrap.css">
-    <link rel="stylesheet" href="..\CSS\style.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-    <script src="..\JS\bootstrap.bundle.js">
+    <script src="JS/jquery-3.4.1.min.js">
     </script>
     <title>Contacto</title>
 </head>
@@ -36,39 +36,62 @@
                     <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactenos.html">Contactenos</a>
+                    <a class="nav-link" href="contactenos.php">Contactenos</a>
                 </li>
+                
             </ul>
         </nav>
     </header>
 <!-- Form -->
     <div class="contenedor-form">
         <div class="formulario">
-            <form class="">
+            
+            <form action="contactenos.php" method="POST">
+
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Apellido</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input name="Apellido" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telefono</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input name="Telefono"  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dirección e-mail</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                    <input name="Email"  type="email" class="form-control" id="exampleFormControlInput1"
                         placeholder="Jancho_perez@correo.com">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label  for="exampleFormControlTextarea1">Mensaje</label>
+                    <textarea name="Mensaje"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
+                <button type="submit" id="enviar" name="Enviar" class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
+                    datos</button>
+
             </form>
-            <button type="button" id="enviar" class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
-                datos</button>
+            <?php
+if (isset($_REQUEST['Enviar'])) {
+  require_once "PHP/conexion.php";
+
+  extract($_REQUEST);
+  $query = "INSERT INTO formulario(Nombre,Apellido,Telefono,Email,Mensaje) VALUES ('$Nombre', '$Apellido', '$Telefono', '$Email','$Mensaje');";
+  //se prepara la consulta
+  $consulta = $c->prepare($query);
+  
+  $r = $consulta->execute();
+  //echo $r;
+  if ($r == 1) {
+    echo "se ha creado un usuario<br/>";
+  
+  }
+  
+}
+?>
+
         </div>
         <div class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore ad deserunt minima
             maxime et, commodi nostrum neque nesciunt, beatae, velit laudantium quis accusantium. Amet accusamus
@@ -114,8 +137,8 @@
                 </li>
                 <li class="footer__redes--item">
                     <img src="/img/icon-instagram.svg" alt="icon-instagram" />
-                </li>
-            </ul>
+                    </li>
+                </ul>
         </div>
         <div class="attribution">
             Challenge by
@@ -128,4 +151,7 @@
 </body>
 
 
+
 </html>
+
+    

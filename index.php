@@ -2,14 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="CSS\bootstrap.css">
+    <link rel="stylesheet" href="CSS\style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\CSS\bootstrap.css">
-    <link rel="stylesheet" href="..\CSS\style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-    <script src="..\JS\bootstrap.bundle.js">
-    </script>
-    <title>Productos</title>
+    <title>INICIO</title>
 </head>
 
 <body>
@@ -17,7 +14,7 @@
     <header>
         <!-- Barra de navegacion -->
         <nav class="navbar">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
                     loading="lazy">
                 DVLeasy
@@ -41,59 +38,65 @@
             </ul>
         </nav>
     </header>
+
     <!-- Contenedor principal -->
-    <div class="container-fluid contenedor">
-        <div class="d-flex text-center justify-content-center">
-            <div>
-                <h3 class="pt-5 pb-4">Productos</h3>
-            </div>
-
-        </div>
-        <div class="contenedor-productos d-flex justify-content-around">
-
-            <div class="card tarjeta" style="width: 25%; ">
-                <img src="img/Example.jpg" class="card-img-top" height="55%" alt="imagen de ejemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text tarjeta-texto text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. maiores adipisci perferendis tenetur saepe veniam explicabo magni laboriosam labore beatae
-                        temporibus impedit?</p>
-                    <!-- <a href="#" class="btn btn-primary">Ir al sitio</a> -->
-                    <button class="btn btn-secondary btn-lg boton-largo ">Ver más
-                        <i class="fas fa-arrow-right"></i></button>
-
-                </div>
-            </div>
-
-            <div class="card tarjeta" style="width: 25%; ">
-                <img src="img/sopiec.jpeg" class="card-img-top" height="55%"
-                    alt="Logo del programa SOPIEC, el cual contiene una caja marron con una lista de contenido y un lapiz">
-                <div class="card-body">
-                    <h5 class="card-title tarjeta-titulo">SOPIEC</h5>
-                    <p class="card-text tarjeta-texto text-justify">Software para el inventariado de equipos de computo,
-                        fue creado con el objetivo de ayudar a la empresa NativApps a llevar control sobre los equipos
-                        de computo y a quien se les asignó </p>
-                    <button class="btn btn-secondary btn-lg boton-largo ">Ver más
-                        <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
-
-            <div class="card tarjeta" style="width: 25%; ">
-                <img src="img/Example.jpg" class="card-img-top" height="55%" alt="imagen de ejemplo">
-                <div class="card-body">
-                    <h5 class="card-title tarjeta-titulo">Card title</h5>
-                    <p class="card-text tarjeta-texto text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. assumenda eos obcaecati ad delectus asperiores ullam consequuntur eius quam a dicta sequi
-                        totam dignissimos! Debitis?</p>
-                    <button class="btn btn-secondary btn-lg boton-largo ">Ver más
-                        <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
+    <div class="container-fluid">
+        <!-- Banner y botones contacto, productos -->
+        <div class="banner">
+            <!-- Botones dentro del banner -->
+            <img src="img/1755.jpg" class="img-fluid img-banner" alt="Responsive image">
+            <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.php" >Contactenos!</a>
+            <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html" >Nuestros productos</a>
         </div>
 
+        <!-- Div Cajas (Documentacion, opinion y SOPIEC) -->
+        <div class="card-deck pt-4 cajas">
+            <!-- Primera caja/Documentacion -->
+            <div class="card">
+                <img src="IMG/Document.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Documentacion de proyectos</h5>
+                    <p class="card-text">Echa un vistaso a la documentacion de nuestros proyectos, el diseño, los
+                        diagramas
+                        y todo lo referente a nuestro trabajo</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="https://kelvinmr1997.github.io/NativApps/diagramas.html" >Ver más
+                        <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Segunda caja/Tu opinion -->
+            <div class="card">
+                <img src="IMG/opiniones.jpg" class="card-img-top" alt="Opiniones">
+                <div class="card-body">
+                    <h5 class="card-title">¡Tu opinion es importante para nosotros!</h5>
+                    <p class="card-text">Nos gustaria saber que piensas a cerca de nuestro trabajo</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="opiniones.html" >Ver más
+                        <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Tercera caja/ SOPIEC-->
+            <div class="card">
+                <img src="IMG/sopiec.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">SOPIEC</h5>
+                    <p class="card-text">Un software de inventariado de equipos de computo con niveles de acceso</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-secondary btn-lg boton-largo color-blanco">Ver más
+                        <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Pie de pagina -->
+    <!-- CDN de Fontawesome -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
+        <!-- Pie de pagina -->
     <footer>
         <div class="container footer">
             <h2>Shortly</h2>
@@ -136,12 +139,9 @@
         <div class="attribution">
             Challenge by
             <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
-            <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
+            <a href="https://github.com/soadtech" target="_blank">Fernando Ropero</a>.
         </div>
     </footer>
-    </div>
-
-
 </body>
 
 </html>
