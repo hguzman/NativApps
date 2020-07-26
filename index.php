@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:index.php
 <?php
 if (isset($_SESSION['login'])) {
     session_destroy();
@@ -6,19 +9,38 @@ if (isset($_SESSION['login'])) {
 
 ?>
 
+========
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="stylesheet" href="CSS\bootstrap.css">
+<<<<<<< HEAD
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+=======
     <link rel="stylesheet" href="CSS\style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
     <title>INICIO</title>
 </head>
 
 <body>
     <!-- Header -->
+<<<<<<< HEAD
+    <header id="contenedor">
+        <!-- Barra de navegacion -->
+        <nav class="navbar">
+=======
+<<<<<<<< HEAD:index.php
     <header id="contenedor">
         <!-- Barra de navegacion -->
         <nav class="navbar">
@@ -66,6 +88,23 @@ if (isset($_SESSION['login'])) {
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link a-actual" href="index.php">Inicio</a>
+========
+    <header>
+        <!-- Barra de navegacion -->
+        <nav class="navbar">
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
+            <a class="navbar-brand" href="index.html">
+                <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
+                    loading="lazy">
+                DVLeasy
+            </a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link a-actual" href="index.html">Inicio</a>
+<<<<<<< HEAD
+=======
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
@@ -88,12 +127,24 @@ if (isset($_SESSION['login'])) {
         <!-- Banner y botones contacto, productos -->
         <div class="banner">
             <!-- Botones dentro del banner -->
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:index.php
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
             <div class="imagen-banner">
                 <img src="img/1755.jpg" class="img-fluid img-banner" alt="Responsive image">
             </div>
             <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
             <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
                 productos</a>
+<<<<<<< HEAD
+=======
+========
+            <img src="img/1755.jpg" class="img-fluid img-banner" alt="Responsive image">
+            <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html" >Contactenos!</a>
+            <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html" >Nuestros productos</a>
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
         </div>
 
         <!-- Div Cajas (Documentacion, opinion y SOPIEC) -->
@@ -108,7 +159,16 @@ if (isset($_SESSION['login'])) {
                         y todo lo referente a nuestro trabajo</p>
                 </div>
                 <div class="card-footer">
+<<<<<<< HEAD
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco"
+                        href="https://kelvinmr1997.github.io/NativApps/diagramas.html">Ver más
+=======
+<<<<<<<< HEAD:index.php
                     <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="https://kelvinmr1997.github.io/NativApps/diagramas.html">Ver más
+========
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="https://kelvinmr1997.github.io/NativApps/diagramas.html" >Ver más
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -120,7 +180,15 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Nos gustaria saber que piensas a cerca de nuestro trabajo</p>
                 </div>
                 <div class="card-footer">
+<<<<<<< HEAD
                     <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="opiniones.html">Ver más
+=======
+<<<<<<<< HEAD:index.php
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="opiniones.html">Ver más
+========
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="opiniones.html" >Ver más
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -132,16 +200,41 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Un software de inventariado de equipos de computo con niveles de acceso</p>
                 </div>
                 <div class="card-footer">
+<<<<<<< HEAD
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/index.php">Ver más
+                        <i class="fas fa-arrow-right"></i></a>
+=======
+<<<<<<<< HEAD:index.php
                     <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.html">Ver más
                         <i class="fas fa-arrow-right"></i></a>
+========
+                    <button class="btn btn-secondary btn-lg boton-largo color-blanco">Ver más
+                        <i class="fas fa-arrow-right"></i></button>
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:index.php
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 
 
 
     <!-- Pie de pagina -->
+<<<<<<< HEAD
+=======
+========
+    <!-- CDN de Fontawesome -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
+        <!-- Pie de pagina -->
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
     <footer>
         <div class="container footer">
             <h2>Shortly</h2>
@@ -168,6 +261,21 @@ if (isset($_SESSION['login'])) {
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
+<<<<<<< HEAD
+                    <a href="#">
+                        <img src="img/icon-facebook.svg" alt="icon-facebook" />
+                    </a>
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-twitter.svg" alt="icon-twitter" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-pinterest.svg" alt=" icon-pinterest" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-instagram.svg" alt="icon-instagram" />
+=======
+<<<<<<<< HEAD:index.php
                     <a href="#">
                         <i class="fab fa-facebook-square texto-iconos"></i>
                     </a>
@@ -187,22 +295,50 @@ if (isset($_SESSION['login'])) {
                     <a href="#">
                         <i class="fab fa-instagram-square texto-iconos"></i>
                     </a>
+========
+                    <img src="/img/icon-facebook.svg" alt="icon-facebook" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="/img//icon-twitter.svg" alt="icon-twitter" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="/img/icon-pinterest.svg" alt=" icon-pinterest" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="/img/icon-instagram.svg" alt="icon-instagram" />
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </li>
             </ul>
         </div>
         <div class="attribution">
             Challenge by
             <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:index.php
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
             <a href="#" target="_blank">Pepito peres</a>.
         </div>
     </footer>
     <!-- CDN de Fontawesome -->
+<<<<<<< HEAD
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
+=======
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
     <!--Archivos de javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!--Archivos de javascript-->
+========
+            <a href="https://github.com/soadtech" target="_blank">Fernando Ropero</a>.
+        </div>
+    </footer>
+>>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1:index.html
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 </body>
 
 </html>

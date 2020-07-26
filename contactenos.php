@@ -17,6 +17,16 @@
     <header>
         <!-- Barra de navegacion -->
         <nav class="navbar">
+<<<<<<< HEAD
+            <a class="navbar-brand" href="#">
+                <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
+                    loading="lazy">
+                DVLeasy
+            </a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+=======
             <div>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -60,6 +70,7 @@
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Inicio</a>
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
@@ -140,6 +151,18 @@
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
+<<<<<<< HEAD
+                    <img src="img/icon-facebook.svg" alt="icon-facebook" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img//icon-twitter.svg" alt="icon-twitter" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-pinterest.svg" alt=" icon-pinterest" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-instagram.svg" alt="icon-instagram" />
+=======
                     <a href="#">
                         <i class="fab fa-facebook-square texto-iconos"></i>
                     </a>
@@ -159,6 +182,7 @@
                     <a href="#">
                         <i class="fab fa-instagram-square texto-iconos"></i>
                     </a>
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </li>
             </ul>
         </div>
@@ -168,7 +192,10 @@
             <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
         </div>
     </footer>
+<<<<<<< HEAD
+=======
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 
     </div>
 </body>

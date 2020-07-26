@@ -159,6 +159,8 @@ background-color: #8B7BFF;
 }
 
 /*==============================================
+<<<<<<< HEAD
+=======
     LOGIN STYLES     
     =============================================*/
     #body{
@@ -211,6 +213,7 @@ background-color: #8B7BFF;
     /* FIN login */
 
 /*==============================================
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
     PANEL DE ADMINISTRACION STYLES     
     =============================================*/
 
@@ -236,7 +239,10 @@ padding: 8rem;
 }
 
 .ajustar-boton{
+<<<<<<< HEAD
+=======
   
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
     margin-left: 90%;
     border-radius: 5px!important;
 }
@@ -299,4 +305,90 @@ border-radius: 0px;
    
 }
 
+<<<<<<< HEAD
+/* ===================================
+    Estilos del Ver usuarios
+    ================================= */
+    .contenedor-usuarios{
+        margin-top: 2%;
+        border: 2px solid rgba(245, 137, 13, 0.979);
+        width: 100%;
+        border-color: #2922872e;
+        background-color: white;
+    }
+    
+    /* .cabecera{
+        background-color: black;
+    } */
+    
+/*     
+    #menu::after{
+        position: absolute; 
+        transform: translate3d(0px, 42px, 0px); 
+        top: 0px; left: 0px; 
+        will-change: transform;    
+    } */
+    
+    /* .a-actual{
+        background-color: blue;
+        border-radius: 15%;
+        border: blue solid 1px;
+    } */
+    
+    /* a-menu{
+        color: blue;
+    } */
+
+    .text-1{
+        color: black;
+        
+    }
+    
+    
+    .formulario{
+        background-color: white;
+    }
+    body{
+        background-color: white;
+    }
+    .text-label{
+    color: black;
+    
+    }
+    
+    .icon-pencil:before {
+        content: "\e905";
+      }
+    
+    #edit{
+     color: royalblue;
+    
+    
+    }
+    
+    #del{
+     color: red;
+    
+    }
+    #editb{
+    background-color: rgba(255, 255, 0, 0.856);
+    }
+    
+    #delb{
+    background-color: red;
+    }
+    .btn{
+        font-size: xx-large;
+    }
+
+    .eliminar-editar{
+        display: flex;
+        justify-content: space-between;
+    }
+
+.tabla-contenido{
+ background-color: darkcyan;
+}
+=======
+>>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 
