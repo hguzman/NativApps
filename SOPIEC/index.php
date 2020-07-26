@@ -1,11 +1,4 @@
-﻿<?php
-session_start();
-
-if(isset($_SESSION['login'])) {
-    
-?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -41,19 +34,15 @@ if(isset($_SESSION['login'])) {
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a><?php echo "Session: ".$_SESSION['login'];
-                        } else { header("location: login.html");
-                            
-                        }; ?></a></li>
-                        <li><a href="../index.php">See Website</a></li>
+                        <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
+                        <li><a href="#">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- /. NAV TOP  -->
+        <!--  Sidebar de opciones  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -62,7 +51,7 @@ if(isset($_SESSION['login'])) {
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
@@ -73,10 +62,7 @@ if(isset($_SESSION['login'])) {
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-                                <a href="#">Eliminar Usuario</a>
-                            </li>
-                            <li>
-                                <a href="#">Modificar usuario</a>
+                                <a href="usuarios.php">Ver usuarios registrados</a>
                             </li>
                         </ul>
                     </li>
@@ -85,10 +71,6 @@ if(isset($_SESSION['login'])) {
                         <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
                     </li>
 
-                    <!-- Ver usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver usuarios</a>
-                    </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
@@ -128,7 +110,7 @@ if(isset($_SESSION['login'])) {
 
         </nav>
 
-        <!-- /. NAV SIDE  -->
+        <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">

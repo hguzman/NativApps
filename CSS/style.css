@@ -63,8 +63,6 @@
     height: auto;
 }
 
-
-
 /* Botones */
 .contactanos-btn{
     position: absolute;
@@ -179,9 +177,7 @@
 
  .texto-iconos{
      font-size: xx-large;
-     margin-right: 10px;
-     color:whitesmoke;
-     
+     margin-left: 10
  }
  /* FIN contenedor-iconos */
  
@@ -243,3 +239,9 @@
       margin: 0!important;
       padding: 0!important;
   }
+
+  
+#edit{
+    color: royalblue;
+
+   }
