@@ -3,6 +3,7 @@
 
 /* ESTILOS PARA EL HEADER*/
 
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -234,3 +235,13 @@
     color: #ffffff9e;
   }
   
+  .imagen-banner{
+      margin: 0!important;
+      padding: 0!important;
+  }
+
+  
+#edit{
+    color: royalblue;
+
+   }

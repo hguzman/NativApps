@@ -4,7 +4,7 @@ $conexion= mysqli_connect(
     'localhost',
     'root',
     '',
-    'registrodb'
+    'sopiecdb'
 );
 
 // if (isset($conexion)){
