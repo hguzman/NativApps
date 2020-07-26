@@ -17,7 +17,6 @@
     <header>
         <!-- Barra de navegacion -->
         <nav class="navbar">
-<<<<<<< HEAD
             <a class="navbar-brand" href="#">
                 <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
                     loading="lazy">
@@ -26,51 +25,6 @@
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Inicio</a>
-=======
-            <div>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    DVLeasy
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Información de de DVLeasy</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body" >
-                                LOGO
-                                <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
-                                <br>
-                                <h5><strong> nombre completo de la empresa</strong></h5>
-                                <p> DeVeLopment easy</p>
-                                <br>
-                                <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                                <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                                <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                                <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
@@ -151,7 +105,6 @@
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-<<<<<<< HEAD
                     <img src="img/icon-facebook.svg" alt="icon-facebook" />
                 </li>
                 <li class="footer__redes--item">
@@ -162,27 +115,6 @@
                 </li>
                 <li class="footer__redes--item">
                     <img src="img/icon-instagram.svg" alt="icon-instagram" />
-=======
-                    <a href="#">
-                        <i class="fab fa-facebook-square texto-iconos"></i>
-                    </a>
-                </li>
-                <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-twitter-square texto-iconos"></i>
-                    </a>
-                </li>
-
-                <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-pinterest-square texto-iconos"></i>
-                    </a>
-                </li>
-                <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-instagram-square texto-iconos"></i>
-                    </a>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
                 </li>
             </ul>
         </div>
@@ -192,10 +124,6 @@
             <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
         </div>
     </footer>
-<<<<<<< HEAD
-=======
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
->>>>>>> b2069c4422d8f7740f1416b5e14c27db9a2adde1
 
     </div>
 </body>
