@@ -3,6 +3,7 @@
 
 /* ESTILOS PARA EL HEADER*/
 
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -61,6 +62,8 @@
     background-color: rgba(216, 214, 212, 0.178);
     height: auto;
 }
+
+
 
 /* Botones */
 .contactanos-btn{
@@ -176,7 +179,9 @@
 
  .texto-iconos{
      font-size: xx-large;
-     margin-left: 10
+     margin-right: 10px;
+     color:whitesmoke;
+     
  }
  /* FIN contenedor-iconos */
  
@@ -234,3 +239,7 @@
     color: #ffffff9e;
   }
   
+  .imagen-banner{
+      margin: 0!important;
+      padding: 0!important;
+  }
