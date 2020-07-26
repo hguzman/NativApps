@@ -13,6 +13,7 @@
     
         header("location: ../../index.php");
         $_SESSION['login']="administrador";
+
     } else {
         echo ("error en la autenticacion");
     }

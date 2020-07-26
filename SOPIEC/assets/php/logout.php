@@ -6,5 +6,5 @@ echo 'la sesion ha caducado';
 ?>
 
 <script language="javascript">
-    location.href = "../../login.php";
+    location.href = "../../login.html";
 </script>
