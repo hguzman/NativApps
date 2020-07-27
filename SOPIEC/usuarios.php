@@ -119,6 +119,7 @@ require_once("assets/php/db.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                    <!-- Alerta -->
                         <?php if (isset($_SESSION['mensaje'])) : ?>
                             <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
                                 <?php echo $_SESSION['mensaje']; ?>
