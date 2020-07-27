@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="CSS/bootstrap.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-    <script src="..\JS\bootstrap.bundle.js">
+    <script src="JS/jquery-3.4.1.min.js">
     </script>
     <title>Contacto</title>
 </head>
@@ -17,49 +17,14 @@
     <header>
         <!-- Barra de navegacion -->
         <nav class="navbar">
-            <div>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    DVLeasy
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Información de de DVLeasy</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body" >
-                                LOGO
-                                <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
-                                <br>
-                                <h5><strong> nombre completo de la empresa</strong></h5>
-                                <p> DeVeLopment easy</p>
-                                <br>
-                                <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                                <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                                <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                                <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a class="navbar-brand" href="#">
+                <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
+                    loading="lazy">
+                DVLeasy
+            </a>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link a-actual" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
@@ -71,52 +36,82 @@
                     <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-actual" href="contactenos.html">Contactenos</a>
+                    <a class="nav-link" href="contactenos.php">Contactenos</a>
                 </li>
+
             </ul>
         </nav>
     </header>
+
+
     <!-- Form -->
     <div class="contenedor-form">
         <div class="formulario">
-            <form class="">
+
+            <form action="contactenos.php" method="POST">
+                <div class="alert alert-secondary" role="alert">
+                    <p class='finalizado'> </p>
+                </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Andres">
+                    <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Apellido</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="perez">
+                    <input name="Apellido" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telefono</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="3001234567">
+                    <input name="Telefono" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dirección e-mail</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="corre@correo.com">
+                    <input name="Email" type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Jancho_perez@correo.com">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        placeholder="Hola, quiero contactarme con DLVeasy"></textarea>
+                    <textarea name="Mensaje" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
+                <button type="submit" id="enviar" name="Enviar"
+                    class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
+                    datos</button>
+
             </form>
-            <button type="button" id="enviar" class="btn btn-secondary btn-lg boton-largo color-blanco">Enviar
-                datos</button>
+            <?php
+if (isset($_REQUEST['Enviar'])) {
+  require_once "PHP/conexion.php";
+
+  extract($_REQUEST);
+  $query = "INSERT INTO contacto(Nombre,Apellido,Telefono,Email,Mensaje) VALUES ('$Nombre', '$Apellido', '$Telefono', '$Email','$Mensaje');";
+  //se prepara la consulta
+  $consulta = $c->prepare($query);
+  
+  $r = $consulta->execute();
+  //echo $r;
+  if ($r == 1) {
+    echo '<script>
+    $(".finalizado").text("Se Ha Creado un Usuario");
+</script>';
+  }
+}
+?>
         </div>
-        <div class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore ad deserunt minima
-            maxime et, commodi nostrum neque nesciunt, beatae, velit laudantium quis accusantium. Amet accusamus
-            aspernatur animi laboriosam eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-            molestias modi tenetur inventore necessitatibus maiores perspiciatis ex minima aperiam tempore voluptate in
-            porro, nostrum aliquam illum eveniet doloremque consequuntur! Praesentium?</div>
+
+        <div class="img" style="margin-top:6%; height:100%; width: 100%;">
+            <img src="IMG\contactenos.jpg" heigth='100%' width='100%' alt="imagen de contacto">
+        </div>
+
     </div>
+
 
     <!-- Pie de pagina -->
     <footer>
         <div class="container footer">
-            <h2>DVLeasy</h2>
+            <h2>Shortly</h2>
             <ul class="footer__features">
                 <h3 class="footer__features--title">Features</h3>
                 <li class="footer__features--item">Link Shortening</li>
@@ -140,25 +135,16 @@
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-facebook-square texto-iconos"></i>
-                    </a>
+                    <img src="/img/icon-facebook.svg" alt="icon-facebook" />
                 </li>
                 <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-twitter-square texto-iconos"></i>
-                    </a>
-                </li>
-
-                <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-pinterest-square texto-iconos"></i>
-                    </a>
+                    <img src="/img//icon-twitter.svg" alt="icon-twitter" />
                 </li>
                 <li class="footer__redes--item">
-                    <a href="#">
-                        <i class="fab fa-instagram-square texto-iconos"></i>
-                    </a>
+                    <img src="/img/icon-pinterest.svg" alt=" icon-pinterest" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="/img/icon-instagram.svg" alt="icon-instagram" />
                 </li>
             </ul>
         </div>
@@ -168,10 +154,10 @@
             <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
 
     </div>
 </body>
+
 
 
 </html>
