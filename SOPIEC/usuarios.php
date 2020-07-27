@@ -1,3 +1,17 @@
+
+<!-- VALIDACION LOGIN -->
+<?php
+session_start();
+$sesion = $_SESSION['username'];
+if(!isset($sesion)){
+    header("location: login.html");
+
+}else{
+
+}
+
+?>
+
 <?php
 require_once("assets/php/db.php");
 ?>
