@@ -21,7 +21,7 @@
             </a>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link a-actual" href="index.html">Inicio</a>
+                    <a class="nav-link a-actual" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
