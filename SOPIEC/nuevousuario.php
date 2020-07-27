@@ -1,6 +1,6 @@
 <!-- Codigo de conexion al archivo db.php -->
 <?php
-include('assets/php/db.php');
+include("assets/php/db.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +10,7 @@ include('assets/php/db.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear nuevo usuario</title>
     <!-- BOOTSTRAP STYLES-->
+
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
@@ -17,6 +18,8 @@ include('assets/php/db.php');
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- Alertify -->
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
 </head>
 
 <body>
@@ -31,20 +34,20 @@ include('assets/php/db.php');
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
-                        <li><a href="#">Cerrar sesión</a></li>
+                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- /. NAV TOP  -->
+        <!--  Sidebar de opciones  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -53,20 +56,17 @@ include('assets/php/db.php');
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit"></i>Administración de usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Crear Nuevo usuario</a>
+                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-                                <a href="#">Eliminar Usuario</a>
-                            </li>
-                            <li>
-                                <a href="#">Modificar usuario</a>
+                                <a href="usuarios.php">Ver usuarios registrados</a>
                             </li>
                         </ul>
                     </li>
@@ -74,6 +74,7 @@ include('assets/php/db.php');
                     <li>
                         <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
                     </li>
+
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
@@ -112,7 +113,7 @@ include('assets/php/db.php');
 
         </nav>
 
-        <!-- /. NAV SIDE  -->
+        <!-- Contenido de la pagina, lado derecho ancho -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
@@ -120,14 +121,10 @@ include('assets/php/db.php');
                         <h2>Crear nuevo usuario</h2>
                     </div>
                 </div>
-
-                <!-- /. ROW  -->
-                <hr />
-
-                <!--MOSTRAR  MENSAJE-->
+                <hr>
                 <?php if (isset($_SESSION['mensaje'])) : ?>
 
-                    <div class="container alert alert-<?php echo $_SESSION['tipo_mensaje']; ?> alert-dismissible fade show" role="alert">
+                    <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
                         <?php echo $_SESSION['mensaje']; ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -138,7 +135,6 @@ include('assets/php/db.php');
                     <?php session_unset(); ?>
 
                 <?php endif; ?>
-
                 <!-- Formulario de creacion de usuario -->
                 <form class="form-nuevo-cliente" action="assets/php/guardarinfo.php" method="POST">
 
@@ -146,53 +142,59 @@ include('assets/php/db.php');
                     <div class="form-row">
                         <!-- Cedula de ciudadania -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-primer-nombre">Cedula de ciudadania</label>
-                            <input type="number" class="form-control" id="cedula" name="cedula" placeholder="112223344556">
+                            <label for="cedula">Cedula de ciudadania</label>
+                            <input type="number" class="form-control" id="cedula" name="cedula" placeholder="112223344556" require>
                         </div>
                         <!-- Area de trabajo -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-segundo-nombre">Area de trabajo</label>
-                            <input type="number" class="form-control" id="area" name="area" placeholder="5">
+                            <label for="area">Area de trabajo</label>
+                            <input type="number" class="form-control" id="area" name="area" placeholder="5" require>
                         </div>
                         <!-- Primer nombre -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-primer-nombre">Primer nombre</label>
-                            <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" placeholder="Andrés">
+                            <label for="primer_nombre">Primer nombre</label>
+                            <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" placeholder="Andrés" require>
                         </div>
                         <!-- Segundo nombre -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-segundo-nombre">Segundo nombre</label>
+                            <label for="segundo_nombre">Segundo nombre</label>
                             <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="José">
                         </div>
                         <!-- Primer apellido -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-primer-apellido">Primer apellido</label>
-                            <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Salas">
+                            <label for="primer_apellido">Primer apellido</label>
+                            <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Salas" require>
                         </div>
                         <!-- Segundo apellido -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-segundo-apellido">Segundo apellido</label>
+                            <label for="segundo_apellido">Segundo apellido</label>
                             <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Casas">
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="registrar-email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="correo_143@correo.com">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="correo_143@correo.com" require>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">Contraseña</label>
-                            <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********">
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
+                            <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar" >Registrar</button>
+                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">Registrar</button>
                 </form>
-                <!-- /. ROW  -->
-            </div>
-            <!-- /. PAGE INNER  -->
 
+            </div>
+
+
+
+            <!-- /. ROW  -->
         </div>
-        <!-- /. PAGE WRAPPER  -->
+        <!-- /. PAGE INNER  -->
+
+    </div>
+    <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
@@ -204,6 +206,16 @@ include('assets/php/db.php');
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+    <!-- Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="assets/js/validaciones.js"></script>
+
 
 
 

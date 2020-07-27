@@ -38,7 +38,7 @@ if (isset($_SESSION['login'])) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body" >
+                            <div class="modal-body">
                                 LOGO
                                 <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
                                 <br>
@@ -47,13 +47,13 @@ if (isset($_SESSION['login'])) {
                                 <br>
                                 <h5>Integrantes</h5>
                                 <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                                 <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                                 <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                                 <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

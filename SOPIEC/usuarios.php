@@ -1,3 +1,7 @@
+<?php
+require_once("assets/php/db.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,14 +35,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="index.php"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
-                        <li><a href="#">Cerrar sesión</a></li>
+                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +57,7 @@
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
@@ -111,25 +115,35 @@
         </nav>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
-
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                        <?php if (isset($_SESSION['mensaje'])) : ?>
+                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                                <?php echo $_SESSION['mensaje']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
+                            <?php session_unset(); ?>
+
+                        <?php endif; ?>
                         <h2>Usuarios</h2>
                     </div>
                 </div>
                 <hr />
+
                 <!-- query -->
                 <?php
-                require_once("assets/php/db.php");
-
                 $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email
                                       from usuarios") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
-                <div id="contenedor-usuarios" class="container contenedor-usuarios">
-                    <div class="row">
+                <div id="contenedor-usuarios" class="contenedor-usuarios">
+                    <div class="row contenedor-tabla">
                         <!-- Tabla de valores en base de datos -->
                         <table class="table">
                             <thead class="thead-light ">
