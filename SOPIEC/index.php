@@ -1,17 +1,4 @@
-﻿<?php
-session_start();
-$sesion = $_SESSION['username'];
-if(!isset($sesion)){
-    header("location: login.html");
-
-}else{
-
-}
-
-?>
-
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -47,7 +34,6 @@ if(!isset($sesion)){
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username'];?> </a></li>
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
@@ -65,7 +51,7 @@ if(!isset($sesion)){
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>

@@ -1,17 +1,3 @@
-
-<!-- VALIDACION LOGIN -->
-<?php
-session_start();
-$sesion = $_SESSION['username'];
-if(!isset($sesion)){
-    header("location: login.html");
-
-}else{
-
-}
-
-?>
-
 <!-- Codigo de conexion al archivo db.php -->
 <?php
 include("assets/php/db.php");
@@ -70,7 +56,7 @@ include("assets/php/db.php");
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
