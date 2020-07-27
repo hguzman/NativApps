@@ -38,38 +38,46 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contactenos.php">Contactenos</a>
                 </li>
-                
+
             </ul>
         </nav>
     </header>
-<!-- Form -->
+
+
+    <!-- Form -->
     <div class="contenedor-form">
         <div class="formulario">
-            
-            <form action="contactenos.php" method="POST">
 
+            <form action="contactenos.php" method="POST">
+                <div class="alert alert-secondary" role="alert">
+                    <p class='finalizado'> </p>
+                </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
-                    <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Apellido</label>
-                    <input name="Apellido" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input name="Apellido" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telefono</label>
-                    <input name="Telefono"  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juancho">
+                    <input name="Telefono" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Juancho">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dirección e-mail</label>
-                    <input name="Email"  type="email" class="form-control" id="exampleFormControlInput1"
+                    <input name="Email" type="email" class="form-control" id="exampleFormControlInput1"
                         placeholder="Jancho_perez@correo.com">
                 </div>
                 <div class="form-group">
-                    <label  for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea name="Mensaje"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="exampleFormControlTextarea1">Mensaje</label>
+                    <textarea name="Mensaje" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <button type="submit" id="enviar" name="Enviar" class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
+                <button type="submit" id="enviar" name="Enviar"
+                    class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
                     datos</button>
 
             </form>
@@ -78,27 +86,27 @@ if (isset($_REQUEST['Enviar'])) {
   require_once "PHP/conexion.php";
 
   extract($_REQUEST);
-  $query = "INSERT INTO formulario(Nombre,Apellido,Telefono,Email,Mensaje) VALUES ('$Nombre', '$Apellido', '$Telefono', '$Email','$Mensaje');";
+  $query = "INSERT INTO contacto(Nombre,Apellido,Telefono,Email,Mensaje) VALUES ('$Nombre', '$Apellido', '$Telefono', '$Email','$Mensaje');";
   //se prepara la consulta
   $consulta = $c->prepare($query);
   
   $r = $consulta->execute();
   //echo $r;
   if ($r == 1) {
-    echo "se ha creado un usuario<br/>";
-  
+    echo '<script>
+    $(".finalizado").text("Se Ha Creado un Usuario");
+</script>';
   }
-  
 }
 ?>
-
         </div>
-        <div class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore ad deserunt minima
-            maxime et, commodi nostrum neque nesciunt, beatae, velit laudantium quis accusantium. Amet accusamus
-            aspernatur animi laboriosam eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-            molestias modi tenetur inventore necessitatibus maiores perspiciatis ex minima aperiam tempore voluptate in
-            porro, nostrum aliquam illum eveniet doloremque consequuntur! Praesentium?</div>
+
+        <div class="img" style="margin-top:6%; height:100%; width: 100%;">
+            <img src="IMG\contactenos.jpg" heigth='100%' width='100%' alt="imagen de contacto">
+        </div>
+
     </div>
+
 
     <!-- Pie de pagina -->
     <footer>
@@ -137,8 +145,8 @@ if (isset($_REQUEST['Enviar'])) {
                 </li>
                 <li class="footer__redes--item">
                     <img src="/img/icon-instagram.svg" alt="icon-instagram" />
-                    </li>
-                </ul>
+                </li>
+            </ul>
         </div>
         <div class="attribution">
             Challenge by
@@ -153,5 +161,3 @@ if (isset($_REQUEST['Enviar'])) {
 
 
 </html>
-
-    

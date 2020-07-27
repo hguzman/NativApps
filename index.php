@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$sesion = $_SESSION['username'];
+if (!isset($sesion)) {
+    header("location: login.html");
+} else {
+}
+
+?>
 <html lang="en">
 
 <head>
