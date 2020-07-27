@@ -80,7 +80,7 @@
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">Modificar un equipo</a>
+                                <a href="equipos.php">gestionar equipos</a>
                             </li>
                             <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>

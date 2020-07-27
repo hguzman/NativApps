@@ -152,7 +152,7 @@
                                             <!-- botones editar y eliminar -->
                                             <a id="edit" class="btn fa fa-pen" href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrar.php?serial=<?php echo $reg['serial']; ?>"></a>
+                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
                                         </td>
                                     </tr>
 
