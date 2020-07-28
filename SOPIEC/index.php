@@ -86,10 +86,10 @@ if (!isset($sesion)) {
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Agregar un equipo</a>
+                                <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="#">Modificar un equipo</a>
+                                <a href="equipos.php">gestionar equipos</a>
                             </li>
                             <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>

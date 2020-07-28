@@ -37,6 +37,6 @@ if (isset($_POST['registrar'])) {
     //mostrar mensaje
     $_SESSION['mensaje'] = '¡Nuevo usuario registrado de forma exitosa😀!';
     $_SESSION['tipo_mensaje'] = 'success';
-    header('Location: ../../nuevousuario.php');
+    header('Location: ../../usuarios.php');
 }
 
