@@ -67,7 +67,7 @@ require_once("assets/php/db.php");
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-                                <a href="usuarios.html">Ver usuarios registrados</a>
+                                <a href="usuarios.php">Ver usuarios registrados</a>
                             </li>
                         </ul>
                     </li>
@@ -119,7 +119,7 @@ require_once("assets/php/db.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                    <!-- Alerta -->
+                        <!-- Alerta -->
                         <?php if (isset($_SESSION['mensaje'])) : ?>
                             <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
                                 <?php echo $_SESSION['mensaje']; ?>
@@ -132,7 +132,14 @@ require_once("assets/php/db.php");
                             <?php session_unset(); ?>
 
                         <?php endif; ?>
-                        <h2>Usuarios</h2>
+                        <div class="usuarios-buscar">
+                            <h2>Usuarios</h2>
+                            <!-- Barra de busqueda -->
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php" method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <hr />

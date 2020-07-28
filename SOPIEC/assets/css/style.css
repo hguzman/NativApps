@@ -294,6 +294,14 @@ nav {
 .contenedor-usuarios{
   padding-left: 3rem;
 }
+
+.usuarios-buscar{
+  display: flex;
+  justify-content: space-between;
+}
+.barra-buscar{
+  padding: 2rem;
+}
 /*==============================================
     MEDIA QUERIES     
     =============================================*/
