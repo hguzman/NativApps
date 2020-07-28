@@ -63,15 +63,10 @@
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-                                <a href="usuarios.html">Ver usuarios registrados</a>
+                                <a href="usuarios.php">Ver usuarios registrados</a>
                             </li>
                         </ul>
                     </li>
-                    <!-- Tercero/Inventario de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                    </li>
-
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
@@ -80,7 +75,7 @@
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">gestionar equipo</a>
+                                <a href="equipos.php">Gestionar equipo</a>
                             </li>
 
                         </ul>
@@ -95,25 +90,38 @@
 
         </nav>
 
-        <!-- Contenido de la pagina, lado derecho ancho  -->
 
+        <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                        <!-- Alerta -->
+                        <?php if (isset($_SESSION['mensaje'])) : ?>
+                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                                <?php echo $_SESSION['mensaje']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
+                            <?php session_unset(); ?>
+
+                        <?php endif; ?>
                         <h2>Equipos</h2>
                     </div>
                 </div>
                 <hr />
+
                 <!-- query -->
                 <?php
                 require_once("assets/php/db.php");
-
                 $registros = mysqli_query($conexion, "select `serial`, `marca`, `nombre`, `tipo_equipo`, `modelo_equipo`, `procesador`, `ram`, `disco_duro`, `sistema_operativo`
                                       from equipos") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
-                <div id="contenedor-usuarios" class="container contenedor-usuarios">
+                <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row">
                         <!-- Tabla de valores en base de datos -->
                         <table class="table">
@@ -139,7 +147,7 @@
                                     <!-- Contenido de la tabla -->
                                     <tr class="actual">
                                         <th scope="row">
-                                            <input class="form-control" type="text" value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial" name="serial" readonl> </th> 
+                                            <input class="form-control" type="text" value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial" name="serial" readonl> </th>
                                         <td> <?php echo $reg['marca'] ?></td>
                                         <td> <?php echo $reg['nombre'] ?></td>
                                         <td> <?php echo $reg['tipo_equipo'] ?> </td>
