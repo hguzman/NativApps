@@ -2,6 +2,7 @@
 require_once("assets/php/db.php");
 ?>
 
+
 <!DOCTYPE html>
 <html>
 
@@ -71,11 +72,6 @@ require_once("assets/php/db.php");
                             </li>
                         </ul>
                     </li>
-                    <!-- Tercero/Inventario de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                    </li>
-
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
@@ -84,24 +80,9 @@ require_once("assets/php/db.php");
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">Modificar un equipo</a>
+                                <a href="equipos.php">Gestionar equipo</a>
                             </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
 
-                                </ul>
-
-                            </li>
                         </ul>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->

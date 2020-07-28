@@ -88,11 +88,6 @@ include("assets/php/db.php");
                                 </li>
                             </ul>
                         </li>
-                        <!-- Tercero/Inventario de equipos -->
-                        <li>
-                            <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                        </li>
-
                         <!-- Cuarto/Administracion de equipos -->
                         <li>
                             <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
@@ -101,24 +96,9 @@ include("assets/php/db.php");
                                     <a href="nuevoequipo.php">Agregar un equipo</a>
                                 </li>
                                 <li>
-                                    <a href="equipos.php">Modificar un equipo</a>
+                                    <a href="equipos.php">Gestionar equipo</a>
                                 </li>
-                                <li>
-                                    <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
 
-                                    </ul>
-
-                                </li>
                             </ul>
                         </li>
                         <!--  Quinto/A cerca de SOPIEC-->
@@ -140,18 +120,6 @@ include("assets/php/db.php");
                         </div>
                     </div>
                     <hr>
-                    <?php if (isset($_SESSION['mensaje'])) : ?>
-                        <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                            <?php echo $_SESSION['mensaje']; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                        <?php session_unset(); ?>
-
-                    <?php endif; ?>
                     <!-- Formulario de creacion de equipo -->
                     <form class="form-nuevo-cliente" action="assets/php/actualizarequipo.php" method="POST">
 
@@ -191,7 +159,7 @@ include("assets/php/db.php");
                                 <label for="registrar-segundo-apellido">ram</label>
                                 <input type="text" class="form-control" id="ram" name="ram" placeholder="Casas" value="<?php echo $ram ?>">
                             </div>
-                             <!-- disco duro  -->
+                            <!-- disco duro  -->
                             <div class="form-group col-md-6">
                                 <label for="registrar-email">disco duro </label>
                                 <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="MARCA xGB SSD/HDD" require value="<?php echo $disco_duro ?>">

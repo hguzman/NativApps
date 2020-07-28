@@ -2,6 +2,7 @@
 <?php
 include("assets/php/db.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -64,71 +65,51 @@ include("assets/php/db.php");
                 </div>
             </div>
 
-            <!--  Sidebar de opciones  -->
-            <nav class="navbar-default navbar-side" role="navigation">
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="main-menu">
-                        <li class="text-center user-image-back">
-                            <img src="assets/img/find_user.png" class="img-responsive" />
-                        </li>
-                        <!-- Primero/inicio -->
-                        <li>
-                            <a href="index.html"><i class="fa fa-desktop "></i>Inicio</a>
-                        </li>
-                        <!-- Segundo/Administracion de usuarios -->
-                        <li>
-                            <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.php">Ver usuarios registrados</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Tercero/Inventario de equipos -->
-                        <li>
-                            <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                        </li>
+             <!--  Sidebar de opciones  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center user-image-back">
+                        <img src="assets/img/find_user.png" class="img-responsive" />
+                    </li>
+                    <!-- Primero/inicio -->
+                    <li>
+                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                    </li>
+                    <!-- Segundo/Administracion de usuarios -->
+                    <li>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
+                            </li>
+                            <li>
+                                <a href="usuarios.php">Ver usuarios registrados</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Cuarto/Administracion de equipos -->
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="nuevoequipo.php">Agregar un equipo</a>
+                            </li>
+                            <li>
+                                <a href="equipos.php">Gestionar equipo</a>
+                            </li>
 
-                        <!-- Cuarto/Administracion de equipos -->
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Agregar un equipo</a>
-                                </li>
-                                <li>
-                                    <a href="#">Modificar un equipo</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
+                        </ul>
+                    </li>
+                    <!--  Quinto/A cerca de SOPIEC-->
+                    <li>
+                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
+                    </li>
+                </ul>
 
-                                    </ul>
+            </div>
 
-                                </li>
-                            </ul>
-                        </li>
-                        <!--  Quinto/A cerca de SOPIEC-->
-                        <li>
-                            <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-            </nav>
+        </nav>
 
             <!-- Contenido de la pagina, lado derecho ancho -->
             <div id="page-wrapper">
