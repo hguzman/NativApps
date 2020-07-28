@@ -2,6 +2,8 @@
 <?php
 include("assets/php/db.php");
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -47,8 +49,8 @@ include("assets/php/db.php");
             </div>
         </div>
 
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
+      <!--  Sidebar de opciones  -->
+      <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
@@ -60,7 +62,7 @@ include("assets/php/db.php");
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit"></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -70,11 +72,6 @@ include("assets/php/db.php");
                             </li>
                         </ul>
                     </li>
-                    <!-- Tercero/Inventario de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                    </li>
-
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
@@ -83,24 +80,9 @@ include("assets/php/db.php");
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">Modificar un equipo</a>
+                                <a href="equipos.php">Gestionar equipo</a>
                             </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
 
-                                </ul>
-
-                            </li>
                         </ul>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
