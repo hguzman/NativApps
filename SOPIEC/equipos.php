@@ -1,7 +1,3 @@
-<?php
-require_once("assets/php/db.php");
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -35,14 +31,14 @@ require_once("assets/php/db.php");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
+                        <li><a href="#">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -67,7 +63,7 @@ require_once("assets/php/db.php");
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
+                                <a href="usuarios.html">Ver usuarios registrados</a>
                             </li>
                         </ul>
                     </li>
@@ -84,24 +80,9 @@ require_once("assets/php/db.php");
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">Modificar un equipo</a>
+                                <a href="equipos.php">gestionar equipo</a>
                             </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
 
-                                </ul>
-
-                            </li>
                         </ul>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
@@ -115,56 +96,39 @@ require_once("assets/php/db.php");
         </nav>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
+
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- Alerta -->
-                        <?php if (isset($_SESSION['mensaje'])) : ?>
-                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                                <?php echo $_SESSION['mensaje']; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                            <?php session_unset(); ?>
-
-                        <?php endif; ?>
-                        <div class="usuarios-buscar">
-                            <h2>Usuarios</h2>
-                            <!-- Barra de busqueda -->
-                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
-                            </form>
-                        </div>
+                        <h2>Equipos</h2>
                     </div>
                 </div>
                 <hr />
-
                 <!-- query -->
                 <?php
-                $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email
-                                      from usuarios") or
+                require_once("assets/php/db.php");
+
+                $registros = mysqli_query($conexion, "select `serial`, `marca`, `nombre`, `tipo_equipo`, `modelo_equipo`, `procesador`, `ram`, `disco_duro`, `sistema_operativo`
+                                      from equipos") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
-                <div id="contenedor-usuarios" class="contenedor-usuarios">
-                    <div class="row contenedor-tabla">
+                <div id="contenedor-usuarios" class="container contenedor-usuarios">
+                    <div class="row">
                         <!-- Tabla de valores en base de datos -->
                         <table class="table">
                             <thead class="thead-light ">
                                 <!-- Header de la tabla -->
                                 <tr class="">
-                                    <th scope="col">ID/Cedula</th>
-                                    <th scope="col">Primer nombre</th>
-                                    <th scope="col">Area</th>
-                                    <th scope="col">Segundo nombre</th>
-                                    <th scope="col">Primer apellido</th>
-                                    <th scope="col">Segundo apellido</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Acciones</th>
+                                    <th scope="col">Serial</th>
+                                    <th scope="col">marca</th>
+                                    <th scope="col">nombre</th>
+                                    <th scope="col">Tipo de equipo</th>
+                                    <th scope="col">Modelo de equipo</th>
+                                    <th scope="col">procesador</th>
+                                    <th scope="col">ram</th>
+                                    <th scope="col">disco duro</th>
+                                    <th scope="col">sistema operativo</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -175,18 +139,20 @@ require_once("assets/php/db.php");
                                     <!-- Contenido de la tabla -->
                                     <tr class="actual">
                                         <th scope="row">
-                                            <input class="form-control" type="number" value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula" name="cedula" readonl> </th>
-                                        <td> <?php echo $reg['primer_nombre'] ?></td>
-                                        <td> <?php echo $reg['area'] ?></td>
-                                        <td> <?php echo $reg['segundo_nombre'] ?></td>
-                                        <td> <?php echo $reg['primer_apellido'] ?> </td>
-                                        <td> <?php echo $reg['segundo_apellido'] ?> </td>
-                                        <td> <?php echo $reg['email'] ?> </td>
+                                            <input class="form-control" type="text" value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial" name="serial" readonl> </th> 
+                                        <td> <?php echo $reg['marca'] ?></td>
+                                        <td> <?php echo $reg['nombre'] ?></td>
+                                        <td> <?php echo $reg['tipo_equipo'] ?> </td>
+                                        <td> <?php echo $reg['modelo_equipo'] ?> </td>
+                                        <td> <?php echo $reg['procesador'] ?> </td>
+                                        <td> <?php echo $reg['ram'] ?> </td>
+                                        <td> <?php echo $reg['disco_duro'] ?> </td>
+                                        <td> <?php echo $reg['sistema_operativo'] ?> </td>
                                         <td class="eliminar-editar">
                                             <!-- botones editar y eliminar -->
-                                            <a id="edit" class="btn fa fa-pen" href="modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                            <a id="edit" class="btn fa fa-pen" href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
                                         </td>
                                     </tr>
 

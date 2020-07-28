@@ -154,6 +154,13 @@ h5,
 .navbar-toggle {
   background-color: #8b7bff;
 }
+#edit {
+  color: royalblue;
+}
+
+#del {
+  color: red;
+}
 
 /*==============================================
     LOGIN STYLES     
@@ -271,10 +278,29 @@ nav {
 }
 .ancho100 {
   width: 100%;
+  padding: 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  font-size: 17px;
+  font-family: cursive;
+  text-align: center;
+  color: #2a2f3bb3;
 }
 
 .contenedor-tabla {
   width: 100%;
+
+}
+.contenedor-usuarios{
+  padding-left: 3rem;
+}
+
+.usuarios-buscar{
+  display: flex;
+  justify-content: space-between;
+}
+.barra-buscar{
+  padding: 2rem;
 }
 /*==============================================
     MEDIA QUERIES     

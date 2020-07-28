@@ -27,8 +27,10 @@
   height: 30rem;
 }
 
-.nav {
-  width: 54%;
+
+.nav{
+    width: 54%;
+
 }
 
 .a-actual {
@@ -112,6 +114,17 @@
 .cajas {
   margin: 1rem;
 }
+
+
+/* DAYANA */
+
+.finalizado{
+    font-size: xx-large;
+    color: #0f0101;
+    
+}
+
+/*FIN DAYANA*/
 
 /* MARIO */
 
