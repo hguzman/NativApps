@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +7,8 @@
     <link rel="stylesheet" href="CSS\bootstrap.css">
     <link rel="stylesheet" href="CSS\style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <script src="..\JS\bootstrap.bundle.js">
     </script>
     <title>Productos</title>
@@ -18,17 +19,53 @@
     <header>
         <!-- Barra de navegacion -->
         <nav class="navbar">
-            <a class="navbar-brand" href="#">
-                <img src="IMG/logodvl.jpeg" width="100" height="45" class="d-inline-block align-top img-logo" alt="Logo"
-                    loading="lazy">
-                DVLeasy
-            </a>
+            <div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-link" style="color: honeydew;" data-toggle="modal" data-target="#exampleModal">
+                    DVLeasy
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Información de de DVLeasy</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                LOGO
+                                <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
+                                <br>
+                                <h5><strong> nombre completo de la empresa</strong></h5>
+                                <p> DeVeLopment easy</p>
+                                <br>
+                                <h5>Integrantes</h5>
+                                <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
+
+                                <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
+
+                                <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
+
+                                <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link a-actual" href="index.php">Inicio</a>
+                    <a class="nav-link " href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="productos.html">Productos</a>
+                    <a class="nav-link a-actual" href="productos.html">Productos</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link " href="compania.html">Compañia</a>
@@ -74,8 +111,8 @@
                     <p class="card-text tarjeta-texto text-justify">Software para el inventariado de equipos de computo,
                         fue creado con el objetivo de ayudar a la empresa NativApps a llevar control sobre los equipos
                         de computo y a quien se les asignó </p>
-                    <button class="btn btn-secondary btn-lg boton-largo ">Ver más
-                        <i class="fas fa-arrow-right"></i></button>
+                    <a href="SOPIEC/login.html" class="btn btn-secondary btn-lg boton-largo ">Ver más
+                        <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -85,7 +122,7 @@
                     <h5 class="card-title tarjeta-titulo">Card title</h5>
                     <p class="card-text tarjeta-texto text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. assumenda eos obcaecati ad delectus asperiores ullam consequuntur eius quam a dicta sequi
-                        totam dignissimos! Debitis?</p>
+                        totam dignissimos?</p>
                     <button class="btn btn-secondary btn-lg boton-largo ">Ver más
                         <i class="fas fa-arrow-right"></i></button>
                 </div>
@@ -121,16 +158,25 @@
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <img src="/img/icon-facebook.svg" alt="icon-facebook" />
+                    <a href="">
+                        <i class="fab fa-facebook-square texto-iconos"></i>
+                    </a>
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img//icon-twitter.svg" alt="icon-twitter" />
+                    <a href=""></a>
+                    <i class="fab fa-twitter-square texto-iconos"></i>
+                    </a></a>
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img/icon-pinterest.svg" alt=" icon-pinterest" />
+                    <a href=""></a>
+                    <i class="fab fa-pinterest-square texto-iconos"></i>
+                    </a></a>
                 </li>
+
                 <li class="footer__redes--item">
-                    <img src="/img/icon-instagram.svg" alt="icon-instagram" />
+                    <a href=""></a>
+                    <i class="fab fa-instagram-square texto-iconos"></i>
+                    </a></a>
                 </li>
             </ul>
         </div>
@@ -139,9 +185,23 @@
             <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
             <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
         </div>
+
+
     </footer>
     </div>
 
+    <!--Archivos de javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!--Archivos de javascript-->
 
 </body>
+
 </html>

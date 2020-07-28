@@ -4,7 +4,6 @@ session_start();
 $user = $_POST['username'];
 $pass = $_POST['password'];
 
-session_start();
 $conexion = mysqli_connect("localhost", "root", "", "sopiecdb");
 $consulta = "SELECT * FROM usuarios WHERE cedula = '$user' AND contrasena = '$pass'";
 $resultado = mysqli_query($conexion, $consulta);
