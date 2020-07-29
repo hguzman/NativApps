@@ -13,18 +13,17 @@ if (isset($_POST['registrar'])) {
     $disco_duro = $_POST['disco_duro'];
     $sistema_operativo = $_POST['sistema_operativo'];
 
-
     // Validaciones
 
     if ($serial == "" || $marca == "" || $nombre == "" || $tipo_equipo == "" || $modelo_equipo == "" || $procesador == ""  || $ram == "" || $disco_duro == "" || $sistema_operativo == "") {
 
-        $_SESSION ['mensaje'] = 'Por favor, llene los campos requeridos';
-        $_SESSION ['tipo_mensaje'] = 'danger';
-        
-        $_POST['registrar']; 
-        
+        $_SESSION['mensaje'] = 'Por favor, llene los campos requeridos';
+        $_SESSION['tipo_mensaje'] = 'danger';
+
+        $_POST['registrar'];
+
         die();
-        }
+    }
 
     // if (!$resultado) {
     //     die('Algo anda mal');
@@ -43,15 +42,14 @@ disco_duro='$disco_duro',
 sistema_operativo='$sistema_operativo'
 
 where serial='$serial'") or
-        die("Problemas en el select:" .mysqli_error($conexion));
+        die("Problemas en el select:" . mysqli_error($conexion));
 
     //mostrar mensaje
-    $_SESSION['mensaje'] = 'equipo actualizado de forma exitosa 😀!';
+    $_SESSION['mensaje'] = '¡Usuario actualizado de forma exitosa 😀!';
     $_SESSION['tipo_mensaje'] = 'success';
     header('Location: ../../equipos.php');
     //     echo "<script type='text/javascript'>
     // alert('Registro actualizado exitosamente exitosamente');
     // window.location.href='../../usuarios.php';
     // /script>";
-  }
-?>
+}

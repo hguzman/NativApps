@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <?php
 session_start();
 $sesion = $_SESSION['username'];
@@ -60,8 +60,8 @@ if (!isset($sesion)) {
             </div>
         </div>
 
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
+       <!--  Sidebar de opciones  -->
+       <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
@@ -83,11 +83,6 @@ if (!isset($sesion)) {
                             </li>
                         </ul>
                     </li>
-                    <!-- Tercero/Inventario de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                    </li>
-
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
@@ -96,24 +91,9 @@ if (!isset($sesion)) {
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">gestionar equipos</a>
+                                <a href="equipos.php">Gestionar equipo</a>
                             </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
 
-                                </ul>
-
-                            </li>
                         </ul>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->

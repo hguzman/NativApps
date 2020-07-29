@@ -15,15 +15,11 @@ if (isset($_POST['registrar'])) {
 
 
     // Validaciones
-
     if ($serial == "" || $marca == "" || $nombre == "" || $tipo_equipo == "" || $modelo_equipo == "" || $procesador == ""  || $ram == "" || $disco_duro == "" || $sistema_operativo == "") {
-
-        $_SESSION ['mensaje'] = 'Por favor, llene los campos requeridos';
-        $_SESSION ['tipo_mensaje'] = 'danger';
-        
-        $_POST['registrar']; 
-        
-        header('Location: ../../nuevoequipo.php');   
+        $_SESSION['mensaje'] = 'Por favor, llene los campos requeridos';
+        $_SESSION['tipo_mensaje'] = 'danger';
+        $_POST['registrar'];
+        header('Location: ../../nuevoequipo.php');
         die();
     }
 
@@ -33,14 +29,12 @@ if (isset($_POST['registrar'])) {
     //realizas la consulta en al base de datos
     $resultado = mysqli_query($conexion, $query);
 
+    
     if (!$resultado) {
         die('Algo anda mal');
     }
     // mostrar mensaje
-    
-    $_SESSION['mensaje'] = '¡Listo, Tu mensaje fue enviado 😀!';
+    $_SESSION['mensaje'] = '¡Equipo agregado a la base de datos😀!';
     $_SESSION['tipo_mensaje'] = 'success';
-    
-    header('Location: ../../nuevoequipo.php');
+    header('Location: ../../equipos.php');
 }
-

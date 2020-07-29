@@ -31,7 +31,7 @@ registrar.addEventListener("click",function(){
 
 //   Validar campos vacios
 registrar.addEventListener("click", function(){
- 
+
     if (cedula.value == "" || area.value == "" || primer_nombre.value == "" || primer_apellido.value == "" || email.value == "" || contrasena.value == ""){
         alert("Por favor llene todos los campos requeridos")
         event.preventDefault();
