@@ -9,7 +9,7 @@ if (!isset($sesion)) {
     if($rol == "admin"){
 
     }else{
-        header("location: assets\php\logout.php");
+        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 

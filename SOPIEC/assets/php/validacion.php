@@ -11,8 +11,8 @@ $filas = mysqli_num_rows($resultado);
 
 $rol = $reg['rol'];
 $cedula = $reg['cedula'];
-$nombre1 = $reg['primer_nombre'];
 $area = $reg['area'];
+$nombre1 = $reg['primer_nombre'];
 $nombre2 = $reg['segundo_nombre'];
 $apellido1 = $reg['primer_apellido'];
 $apellido2 = $reg['segundo_apellido'];
@@ -38,6 +38,7 @@ if ($filas > 0 && $rol == "admin") {
         $_SESSION['rol'] = $rol;
         header("location: ../../index_user.php");
     } else {
+        // Redireccion al login.html
         header("Location:../../login.html");
     }
 }
