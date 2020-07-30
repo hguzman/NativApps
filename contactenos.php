@@ -24,7 +24,7 @@
             </a>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link a-actual" href="index.php">Inicio</a>
+                    <a class="nav-link" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
@@ -36,7 +36,7 @@
                     <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactenos.php">Contactenos</a>
+                    <a class="nav-link a-actual" href="contactenos.php">Contactenos</a>
                 </li>
 
             </ul>
@@ -135,16 +135,16 @@ if (isset($_REQUEST['Enviar'])) {
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <img src="/img/icon-facebook.svg" alt="icon-facebook" />
+                    <img src="img/icon-facebook.svg" alt="icon-facebook" />
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img//icon-twitter.svg" alt="icon-twitter" />
+                    <img src="img//icon-twitter.svg" alt="icon-twitter" />
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img/icon-pinterest.svg" alt=" icon-pinterest" />
+                    <img src="img/icon-pinterest.svg" alt=" icon-pinterest" />
                 </li>
                 <li class="footer__redes--item">
-                    <img src="/img/icon-instagram.svg" alt="icon-instagram" />
+                    <img src="img/icon-instagram.svg" alt="icon-instagram" />
                 </li>
             </ul>
         </div>

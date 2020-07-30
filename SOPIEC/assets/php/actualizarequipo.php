@@ -1,6 +1,22 @@
 <?php
 // Incluir archivo de base de datos
 require_once("db.php");
+?>
+
+<?php
+
+$sesion = $_SESSION['username'];
+$rol = $_SESSION['rol'];
+if (!isset($sesion)) {
+    header("location: ../../login.html");
+} else {
+    if($rol == "admin"){
+
+    }else{
+        header("logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    }
+}
+
 // Funcion para el botón enviar
 if (isset($_POST['registrar'])) {
     $serial = $_POST['serial'];
@@ -53,3 +69,4 @@ where serial='$serial'") or
     // window.location.href='../../usuarios.php';
     // /script>";
 }
+?>
