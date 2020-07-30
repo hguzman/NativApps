@@ -6,4 +6,5 @@ session_destroy();
 
 <script language="javascript">
     location.href = "../../login.html";
+    alert("Sesion finalizada")
 </script>
