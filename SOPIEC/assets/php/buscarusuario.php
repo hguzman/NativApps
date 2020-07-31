@@ -8,10 +8,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: ../../login.html");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 ?>

@@ -8,10 +8,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: login.html");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 
@@ -25,6 +24,8 @@ if (!isset($sesion)) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOPIEC</title>
+
+
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -142,7 +143,7 @@ if (!isset($sesion)) {
 
                 <!-- query -->
                 <?php
-                $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email
+                $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,rol
                                       from usuarios") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
@@ -160,6 +161,7 @@ if (!isset($sesion)) {
                                     <th scope="col">Primer apellido</th>
                                     <th scope="col">Segundo apellido</th>
                                     <th scope="col">Correo</th>
+                                    <th scope="col">Rol</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -178,11 +180,12 @@ if (!isset($sesion)) {
                                         <td> <?php echo $reg['primer_apellido'] ?> </td>
                                         <td> <?php echo $reg['segundo_apellido'] ?> </td>
                                         <td> <?php echo $reg['email'] ?> </td>
+                                        <td> <?php echo $reg['rol'] ?> </td>
                                         <td class="eliminar-editar">
                                             <!-- botones editar y eliminar -->
                                             <a id="edit" class="btn fa fa-pen" href="modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                            <a id="del" class="btn fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
                                         </td>
                                     </tr>
 
@@ -213,6 +216,16 @@ if (!isset($sesion)) {
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/validaciones.js"></script>
+    
+    <!-- Alerta borrar -->
+    <script type="text/javascript">
+        function confirmacion_borrar(cedula) {
+            if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
+                window.location.href = "assets/php/borrar.php?cedula=" + cedula
+            }
+        }
+    </script>
 
 </body>
 
