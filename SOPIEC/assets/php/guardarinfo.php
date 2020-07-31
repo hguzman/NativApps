@@ -11,6 +11,7 @@ if (isset($_POST['registrar'])) {
     $segundo_apellido = $_POST['segundo_apellido'];
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
+    $rol = $_POST['rol'];
 
 
     // Validaciones
@@ -26,7 +27,7 @@ if (isset($_POST['registrar'])) {
     }
 
     // Query
-    $query = "INSERT INTO usuarios(cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,contrasena) VALUES ('$cedula','$area','$primer_nombre','$segundo_nombre','$primer_apellido','$segundo_apellido','$email','$contrasena')";
+    $query = "INSERT INTO usuarios(cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,contrasena,rol) VALUES ('$cedula','$area','$primer_nombre','$segundo_nombre','$primer_apellido','$segundo_apellido','$email','$contrasena','$rol')";
 
     //realizas la consulta en al base de datos
     $resultado = mysqli_query($conexion, $query);
