@@ -9,10 +9,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: login.html");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 
@@ -51,6 +50,8 @@ if (!isset($sesion)) {
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
+                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
                         <li><a href="#">Cerrar sesión</a></li>
@@ -59,8 +60,8 @@ if (!isset($sesion)) {
             </div>
         </div>
 
-         <!--  Sidebar de opciones  -->
-         <nav class="navbar-default navbar-side" role="navigation">
+        <!--  Sidebar de opciones  -->
+        <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
@@ -72,7 +73,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -84,7 +86,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -115,7 +118,7 @@ if (!isset($sesion)) {
                         <h2>Agregar nuevo equipo</h2>
                     </div>
                 </div>
-                <hr/>
+                <hr />
 
                 <form class="form-nuevo-cliente" action="assets/php/guardarequipo.php" method="POST">
 
@@ -124,45 +127,54 @@ if (!isset($sesion)) {
                         <!-- serial -->
                         <div class="form-group col-md-6">
                             <label for="registrar-primer-nombre">Serial</label>
-                            <input type="text" class="form-control" id="serial" name="serial" placeholder="112223344556" require>
+                            <input type="text" class="form-control" id="serial" name="serial" placeholder="112223344556"
+                                require>
                         </div>
                         <!-- marca -->
                         <div class="form-group col-md-6">
                             <label for="registrar-segundo-nombre">marca</label>
-                            <input type="text" class="form-control" id="marca" name="marca" placeholder="HP/LENOVO/ETC" require>
+                            <input type="text" class="form-control" id="marca" name="marca" placeholder="HP/LENOVO/ETC"
+                                require>
                         </div>
                         <!-- nombre -->
                         <div class="form-group col-md-6">
                             <label for="registrar-primer-nombre">nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="DESKTOP-XXXCCXZXC" require>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                                placeholder="DESKTOP-XXXCCXZXC" require>
                         </div>
                         <!-- tIPO EQUIPO -->
                         <div class="form-group col-md-6">
                             <label for="registrar-segundo-nombre">Tipo equipo</label>
-                            <input type="text" class="form-control" id="tipo_equipo" name="tipo_equipo" placeholder="ALL IN ONE / PORTATIL">
+                            <input type="text" class="form-control" id="tipo_equipo" name="tipo_equipo"
+                                placeholder="ALL IN ONE / PORTATIL">
                         </div>
                         <!-- Modelo equipo -->
                         <div class="form-group col-md-6">
                             <label for="registrar-primer-apellido">Modelo equipo</label>
-                            <input type="text" class="form-control" id="modelo_equipo" name="modelo_equipo" placeholder="123123XXXXXX" require>
+                            <input type="text" class="form-control" id="modelo_equipo" name="modelo_equipo"
+                                placeholder="123123XXXXXX" require>
                         </div>
                         <!-- procesador -->
                         <div class="form-group col-md-6">
                             <label for="registrar-segundo-apellido">procesador</label>
-                            <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Casas">
+                            <input type="text" class="form-control" id="procesador" name="procesador"
+                                placeholder="Casas">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="registrar-email">ram</label>
-                            <input type="text" class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X" require>
+                            <input type="text" class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X"
+                                require>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">disco_duro</label>
-                            <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="marca del disco duro  " require>
+                            <input type="text" class="form-control" id="disco_duro" name="disco_duro"
+                                placeholder="marca del disco duro  " require>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">sistema operativo</label>
-                            <input type="text" class="form-control" id="sistema_operativo" name="sistema_operativo" placeholder="marca del disco duro  " require>
+                            <input type="text" class="form-control" id="sistema_operativo" name="sistema_operativo"
+                                placeholder="marca del disco duro  " require>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">estado del equipo</label>
@@ -172,7 +184,8 @@ if (!isset($sesion)) {
 
                     </div>
 
-                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">Registrar</button>
+                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar"
+                        id="registrar">Registrar</button>
                 </form>
 
             </div>
@@ -198,9 +211,15 @@ if (!isset($sesion)) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 
     <script src="assets/js/validaciones.js"></script>
 

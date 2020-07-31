@@ -40,4 +40,3 @@ if (isset($_POST['registrar'])) {
     $_SESSION['tipo_mensaje'] = 'success';
     header('Location: ../../usuarios.php');
 }
-
