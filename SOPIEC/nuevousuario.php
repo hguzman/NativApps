@@ -1,10 +1,22 @@
+<!DOCTYPE html>
 <!-- Codigo de conexion al archivo db.php -->
 <?php
 include("assets/php/db.php");
 ?>
+<?php
+$sesion = $_SESSION['username'];
+$rol = $_SESSION['rol'];
+if (!isset($sesion)) {
+    header("location: login.html");
+} else {
+    if($rol == "admin"){
 
+    }else{
+        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    }
+}
 
-<!DOCTYPE html>
+?>
 <html>
 
 <head>
@@ -161,6 +173,14 @@ include("assets/php/db.php");
                             <label for="contrasena">Contraseña</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
                             <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
+                        </div>
+                         <!-- Rol -->
+                         <div class="form-group col-md-12 rol-derecha">
+                            <label for="primer_nombre">Rol</label>
+                            <select name="rol" id="rol">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
                         </div>
                     </div>
 

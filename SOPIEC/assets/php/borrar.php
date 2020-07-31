@@ -1,5 +1,4 @@
 
-
 <?php
 
 require_once("db.php");
@@ -27,8 +26,8 @@ echo "No existe un usuario con este ID/Cedula.";
 }
 mysqli_close($conexion);
 
-
 ?>
+
 
 
 

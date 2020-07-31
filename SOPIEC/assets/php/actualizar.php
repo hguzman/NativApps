@@ -11,6 +11,7 @@ if (isset($_POST['registrar'])) {
     $segundo_apellido = $_POST['segundo_apellido'];
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
+    $rol = $_POST['rol'];
 
 
 
@@ -37,13 +38,13 @@ segundo_nombre='$segundo_nombre',
 primer_apellido='$primer_apellido', 
 segundo_apellido='$segundo_apellido', 
 email='$email',
-contrasena='$contrasena'
-
+contrasena='$contrasena',
+rol='$rol'
 where cedula='$cedula'") or
         die("Problemas en el select:" . mysqli_error($conexion));
 
     //mostrar mensaje
-    $_SESSION['mensaje'] = '¡Usuario actualizado de forma exitosa 😀!';
+    $_SESSION['mensaje'] = 'Los registros del usuario con C.C: '.$cedula.' han sido actualizados exitosamente!';
     $_SESSION['tipo_mensaje'] = 'success';
     header('Location: ../../usuarios.php');
     //     echo "<script type='text/javascript'>
