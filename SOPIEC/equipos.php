@@ -54,8 +54,6 @@ if (!isset($sesion)) {
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
                         <li><a href="#">Cerrar sesión</a></li>
@@ -77,8 +75,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -90,8 +87,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -120,12 +116,15 @@ if (!isset($sesion)) {
                     <div class="col-md-12">
                         <!-- Alerta -->
                         <?php if (isset($_SESSION['mensaje'])) : ?>
-                        <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                            <?php echo $_SESSION['mensaje']; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                                <?php echo $_SESSION['mensaje']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
+                            <?php session_unset(); ?>
 
                         <?php endif; ?>
                         <h2>Equipos</h2>
@@ -163,39 +162,35 @@ if (!isset($sesion)) {
                                 <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                <!-- Contenido de la tabla -->
-                                <tr class="actual">
-                                    <th scope="row">
-                                        <input class="form-control" type="text"
-                                            value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial"
-                                            name="serial" readonl> </th>
-                                    <td> <?php echo $reg['marca'] ?></td>
-                                    <td> <?php echo $reg['nombre'] ?></td>
-                                    <td> <?php echo $reg['tipo_equipo'] ?> </td>
-                                    <td> <?php echo $reg['modelo_equipo'] ?> </td>
-                                    <td> <?php echo $reg['procesador'] ?> </td>
-                                    <td> <?php echo $reg['ram'] ?> </td>
-                                    <td> <?php echo $reg['disco_duro'] ?> </td>
-                                    <td> <?php echo $reg['sistema_operativo'] ?> </td>
-                                    <td class="eliminar-editar">
-                                        <!-- botones editar y eliminar -->
-                                        <a id="edit" class="btn fa fa-pen"
-                                            href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
+                                    <!-- Contenido de la tabla -->
+                                    <tr class="actual">
+                                        <th scope="row">
+                                            <input class="form-control" type="text" value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial" name="serial" readonl> </th>
+                                        <td> <?php echo $reg['marca'] ?></td>
+                                        <td> <?php echo $reg['nombre'] ?></td>
+                                        <td> <?php echo $reg['tipo_equipo'] ?> </td>
+                                        <td> <?php echo $reg['modelo_equipo'] ?> </td>
+                                        <td> <?php echo $reg['procesador'] ?> </td>
+                                        <td> <?php echo $reg['ram'] ?> </td>
+                                        <td> <?php echo $reg['disco_duro'] ?> </td>
+                                        <td> <?php echo $reg['sistema_operativo'] ?> </td>
+                                        <td class="eliminar-editar">
+                                            <!-- botones editar y eliminar -->
+                                            <a id="edit" class="btn fa fa-pen" href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
-                                        <a id="del" class="btn fa fa-trash-alt"
-                                            href="assets/php/borrarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
-                                    </td>
-                                </tr>
+                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
+                                        </td>
+                                    </tr>
 
                     </div>
                 </div>
 
-                <?php
+            <?php
                                 }
                                 mysqli_close($conexion);
             ?>
-                </tbody>
-                </table>
+            </tbody>
+            </table>
             </div>
 
             <!-- /. ROW  -->

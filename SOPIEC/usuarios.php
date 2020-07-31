@@ -57,8 +57,6 @@ if (!isset($sesion)) {
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
@@ -80,8 +78,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -93,8 +90,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -122,24 +118,23 @@ if (!isset($sesion)) {
                     <div class="col-md-12">
                         <!-- Alerta -->
                         <?php if (isset($_SESSION['mensaje'])) : ?>
-                        <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                            <?php echo $_SESSION['mensaje']; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                                <?php echo $_SESSION['mensaje']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
-                       
+                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
+                            <?php session_unset(); ?>
+
                         <?php endif; ?>
                         <div class="usuarios-buscar">
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->
-                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php"
-                                method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
-                                    id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
-                                    id="boton_buscar">Buscar</button>
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php" method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -197,12 +192,12 @@ if (!isset($sesion)) {
                     </div>
                 </div>
 
-                <?php
+            <?php
                                 }
                                 mysqli_close($conexion);
             ?>
-                </tbody>
-                </table>
+            </tbody>
+            </table>
             </div>
 
             <!-- /. ROW  -->

@@ -53,8 +53,6 @@ if (!isset($sesion)) {
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
                         <li><a href="#">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
@@ -63,8 +61,8 @@ if (!isset($sesion)) {
             </div>
         </div>
 
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
+      <!--  Sidebar de opciones  -->
+      <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
@@ -76,8 +74,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -89,8 +86,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -122,14 +118,15 @@ if (!isset($sesion)) {
                 <hr>
                 <?php if (isset($_SESSION['mensaje'])) : ?>
 
-                <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                    <?php echo $_SESSION['mensaje']; ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                    <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                        <?php echo $_SESSION['mensaje']; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                
+                    <!--LIMPIAR LOS DATOS DE LA SESSION-->
+                    <?php session_unset(); ?>
 
                 <?php endif; ?>
                 <!-- Formulario de creacion de usuario -->
@@ -140,8 +137,7 @@ if (!isset($sesion)) {
                         <!-- Cedula de ciudadania -->
                         <div class="form-group col-md-6">
                             <label for="cedula">Cedula de ciudadania</label>
-                            <input type="number" class="form-control" id="cedula" name="cedula"
-                                placeholder="112223344556" require>
+                            <input type="number" class="form-control" id="cedula" name="cedula" placeholder="112223344556" require>
                         </div>
                         <!-- Area de trabajo -->
                         <div class="form-group col-md-6">
@@ -151,37 +147,31 @@ if (!isset($sesion)) {
                         <!-- Primer nombre -->
                         <div class="form-group col-md-6">
                             <label for="primer_nombre">Primer nombre</label>
-                            <input type="text" class="form-control" id="primer_nombre" name="primer_nombre"
-                                placeholder="Andrés" require>
+                            <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" placeholder="Andrés" require>
                         </div>
                         <!-- Segundo nombre -->
                         <div class="form-group col-md-6">
                             <label for="segundo_nombre">Segundo nombre</label>
-                            <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre"
-                                placeholder="José">
+                            <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="José">
                         </div>
                         <!-- Primer apellido -->
                         <div class="form-group col-md-6">
                             <label for="primer_apellido">Primer apellido</label>
-                            <input type="text" class="form-control" id="primer_apellido" name="primer_apellido"
-                                placeholder="Salas" require>
+                            <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Salas" require>
                         </div>
                         <!-- Segundo apellido -->
                         <div class="form-group col-md-6">
                             <label for="segundo_apellido">Segundo apellido</label>
-                            <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido"
-                                placeholder="Casas">
+                            <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Casas">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="correo_143@correo.com" require>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="correo_143@correo.com" require>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="contrasena">Contraseña</label>
-                            <input type="password" class="form-control" id="contrasena" name="contrasena"
-                                placeholder="*********" require>
+                            <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
                             <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
                         </div>
                          <!-- Rol -->
@@ -194,8 +184,7 @@ if (!isset($sesion)) {
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar"
-                        id="registrar">Registrar</button>
+                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">Registrar</button>
                 </form>
 
             </div>
@@ -223,15 +212,9 @@ if (!isset($sesion)) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script src="assets/js/validaciones.js"></script>
 

@@ -3,6 +3,7 @@
 include("assets/php/db.php");
 ?>
 <?php
+
 $sesion = $_SESSION['username'];
 $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
@@ -54,31 +55,29 @@ if (!isset($sesion)) {
         $contrasena = $reg['contrasena'];
 
     ?>
-    <!-- Contenedor principal -->
-    <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
+        <!-- Contenedor principal -->
+        <div id="wrapper">
+            <!-- Header -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="adjust-nav">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    </div>
+                    <!-- Lista opciones -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">See Website</a></li>
+                            <li><a href="#">Open Ticket</a></li>
+                            <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
             <!--  Sidebar de opciones  -->
             <nav class="navbar-default navbar-side" role="navigation">
@@ -126,22 +125,25 @@ if (!isset($sesion)) {
 
             </nav>
 
-        <!-- Contenido de la pagina, lado derecho ancho -->
-        <div id="page-wrapper">
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Modificar usuario</h2>
+            <!-- Contenido de la pagina, lado derecho ancho -->
+            <div id="page-wrapper">
+                <div id="page-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Modificar usuario</h2>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <?php if (isset($_SESSION['mensaje'])) : ?>
-                <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                    <?php echo $_SESSION['mensaje']; ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                    <hr>
+                    <?php if (isset($_SESSION['mensaje'])) : ?>
+                        <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                            <?php echo $_SESSION['mensaje']; ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <!--LIMPIAR LOS DATOS DE LA SESSION-->
+                        <?php session_unset(); ?>
 
                     <?php endif; ?>
                     <!-- Formulario de creacion de usuario -->
@@ -199,59 +201,39 @@ if (!isset($sesion)) {
                             </div>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="registrar-email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="correo_143@correo.com" require value="<?php echo $email ?>">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">Contraseña</label>
-                            <input type="password" class="form-control" id="contrasena" name="contrasena"
-                                placeholder="*********" require value="<?php echo $contrasena ?>">
-                            <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar" onclick="">Actualizar</button>
+                    </form>
 
-                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar"
-                        id="registrar" onclick="">Actualizar</button>
-                </form>
+                </div>
 
+
+
+                <!-- /. ROW  -->
             </div>
+            <!-- /. PAGE INNER  -->
 
-
-
-            <!-- /. ROW  -->
         </div>
-        <!-- /. PAGE INNER  -->
-
-    </div>
-    <!-- /. PAGE WRAPPER  -->
-    </div>
-    <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
-    <!-- Sweetalert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <!-- /. PAGE WRAPPER  -->
+        </div>
+        <!-- /. WRAPPER  -->
+        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+        <!-- JQUERY SCRIPTS -->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- METISMENU SCRIPTS -->
+        <script src="assets/js/jquery.metisMenu.js"></script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="assets/js/custom.js"></script>
+        <!-- Sweetalert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script src="assets/js/validaciones.js"></script>
+        <script src="assets/js/validaciones.js"></script>
 
 
 
