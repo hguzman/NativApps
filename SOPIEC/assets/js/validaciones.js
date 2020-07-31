@@ -7,6 +7,7 @@ var email = document.querySelector("#email");
 var contrasena = document.querySelector("#contrasena");
 var mensaje = document.querySelector(".mensaje");
 var registrar = document.querySelector("#registrar");
+var del = document.getElementById(del)
 
 
 
@@ -44,3 +45,6 @@ registrar.addEventListener("click", function(){
     }
 
 })
+
+
+

@@ -174,6 +174,14 @@ if (!isset($sesion)) {
                             <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
                             <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
                         </div>
+                         <!-- Rol -->
+                         <div class="form-group col-md-12 rol-derecha">
+                            <label for="primer_nombre">Rol</label>
+                            <select name="rol" id="rol">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">Registrar</button>

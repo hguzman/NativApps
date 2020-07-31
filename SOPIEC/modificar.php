@@ -9,10 +9,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: login.html");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 
@@ -80,51 +79,51 @@ if (!isset($sesion)) {
                 </div>
             </div>
 
-             <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="equipos.php">Gestionar equipo</a>
-                            </li>
+            <!--  Sidebar de opciones  -->
+            <nav class="navbar-default navbar-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+                        <li class="text-center user-image-back">
+                            <img src="assets/img/find_user.png" class="img-responsive" />
+                        </li>
+                        <!-- Primero/inicio -->
+                        <li>
+                            <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                        </li>
+                        <!-- Segundo/Administracion de usuarios -->
+                        <li>
+                            <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="nuevousuario.php">Crear Nuevo usuario</a>
+                                </li>
+                                <li>
+                                    <a href="usuarios.php">Ver usuarios registrados</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Cuarto/Administracion de equipos -->
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="nuevoequipo.php">Agregar un equipo</a>
+                                </li>
+                                <li>
+                                    <a href="equipos.php">Gestionar equipo</a>
+                                </li>
 
-                        </ul>
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
+                            </ul>
+                        </li>
+                        <!--  Quinto/A cerca de SOPIEC-->
+                        <li>
+                            <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
+                        </li>
+                    </ul>
 
-            </div>
+                </div>
 
-        </nav>
+            </nav>
 
             <!-- Contenido de la pagina, lado derecho ancho -->
             <div id="page-wrapper">
@@ -191,6 +190,14 @@ if (!isset($sesion)) {
                                 <label for="registrar-contrasena">Contraseña</label>
                                 <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require value="<?php echo $contrasena ?>">
                                 <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
+                            </div>
+                            <!-- Rol -->
+                            <div class="form-group col-md-12 rol-derecha">
+                                <label for="primer_nombre">Rol</label>
+                                <select name="rol" id="rol">
+                                    <option value="user">User</option>
+                                    <option value="admin">Admin</option>
+                                </select>
                             </div>
                         </div>
 
