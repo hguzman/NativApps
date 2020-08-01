@@ -125,9 +125,6 @@ if (!isset($sesion)) {
                         </button>
                     </div>
 
-                    <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                    <?php session_unset(); ?>
-
                 <?php endif; ?>
                 <!-- Formulario de creacion de usuario -->
                 <form class="form-nuevo-cliente" action="assets/php/guardarinfo.php" method="POST">
