@@ -121,9 +121,6 @@ if (!isset($sesion)) {
                                 </button>
                             </div>
 
-                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                            <?php session_unset(); ?>
-
                         <?php endif; ?>
                         <div class="usuarios-buscar">
                             <h2>Usuarios</h2>
