@@ -46,5 +46,3 @@ registrar.addEventListener("click", function(){
 
 })
 
-
-
