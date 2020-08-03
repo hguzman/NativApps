@@ -17,7 +17,7 @@
 
 | Precondición |
 |--------|
-| El usuario debe estar registrado, el equipo que manipule debe tener el software de inventariado previamente instalado.  |
+| El usuario debe estar registrado y tener rol de admin, el equipo que manipule debe tener el software de inventariado previamente instalado.  |
 
 | Secuencia Normal|
 |--------|
