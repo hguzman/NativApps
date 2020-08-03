@@ -8,10 +8,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: ../../login.html");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 ?>
@@ -67,7 +66,7 @@ if (!isset($sesion)) {
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
+                        <img src="../img/find_user.png" class="img-responsive" />
                     </li>
                     <!-- Primero/inicio -->
                     <li>
@@ -78,10 +77,10 @@ if (!isset($sesion)) {
                         <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
+                                <a href="../../nuevousuario.php">Crear Nuevo usuario</a>
                             </li>
                             <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
+                                <a href="../../usuarios.php">Ver usuarios registrados</a>
                             </li>
                         </ul>
                     </li>
@@ -90,10 +89,10 @@ if (!isset($sesion)) {
                         <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
+                                <a href="../../nuevoequipo.php">Agregar un equipo</a>
                             </li>
                             <li>
-                                <a href="equipos.php">Gestionar equipo</a>
+                                <a href="../../equipos.php">Gestionar equipo</a>
                             </li>
 
                         </ul>
@@ -113,19 +112,7 @@ if (!isset($sesion)) {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- Alerta -->
-                        <?php if (isset($_SESSION['mensaje'])) : ?>
-                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                                <?php echo $_SESSION['mensaje']; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
 
-                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                            <?php session_unset(); ?>
-
-                        <?php endif; ?>
                         <div class="usuarios-buscar">
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->

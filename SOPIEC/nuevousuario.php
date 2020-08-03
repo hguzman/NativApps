@@ -116,19 +116,7 @@ if (!isset($sesion)) {
                     </div>
                 </div>
                 <hr>
-                <?php if (isset($_SESSION['mensaje'])) : ?>
-
-                    <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                        <?php echo $_SESSION['mensaje']; ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                    <?php session_unset(); ?>
-
-                <?php endif; ?>
+              
                 <!-- Formulario de creacion de usuario -->
                 <form class="form-nuevo-cliente" action="assets/php/guardarinfo.php" method="POST">
 
@@ -173,6 +161,14 @@ if (!isset($sesion)) {
                             <label for="contrasena">Contraseña</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
                             <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
+                        </div>
+                         <!-- Rol -->
+                         <div class="form-group col-md-12 rol-derecha">
+                            <label for="primer_nombre">Rol</label>
+                            <select name="rol" id="rol">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
                         </div>
                     </div>
 
