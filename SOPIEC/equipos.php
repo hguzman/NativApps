@@ -123,9 +123,6 @@ if (!isset($sesion)) {
                                 </button>
                             </div>
 
-                            <!--LIMPIAR LOS DATOS DE LA SESSION-->
-                            <?php session_unset(); ?>
-
                         <?php endif; ?>
                         <h2>Equipos</h2>
                     </div>
