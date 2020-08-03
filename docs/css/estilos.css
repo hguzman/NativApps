@@ -21,7 +21,11 @@ height: 16rem;
 .texto-modal{
     text-align: justify;
     margin: auto;
-    width: 35rem;
+    width: 80%;
+    border: solid;
+    border-color: #e5e5e5;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .card-header{
@@ -47,4 +51,35 @@ height: 16rem;
 .imagen{
     height: 22rem;
     overflow: hidden;
+}
+
+.alto_login{
+    height: 30rem;
+    object-fit: scale-down;
+}
+
+.fw-500{
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.centrar{
+    display: block;
+    text-align: center;
+}
+
+.altura_card{
+    height: 100%;
+}
+
+.centrar-boton{
+    display: block!important;
+    align-items: center!important;
+    margin-left: 37%;
+    width: 25%;
+}
+
+.tittle-color{
+    font-family: monospace;
+    color: black;
 }

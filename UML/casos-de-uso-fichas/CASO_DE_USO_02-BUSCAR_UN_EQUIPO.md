@@ -16,7 +16,7 @@
 
 | Precondición |
 |--------|
-| El usuario debe estar registrado, el equipo que manipule debe tener el software de inventariado previamente instalado, el equipo que será objeto de búsqueda debe estar previamente registrado en el sistema de inventariado. |
+| El usuario debe estar registrado, el equipo que manipule debe tener un navegador y conexion a internet, el equipo que será objeto de búsqueda debe estar previamente registrado en el sistema de inventariado. |
 
 | Secuencia Normal|
 |--------|
