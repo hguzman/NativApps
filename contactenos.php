@@ -29,9 +29,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link " href="compania.html">Compañia</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
                 </li>
@@ -101,9 +98,17 @@ if (isset($_REQUEST['Enviar'])) {
 ?>
         </div>
 
-        <div class="img" style="margin-top:6%; height:100%; width: 100%;">
-            <img src="IMG\contactenos.jpg" heigth='100%' width='100%' alt="imagen de contacto">
+        <div class="img" style="margin-top:2%;margin-right:6%;margin-bottom:4%; height:80%; width: 80%;">
+            <img src="IMG\contactenos.jpg" heigth='80%' width='80%' alt="imagen de contacto">
+            <h1>contactenos:</h1>
+            <h5>fijo: 3651234</h5>
+            <h5>telefono: 3002881234</h5>
+            <h5>___________________________</h5>
+            <h5>direccion: calle 94 #51b-73</h5>
+            <h5>centro empresarial buro51 - oficina 607</h5>
+            <h5>Barranquilla -  Colombia</h5>
         </div>
+        
 
     </div>
 

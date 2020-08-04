@@ -138,57 +138,77 @@ if (!isset($sesion)) {
                     <!-- Formulario de creacion de equipo -->
                     <form class="form-nuevo-cliente" action="assets/php/actualizarequipo.php" method="POST">
 
-                        <!-- Row de email y pass -->
-                        <div class="form-row">
-                            <!-- SERIAL -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-primer-nombre">SERIAL</label>
-                                <input type="text" class="form-control" id="serial" name="serial" placeholder="112223344556" require value="<?php echo $serial ?>" readonly>
+                     <div class="form-row">
+                        <!-- serial -->
+                        <div class="form-group col-md-6">
+                            <label for="registrar-primer-nombre">Serial</label>
+                            <input type="text" class="form-control" id="serial" name="serial" placeholder="112223344556" require value="<?php echo $serial ?>" readonly>
+                        </div>
+                        <!-- marca -->
+                        <div class="form-group col-md-6">
+                            <label for="registrar-segundo-nombre">Marca</label>
+                            <input type="text" class="form-control" id="marca" name="marca" placeholder="HP/LENOVO/ETC" require>
+                        </div>
+                        <!-- nombre -->
+                        <div class="form-group col-md-6">
+                            <label for="registrar-primer-nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="DESKTOP-XXXCCXZXC" require>
+                        </div>
+                        <!-- tIPO EQUIPO -->
+                        <div class="form-group col-md-6">
+                            <label for="registrar-segundo-nombre">Tipo equipo</label>
+                            <select  class="form-control" name="tipo_equipo" id="tipo_equipo"  >
+                                <option value="disabled selected">seleccione un tipo de equipo</option>
+                                <option value="all in one">All in one</option>
+                                <option value="Portatil">Portatil</option>
+                                <option value="Movil">Movil</option>
+                                <option value="Otro">Otro</option>
+                            </select>                        
                             </div>
-                            <!-- marca -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-segundo-nombre">marca</label>
-                                <input type="text" class="form-control" id="marca" name="marca" placeholder="5" require value="<?php echo $marca ?>">
-                            </div>
-                            <!-- nombre -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-primer-nombre">nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Andrés" require value="<?php echo $nombre ?>">
-                            </div>
-                            <!-- tipo de equipo -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-segundo-nombre">tipo de equipo</label>
-                                <input type="text" class="form-control" id="tipo_equipo" name="tipo_equipo" placeholder="José" value="<?php echo $tipo_equipo ?>">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="registrar-segundo-nombre">modelo de equipo</label>
-                                <input type="text" class="form-control" id="modelo_equipo" name="modelo_equipo" placeholder="José" value="<?php echo $modelo_equipo ?>">
-                            </div>
-                            <!-- procesador -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-primer-apellido">procesador</label>
-                                <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Salas" require value="<?php echo $procesador ?>">
-                            </div>
-                            <!-- ram -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-segundo-apellido">ram</label>
-                                <input type="text" class="form-control" id="ram" name="ram" placeholder="Casas" value="<?php echo $ram ?>">
-                            </div>
-                            <!-- disco duro  -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-email">disco duro </label>
-                                <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="MARCA xGB SSD/HDD" require value="<?php echo $disco_duro ?>">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="registrar-contrasena">sistema operativo</label>
-                                <input type="text" class="form-control" id="sistema_operativo" name="sistema_operativo" placeholder="WINDOWS/UBUNTU/ETC" require value="<?php echo $sistema_operativo ?>">
-                            </div>
+                        <!-- Modelo equipo -->
+                        <div class="form-group col-md-6">
+                            <label for="registrar-primer-apellido">Modelo equipo</label>
+                            <input type="text" class="form-control" id="modelo_equipo" name="modelo_equipo" placeholder="123123XXXXXX" require>
+                        </div>
+                        <!-- procesador -->
+                        <div class="form-group col-md-6">
+                            <label for="registrar-segundo-apellido">Procesador</label>
+                            <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Casas">
                         </div>
 
-                        <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar" onclick="">Actualizar</button>
-                    </form>
+                        <div class="form-group col-md-6">
+                            <label for="registrar-email">Ram</label>
+                            <input class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X" require>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="registrar-contrasena">Disco duro</label>
+                            <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="marca del disco duro  " require>
+                        </div>
 
-                </div>
+                        <div class="form-group col-md-6">
+                            <label for="sistema_operativo">Sistema operativo </label>
+                            <select  class="form-control" name="sistema_operativo" id="sistema_operativo"  >
+                                <option value="disabled selected">seleccione un sistema operativo</option>
+                                <option value="Windows 10">Windows 10</option>
+                                <option value="Ubuntu">Ubuntu</option>
+                                <option value="Mac/OS">Mac/OS</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="sel1">Estado </label>
+                            <select class="form-control" id="sel1">
+                                <option value="disabled selected">seleccione un estado</option>
+                                <option>bueno</option>
+                                <option>regular</option>
+                                <option>reparar</option>
+                                <option>Fuera de uso</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">actualizar</button>
+                </form>
 
 
 

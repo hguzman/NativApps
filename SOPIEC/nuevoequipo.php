@@ -139,7 +139,13 @@ if (!isset($sesion)) {
                         <!-- tIPO EQUIPO -->
                         <div class="form-group col-md-6">
                             <label for="registrar-segundo-nombre">Tipo equipo</label>
-                            <input type="text" class="form-control" id="tipo_equipo" name="tipo_equipo" placeholder="ALL IN ONE / PORTATIL">
+                             <select  class="form-control" name="tipo_equipo" id="tipo_equipo"  >
+                                <option value="disabled selected">seleccione un tipo de equipo</option>
+                                <option value="all in one">All in one</option>
+                                <option value="Portatil">Portatil</option>
+                                <option value="Movil">Movil</option>
+                                <option value="Otro">Otro</option>
+                            </select>
                         </div>
                         <!-- Modelo equipo -->
                         <div class="form-group col-md-6">
@@ -154,22 +160,33 @@ if (!isset($sesion)) {
 
                         <div class="form-group col-md-6">
                             <label for="registrar-email">ram</label>
-                            <input type="text" class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X" require>
+                            <input class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X" require>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">disco_duro</label>
                             <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="marca del disco duro  " require>
                         </div>
+
                         <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">sistema operativo</label>
-                            <input type="text" class="form-control" id="sistema_operativo" name="sistema_operativo" placeholder="marca del disco duro  " require>
+                            <label for="sistema_operativo">sistema operativo </label>
+                            <select  class="form-control" name="sistema_operativo" id="sistema_operativo"  >
+                                <option value="disabled selected">seleccione un sistema operativo</option>
+                                <option value="Windows 10">Windows 10</option>
+                                <option value="Ubuntu">Ubuntu</option>
+                                <option value="Mac/OS">Mac/OS</option>
+                                <option value="Otros">Otros</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">estado del equipo</label>
-                            <input type="text" class="form-control" id="estado" name="estado" placeholder="  " require>
+                            <label for="sel1">estado </label>
+                            <select class="form-control" id="sel1">
+                                <option value="disabled selected">seleccione un estado</option>
+                                <option>bueno</option>
+                                <option>regular</option>
+                                <option>reparar</option>
+                                <option>Fuera de uso</option>
+                            </select>
                         </div>
-
-
                     </div>
 
                     <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">Registrar</button>

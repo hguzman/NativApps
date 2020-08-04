@@ -66,7 +66,7 @@ if (!isset($sesion)) {
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
-                        <img src="../img/find_user.png" class="img-responsive" />
+                        <img src="assets/img/find_user.png" class="img-responsive" />
                     </li>
                     <!-- Primero/inicio -->
                     <li>
@@ -112,35 +112,45 @@ if (!isset($sesion)) {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                        <!-- Alerta -->
+                        <?php if (isset($_SESSION['mensaje'])) : ?>
+                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                                <?php echo $_SESSION['mensaje']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
+                        <?php endif; ?>
                         <div class="usuarios-buscar">
-                            <h2>Usuarios</h2>
+                            <h2>EQUIPOS</h2>
                             <!-- Barra de busqueda -->
-                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarusuario.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo.php" method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="serial" aria-label="Search" id="buscar_equipo" name="buscar_equipo">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
                             </form>
                         </div>
-                    </div>
+                    </div>    
+
                 </div>
                 <hr />
 
                 <!-- Busqueda por distintos criterios -->
                 <?php
-                $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email
-from usuarios where cedula ='$_REQUEST[buscar_usuario]' 
-or primer_nombre='$_REQUEST[buscar_usuario]' 
-or area='$_REQUEST[buscar_usuario]' 
-or email='$_REQUEST[buscar_usuario]'
-or primer_apellido='$_REQUEST[buscar_usuario]'")
-                    or
-                    die("Problemas en el select:" . mysqli_error($conexion));
+                $registros = mysqli_query($conexion, "select serial,marca,nombre,tipo_equipo,modelo_equipo,procesador,ram,disco_duro,sistema_operativo
+                from equipos where serial ='$_REQUEST[buscar_equipo]' 
+                or nombre='$_REQUEST[buscar_equipo]' 
+                or marca='$_REQUEST[buscar_equipo]' 
+                or ram='$_REQUEST[buscar_equipo]'
+                or modelo_equipo='$_REQUEST[buscar_equipo]'")
+                or
+                die("Problemas en el select:" . mysqli_error($conexion));
                 // Alerta de criterio no encontrado NO SIRVE 
                 if (empty($registros)) {
                     //mostrar mensaje
                     $_SESSION['mensaje'] = 'El criterio de busqueda indicado no existe en la base de datos';
                     $_SESSION['tipo_mensaje'] = 'danger';
-                    header('Location: ../../usuarios.php');
+                    header('Location: ../../equipos.php');
                 }
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
@@ -149,15 +159,16 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
                         <table class="table">
                             <thead class="thead-light ">
                                 <!-- Header de la tabla -->
-                                <tr class="">
-                                    <th scope="col">ID/Cedula</th>
-                                    <th scope="col">Primer nombre</th>
-                                    <th scope="col">Area</th>
-                                    <th scope="col">Segundo nombre</th>
-                                    <th scope="col">Primer apellido</th>
-                                    <th scope="col">Segundo apellido</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Acciones</th>
+                                    <tr class="">
+                                    <th scope="col">Serial</th>
+                                    <th scope="col">Marca</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Tipo de equipo</th>
+                                    <th scope="col">Modelo de equipo</th>
+                                    <th scope="col">Procesador</th>
+                                    <th scope="col">Ram</th>
+                                    <th scope="col">Disco duro</th>
+                                    <th scope="col">Sistema operativo</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -168,18 +179,20 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
                                     <!-- Contenido de la tabla -->
                                     <tr class="actual">
                                         <th scope="row">
-                                            <input class="form-control" type="number" value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula" name="cedula" readonl> </th>
-                                        <td> <?php echo $reg['primer_nombre'] ?></td>
-                                        <td> <?php echo $reg['area'] ?></td>
-                                        <td> <?php echo $reg['segundo_nombre'] ?></td>
-                                        <td> <?php echo $reg['primer_apellido'] ?> </td>
-                                        <td> <?php echo $reg['segundo_apellido'] ?> </td>
-                                        <td> <?php echo $reg['email'] ?> </td>
+                                            <input class="form-control" type="text" value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial" name="serial" readonl> </th>
+                                        <td> <?php echo $reg['marca'] ?></td>
+                                        <td> <?php echo $reg['nombre'] ?></td>
+                                        <td> <?php echo $reg['tipo_equipo'] ?> </td>
+                                        <td> <?php echo $reg['modelo_equipo'] ?> </td>
+                                        <td> <?php echo $reg['procesador'] ?> </td>
+                                        <td> <?php echo $reg['ram'] ?> </td>
+                                        <td> <?php echo $reg['disco_duro'] ?> </td>
+                                        <td> <?php echo $reg['sistema_operativo'] ?> </td>
                                         <td class="eliminar-editar">
                                             <!-- botones editar y eliminar -->
-                                            <a id="edit" class="btn fa fa-pen" href="../../modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                            <a id="edit" class="btn fa fa-pen" href="../../modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="borrar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                            <a id="del" class="btn fa fa-trash-alt" href="borrarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
                                         </td>
                                     </tr>
 
@@ -209,8 +222,10 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
     <!-- METISMENU SCRIPTS -->
     <script src="../js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
-    <script src="../js/custom.js"></script>
-
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/validaciones.js"></script>    
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/validaciones.js"></script>
 </body>
 
 </html>

@@ -117,15 +117,15 @@ if (!isset($sesion)) {
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Alerta -->
-                        <?php if (isset($_SESSION['mensaje'])) : ?>
-                            <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                                <?php echo $_SESSION['mensaje']; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <?php if (isset($_SESSION['mensajeUsuario'])) : ?>
+                            <div class=" mostrar container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
+                                <?php echo $_SESSION['mensajeUsuario']; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="cerrar_alert">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-
                         <?php endif; ?>
+                        
                         <div class="usuarios-buscar">
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->
@@ -214,7 +214,7 @@ if (!isset($sesion)) {
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/validaciones.js"></script>
-    
+
     <!-- Alerta borrar -->
     <script type="text/javascript">
         function confirmacion_borrar(cedula) {

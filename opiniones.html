@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
     <script src="..\JS\bootstrap.bundle.js">
-        </script>
-        <title>Compañia</title>
+    </script>
+    <title>Compañia</title>
 </head>
 
 <body>
-     <!-- Header -->
-     <header>
+    <!-- Header -->
+    <header>
         <!-- Barra de navegacion -->
         <nav class="navbar">
             <div>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: whitesmoke; font-size: x-large;">
                     DVLeasy
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -34,22 +36,22 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body" >
+                            <div class="modal-body">
                                 LOGO
                                 <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
                                 <br>
-                                <h5><strong> nombre completo de la empresa</strong></h5>
+                                <h5><strong> Nombre completo de la empresa</strong></h5>
                                 <p> DeVeLopment easy</p>
                                 <br>
                                 <h5>Integrantes</h5>
                                 <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                                 <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                                 <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                                 <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-                            
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -65,9 +67,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link " href="compania.html">Compañia</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link a-actual" href="opiniones.html">Opinion de nuestros clientes</a>
                 </li>
@@ -77,48 +76,162 @@
             </ul>
         </nav>
     </header>
-    <div class="container-fluid contenedor">
-        <div class="d-flex text-center justify-content-center">
+    <div class="container-fluid contenedor" style="margin-bottom: 2%;">
+        <br>
+        <form action="opiniones.html" class="d-flex justify-content-center" s">
             <div>
-                <h3 class="pt-5 pb-4"> Opiniones descatadas</h3>
+                <div class="col-lg-12">
+                    <textarea name="" id="" cols="92" rows="2" placeholder="Agrega tu opinion, ¡ES GRATIS!"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">
+                        ¡Enviar mi comentario!</button>
+                </div>
+            </div>
+        </form>
+        <div class="d-flex justify-content-center">
+            <div style="margin-left: -37%;">
+                <h2 class="pt-5 pb-4 "> Comentarios</h2>
+                <div>
+                    <h6><strong>Diana Becerra</strong></h6>
+                    <p>Quedé sorprendida con esta empresa.</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Ivan Prado</strong></h6>
+                    <p>Es un buen servicio</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Marc Ochoa</strong></h6>
+                    <p>Gracias por su ayuda</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Maria Paz</strong></h6>
+                    <p>Sigan así</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Diana Becerra</strong></h6>
+                    <p>Pueden mejorar.</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Noel Palacios</strong></h6>
+                    <p>No quedé satisfecho</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Avelina Salcedo</strong></h6>
+                    <p>Que buenos instructores tienen.</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Noel Palacios</strong></h6>
+                    <p>El SENA es bueno enseñando.</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+                <br>
+                <div>
+                    <h6><strong>Josefina Aznar</strong></h6>
+                    <p>Buen trabajo.</p>
+                    <button><i class="far fa-thumbs-up"></i></button>
+                    <button><i class="far fa-thumbs-down"></i></button>
+                    <a href="#"><small style="color: black;">responder</small></a>
+                </div>
+            
             </div>
         </div>
 
         <div class="contenedor-graficos d-flex justify-content-around">
-            <div class="card tarjeta-sin-bordes" style="width: 25%; ">
-                <div class="d-flex text-center justify-content-center">
-                    
-                    <h4 class="pt-4"> Cliente importante A</h4>
-                    
-                </div>
-                
-                <div class="card-body">
-                    
-                    <h5 class="card-title tarjeta-titulo">Nombre: Pepe Martinez</h5>
-                    <span><i class="far fa-comment"></i></span>
-                    <p class="card-text tarjeta-texto text-justify">Reseña: Lorem ipsum, dolor sit amet consectetur adipisicing elit. tenetur ipsa voluptatum velit mollitia quam eaque quia, tempore esse maiores, repellendus consequatur maxime sint sequi nostrum provident illo?</p>
-                </div>
-            </div>
 
-            <div class="card tarjeta-sin-bordes" style="width: 25%; ">
-                <div class="d-flex text-center justify-content-center">
-                    <h4 class="pt-4"> Cliente importante B</h4>
-                </div>
 
-                <div class="card-body">
-                    <h5 class="card-title tarjeta-titulo">Nombre: Juan Peralta</h5>
-                    <span><i class="far fa-comment"></i></span>
-                    <p class="card-text tarjeta-texto text-justify">Reseña: Lorem ipsum dolor sit amet consectetur adipisicing elit. reprehenderit? Architecto fugit nemo nobis, a delectus voluptatum vero consectetur iste, impedit, praesentium commodi veritatis labore obcaecati porro!</p>
-                </div>
-            </div>
         </div>
-      <div class="boton-enviar-opinion">
-        <button type="button" class="btn  btn-lg btn-block btn btn-secondary btn-lg boton-largo mt-5 boton-medio color-blanco">
-            ¡Evianos tu opinion!</button>
+
+
+    </div>
+    <footer>
+        <div class="container footer">
+            <h2>Shortly</h2>
+            <ul class="footer__features">
+                <h3 class="footer__features--title">Features</h3>
+                <li class="footer__features--item">Link Shortening</li>
+                <li class="footer__features--item">Branden Links</li>
+                <li class="footer__features--item">Analytics</li>
+            </ul>
+
+            <ul class="footer__resources">
+                <h3 class="footer__resources--title">Resources</h3>
+                <li class="footer__resources--item">Blog</li>
+                <li class="footer__resources--item">Developers</li>
+                <li class="footer__resources--item">Support</li>
+            </ul>
+
+            <ul class="footer__company">
+                <h3 class="footer__company--title">Company</h3>
+                <li class="footer__company--item">About</li>
+                <li class="footer__company--item">Our Team</li>
+                <li class="footer__company--item">Careers</li>
+                <li class="footer__company--item">Contact</li>
+            </ul>
+            <ul class="footer__redes d-flex justify-content-around">
+                <li class="footer__redes--item">
+                    <img src="img/icon-facebook.svg" alt="icon-facebook" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img//icon-twitter.svg" alt="icon-twitter" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-pinterest.svg" alt=" icon-pinterest" />
+                </li>
+                <li class="footer__redes--item">
+                    <img src="img/icon-instagram.svg" alt="icon-instagram" />
+                </li>
+            </ul>
         </div>
-        
+        <div class="attribution">
+            Challenge by
+            <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        </div>
+    </footer>
+
     </div>
 
+    <!--Archivos de javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!--Archivos de javascript-->
+</body>
 </body>
 
 </html>

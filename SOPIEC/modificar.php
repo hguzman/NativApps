@@ -134,15 +134,7 @@ if (!isset($sesion)) {
                         </div>
                     </div>
                     <hr>
-                    <?php if (isset($_SESSION['mensaje'])) : ?>
-                        <div class="container  bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                            <?php echo $_SESSION['mensaje']; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                    <?php endif; ?>
+                 
                     <!-- Formulario de creacion de usuario -->
                     <form class="form-nuevo-cliente" action="assets/php/actualizar.php" method="POST">
 
