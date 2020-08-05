@@ -18,7 +18,7 @@ if (isset($_POST['registrar'])) {
 
     if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
 
-        $_SESSION['mensaje'] = 'Por favor, llene los campos requeridos';
+        $_SESSION['mensajeUsuario'] = 'Por favor, llene los campos requeridos';
         $_SESSION['tipo_mensaje'] = 'danger';
         $_POST['registrar'];
         
