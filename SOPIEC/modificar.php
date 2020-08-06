@@ -53,6 +53,7 @@ if (!isset($sesion)) {
         $segundo_apellido = $reg['segundo_apellido'];
         $email = $reg['email'];
         $contrasena = $reg['contrasena'];
+        $addrol= $reg['rol']
 
     ?>
         <!-- Contenedor principal -->
@@ -134,7 +135,7 @@ if (!isset($sesion)) {
                         </div>
                     </div>
                     <hr>
-                 
+
                     <!-- Formulario de creacion de usuario -->
                     <form class="form-nuevo-cliente" action="assets/php/actualizar.php" method="POST">
 
@@ -183,7 +184,9 @@ if (!isset($sesion)) {
                             <!-- Rol -->
                             <div class="form-group col-md-12 rol-derecha">
                                 <label for="primer_nombre">Rol</label>
-                                <select name="rol" id="rol">
+                                <select name="addrol" id="addrol">
+                                    <!-- <option disabled value=""> Seleccionar</option> -->
+                                    <option selected disabled value="<?php echo $addrol ?>">Rol actual: <?php echo $addrol ?></option>
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>
                                 </select>
