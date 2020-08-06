@@ -289,29 +289,54 @@ nav {
 
 .contenedor-tabla {
   width: 100%;
-
 }
-.contenedor-usuarios{
+.contenedor-usuarios {
   padding-left: 3rem;
 }
 
-.usuarios-buscar{
+.usuarios-buscar {
   display: flex;
   justify-content: space-between;
 }
-.barra-buscar{
+.barra-buscar {
   padding: 2rem;
 }
-.rol-derecha{
+.rol-derecha {
   margin-left: 40%;
 }
 
-.btn-verusuarios{
-  font-family: cursive;
+.btn-verusuarios {
+  font-family: monospace;
   font-weight: 500;
-  margin-left: 106%;
+  margin-left: 219%;
   margin-top: 2rem;
 }
+
+.datos-user-act {
+  font-family: auto;
+  text-align: justify;
+  margin-left: 6%;
+}
+
+.botones-edi-elim {
+  margin-left: 6%;
+}
+
+.color-datos-act {
+  color: #3ea0f6;
+}
+.botones-newUser {
+  display: flex;
+  width: 59%;
+  justify-content: space-between;
+  margin: 2rem 0 0 41%;
+  font-weight: 500;
+  font-family: monospace;
+}
+.r{
+  border-radius: 5px;
+}
+
 /*==============================================
     MEDIA QUERIES     
     =============================================*/

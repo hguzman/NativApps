@@ -70,7 +70,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Primero/inicio -->
                     <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
+                        <a href="../../index.php"><i class="fa fa-desktop "></i>Inicio</a>
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>

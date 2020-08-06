@@ -163,7 +163,8 @@ if (!isset($sesion)) {
                         <!-- Rol -->
                         <div class="form-group col-md-12 rol-derecha">
                             <label for="primer_nombre">Rol</label>
-                            <select name="rol" id="rol">
+                            <select name="addrol" id="addrol">
+                                <option selected disabled value=""> Seleccionar</option>
                                 <option value="user">User</option>
                                 <option value="admin">Admin</option>
                             </select>
