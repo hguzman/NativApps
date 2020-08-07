@@ -53,7 +53,7 @@ if (!isset($sesion)) {
         $segundo_apellido = $reg['segundo_apellido'];
         $email = $reg['email'];
         $contrasena = $reg['contrasena'];
-        $addrol= $reg['rol']
+        $addrol = $reg['rol']
 
     ?>
         <!-- Contenedor principal -->
@@ -184,11 +184,10 @@ if (!isset($sesion)) {
                             <!-- Rol -->
                             <div class="form-group col-md-12 rol-derecha">
                                 <label for="primer_nombre">Rol</label>
-                                <select name="addrol" id="addrol">
-                                    <!-- <option disabled value=""> Seleccionar</option> -->
-                                    <option selected disabled value="<?php echo $addrol ?>">Rol actual: <?php echo $addrol ?></option>
+                                <select name="addrol_select" id="addrol_select">
+                                    <option selected value="<?php echo $addrol ?>" id="seleccionado">Rol actual: <?php echo $addrol ?></option>
                                     <option value="user">User</option>
-                                    <option value="admin">Admin</option>
+                                    <option value="admin" id="user">Admin</option>
                                 </select>
                             </div>
                         </div>
@@ -197,8 +196,6 @@ if (!isset($sesion)) {
                     </form>
 
                 </div>
-
-
 
                 <!-- /. ROW  -->
             </div>
@@ -226,8 +223,6 @@ if (!isset($sesion)) {
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
         <script src="assets/js/validaciones.js"></script>
-
-
 
     <?php
     } else {
