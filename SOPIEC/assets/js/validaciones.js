@@ -19,26 +19,6 @@ contrasena.addEventListener("change", function () {
   }
 });
 
-// registrar.addEventListener("click", function () {
-//   // // Valdiar contraseña mayor de 8
-//   // let contra = contrasena.value;
-//   // if (contra.length < 8) {
-//   //   alert("Por favor digite una contraseña valida");
-//   //   event.preventDefault();
-//   // }
-//   var add = addrol.value
-//   if (
-//     (add.value == "") &
-//     (cedula.value != "") &
-//     (primer_nombre.value != "") &
-//     (primer_apellido.value != "") &
-//     (email.value != "") &
-//     (contrasena.value != "")
-//   ) {
-//     preventDefault();
-//     alert("Seleccione un rol para este usuario");
-//   }
-// });
 
 //   Validar campos vacios
 registrar.addEventListener("click", function () {

@@ -11,7 +11,7 @@ if (isset($_POST['registrar'])) {
     $segundo_apellido = $_POST['segundo_apellido'];
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
-    $addrol = $_POST['addrol'];
+    $addrol_select = $_POST['addrol_select'];
 
 
 
@@ -38,7 +38,7 @@ primer_apellido='$primer_apellido',
 segundo_apellido='$segundo_apellido', 
 email='$email',
 contrasena='$contrasena',
-rol='$addrol'
+rol='$addrol_select'
 where cedula='$cedula'") or
         die("Problemas en el select:" . mysqli_error($conexion));
 
@@ -193,7 +193,7 @@ if (!isset($sesion)) {
                                 <h2>Primer apellido: <span class="color-datos-act"><?php echo $primer_apellido ?> </span></h2>
                                 <h2>Segundo apellido: <span class="color-datos-act"><?php echo $segundo_apellido ?> </span></h2>
                                 <h2>Correo: <span class="color-datos-act"><?php echo $email ?> </span></h2>
-                                <h2>Rol: <span class="color-datos-act"><?php echo $addrol ?> </span></h2>
+                                <h2>Rol: <span class="color-datos-act"><?php echo $addrol_select ?> </span></h2>
                         </div>
 
                         <div class="botones-edi-elim">
