@@ -11,7 +11,7 @@ if (isset($_POST['registrar'])) {
     $segundo_apellido = $_POST['segundo_apellido'];
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
-    $rol = $_POST['rol'];
+    $addrol_select = $_POST['addrol_select'];
 
 
 
@@ -38,7 +38,7 @@ primer_apellido='$primer_apellido',
 segundo_apellido='$segundo_apellido', 
 email='$email',
 contrasena='$contrasena',
-rol='$rol'
+rol='$addrol_select'
 where cedula='$cedula'") or
         die("Problemas en el select:" . mysqli_error($conexion));
 
@@ -170,7 +170,7 @@ if (!isset($sesion)) {
                         <?php endif; ?>
 
                         <div class="usuarios-buscar">
-                            <h2>Usuarios</h2>
+                            <h2>Datos de usuario actualizado</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarusuario.php" method="GET">
                                 <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
@@ -183,58 +183,34 @@ if (!isset($sesion)) {
 
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
-                        <!-- Tabla de valores en base de datos -->
-                        <table class="table">
-                            <thead class="thead-light ">
-                                <!-- Header de la tabla -->
-                                <tr class="">
-                                    <th scope="col">ID/Cedula</th>
-                                    <th scope="col">Primer nombre</th>
-                                    <th scope="col">Area</th>
-                                    <th scope="col">Segundo nombre</th>
-                                    <th scope="col">Primer apellido</th>
-                                    <th scope="col">Segundo apellido</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Rol</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
+                        
+                       <!-- Datos del usuario actualizado -->
+                        <div class="datos-user-act">
+                            <h2>Cedula: <span class="color-datos-act"><?php echo $cedula ?> </span></h2>
+                            <h2>Primer nombre: <span class="color-datos-act"><?php echo $primer_nombre ?> </span></h2>
+                            <h2>Area: <span class="color-datos-act"><?php echo $area ?> </span></p>
+                                <h2>Segundo nombre: <span class="color-datos-act"><?php echo $segundo_nombre ?> </span></h2>
+                                <h2>Primer apellido: <span class="color-datos-act"><?php echo $primer_apellido ?> </span></h2>
+                                <h2>Segundo apellido: <span class="color-datos-act"><?php echo $segundo_apellido ?> </span></h2>
+                                <h2>Correo: <span class="color-datos-act"><?php echo $email ?> </span></h2>
+                                <h2>Rol: <span class="color-datos-act"><?php echo $addrol_select ?> </span></h2>
+                        </div>
 
-                            <tbody>
-                                <!-- Contenido de la tabla -->
-                                <tr class="actual">
-                                    <th scope="row">
-                                        <input class="form-control" type="number" value="<?php echo $cedula ?>" readonly id="cedula" name="cedula" readonl></th>
-                                    <td> <?php echo $primer_nombre ?></td>
-                                    <td> <?php echo $area ?></td>
-                                    <td> <?php echo $segundo_nombre ?></td>
-                                    <td> <?php echo $primer_apellido ?> </td>
-                                    <td> <?php echo $segundo_apellido ?> </td>
-                                    <td> <?php echo $email ?> </td>
-                                    <td> <?php echo $rol ?> </td>
-
-                                    <td class="eliminar-editar">
-                                        <!-- botones editar y eliminar -->
-                                        <a id="edit" class="btn fa fa-pen" href="../../modificar.php?cedula=<?php echo $cedula ?>"></a>
-
-                                        <a id="del" class="btn fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $cedula ?>)"></a>
-                                    </td>
-                                </tr>
-
-                            </tbody>
+                        <div class="botones-edi-elim">
+                            <label for="edit" class="fa">Editar: </label>
+                            <a id="edit" class="btn btn-lg fa fa-pen" href="../../modificar.php?cedula=<?php echo $cedula ?>"></a>
+                            <label for="del" class="fa">Eliminar: </label>
+                            <a id="del" class="btn btn-lg fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $cedula ?>)"></a>
+                        </div>
+                        <!-- Boton Ver todos los usuarios. -->
+                        <div class="col-md-4 col-sm-12">
+                            <a href="../../usuarios.php" class="btn btn-success btn-lg btn-block ajustar-boton btn-verusuarios ">VER TODOS LOS USUARIOS</a>
+                        </div>
                     </div>
                 </div>
-
-
-
-
-                </table>
             </div>
 
-            <div class="col-md-4">
-                        
-                        <a href="../../usuarios.php"  class="btn btn-success btn-lg btn-block ajustar-boton btn-verusuarios ">VER TODOS LOS USUARIOS</a>
-                    </div>
+
             <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->
