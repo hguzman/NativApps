@@ -24,7 +24,7 @@ if (isset($_SESSION['login'])) {
         <nav class="navbar">
             <div>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: whitesmoke;">
                     DVLeasy 
                 </button>
 
@@ -69,9 +69,6 @@ if (isset($_SESSION['login'])) {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="productos.html">Productos</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link " href="compania.html">Compañia</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
