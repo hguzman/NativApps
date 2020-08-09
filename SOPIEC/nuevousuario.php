@@ -9,10 +9,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: login.html");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 
@@ -61,8 +60,8 @@ if (!isset($sesion)) {
             </div>
         </div>
 
-      <!--  Sidebar de opciones  -->
-      <nav class="navbar-default navbar-side" role="navigation">
+        <!--  Sidebar de opciones  -->
+        <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
@@ -116,10 +115,9 @@ if (!isset($sesion)) {
                     </div>
                 </div>
                 <hr>
-              
+
                 <!-- Formulario de creacion de usuario -->
                 <form class="form-nuevo-cliente" action="assets/php/guardarinfo.php" method="POST">
-
                     <!-- Row de email y pass -->
                     <div class="form-row">
                         <!-- Cedula de ciudadania -->
@@ -162,10 +160,11 @@ if (!isset($sesion)) {
                             <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
                             <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
                         </div>
-                         <!-- Rol -->
-                         <div class="form-group col-md-12 rol-derecha">
+                        <!-- Rol -->
+                        <div class="form-group col-md-12 rol-derecha">
                             <label for="primer_nombre">Rol</label>
-                            <select name="rol" id="rol">
+                            <select name="addrol" id="addrol">
+                                <option selected disabled value=""> Seleccionar</option>
                                 <option value="user">User</option>
                                 <option value="admin">Admin</option>
                             </select>

@@ -26,6 +26,19 @@ $contraseña = $reg['contrasena'];
     echo "no funciona";
 } */
 
+if ($user=="" || $pass == "") {
+    $_SESSION['alerta'] = "empty";
+    header("location: ../../login.php");
+} else {
+    if ($user!=$cedula || $pass != $contraseña) {
+        $_SESSION['alerta'] = "incorrect";
+        header("location: ../../login.php"); 
+               
+        
+    }
+}
+
+
 if ($filas > 0 && $rol == "admin") {
     $_SESSION['username'] = $user;
     $_SESSION['login'] = "administrador";
@@ -39,7 +52,7 @@ if ($filas > 0 && $rol == "admin") {
         header("location: ../../index_user.php");
     } else {
         // Redireccion al login.html
-        header("Location:../../login.html");
+        header("Location:../../login.php");
     }
 }
 

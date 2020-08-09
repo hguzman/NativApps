@@ -18,7 +18,7 @@ mysqli_query($conexion, "delete from usuarios where cedula='$_REQUEST[cedula]'")
 //         window.location.href='../../usuarios.php';
 //         </script>";
 //mostrar mensaje
-$_SESSION['mensaje'] = '¡Usuario eliminado de la base de datos!';
+$_SESSION['mensajeUsuario'] = '¡Usuario eliminado de la base de datos!';
 $_SESSION['tipo_mensaje'] = 'danger';
 header('Location: ../../usuarios.php');
 } else {
