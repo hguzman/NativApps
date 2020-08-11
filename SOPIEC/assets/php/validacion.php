@@ -51,7 +51,7 @@ if ($filas > 0 && $rol == "admin") {
         $_SESSION['rol'] = $rol;
         header("location: ../../index_user.php");
     } else {
-        // Redireccion al login.html
+        // Redireccion al login.php
         header("Location:../../login.php");
     }
 }

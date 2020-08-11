@@ -129,7 +129,7 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Un software de inventariado de equipos de computo con niveles de acceso</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.html">Ver más
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.php">Ver más
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -141,47 +141,34 @@ if (isset($_SESSION['login'])) {
     <!-- Pie de pagina -->
     <footer>
         <div class="container footer">
-            <h2>Shortly</h2>
-            <ul class="footer__features">
-                <h3 class="footer__features--title">Features</h3>
-                <li class="footer__features--item">Link Shortening</li>
-                <li class="footer__features--item">Branden Links</li>
-                <li class="footer__features--item">Analytics</li>
-            </ul>
-
-            <ul class="footer__resources">
-                <h3 class="footer__resources--title">Resources</h3>
-                <li class="footer__resources--item">Blog</li>
-                <li class="footer__resources--item">Developers</li>
-                <li class="footer__resources--item">Support</li>
-            </ul>
+            <h2><a href="index.php">DVLeasy</a></h2>
 
             <ul class="footer__company">
-                <h3 class="footer__company--title">Company</h3>
-                <li class="footer__company--item">About</li>
-                <li class="footer__company--item">Our Team</li>
-                <li class="footer__company--item">Careers</li>
-                <li class="footer__company--item">Contact</li>
+                <h3 class="footer__company--title">Compañia</h3>
+                <li class="footer__company--item"><a href="acerca_dvleasy.html">Acerca de DVLeasy</a></li>
+                <li class="footer__company--item"><a href="docs/nosotros.html">Nuestro equipo</a></li>
+                <li class="footer__company--item"><a href="contactenos.php">Contactenos</a> </li>
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <a href="#">
+                    <a href="https://www.facebook.com/DVLeasy-119472056341523">
                         <i class="fab fa-facebook-square texto-iconos"></i>
                     </a>
                 </li>
                 <li class="footer__redes--item">
-                    <a href="#">
+                    <a href="https://twitter.com/DvLeasy">
                         <i class="fab fa-twitter-square texto-iconos"></i>
                     </a>
                 </li>
 
                 <li class="footer__redes--item">
-                    <a href="#">
+                    <a href="https://co.pinterest.com/developmenteasy/">
                         <i class="fab fa-pinterest-square texto-iconos"></i>
                     </a>
                 </li>
+
                 <li class="footer__redes--item">
-                    <a href="#">
+                    <a href="https://www.instagram.com/dvleasy/">
                         <i class="fab fa-instagram-square texto-iconos"></i>
                     </a>
                 </li>
