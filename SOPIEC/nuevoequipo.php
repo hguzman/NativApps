@@ -128,18 +128,30 @@ if (!isset($sesion)) {
                         </div>
                         <!-- marca -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-segundo-nombre">marca</label>
-                            <input type="text" class="form-control" id="marca" name="marca" placeholder="HP/LENOVO/ETC" require>
+                            <label for="registrar-segundo-nombre">Marca</label>
+                            <select class="form-control"name="marca" id="marca" require>
+                                <option selected disabled value=""> Seleccionar</option>
+                                <option value="HP">HP</option>
+                                <option value="ASUS">ASUS</option>
+                                <option value="LENOVO">LENOVO</option>
+                                <option value="APPLE">APPLE</option>
+                            </select>
                         </div>
                         <!-- nombre -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-primer-nombre">nombre</label>
+                            <label for="registrar-primer-nombre">Nombre del dispositivo</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="DESKTOP-XXXCCXZXC" require>
                         </div>
                         <!-- tIPO EQUIPO -->
                         <div class="form-group col-md-6">
                             <label for="registrar-segundo-nombre">Tipo equipo</label>
-                            <input type="text" class="form-control" id="tipo_equipo" name="tipo_equipo" placeholder="ALL IN ONE / PORTATIL">
+                            <select class="form-control"name="tipo_equipo" id="tipo_equipo" require>
+                                <option selected disabled value=""> Seleccionar</option>
+                                <option value="All in one">All in one</option>
+                                <option value="Portatil">Portatil</option>
+                                <option value="PC de mesa">PC de mesa</option>
+                                <option value="dispositivo movil">dispositivo movil</option>
+                            </select>
                         </div>
                         <!-- Modelo equipo -->
                         <div class="form-group col-md-6">
@@ -148,25 +160,37 @@ if (!isset($sesion)) {
                         </div>
                         <!-- procesador -->
                         <div class="form-group col-md-6">
-                            <label for="registrar-segundo-apellido">procesador</label>
-                            <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Casas">
+                            <label for="registrar-segundo-apellido">Procesador</label>
+                            <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Intel/AMD">
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="registrar-email">ram</label>
+                            <label for="registrar-email">Ram</label>
                             <input type="text" class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X" require>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">disco_duro</label>
+                            <label for="registrar-contrasena">Disco_duro</label>
                             <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="marca del disco duro  " require>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">sistema operativo</label>
-                            <input type="text" class="form-control" id="sistema_operativo" name="sistema_operativo" placeholder="marca del disco duro  " require>
+                            <label for="registrar-contrasena">Sistema operativo</label>
+                            <select class="form-control"name="sistema_operativo" id="sistema_operativo" require>
+                                <option selected disabled value=""> Seleccionar</option>
+                                <option value="windows 10">windows 10</option>
+                                <option value="ubuntu">ubuntu</option>
+                                <option value="Mac/Os">Mac/Os</option>
+                                <option value="Otros">Otros</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="registrar-contrasena">estado del equipo</label>
-                            <input type="text" class="form-control" id="estado" name="estado" placeholder="  " require>
+                            <label for="registrar-contrasena">Estado del equipo</label>
+                            <select class="form-control"name="estado" id="estado">
+                                <option selected disabled value=""> Seleccionar</option>
+                                <option value="Bueno">Bueno</option>
+                                <option value="Funcional">Funcional</option>
+                                <option value="regular">regular</option>
+                                <option value="fuera de servicio">fuera de servicio</option>
+                            </select>
                         </div>
 
 

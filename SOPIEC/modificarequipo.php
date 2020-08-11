@@ -140,54 +140,83 @@ if (!isset($sesion)) {
 
                         <!-- Row de email y pass -->
                         <div class="form-row">
-                            <!-- SERIAL -->
+                            <!-- serial -->
                             <div class="form-group col-md-6">
-                                <label for="registrar-primer-nombre">SERIAL</label>
+                                <label for="registrar-primer-nombre">Serial</label>
                                 <input type="text" class="form-control" id="serial" name="serial" placeholder="112223344556" require value="<?php echo $serial ?>" readonly>
                             </div>
                             <!-- marca -->
                             <div class="form-group col-md-6">
-                                <label for="registrar-segundo-nombre">marca</label>
-                                <input type="text" class="form-control" id="marca" name="marca" placeholder="5" require value="<?php echo $marca ?>">
+                                <label for="registrar-segundo-nombre">Marca</label>
+                                <select class="form-control"name="marca" id="marca" require>
+                                    <option selected disabled value=""> Seleccionar</option>
+                                    <option value="HP">HP</option>
+                                    <option value="ASUS">ASUS</option>
+                                    <option value="LENOVO">LENOVO</option>
+                                    <option value="APPLE">APPLE</option>
+                                </select>
                             </div>
                             <!-- nombre -->
                             <div class="form-group col-md-6">
-                                <label for="registrar-primer-nombre">nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Andrés" require value="<?php echo $nombre ?>">
+                                <label for="registrar-primer-nombre">Nombre del dispositivo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="DESKTOP-XXXCCXZXC" require>
                             </div>
-                            <!-- tipo de equipo -->
+                            <!-- tIPO EQUIPO -->
                             <div class="form-group col-md-6">
-                                <label for="registrar-segundo-nombre">tipo de equipo</label>
-                                <input type="text" class="form-control" id="tipo_equipo" name="tipo_equipo" placeholder="José" value="<?php echo $tipo_equipo ?>">
+                                <label for="registrar-segundo-nombre">Tipo equipo</label>
+                                <select class="form-control"name="tipo_equipo" id="tipo_equipo" require>
+                                    <option selected disabled value=""> Seleccionar</option>
+                                    <option value="All in one">All in one</option>
+                                    <option value="Portatil">Portatil</option>
+                                    <option value="PC de mesa">PC de mesa</option>
+                                    <option value="dispositivo movil">dispositivo movil</option>
+                                </select>
                             </div>
+                            <!-- Modelo equipo -->
                             <div class="form-group col-md-6">
-                                <label for="registrar-segundo-nombre">modelo de equipo</label>
-                                <input type="text" class="form-control" id="modelo_equipo" name="modelo_equipo" placeholder="José" value="<?php echo $modelo_equipo ?>">
+                                <label for="registrar-primer-apellido">Modelo equipo</label>
+                                <input type="text" class="form-control" id="modelo_equipo" name="modelo_equipo" placeholder="123123XXXXXX" require>
                             </div>
                             <!-- procesador -->
                             <div class="form-group col-md-6">
-                                <label for="registrar-primer-apellido">procesador</label>
-                                <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Salas" require value="<?php echo $procesador ?>">
+                                <label for="registrar-segundo-apellido">Procesador</label>
+                                <input type="text" class="form-control" id="procesador" name="procesador" placeholder="Casas">
                             </div>
-                            <!-- ram -->
+
                             <div class="form-group col-md-6">
-                                <label for="registrar-segundo-apellido">ram</label>
-                                <input type="text" class="form-control" id="ram" name="ram" placeholder="Casas" value="<?php echo $ram ?>">
-                            </div>
-                            <!-- disco duro  -->
-                            <div class="form-group col-md-6">
-                                <label for="registrar-email">disco duro </label>
-                                <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="MARCA xGB SSD/HDD" require value="<?php echo $disco_duro ?>">
+                                <label for="registrar-email">Ram</label>
+                                <input type="text" class="form-control" id="ram" name="ram" placeholder="Xgb ram tipo X" require>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="registrar-contrasena">sistema operativo</label>
-                                <input type="text" class="form-control" id="sistema_operativo" name="sistema_operativo" placeholder="WINDOWS/UBUNTU/ETC" require value="<?php echo $sistema_operativo ?>">
+                                <label for="registrar-contrasena">Disco_duro</label>
+                                <input type="text" class="form-control" id="disco_duro" name="disco_duro" placeholder="marca del disco duro  " require>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label for="registrar-contrasena">Sistema operativo</label>
+                                <select class="form-control"name="sistema_operativo" id="sistema_operativo" require>
+                                    <option selected disabled value=""> Seleccionar</option>
+                                    <option value="windows 10">windows 10</option>
+                                    <option value="ubuntu">ubuntu</option>
+                                    <option value="Mac/Os">Mac/Os</option>
+                                    <option value="Otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="registrar-contrasena">Estado del equipo</label>
+                                <select class="form-control"name="estado" id="estado">
+                                    <option selected disabled value=""> Seleccionar</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Funcional">Funcional</option>
+                                    <option value="regular">regular</option>
+                                    <option value="fuera de servicio">fuera de servicio</option>
+                                </select>
+                            </div>
+
+
                         </div>
 
-                        <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar" onclick="">Actualizar</button>
-                    </form>
-
+                        <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">actualizar</button>
+                     </form>
                 </div>
 
 
