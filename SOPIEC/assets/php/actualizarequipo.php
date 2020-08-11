@@ -61,7 +61,7 @@ where serial='$serial'") or
         die("Problemas en el select:" . mysqli_error($conexion));
 
     //mostrar mensaje
-    $_SESSION['mensaje'] = '¡Usuario actualizado de forma exitosa 😀!';
+    $_SESSION['mensaje'] = 'Equipo actualizado de forma exitosa 😀!';
     $_SESSION['tipo_mensaje'] = 'success';
     header('Location: ../../equipos.php');
     //     echo "<script type='text/javascript'>
