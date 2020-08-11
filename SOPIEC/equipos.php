@@ -124,7 +124,14 @@ if (!isset($sesion)) {
                             </div>
 
                         <?php endif; ?>
+                        <div class="usuarios-buscar">
                         <h2>Equipos</h2>
+                         <!-- Barra de busqueda -->
+                         <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarequipo.php" method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Serial" aria-label="Search" id="buscar_equipo" name="buscar_equipo">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <hr />
@@ -206,7 +213,9 @@ if (!isset($sesion)) {
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-
+    <script src="assets/js/validaciones.js"></script>    
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/validaciones.js"></script>
 </body>
 
 </html>
