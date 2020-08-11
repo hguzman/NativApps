@@ -2,7 +2,7 @@
 // Incluir archivo de base de datos
 require_once("db.php");
 // Funcion para el botón enviar
-if (isset($_POST['registrar'])) {
+if (isset($_POST['modificarUser'])) {
     $cedula = $_POST['cedula'];
     $area = $_POST['area'];
     $primer_nombre = $_POST['primer_nombre'];
@@ -13,17 +13,13 @@ if (isset($_POST['registrar'])) {
     $contrasena = $_POST['contrasena'];
     $addrol_select = $_POST['addrol_select'];
 
-
-
     // Validaciones
-    if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
-        $_SESSION['mensajeUsuario'] = 'Por favor, llene los campos requeridos Usuario';
-        $_SESSION['tipo_mensaje'] = 'danger';
-        $_POST['registrar'];
-        echo ("se está metiendo en el condicional de validacion");
-        // header('Location: ../../nuevousuario.php');
-        die();
-    }
+    // if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
+    //     $_POST['actualizar'];
+    //     echo ("se está metiendo en el condicional de validacion de php");
+    //     // header('Location: ../../nuevousuario.php');
+    //     die();
+    // }
 
     // if (!$resultado) {
     //     die('Algo anda mal');
@@ -41,10 +37,6 @@ contrasena='$contrasena',
 rol='$addrol_select'
 where cedula='$cedula'") or
         die("Problemas en el select:" . mysqli_error($conexion));
-
-    //mostrar mensaje
-    $_SESSION['mensajeUsuario'] = 'Los registros del usuario con C.C: ' . $cedula . ' han sido actualizados exitosamente!';
-    $_SESSION['tipo_mensaje'] = 'success';
 }
 ?>
 <?php
@@ -52,7 +44,7 @@ where cedula='$cedula'") or
 $sesion = $_SESSION['username'];
 $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
-    header("location: login.html");
+    header("location: login.php");
 } else {
     if ($rol == "admin") {
     } else {
@@ -70,7 +62,9 @@ if (!isset($sesion)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Usuarios</title>
 
-
+    <!-- Estilos CSS Toastr -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- BOOTSTRAP STYLES-->
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -159,15 +153,6 @@ if (!isset($sesion)) {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- Alerta -->
-                        <?php if (isset($_SESSION['mensajeUsuario'])) : ?>
-                            <div class=" mostrar container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                                <?php echo $_SESSION['mensajeUsuario']; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="cerrar_alert">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        <?php endif; ?>
 
                         <div class="usuarios-buscar">
                             <h2>Datos de usuario actualizado</h2>
@@ -183,8 +168,8 @@ if (!isset($sesion)) {
 
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
-                        
-                       <!-- Datos del usuario actualizado -->
+
+                        <!-- Datos del usuario actualizado -->
                         <div class="datos-user-act">
                             <h2>Cedula: <span class="color-datos-act"><?php echo $cedula ?> </span></h2>
                             <h2>Primer nombre: <span class="color-datos-act"><?php echo $primer_nombre ?> </span></h2>
@@ -227,6 +212,12 @@ if (!isset($sesion)) {
     <script src="../js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../js/custom.js"></script>
+
+    <!-- CDN Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Script Toastr -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
     <script src="../js/validaciones.js"></script>
 
     <!-- Alerta borrar -->
