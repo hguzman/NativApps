@@ -153,40 +153,36 @@ if (isset($_REQUEST['Enviar'])) {
     <!-- Pie de pagina -->
     <footer>
         <div class="container footer">
-            <h2>Shortly</h2>
-            <ul class="footer__features">
-                <h3 class="footer__features--title">Features</h3>
-                <li class="footer__features--item">Link Shortening</li>
-                <li class="footer__features--item">Branden Links</li>
-                <li class="footer__features--item">Analytics</li>
-            </ul>
-
-            <ul class="footer__resources">
-                <h3 class="footer__resources--title">Resources</h3>
-                <li class="footer__resources--item">Blog</li>
-                <li class="footer__resources--item">Developers</li>
-                <li class="footer__resources--item">Support</li>
-            </ul>
+            <h2><a href="index.php"> DVLeasy </a></h2>
 
             <ul class="footer__company">
-                <h3 class="footer__company--title">Company</h3>
-                <li class="footer__company--item">About</li>
-                <li class="footer__company--item">Our Team</li>
-                <li class="footer__company--item">Careers</li>
-                <li class="footer__company--item">Contact</li>
+                <h3 class="footer__company--title">Compañia</h3>
+                <li class="footer__company--item"><a href="acerca_dvleasy.html">Acerca de DVLeasy</a></li>
+                <li class="footer__company--item"><a href="docs/nosotros.html">Nuestro equipo</a></li>
+                <li class="footer__company--item"><a href="contactenos.php">Contactenos</a> </li>
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <img src="img/icon-facebook.svg" alt="icon-facebook" />
+                    <a href="https://www.facebook.com/DVLeasy-119472056341523">
+                        <i class="fab fa-facebook-square texto-iconos"></i>
+                    </a>
                 </li>
                 <li class="footer__redes--item">
-                    <img src="img//icon-twitter.svg" alt="icon-twitter" />
+                    <a href="https://twitter.com/DvLeasy">
+                        <i class="fab fa-twitter-square texto-iconos"></i>
+                    </a>
                 </li>
+
                 <li class="footer__redes--item">
-                    <img src="img/icon-pinterest.svg" alt=" icon-pinterest" />
+                    <a href="https://co.pinterest.com/developmenteasy/">
+                        <i class="fab fa-pinterest-square texto-iconos"></i>
+                    </a>
                 </li>
+
                 <li class="footer__redes--item">
-                    <img src="img/icon-instagram.svg" alt="icon-instagram" />
+                    <a href="https://www.instagram.com/dvleasy/">
+                        <i class="fab fa-instagram-square texto-iconos"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -196,7 +192,9 @@ if (isset($_REQUEST['Enviar'])) {
             <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
         </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
     </div>
      <!--Archivos de javascript -->
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
