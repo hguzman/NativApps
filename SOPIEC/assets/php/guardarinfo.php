@@ -38,7 +38,7 @@ if (isset($_POST['registrar'])) {
 $sesion = $_SESSION['username'];
 $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
-    header("location: login.html");
+    header("location: login.php");
 } else {
     if ($rol == "admin") {
     } else {
