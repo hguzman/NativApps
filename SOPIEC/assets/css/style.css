@@ -302,7 +302,7 @@ nav {
   padding: 2rem;
 }
 .rol-derecha {
-  margin-left: 40%;
+  margin: auto;
 }
 
 .btn-verusuarios {
@@ -333,11 +333,9 @@ nav {
   font-weight: 500;
   font-family: monospace;
 }
-.r{
+.r {
   border-radius: 5px;
 }
-
-
 
 /*==============================================
     MEDIA QUERIES     

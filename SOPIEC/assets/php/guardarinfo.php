@@ -15,11 +15,10 @@ if (isset($_POST['registrar'])) {
 
     // Validaciones
     if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
-        $_SESSION['mensajeUsuario'] = 'Por favor, llene los campos requeridos Usuario';
-        $_SESSION['tipo_mensaje'] = 'danger';
         $_POST['registrar'];
-        echo ("se está metiendo en el condicional de validacion");
+        echo ("se está metiendo en el condicional de validacion en php");
         // header('Location: ../../nuevousuario.php');
+        // echo ("<script src='../js/validaciones.js'></script>"); 
         die();
     }
 
@@ -29,14 +28,10 @@ if (isset($_POST['registrar'])) {
     //realizas la consulta en al base de datos
     $resultado = mysqli_query($conexion, $query);
 
-
+    
     if (!$resultado) {
         die('Algo anda mal');
     }
-
-    //mostrar mensaje
-    $_SESSION['mensajeUsuario'] = 'El usuario ' . $primer_nombre . ' C.C: # ' . $cedula . ' ha sido creado exitosamente!';
-    $_SESSION['tipo_mensaje'] = 'success';
 }
 ?>
 
@@ -60,6 +55,9 @@ if (!isset($sesion)) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nuevo Usuario</title>
+
+    <!-- Estilos CSS Toastr -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- BOOTSTRAP STYLES-->
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -148,15 +146,6 @@ if (!isset($sesion)) {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- Alerta -->
-                        <?php if (isset($_SESSION['mensajeUsuario'])) : ?>
-                            <div class=" mostrar container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                                <?php echo $_SESSION['mensajeUsuario']; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="cerrar_alert">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        <?php endif; ?>
 
                         <div class="usuarios-buscar">
                             <h2>Datos del nuevo Usuario</h2>
@@ -218,6 +207,10 @@ if (!isset($sesion)) {
     <script src="../js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="../js/jquery.metisMenu.js"></script>
+    <!-- CDN Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Script Toastr -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../js/custom.js"></script>
     <script src="../js/validaciones.js"></script>
