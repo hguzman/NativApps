@@ -25,6 +25,9 @@ if (!isset($sesion)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editar usuario</title>
 
+    <!-- Bootstrap validator -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- BOOTSTRAP STYLES-->
@@ -140,7 +143,7 @@ if (!isset($sesion)) {
                     <hr>
 
                     <!-- Formulario de creacion de usuario -->
-                    <form class="form-nuevo-cliente" action="assets/php/actualizar.php" method="POST">
+                    <form id="formActualizar" class="form-nuevo-cliente" action="assets/php/actualizar.php" method="POST">
                         <!-- Row de email y pass -->
                         <div class="form-row">
                             <!-- Cedula de ciudadania -->
@@ -181,16 +184,18 @@ if (!isset($sesion)) {
                             <div class="form-group col-md-6">
                                 <label for="registrar-contrasena">Contraseña</label>
                                 <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require value="<?php echo $contrasena ?>">
-                                <p class="mensaje text-danger">*La contraseña debe tener más de 8 caracteres</p>
+                                
                             </div>
                             <!-- Rol -->
-                            <div class="form-group col-md-12 rol-derecha">
-                                <label for="primer_nombre">Rol</label>
+                            <div class="form-group input-group mb-3 rol-derecha">
                                 <select name="addrol_select" id="addrol_select">
                                     <option selected value="<?php echo $addrol ?>" id="seleccionado">Rol actual: <?php echo $addrol ?></option>
                                     <option value="user">User</option>
                                     <option value="admin" id="user">Admin</option>
                                 </select>
+                                <div class="input-group-append">
+                                    <label for="addrol">Rol</label>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success ajustar-boton" name="modificarUser" value="modificarUser" id="modificarUser" value="modificarUser">Actualizar</button>
@@ -232,6 +237,9 @@ if (!isset($sesion)) {
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
+
+    <!-- Bootstrap validator -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
 </body>
 

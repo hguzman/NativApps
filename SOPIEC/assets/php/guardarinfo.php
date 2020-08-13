@@ -18,6 +18,7 @@ if (isset($_POST['registrar'])) {
         $_POST['registrar'];
         echo ("se está metiendo en el condicional de validacion en php");
         // header('Location: ../../nuevousuario.php');
+        // echo ("<script src='../js/validaciones.js'></script>"); 
         die();
     }
 
@@ -27,7 +28,7 @@ if (isset($_POST['registrar'])) {
     //realizas la consulta en al base de datos
     $resultado = mysqli_query($conexion, $query);
 
-
+    
     if (!$resultado) {
         die('Algo anda mal');
     }

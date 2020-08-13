@@ -13,17 +13,6 @@ if (isset($_POST['modificarUser'])) {
     $contrasena = $_POST['contrasena'];
     $addrol_select = $_POST['addrol_select'];
 
-    // Validaciones
-    // if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
-    //     $_POST['actualizar'];
-    //     echo ("se está metiendo en el condicional de validacion de php");
-    //     // header('Location: ../../nuevousuario.php');
-    //     die();
-    // }
-
-    // if (!$resultado) {
-    //     die('Algo anda mal');
-    // }
 
     mysqli_query($conexion, "
 update usuarios set 
@@ -222,9 +211,33 @@ if (!isset($sesion)) {
 
     <!-- Alerta borrar -->
     <script type="text/javascript">
+        // var nombre = document.getElementById("nombre");
+        // console.log(nombre.value);
+
         function confirmacion_borrar(cedula) {
+
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
                 window.location.href = "borrar.php?cedula=" + cedula
+
+                toastr["success"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "5000",
+                    "hideDuration": "5000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "5000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         }
     </script>

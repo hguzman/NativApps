@@ -10,190 +10,301 @@ var del = document.getElementById(del);
 var addrol = document.querySelector("#addrol");
 var actualizar = document.querySelector("#modificarUser");
 
-//Valida que la contraseña tenga mas de 8 caracteres
-contrasena.addEventListener("change", function () {
-  var contra = contrasena.value;
-  if (contra.length < 8) {
-    mensaje.style.display = "block";
-  } else {
-    mensaje.style.display = "none";
-  }
-});
-
-
-// Verificar campos vacios al actualizar
-// window.addEventListener("load", function (event) {
-  // document.getElementById("modificarUser").addEventListener
- actualizar.addEventListener("click", () => {
-    console.log("por si las moscas");
-    // console.log(cedula.value,area.value,primer_nombre.value,primer_apellido.value,contrasena.value, addrol.value);
-    if (
-      cedula.value == "" ||
-      area.value == "" ||
-      primer_nombre.value == "" ||
-      primer_apellido.value == "" ||
-      email.value == "" ||
-      contrasena.value == "" ||
-      addrol.value == ""
-    ) {
-      event.preventDefault();
-      toastr["error"](
-        "Por favor llene todos los campos requeridos y/o defina un rol para este usuario",
-        "Error"
-      );
-      toastr.options = {
-        closeButton: true,
-        debug: false,
-        newestOnTop: false,
-        progressBar: false,
-        positionClass: "toast-top-right",
-        preventDuplicates: true,
-        onclick: null,
-        showDuration: "300",
-        hideDuration: "1000",
-        timeOut: "5000",
-        extendedTimeOut: "1000",
-        showEasing: "swing",
-        hideEasing: "linear",
-        showMethod: "fadeIn",
-        hideMethod: "fadeOut",
-      };
-
-      // Validación del formato de correo
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email.value)) {
-      toastr["warning"]("Digite un correo valido.", "Error");
-      toastr.options = {
-        closeButton: true,
-        debug: false,
-        newestOnTop: false,
-        progressBar: false,
-        positionClass: "toast-top-right",
-        preventDuplicates: true,
-        onclick: null,
-        showDuration: "300",
-        hideDuration: "1000",
-        timeOut: "5000",
-        extendedTimeOut: "1000",
-        showEasing: "swing",
-        hideEasing: "linear",
-        showMethod: "fadeIn",
-        hideMethod: "fadeOut",
-      };
-      event.preventDefault();
-    } else {
-      toastr["success"](
-        "El usuario" +
-          primer_nombre +
-          " " +
-          "con cedula #" +
-          cedula.value +
-          " ha sido actualizado de forma exitosa",
-        "¡Usuario Actualizado!"
-      );
-      toastr.options = {
-        closeButton: true,
-        debug: false,
-        newestOnTop: false,
-        progressBar: false,
-        positionClass: "toast-top-right",
-        preventDuplicates: true,
-        onclick: null,
-        showDuration: "300",
-        hideDuration: "1000",
-        timeOut: "5000",
-        extendedTimeOut: "1000",
-        showEasing: "swing",
-        hideEasing: "linear",
-        showMethod: "fadeIn",
-        hideMethod: "fadeOut",
-      };
-    }
+$(document).ready(function () {
+  // Validaciones registrar usuario
+  $("#formRegistrar").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
+      cedula: {
+        message: "Porfavor digite una cedula valida",
+        validators: {
+          notEmpty: {
+            message: "La cedula no puede estar vacia",
+          },
+          stringLength: {
+            min: 5,
+            max: 10,
+            message: "La cedula debe contener como minimo 5 caracteres max 10",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z0-9_]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      area: {
+        message: "Porfavor digite un area",
+        validators: {
+          notEmpty: {
+            message: "El area no puede estar vacia",
+          },
+          stringLength: {
+            min: 1,
+            max: 1,
+            message: "El area debe ser un solo digito",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z-1-5_]+$/,
+            message: "El numero de area minimo es 1 y maximo 5",
+          },
+        },
+      },
+      primer_nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          notEmpty: {
+            message: "El primer nombre no puede estar vacio",
+          },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Nombre invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      segundo_nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          // notEmpty: {
+          //   message: "Este campo es obligatorio",
+          // },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Nombre invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      primer_apellido: {
+        message: "Porfavor digite un apellido valido",
+        validators: {
+          notEmpty: {
+            message: "El primer apellido no puede estar vacio",
+          },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Apellido invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan números especiales en este campo",
+          },
+        },
+      },
+      segundo_apellido: {
+        message: "Porfavor digite un apellido valido",
+        validators: {
+          // notEmpty: {
+          //   message: "El primer apellido no puede estar vacio",
+          // },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Apellido invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan números especiales en este campo",
+          },
+        },
+      },
+      email: {
+        validators: {
+          notEmpty: {
+            message: "El correo no puede estar vacio",
+          },
+          emailAddress: {
+            message: "Correo invalido",
+          },
+        },
+      },
+      contrasena: {
+        message: "Por favor digite una contraseña valida",
+        validators: {
+          notEmpty: {
+            message: "La contraseña no puede estar vacia",
+          },
+          stringLength: {
+            min: 5,
+            max: 100,
+            message: "La contraseña debe ser mayor de 5 caracteres",
+          },
+          // regexp: {
+          //   regexp: /^[a-zA-Z_]+$/,
+          //   message: "No se aceptan números especiales en este campo",
+          // },
+        },
+      },
+      addrol: {
+        message: "Elija un rol para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un rol para este usuario",
+          },
+        },
+      },
+    },
   });
-// });
-
-//   Validar campos vacios Regisrar
-registrar.addEventListener("click", function () {
-  if (
-    cedula.value == "" ||
-    area.value == "" ||
-    primer_nombre.value == "" ||
-    primer_apellido.value == "" ||
-    email.value == "" ||
-    contrasena.value == "" ||
-    addrol.value == ""
-  ) {
-    toastr["error"](
-      "Por favor llene todos los campos requeridos y/o defina un rol para este usuario",
-      "Error"
-    );
-
-    toastr.options = {
-      closeButton: true,
-      debug: false,
-      newestOnTop: false,
-      progressBar: false,
-      positionClass: "toast-top-right",
-      preventDuplicates: true,
-      onclick: null,
-      showDuration: "300",
-      hideDuration: "1000",
-      timeOut: "5000",
-      extendedTimeOut: "1000",
-      showEasing: "swing",
-      hideEasing: "linear",
-      showMethod: "fadeIn",
-      hideMethod: "fadeOut",
-    };
-    event.preventDefault();
-    // Validación del formato de correo
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email.value)) {
-    toastr["warning"]("Digite un correo valido.", "Error");
-
-    toastr.options = {
-      closeButton: true,
-      debug: false,
-      newestOnTop: false,
-      progressBar: false,
-      positionClass: "toast-top-right",
-      preventDuplicates: true,
-      onclick: null,
-      showDuration: "300",
-      hideDuration: "1000",
-      timeOut: "5000",
-      extendedTimeOut: "1000",
-      showEasing: "swing",
-      hideEasing: "linear",
-      showMethod: "fadeIn",
-      hideMethod: "fadeOut",
-    };
-    event.preventDefault();
-  } else {
-    toastr["success"](
-      "El usuario" +
-        primer_nombre +
-        " " +
-        "con cedula #" +
-        cedula.value +
-        " ha sido registrado de forma exitosa",
-      "¡Usuario registrado!"
-    );
-
-    toastr.options = {
-      closeButton: true,
-      debug: false,
-      newestOnTop: false,
-      progressBar: false,
-      positionClass: "toast-top-right",
-      preventDuplicates: true,
-      onclick: null,
-      showDuration: "300",
-      hideDuration: "1000",
-      timeOut: "5000",
-      extendedTimeOut: "1000",
-      showEasing: "swing",
-      hideEasing: "linear",
-      showMethod: "fadeIn",
-      hideMethod: "fadeOut",
-    };
-  }
+  // Validaciones actualizar usuario
+  $("#formActualizar").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
+      cedula: {
+        message: "Porfavor digite una cedula valida",
+        validators: {
+          notEmpty: {
+            message: "La cedula no puede estar vacia",
+          },
+          stringLength: {
+            min: 5,
+            max: 10,
+            message: "La cedula debe contener como minimo 5 caracteres max 10",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z-0-9_]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      area: {
+        message: "Porfavor digite un area",
+        validators: {
+          notEmpty: {
+            message: "El area no puede estar vacia",
+          },
+          stringLength: {
+            min: 1,
+            max: 1,
+            message: "El area debe ser un solo digito",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z-1-5_]+$/,
+            message: "El numero de area minimo es 1 y maximo 5",
+          },
+        },
+      },
+      primer_nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          notEmpty: {
+            message: "El primer nombre no puede estar vacio",
+          },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Nombre invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      segundo_nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          // notEmpty: {
+          //   message: "Este campo es obligatorio",
+          // },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Nombre invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      primer_apellido: {
+        message: "Porfavor digite un apellido valido",
+        validators: {
+          notEmpty: {
+            message: "El primer apellido no puede estar vacio",
+          },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Apellido invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan números especiales en este campo",
+          },
+        },
+      },
+      segundo_apellido: {
+        message: "Porfavor digite un apellido valido",
+        validators: {
+          // notEmpty: {
+          //   message: "El primer apellido no puede estar vacio",
+          // },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Apellido invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-Z_]+$/,
+            message: "No se aceptan números especiales en este campo",
+          },
+        },
+      },
+      email: {
+        validators: {
+          notEmpty: {
+            message: "El correo no puede estar vacio",
+          },
+          emailAddress: {
+            message: "Correo invalido",
+          },
+        },
+      },
+      contrasena: {
+        message: "Por favor digite una contraseña valida",
+        validators: {
+          notEmpty: {
+            message: "La contraseña no puede estar vacia",
+          },
+          stringLength: {
+            min: 5,
+            max: 100,
+            message: "La contraseña debe ser mayor de 5 caracteres",
+          },
+          // regexp: {
+          //   regexp: /^[a-zA-Z_]+$/,
+          //   message: "No se aceptan números especiales en este campo",
+          // },
+        },
+      },
+      addrol: {
+        message: "Elija un rol para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un rol para este usuario",
+          },
+        },
+      },
+    },
+  });
 });
