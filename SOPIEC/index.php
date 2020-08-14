@@ -6,10 +6,9 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: login.php");
 } else {
-    if($rol == "admin"){
-
-    }else{
-        header("location: assets\php\logout.php");//Esta ruta hay que cambairla cuando se suba al hosting
+    if ($rol == "admin") {
+    } else {
+        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
 }
 
@@ -60,8 +59,9 @@ if (!isset($sesion)) {
             </div>
         </div>
 
-       <!--  Sidebar de opciones  -->
-       <nav class="navbar-default navbar-side" role="navigation">
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <!--  Sidebar de opciones  -->
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
