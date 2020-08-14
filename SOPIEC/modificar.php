@@ -176,15 +176,18 @@ if (!isset($sesion)) {
                                 <label for="registrar-segundo-apellido">Segundo apellido</label>
                                 <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Casas" value="<?php echo $segundo_apellido ?>">
                             </div>
-
+                            <!-- Email -->
                             <div class="form-group col-md-6">
                                 <label for="registrar-email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="correo_143@correo.com" require value="<?php echo $email ?>">
+                                <!-- Div de carga -->
+                                <div id="result-email"></div>
                             </div>
+                            <!-- Contraseña -->
                             <div class="form-group col-md-6">
                                 <label for="registrar-contrasena">Contraseña</label>
                                 <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require value="<?php echo $contrasena ?>">
-                                
+
                             </div>
                             <!-- Rol -->
                             <div class="form-group input-group mb-3 rol-derecha">
@@ -198,8 +201,12 @@ if (!isset($sesion)) {
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success ajustar-boton" name="modificarUser" value="modificarUser" id="modificarUser" value="modificarUser">Actualizar</button>
 
+
+                        <div class="col-md-4 col-sm-12 botones-newUser">
+                            <button type="submit" class="btn btn-success btn-lg r" name="modificarUser" value="modificarUser" id="modificarUser" value="modificarUser">Actualizar</button>
+                            <a href="usuarios.php" class="btn btn-primary btn-lg r">Cancelar</a>
+                        </div>
                     </form>
 
                 </div>
@@ -214,7 +221,10 @@ if (!isset($sesion)) {
         <!-- /. WRAPPER  -->
     <?php
     } else {
-        echo "No existe registro con dicho ID/Cedula";
+        echo ("<script>
+            alert('La cedula seleccionada no fue encontrada en la base de datos');
+    </script>");
+        header("Location: usuarios.php");
     }
     ?>
 
@@ -240,6 +250,26 @@ if (!isset($sesion)) {
 
     <!-- Bootstrap validator -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+    <!-- Ajax valdiacion en BD en vivo -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#email').on('blur', function() {
+                $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
+
+                var email = $(this).val();
+                var dataString = 'email=' + email;
+                $.ajax({
+                    type: "POST",
+                    url: "assets/php/checkearDisponibilidad.php",
+                    data: dataString,
+                    success: function(data) {
+                        $('#result-email').fadeIn(1000).html(data);
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

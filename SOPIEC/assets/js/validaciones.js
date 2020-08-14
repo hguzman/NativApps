@@ -66,7 +66,7 @@ $(document).ready(function () {
             message: "Nombre invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan caracterés especiales en este campo",
           },
         },
@@ -83,7 +83,7 @@ $(document).ready(function () {
             message: "Nombre invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan caracterés especiales en este campo",
           },
         },
@@ -100,7 +100,7 @@ $(document).ready(function () {
             message: "Apellido invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan números especiales en este campo",
           },
         },
@@ -117,7 +117,7 @@ $(document).ready(function () {
             message: "Apellido invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan números especiales en este campo",
           },
         },
@@ -214,7 +214,7 @@ $(document).ready(function () {
             message: "Nombre invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan caracterés especiales en este campo",
           },
         },
@@ -231,7 +231,7 @@ $(document).ready(function () {
             message: "Nombre invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan caracterés especiales en este campo",
           },
         },
@@ -248,7 +248,7 @@ $(document).ready(function () {
             message: "Apellido invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan números especiales en este campo",
           },
         },
@@ -265,7 +265,7 @@ $(document).ready(function () {
             message: "Apellido invalido",
           },
           regexp: {
-            regexp: /^[a-zA-Z_]+$/,
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
             message: "No se aceptan números especiales en este campo",
           },
         },
@@ -308,3 +308,5 @@ $(document).ready(function () {
     },
   });
 });
+
+

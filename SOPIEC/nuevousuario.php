@@ -14,6 +14,7 @@ if (!isset($sesion)) {
     }
 }
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -129,7 +130,11 @@ if (!isset($sesion)) {
                         <div class="form-group col-md-6">
                             <label for="cedula">Cedula de ciudadania</label>
                             <input maxlength="10" type="number" class="form-control" id="cedula" name="cedula" placeholder="112223344556" require>
+                            <!-- Div de carga -->
+                            <div id="result-cedula"></div>
                         </div>
+
+
                         <!-- Area de trabajo -->
                         <div class="form-group col-md-6">
                             <label for="area">Area de trabajo</label>
@@ -159,6 +164,8 @@ if (!isset($sesion)) {
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="correo_143@correo.com" require>
+                            <!-- Div de carga -->
+                            <div id="result-email"></div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="contrasena">Contraseña</label>
@@ -166,7 +173,7 @@ if (!isset($sesion)) {
                             <p class="mensaje text-danger" id="errorpass"></p>
 
                         </div>
-                        
+
                         <!-- Rol -->
                         <div class="form-group input-group mb-3 rol-derecha">
                             <select name="addrol" id="addrol">
@@ -222,6 +229,41 @@ if (!isset($sesion)) {
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
     <script src="assets/js/validaciones.js"></script>
+
+    <!-- Ajax valdiacion en BD en vivo -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#cedula').on('blur', function() {
+                $('#result-cedula').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
+
+                var cedula = $(this).val();
+                var dataString = 'cedula=' + cedula;
+                $.ajax({
+                    type: "POST",
+                    url: "assets/php/checkearDisponibilidad.php",
+                    data: dataString,
+                    success: function(data) {
+                        $('#result-cedula').fadeIn(1000).html(data);
+                    }
+                });
+            });
+
+            $('#email').on('blur', function() {
+                $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
+
+                var email = $(this).val();
+                var dataString = 'email=' + email;
+                $.ajax({
+                    type: "POST",
+                    url: "assets/php/checkearDisponibilidad.php",
+                    data: dataString,
+                    success: function(data) {
+                        $('#result-email').fadeIn(1000).html(data);
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

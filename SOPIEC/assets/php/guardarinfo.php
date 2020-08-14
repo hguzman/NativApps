@@ -13,6 +13,21 @@ if (isset($_POST['registrar'])) {
     $contrasena = $_POST['contrasena'];
     $addrol = $_POST['addrol'];
 
+    // Validar que la cedula y el email no se repitan
+    // $validarCedula = @pg_query($conexion, "SELECT cedula FROM usuarios WHERE cedula=" . $cedula);
+    // if (pg_num_rows($validarCedula) > 0) {
+    //     echo "el nro de cedula ya existe";
+    //     echo ("<script>alert('El numero de cedula no existe')</script>");
+    // }
+
+    // $validarEmail = mysqli_query($conexion, "select email
+    // from usuarios where email ='$email'");
+    // if ($validarCedula) {
+    //     echo ("<script>alert('Esta cedula ya se encuentra registrada');</script>");
+    // } else if ($validarEmail) {
+    //     echo ("<script>alert('Este Correo ya se encuentra registrado');</script>");
+    // }
+
     // Validaciones
     if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
         $_POST['registrar'];
@@ -28,9 +43,10 @@ if (isset($_POST['registrar'])) {
     //realizas la consulta en al base de datos
     $resultado = mysqli_query($conexion, $query);
 
-    
+
     if (!$resultado) {
-        die('Algo anda mal');
+        header("location: ../../usuarios.php");
+        die();
     }
 }
 ?>
@@ -192,6 +208,8 @@ if (!isset($sesion)) {
                 </div>
             </div>
 
+            <input hidden id="mostrarCC" value="<?php echo $cedula ?>"></input>
+
 
             <!-- /. ROW  -->
         </div>
@@ -220,7 +238,51 @@ if (!isset($sesion)) {
         function confirmacion_borrar(cedula) {
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
                 window.location.href = "borrar.php?cedula=" + cedula
+                toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "5000",
+                    "hideDuration": "5000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "5000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+
             }
+        }
+    </script>
+    <!-- Alerta usuario actualizado -->
+    <script>
+        var cedula = document.getElementById('mostrarCC').value;
+        document.readyState =
+            toastr["success"]("El usuario con C.C #" + cedula + " ha sido guardado exitosamente.", "Usuario guardado")
+
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "5000",
+            "hideDuration": "5000",
+            "timeOut": "5000",
+            "extendedTimeOut": "5000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
         }
     </script>
 
