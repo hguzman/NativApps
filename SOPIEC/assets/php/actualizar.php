@@ -184,7 +184,7 @@ if (!isset($sesion)) {
                 </div>
             </div>
 
-
+            <input hidden id="mostrarCC" value="<?php echo $cedula ?>"></input>
             <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->
@@ -219,7 +219,7 @@ if (!isset($sesion)) {
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
                 window.location.href = "borrar.php?cedula=" + cedula
 
-                toastr["success"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+                toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
 
                 toastr.options = {
                     "closeButton": false,
@@ -239,6 +239,30 @@ if (!isset($sesion)) {
                     "hideMethod": "fadeOut"
                 }
             }
+        }
+    </script>
+    <!-- Alerta usuario actualizado -->
+    <script>
+        var cedula = document.getElementById('mostrarCC').value;
+        document.readyState =
+            toastr["success"]("El usuario con C.C #" + cedula + " ha sido actualizado exitosamente.", "Usuario actualizado")
+
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "5000",
+            "hideDuration": "5000",
+            "timeOut": "5000",
+            "extendedTimeOut": "5000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
         }
     </script>
 
