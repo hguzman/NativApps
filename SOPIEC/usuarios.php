@@ -222,7 +222,7 @@ if (!isset($sesion)) {
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
                 window.location.href = "assets/php/borrar.php?cedula=" + cedula
 
-                toastr["success"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+                toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
 
                 toastr.options = {
                     "closeButton": false,

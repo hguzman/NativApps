@@ -135,14 +135,7 @@ or email='$_REQUEST[buscar_usuario]'
 or primer_apellido='$_REQUEST[buscar_usuario]'")
                     or
                     die("Problemas en el select:" . mysqli_error($conexion));
-                // // Alerta de criterio no encontrado NO SIRVE 
-                // if (empty($registros)) {
-                //     //mostrar mensaje
-                //     $_SESSION['mensaje'] = 'El criterio de busqueda indicado no existe en la base de datos';
-                //     $_SESSION['tipo_mensaje'] = 'danger';
-                //     header('Location: ../../usuarios.php');
-                // }
-                
+             
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
