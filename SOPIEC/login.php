@@ -34,7 +34,7 @@ session_start();
                 <div class="col-lg-11">
                     <!-- inputs -->
                     <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="CC">
+                        <input type="text" class="form-control" name="username" placeholder="CC" autofocus >
 
                         <div class="form-group">
                             <input type="password" class="form-control" name="password" placeholder="Password">
@@ -57,6 +57,10 @@ session_start();
             <br>
             <a class="nav-item" href="#">Forgot password?</a>
         </form>
+
+        <div class="invisible" style="border: solid 1px #000;";>
+        <input id="alerta-login" type="text" value="">
+    </div>
     </div>
 
  
@@ -83,18 +87,33 @@ session_start();
 <?php
 
 if (isset($_SESSION['alerta']) && $_SESSION['alerta'] == "empty") {
-    echo '<script src="assets/js/campos-vacios.js"></script>';
+    echo '<script>
+    $(document).ready(function(){
+        $("#alerta-login").val("vacio");
 
-session_destroy();
+    });
+</script>';
+
+echo'<script src="assets/js/alertas-login.js"></script>';
+
+    $_SESSION['alerta'] = "";
 } else {
     if (isset($_SESSION['alerta']) && $_SESSION['alerta'] == "incorrect") {
-        echo '<script src="assets/js/campos-incorrectos.js"></script>';
-        session_destroy();
+        echo '<script>
+        $(document).ready(function(){
+            $("#alerta-login").val("incorrecto");
+    
+        });
+    </script>';
+    
+    echo'<script src="assets/js/alertas-login.js"></script>';
+    
+        $_SESSION['alerta'] = "";
 }
 }
+
 
 ?>
-
 
 </body>
 

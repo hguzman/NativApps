@@ -74,7 +74,7 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Tercero/Inventario de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
+                        <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
                     </li>
 
                     <!-- Cuarto/Administracion de equipos -->
