@@ -46,7 +46,7 @@ if (isset($_SESSION['login'])) {
                                 <p> DeVeLopment easy</p>
                                 <br>
                                 <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
+                                <p><strong> Dayana Rodriguez de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
 
                                 <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
 
