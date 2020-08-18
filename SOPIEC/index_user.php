@@ -58,7 +58,7 @@ if (!isset($sesion)) {
         <!--  Sidebar de opciones  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+            <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
                         <img src="assets/img/find_user.png" class="img-responsive" />
                     </li>
@@ -69,26 +69,26 @@ if (!isset($sesion)) {
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
                     <li>
-                        <a href="#"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
+                        <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
                     </li>
                     </li>
                     <!-- Tercero/Inventario de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
+                        <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
                     </li>
 
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
 
                     <li>
-                        <a href="#"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
+                        <a href="miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
                     </li>
 
 
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
                     <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
+                        <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
                     </li>
                 </ul>
 
