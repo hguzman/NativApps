@@ -41,7 +41,7 @@
                                 <p> DeVeLopment easy</p>
                                 <br>
                                 <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
+                                <p><strong> Dayana Rodriguez de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
 
                                 <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
 
@@ -80,9 +80,7 @@
         <div class="formulario">
 
             <form action="contactenos.php" method="POST">
-                <div class="alert alert-secondary" role="alert">
-                    <p class='finalizado'> </p>
-                </div>
+               
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
                     <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1"
