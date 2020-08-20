@@ -1,52 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      
-        <!-- JS, Popper.js, and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-          crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-          crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-          crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/estilos.css">
-        <title>Nosotros</title>
-      </head>
-<body>
-    <div class="container">
-        <!-- Barra de navegacion -->
-        <div class="nav-bar">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="index.html">Inicio</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="diagramas.html">Diagramas <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="nosotros.html">A cerca de nosotros <span class="sr-only">(current)</span></a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
 
-          <div class="alert alert-danger p-5 mt-5 text-center fw-500" role="alert">
-            Aún no tenemos nada aquí 😓 
-          </div>
-      
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Nosotros</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Product example · Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/product/">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="product.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- Barra de navegacion -->
+    <div class="nav-bar site-header sticky-top ">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8e8e8; font-family: cursive;">
+        <a class="navbar-brand hvr-bob" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link hvr-bob" href="diagramas.html">Diagramas/Documentación <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link hvr-bob" href="nosotros.html">Desarrolladores <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link hvr-bob" href="dvleasy.html">A cerca de Dvleasy <span
+                  class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+        <a href="index.html" class="hvr-bob">
+          <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" class="d-block mx-auto " role="img" viewBox="0 0 24 24"
+            focusable="false" style="border-radius: 20px;">
+        </a>
+      </nav>
     </div>
-    
+    <!-- Banner -->
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center" style="background-color: #b7c3ce;">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Conoce a nuestros desarrolladores</h1>
+        <p class="lead font-weight-normal">Podrás conocer un poco más a cerca de las personas que desarrollaron SOPIEC.
+        </p>
+        <a class="btn btn-outline-secondary scroll" href="#desarrolladores">¡Conocelos!</a>
+      </div>
+      <div class="product-device shadow-sm d-none d-md-block"></div>
+      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+
+    <div id="desarrolladores" class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <!-- Perfil Kelvin -->
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"
+        style="border-radius: 50px;">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Kelvin Martinez</h2>
+          <p class="lead">Conocimiento en PHP, HTML, CSS, Javascript, Laravel. Autodidacta, adaptacion a trabajo
+            individual y/o grupal.</p>
+        </div>
+        <div class="shadow-sm mx-auto alto-nosotros">
+          <a href="hojaDevidaKelvin.html" target="_blank">
+            <img src="img/kelvin.jpg" alt="Registro de un equipo" class=" img-thumbnail img-responsive"
+              style="border-radius: 21px 21px 0 0; width: 86%;">
+          </a>
+        </div>
+      </div>
+      <!-- Perfil Mario -->
+      <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        style="border-radius: 50px; background-color: #5f4e4e6e;">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Mario Gomez</h2>
+          <p class="lead">Conocimientos básicos en PHP, JQUERY y API.
+            Conocimientos medios en HTML y CSS.
+            Adaptabilidad: equipos e individual.
+            Metodología de trabajo en equipo: SCRUM.
+            Fortaleza: Back end, análisis de código.</p>
+        </div>
+        <div class=" shadow-sm mx-auto alto-nosotros">
+          <a href="hojaDevidaMario.html" target="_blank">
+            <img src="img/mario.jpg" alt="Registro de un equipo" class=" img-thumbnail img-responsive"
+              style="border-radius: 21px 21px 0 0;">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <!-- Perfil Dayana -->
+      <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        style="border-radius: 50px; background-color: #5f4e4e6e;">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Dayana Gonzales</h2>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur porro blanditiis vel
+            recusandae in asperiores, itaque animi aspernatur nobis dolorem beatae minus voluptatibus nesciunt unde, ex
+            quis impedit suscipit rem!</p>
+        </div>
+        <div class=" shadow-sm mx-auto " style="width: 80%; border-radius: 21px 21px 0 0;"></div>
+        <a href="hojaDevidaDayana.html" target="_blank">
+          <img src="img/kelvin.jpg" alt="Registro de un equipo" class=" img-thumbnail img-responsive"
+            style="border-radius: 21px 21px 0 0;" width="58%">
+        </a>
+      </div>
+      <!-- Perfil Livan -->
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"
+        style="border-radius: 50px;">
+        <div class=" my-3 py-3">
+          <h2 class="display-5">Livan Torres</h2>
+          <p class="lead">Conocimoentos básicos: en html, Css, boostrap, JQuery,
+            Conocimientos intermedios con NodeJs, mysql, aws, Conocimientos competentes respecto a documentación de
+            casos de uso, historias de usuario, casos de prueba, requerimientos minimos para aplicaciones.</p>
+        </div>
+        <div class="shadow-sm mx-auto" style="width: 80%; border-radius: 21px 21px 0 0;">
+          <a href="hojaDevidaLivan.html" target="_blank">
+            <img src="img/livan.jpeg" alt="Registro de un equipo" class=" img-thumbnail img-responsive"
+              style="border-radius: 21px 21px 0 0;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer  -->
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+            viewBox="0 0 24 24" focusable="false">
+            <title>Product</title>
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+          </svg>
+          <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
+
+
+</div>
+
 </body>
+
 </html>
