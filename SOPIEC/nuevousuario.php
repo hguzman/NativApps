@@ -25,7 +25,8 @@ if (!isset($sesion)) {
     <title>Crear nuevo usuario</title>
 
     <!-- Bootstrap validator -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
 
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -79,7 +80,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -91,7 +93,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -129,7 +132,8 @@ if (!isset($sesion)) {
                         <!-- Cedula de ciudadania -->
                         <div class="form-group col-md-6">
                             <label for="cedula">Cedula de ciudadania</label>
-                            <input maxlength="10" type="number" class="form-control" id="cedula" name="cedula" placeholder="112223344556" require>
+                            <input maxlength="10" type="number" class="form-control" id="cedula" name="cedula"
+                                placeholder="112223344556" require>
                             <!-- Div de carga -->
                             <div id="result-cedula"></div>
                         </div>
@@ -143,33 +147,39 @@ if (!isset($sesion)) {
                         <!-- Primer nombre -->
                         <div class="form-group col-md-6">
                             <label for="primer_nombre">Primer nombre</label>
-                            <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" placeholder="Andrés" require>
+                            <input type="text" class="form-control" id="primer_nombre" name="primer_nombre"
+                                placeholder="Andrés" require>
                         </div>
                         <!-- Segundo nombre -->
                         <div class="form-group col-md-6">
                             <label for="segundo_nombre">Segundo nombre</label>
-                            <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="José">
+                            <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre"
+                                placeholder="José">
                         </div>
                         <!-- Primer apellido -->
                         <div class="form-group col-md-6">
                             <label for="primer_apellido">Primer apellido</label>
-                            <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Salas" require>
+                            <input type="text" class="form-control" id="primer_apellido" name="primer_apellido"
+                                placeholder="Salas" require>
                         </div>
                         <!-- Segundo apellido -->
                         <div class="form-group col-md-6">
                             <label for="segundo_apellido">Segundo apellido</label>
-                            <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Casas">
+                            <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido"
+                                placeholder="Casas">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="correo_143@correo.com" require>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="correo_143@correo.com" require>
                             <!-- Div de carga -->
                             <div id="result-email"></div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="contrasena">Contraseña</label>
-                            <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="*********" require>
+                            <input type="password" class="form-control" id="contrasena" name="contrasena"
+                                placeholder="*********" require>
                             <p class="mensaje text-danger" id="errorpass"></p>
 
                         </div>
@@ -188,7 +198,8 @@ if (!isset($sesion)) {
 
                     </div>
 
-                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar" id="registrar">Registrar</button>
+                    <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar"
+                        id="registrar">Registrar</button>
                 </form>
 
             </div>
@@ -216,49 +227,79 @@ if (!isset($sesion)) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <!-- Ajax Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Bootstrap validator -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
     <script src="assets/js/validaciones.js"></script>
 
     <!-- Ajax valdiacion en BD en vivo -->
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#cedula').on('blur', function() {
+        $(document).ready(function () {
+            var registrar = $('#registrar');
+
+            $('#cedula').on('blur', function () {
                 $('#result-cedula').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
 
-                var cedula = $(this).val();
-                var dataString = 'cedula=' + cedula;
+                var valCedula = $(this).val();
                 $.ajax({
                     type: "POST",
                     url: "assets/php/checkearDisponibilidad.php",
-                    data: dataString,
-                    success: function(data) {
-                        $('#result-cedula').fadeIn(1000).html(data);
+                    dataType: "json",
+                    data: {
+                        cedula: valCedula
+                    },
+                    success: function (data) {
+                        console.log(data.status);
+                        registrar.click(function () {
+                            if (data.status === 'error') {
+                                alert("Error cedula");
+                                event.preventDefault();
+                            }
+                        })
+                        $('#result-cedula').fadeIn(1000).html(data.mensaje);
                     }
                 });
             });
 
-            $('#email').on('blur', function() {
+            // Validación Email
+            $('#email').on('blur', function () {
                 $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
-
-                var email = $(this).val();
-                var dataString = 'email=' + email;
+                var valEmail = $(this).val();
+                var registrar = $('#registrar');
                 $.ajax({
                     type: "POST",
                     url: "assets/php/checkearDisponibilidad.php",
-                    data: dataString,
-                    success: function(data) {
-                        $('#result-email').fadeIn(1000).html(data);
+                    dataType: "json",
+                    data: {
+                        email: valEmail
+                    },
+                    success: function (data) {
+                        registrar.click(function () {
+                            if (data.statusEmail === 'error') {
+                                alert("Error En el email");
+                                event.preventDefault();
+                            } else {}
+                        })
+                        $('#result-email').fadeIn(1000).html(data.mensajeEmail);
                     }
                 });
             });

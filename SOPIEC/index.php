@@ -12,6 +12,7 @@ if (!isset($sesion)) {
     }
 }
 
+$cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 ?>
 
 <html>
@@ -65,7 +66,30 @@ if (!isset($sesion)) {
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
+                        <!-- Imagen de usuario -->
+                        <form action="assets/php/imagenAdmin.php" method="POST" enctype="multipart/form-data">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="foto_admin" lang="es" name="foto_admin"
+                                    require>
+                                <?php 
+                                    // $sql = "SELECT foto_admin FROM usuarios WHERE cedula='$cc'";
+                                    // // $resultado = $conexion-> query ($query);
+                                    // // while($row = $resultado ->fetch_assoc()){
+                                    //     while($res = mysqli_fetch_array($sql)){
+                                    //         echo '<img src=""
+                                    // class="img-responsive" />';
+                                    //     }
+                                    // ?>
+
+                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                <!-- <img src="assets/img/find_user.png" class="img-responsive" /> -->
+
+
+
+                                <input type="submit" value="Aceptar">
+                            </div>
+
+                        </form>
                     </li>
                     <!-- Primero/inicio -->
                     <li>
@@ -73,7 +97,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -85,7 +110,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -150,12 +176,14 @@ if (!isset($sesion)) {
                         <br />
                         <h5>Progressbar Samples</h5>
                         <div class="progress progress-striped">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                 <span class="sr-only">40% Complete (success)</span>
                             </div>
                         </div>
                         <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                 <span class="sr-only">20% Complete</span>
                             </div>
                         </div>
@@ -179,7 +207,8 @@ if (!isset($sesion)) {
                         <a href="blank.html" target="_blank" class="btn btn-danger btn-lg btn-block">BLANK PAGE</a>
                     </div>
                     <div class="col-md-4">
-                        For More Examples Please visit official bootstrap website <a href="http://getbootstrap.com" target="_blank">getbootstrap.com</a>
+                        For More Examples Please visit official bootstrap website <a href="http://getbootstrap.com"
+                            target="_blank">getbootstrap.com</a>
                     </div>
                 </div>
                 <hr />
@@ -293,7 +322,8 @@ if (!isset($sesion)) {
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Collapsible Group Item #1</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                            class="collapsed">Collapsible Group Item #1</a>
                                     </h4>
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
@@ -306,7 +336,8 @@ if (!isset($sesion)) {
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a>
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                            href="#collapseTwo">Collapsible Group Item #2</a>
                                     </h4>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
@@ -320,7 +351,8 @@ if (!isset($sesion)) {
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">Collapsible Group Item #3</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                                            class="collapsed">Collapsible Group Item #3</a>
                                     </h4>
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse">
@@ -393,8 +425,14 @@ if (!isset($sesion)) {
                         <h5>Information</h5>
                         This is a type of bare admin that means you can customize your own admin using this admin
                         structured template . For More Examples of bootstrap elements or components please visit
-                        official bootstrap website <a href="http://getbootstrap.com" target="_blank">getbootstrap.com</a>
-                        . And if you want full template please download <a href="http://www.binarytheme.com/bootstrap-free-admin-dashboard-template/" target="_blank">FREE BCORE ADMIN </a>&nbsp;,&nbsp; <a href="http://www.binarytheme.com/free-bootstrap-admin-template-siminta/" target="_blank">FREE SIMINTA ADMIN</a> and <a href="http://binarycart.com/" target="_blank">FREE BINARY ADMIN</a>.
+                        official bootstrap website <a href="http://getbootstrap.com"
+                            target="_blank">getbootstrap.com</a>
+                        . And if you want full template please download <a
+                            href="http://www.binarytheme.com/bootstrap-free-admin-dashboard-template/"
+                            target="_blank">FREE BCORE ADMIN </a>&nbsp;,&nbsp; <a
+                            href="http://www.binarytheme.com/free-bootstrap-admin-template-siminta/"
+                            target="_blank">FREE SIMINTA ADMIN</a> and <a href="http://binarycart.com/"
+                            target="_blank">FREE BINARY ADMIN</a>.
 
                     </div>
                 </div>

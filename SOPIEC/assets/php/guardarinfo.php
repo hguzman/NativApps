@@ -124,7 +124,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevousuario.php">Crear Nuevo usuario</a>
@@ -136,7 +137,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevoequipo.php">Agregar un equipo</a>
@@ -167,8 +169,10 @@ if (!isset($sesion)) {
                             <h2>Datos del nuevo Usuario</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarusuario.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
+                                    id="buscar_usuario" name="buscar_usuario">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
+                                    id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -195,9 +199,11 @@ if (!isset($sesion)) {
 
                         <div class="botones-edi-elim">
                             <label for="edit" class="fa">Editar: </label>
-                            <a id="edit" class="btn btn-lg fa fa-pen" href="../../modificar.php?cedula=<?php echo $cedula ?>"></a>
+                            <a id="edit" class="btn btn-lg fa fa-pen"
+                                href="../../modificar.php?cedula=<?php echo $cedula ?>"></a>
                             <label for="del" class="fa">Eliminar: </label>
-                            <a id="del" class="btn btn-lg fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $cedula ?>)"></a>
+                            <a id="del" class="btn btn-lg fa fa-trash-alt" href="#"
+                                onclick="confirmacion_borrar(<?php echo $cedula ?>)"></a>
                         </div>
                         <!-- Boton Ver todos los usuarios. -->
                         <div class="col-md-4 col-sm-12 botones-newUser">
@@ -226,7 +232,8 @@ if (!isset($sesion)) {
     <!-- METISMENU SCRIPTS -->
     <script src="../js/jquery.metisMenu.js"></script>
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- CUSTOM SCRIPTS -->

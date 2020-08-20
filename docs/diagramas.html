@@ -25,9 +25,9 @@
 <body>
   <div class="container-fluid">
     <!-- Barra de navegacion -->
-    <div class="nav-bar">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Inicio</a>
+    <div class="nav-bar site-header sticky-top ">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8e8e8; font-family: cursive;">
+        <a class="navbar-brand hvr-bob" href="index.html">Inicio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,128 +35,155 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="diagramas.html">Diagramas <span class="sr-only">(current)</span></a>
+              <a class="nav-link hvr-bob" href="diagramas.html">Diagramas/Documentación <span
+                  class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="nosotros.html">A cerca de nosotros <span class="sr-only">(current)</span></a>
+              <a class="nav-link hvr-bob" href="nosotros.html">Desarrolladores <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link hvr-bob" href="dvleasy.html">A cerca de Dvleasy <span
+                  class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
+        <a href="index.html" class="hvr-bob">
+          <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" class="d-block mx-auto " role="img" viewBox="0 0 24 24"
+            focusable="false" style="border-radius: 20px;">
+        </a>
       </nav>
     </div>
 
-  </div>
+  
 
   <!-- Banner -->
   <div class="card bg-dark text-white">
-    <img src="img/banner.jpg" class="card-img" alt="...">
+    <img src="img/banner.jpg" class="card-img" alt="..." style="
+    height: 96rem;
+">
     <div class="card-img-overlay">
       <h5 class="card-title">DVLeasy</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.</p>
+      <!-- <p class="card-text">Aqui podrás encontrar toda la documentación referente al software SOPIEC.</p> -->
+      <!-- Banner -->
+      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-transparent">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 class="display-4 font-weight-normal">Documentación y diagramas</h1>
+          <p class="lead font-weight-normal">Aqui podrás encontrar toda la documentación referente al software SOPIEC.
+          </p>
+          <a class="btn btn-info scroll" href="#accordion">¡Desliza!</a>
+        </div>
+      </div>
 
       <!-- Contenedor collapsible -->
       <div class="col-12 col-md-12  mt-5" id="accordion">
         <!-- ============= Caso de uso login============= -->
-          <div class="card opacity mb-3">
-            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
-              aria-expanded="true" aria-controls="collapseThree">
-              <h5 class="text-center mb-0">
-                <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse" data-target="#collapseThree"
-                  aria-expanded="true" aria-controls="collapseThree">
-                  Casos de uso login
-                </button>
-              </h5>
-            </div>
-  
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-              <div class="card-body">
-                <!-- Contenido -->
-                <div class="card-group ">
-                  <div class="card altura_card">
-                    <img src="img/Login.jpeg" alt="Registro de un equipo"
-                      class="rounded img-thumbnail img-responsive card-img-top alto_login">
-                      <!-- cuerpo del collapsible -->
-                      
-                    <div class="card-body">
-                      <h1 class="card-title fw-500 centrar p-4">Ingresar a SOPIEC y cerrar sesión</h1>
-                      <p class="card-text fw-500">En este caso de uso se muestr la interacción del usuario con el sistema y la secuencia de pasos para poder ingresar y salir de manera correcta al software.</p>
+        <div class="card opacity mb-3">
+          <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="true" aria-controls="collapseThree">
+            <h5 class="text-center mb-0">
+              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
+                data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                Casos de uso login
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <!-- Contenido -->
+              <div class="card-group ">
+                <div class="card altura_card">
+                  <img src="img/Login.jpeg" alt="Registro de un equipo"
+                    class="rounded img-thumbnail img-responsive card-img-top alto_login">
+                  <!-- cuerpo del collapsible -->
+
+                  <div class="card-body">
+                    <h1 class="card-title fw-500 centrar p-4">Ingresar a SOPIEC y cerrar sesión</h1>
+                    <p class="card-text fw-500">En este caso de uso se muestr la interacción del usuario con el sistema
+                      y la secuencia de pasos para poder ingresar y salir de manera correcta al software.</p>
 
 
-                      <!-- Boton ver -->
-                      <button type="button" class="btn btn-dark botones centrar-boton fw-500" data-toggle="modal"
-                        data-target=".caso05ingresar">Ver</button>
-                      <!-- Extra large modal -->
-                      <div class="modal fade caso05ingresar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                          <div class="modal-content">
-  
-                            <div class="texto-modal col-12 col-md-12">
-                              <h1 class="text-center pt-5 pb-4"> Caso 05 LOGUEARSE Y CERRAR SESIÓN</h1>
-                              <hr>
-                              <h2>Autores</h2>
-                              <ul>
-                                <li>Kelvin Martinez</li>
-                                <li>Livan Torres </li>
-                                <li>Mario Carrillo</li>
-                                <li>Dayana Gonzales</li>
-                              </ul>
-                                <hr>
-                              <h2>Actores:</h2>
-                              <p>Sistema, Usuario</p>
-                              <hr>
-                              <h3>Descripcion</h3>
-                              <p> El usuario accederá al sistema de información y posteriormente de hacer los cambios cerrará sesión.</p>
-  <hr>
-                              <h3>Precondicion</h3>
-                              <p>El usuario debe estar registrado en la base de datos, debe acceder al sitio web del sotware, por tanto debe tener un navegador y conexion a internet.</p>
-  <hr>
-                              <h4>Secuencia normal</h4>
-                              <ol>
-                                <li>Ingresar cedula y contraseña en el formulario.
-                                </li>
-                                <li>Verificar campos vacíos.
-                                </li>
-                                <li>Comprobar que los datos ingresados sean iguales a los de la base de datos
-                                </li>
-                                <li>Dar acceso al software.
-                                </li>
-                                <li>Presionar "cerrar sesión".</li>
-                                <li>Destruir la sesión actual y sacar al usuario del software.</li>
-                              </ol><hr>
-                              <h5>Secuencia alternativa</h5>
-                              <ol>
-                                <li>...</li>
-                                <li>Campos vacíos o credenciales.</li>
-                                <li>Datos no encontrados en la base de datos. </li>
-                                <li>...</li>
-                              </ol><hr>
-                              <h5>Post-condicion</h5>
-                              <p>El usuario accede correctamente al software y posterior a realizar cambios cierra sesión. </p>
-                            </div>
-                            <img src="img/Login.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                    <!-- Boton ver -->
+                    <button type="button" class="btn btn-dark botones centrar-boton fw-500" data-toggle="modal"
+                      data-target=".caso05ingresar">Ver</button>
+                    <!-- Extra large modal -->
+                    <div class="modal fade caso05ingresar" tabindex="-1" role="dialog"
+                      aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+
+                          <div class="texto-modal col-12 col-md-12">
+                            <h1 class="text-center pt-5 pb-4"> Caso 05 LOGUEARSE Y CERRAR SESIÓN</h1>
+                            <hr>
+                            <h2>Autores</h2>
+                            <ul>
+                              <li>Kelvin Martinez</li>
+                              <li>Livan Torres </li>
+                              <li>Mario Carrillo</li>
+                              <li>Dayana Gonzales</li>
+                            </ul>
+                            <hr>
+                            <h2>Actores:</h2>
+                            <p>Sistema, Usuario</p>
+                            <hr>
+                            <h3>Descripcion</h3>
+                            <p> El usuario accederá al sistema de información y posteriormente de hacer los cambios
+                              cerrará sesión.</p>
+                            <hr>
+                            <h3>Precondicion</h3>
+                            <p>El usuario debe estar registrado en la base de datos, debe acceder al sitio web del
+                              sotware, por tanto debe tener un navegador y conexion a internet.</p>
+                            <hr>
+                            <h4>Secuencia normal</h4>
+                            <ol>
+                              <li>Ingresar cedula y contraseña en el formulario.
+                              </li>
+                              <li>Verificar campos vacíos.
+                              </li>
+                              <li>Comprobar que los datos ingresados sean iguales a los de la base de datos
+                              </li>
+                              <li>Dar acceso al software.
+                              </li>
+                              <li>Presionar "cerrar sesión".</li>
+                              <li>Destruir la sesión actual y sacar al usuario del software.</li>
+                            </ol>
+                            <hr>
+                            <h5>Secuencia alternativa</h5>
+                            <ol>
+                              <li>...</li>
+                              <li>Campos vacíos o credenciales.</li>
+                              <li>Datos no encontrados en la base de datos. </li>
+                              <li>...</li>
+                            </ol>
+                            <hr>
+                            <h5>Post-condicion</h5>
+                            <p>El usuario accede correctamente al software y posterior a realizar cambios cierra sesión.
+                            </p>
                           </div>
+                          <img src="img/Login.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
                         </div>
                       </div>
-                      <!-- Fecha de publicacion -->
-                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
                     </div>
+                    <!-- Fecha de publicacion -->
+                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
                   </div>
-  
-  
                 </div>
+
+
               </div>
             </div>
           </div>
-  
+        </div>
+
         <!--============== Card Casos de uso usuarios===========-->
         <div class="card opacity mb-3">
           <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
             aria-expanded="true" aria-controls="collapseOne">
             <h5 class="text-center mb-0">
-              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
+              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
+                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Casos de uso usuarios
               </button>
             </h5>
@@ -199,10 +226,12 @@
                             <p>Sistema, Usuario</p>
 
                             <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para registrar un usuario con sus características</p>
+                            <p>El usuario accederá al sistema de información para registrar un usuario con sus
+                              características</p>
 
                             <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener un navegador y conexion a internet.</p>
+                            <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener un
+                              navegador y conexion a internet.</p>
 
                             <h4>Secuencia normal</h4>
                             <ol>
@@ -225,7 +254,8 @@
                             <h5>Post-condicion</h5>
                             <p>El usuario registra un nuevo usuario</p>
                           </div>
-                          <img src="img/Registrar usuario.png" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          <img src="img/Registrar usuario.png" alt="Imagen registrar"
+                            class="img-responsive img-thumbnail">
                         </div>
                       </div>
                     </div>
@@ -236,7 +266,8 @@
 
                 <!-- Segunda tarjeta-Buscar Usuario-->
                 <div class="card">
-                  <img src="img/Buscarusuario.png" alt="Busqueda de un equipo" class="rounded img-thumbnail card-img-top alto-250">
+                  <img src="img/Buscarusuario.png" alt="Busqueda de un equipo"
+                    class="rounded img-thumbnail card-img-top alto-250">
                   <div class="card-body">
                     <h5 class="card-title">Busqueda de un usuario</h5>
                     <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
@@ -263,10 +294,12 @@
                             <p>Sistema, Usuario</p>
 
                             <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para realizar la busqueda de un usuario registrado</p>
+                            <p>El usuario accederá al sistema de información para realizar la busqueda de un usuario
+                              registrado</p>
 
                             <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener un navegador y conexion a internet.</p>
+                            <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener un
+                              navegador y conexion a internet.</p>
 
                             <h4>Secuencia normal</h4>
                             <ol>
@@ -330,10 +363,12 @@
                             <p>Sistema, Usuario</p>
 
                             <h3>Descripcion</h3>
-                            <p> El usuario accederá al sistema de información para editar un usuario con sus características </p>
+                            <p> El usuario accederá al sistema de información para editar un usuario con sus
+                              características </p>
 
                             <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule debe tener un navegador y conexion a internet.</p>
+                            <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule debe
+                              tener un navegador y conexion a internet.</p>
 
                             <h4>Secuencia normal</h4>
                             <ol>
@@ -341,13 +376,13 @@
                               </li>
                               <li>El sistema verifica sus credenciales y le da acceso.
                               </li>
-                              <li>	El usuario ingresa a la interfaz de ver ususarios.
+                              <li> El usuario ingresa a la interfaz de ver ususarios.
                               </li>
                               <li>El sistema consulta la a base de datos y muestra lista de usuarios.
                               </li>
                               <li>El usuario selecciona el usuario de la lista que desea editar.
                               </li>
-                              <li>sistema muestra nueva vista con los datos de la persona a editar 
+                              <li>sistema muestra nueva vista con los datos de la persona a editar
                               </li>
                               <li>El usuario edita los datos en la interfaz desplegada y guarda los cambios</li>
                             </ol>
@@ -358,13 +393,14 @@
                               <li>Credenciales incorrectas</li>
                               <li>...</li>
                               <li>El usuario no encuentre el usuario a editar</li>
-                              <li>	El usuario no completa los campos al editar el usuario.</li>
+                              <li> El usuario no completa los campos al editar el usuario.</li>
                               <li></li>
                             </ol>
                             <h5>Post-condicion</h5>
                             <p>El usuario edita un usuario registrado</p>
                           </div>
-                          <img src="img/Editar usuario.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          <img src="img/Editar usuario.jpeg" alt="Imagen registrar"
+                            class="img-responsive img-thumbnail">
                         </div>
                       </div>
                     </div>
@@ -408,7 +444,8 @@
                             <p>El usuario accederá al sistema de información para eliminar un usuario </p>
 
                             <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule debe tener un navegador y conexion a internet.</p>
+                            <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule debe
+                              tener un navegador y conexion a internet.</p>
 
                             <h4>Secuencia normal</h4>
                             <ol>
@@ -416,13 +453,13 @@
                               </li>
                               <li>El sistema verifica sus credenciales y le da acceso.
                               </li>
-                              <li>	El usuario ingresa a la interfaz de ver ususarios.
+                              <li> El usuario ingresa a la interfaz de ver ususarios.
                               </li>
                               <li>El sistema consulta la a base de datos y muestra lista de usuarios.
                               </li>
                               <li>El usuario hace click sobre el botón eliminar.
                               </li>
-                              <li>	El sistema muestra una alerta de confirmacion  para eliminar.
+                              <li> El sistema muestra una alerta de confirmacion para eliminar.
                               </li>
                               <li>El usuario selecciona confirmar .</li>
                               <li>El Sistema elimina el usuario seleccionado.</li>
@@ -442,7 +479,8 @@
                             <h5>Post-condicion</h5>
                             <p>El usuario elimina correctamente el equipo con todas sus características de la BD.</p>
                           </div>
-                          <img src="img/Eliminar usuario.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          <img src="img/Eliminar usuario.jpeg" alt="Imagen registrar"
+                            class="img-responsive img-thumbnail">
                         </div>
                       </div>
                     </div>
@@ -460,8 +498,8 @@
         <div class="card opacity">
           <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo">
             <h5 class="text-center mb-0">
-              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="false" aria-controls="collapseTwo">
+              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
+                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Casos de uso equipos
               </button>
             </h5>
@@ -769,7 +807,62 @@
 
       <p class="card-text pt-4">Ultima actualizacion 6/18/2020</p>
     </div>
+    <!-- Footer  -->
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+            viewBox="0 0 24 24" focusable="false">
+            <title>Product</title>
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+          </svg>
+          <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </div>
+</div>
 </body>
 
 </html>

@@ -1,85 +1,253 @@
-body{
-    background-color: #9cd6d642;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #9cd6d642;
 }
 .cajas {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 6rem;
-    
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6rem;
 }
 
 /* Estilos Diagramas UML */
 
-.alto-250{
-height: 16rem;
+.alto-250 {
+  height: 16rem;
 }
 
-.botones{
-    margin: 2rem 0 2rem 0;
+.botones {
+  margin: 2rem 0 2rem 0;
 }
 /* Modal */
-.texto-modal{
-    text-align: justify;
-    margin: auto;
-    width: 80%;
-    border: solid;
-    border-color: #e5e5e5;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+.texto-modal {
+  text-align: justify;
+  margin: auto;
+  width: 80%;
+  border: solid;
+  border-color: #e5e5e5;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
-.card-header{
-    cursor: pointer;
+.card-header {
+  cursor: pointer;
 }
 
-.no-decoration{
-    text-decoration: none!important;
+.no-decoration {
+  text-decoration: none !important;
 }
 
-.card{
-    color: black;
+.card {
+  color: black;
 }
 
-.card-body{
-    background: linear-gradient(101deg, rgba(183, 205, 202, 0.15) 35%, rgba(116, 194, 185, 0.4) 100%)
+.card-body {
+  background: linear-gradient(
+    101deg,
+    rgba(183, 205, 202, 0.15) 35%,
+    rgba(116, 194, 185, 0.4) 100%
+  );
 }
 
-.opacity{
-   background: linear-gradient(101deg, rgba(183, 205, 202, 0.15) 35%, rgba(116, 194, 185, 0.4) 100%)
+.opacity {
+  background: linear-gradient(
+    101deg,
+    rgba(183, 205, 202, 0.15) 35%,
+    rgba(116, 194, 185, 0.4) 100%
+  );
 }
 
-.imagen{
-    height: 22rem;
-    overflow: hidden;
+.imagen {
+  height: 22rem;
+  overflow: hidden;
 }
 
-.alto_login{
-    height: 30rem;
-    object-fit: scale-down;
+.alto_login {
+  height: 30rem;
+  object-fit: scale-down;
 }
 
-.fw-500{
-    font-size: x-large;
-    font-weight: 500;
+.fw-500 {
+  font-size: x-large;
+  font-weight: 500;
 }
 
-.centrar{
-    display: block;
-    text-align: center;
+.centrar {
+  display: block;
+  text-align: center;
 }
 
-.altura_card{
-    height: 100%;
+.altura_card {
+  height: 100%;
 }
 
-.centrar-boton{
-    display: block!important;
-    align-items: center!important;
-    margin-left: 37%;
-    width: 25%;
+.centrar-boton {
+  display: block !important;
+  align-items: center !important;
+  margin-left: 37%;
+  width: 25%;
 }
 
-.tittle-color{
-    font-family: monospace;
-    color: black;
+.tittle-color {
+  font-family: monospace;
+  color: #ffffff;
+}
+
+/* Estilos Nosotros */
+.container {
+  max-width: 960px;
+}
+
+/*
+   * Custom translucent site header
+   */
+
+.site-header {
+  background-color: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color 0.15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #e5e5e5;
+  border-radius: 21px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+/*
+   * Extra utilities
+   */
+
+.flex-equal > * {
+  -ms-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.scroll {
+  scroll-behavior: smooth;
+}
+
+.barra-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Hover header */
+@-webkit-keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@-webkit-keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+.hvr-bob {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-bob:hover,
+.hvr-bob:focus,
+.hvr-bob:active {
+  -webkit-animation-name: hvr-bob-float, hvr-bob;
+  animation-name: hvr-bob-float, hvr-bob;
+  -webkit-animation-duration: 0.3s, 1.5s;
+  animation-duration: 0.3s, 1.5s;
+  -webkit-animation-delay: 0s, 0.3s;
+  animation-delay: 0s, 0.3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+.alto-nosotros {
+  width: 80%;
+  border-radius: 21px 21px 0 0;
 }

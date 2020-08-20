@@ -5,24 +5,13 @@ $(document).ready(function () {
 
     if (alerta == "vacio") {
         toastr["error"]("Campos vacios ", "Error login:")
-        toastr.options = {
-            "positionClass": "toast-top-center",
-        };
 
     } else {
         if (alerta == "incorrecto") {
-            toastr.error("Datos ingresados incorrectos ", "Error login:")
-            toastr.options = {
-                "positionClass": "toast-top-center",
+            toastr["error"]("Datos ingresados incorrectos ", "Error login:")
             }    
         }
         
 
-    }
-
-
-
 
 });
-
-
