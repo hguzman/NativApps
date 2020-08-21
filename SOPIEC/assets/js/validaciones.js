@@ -307,198 +307,196 @@ $(document).ready(function () {
       },
     },
   });
+
   //Validaciones registrar nuevo equipo
-  $(document).ready(function () {
-    $("#formregistrarequipo").bootstrapValidator({
-      message: "This value is not valid",
-      feedbackIcons: {
-        valid: "glyphicon glyphicon-ok",
-        invalid: "glyphicon glyphicon-remove",
-        validating: "glyphicon glyphicon-refresh",
-      },
-      fields: {
-        serial: {
-          message: "Porfavor digite un serial valido",
-          validators: {
-            notEmpty: {
-              message: "El serial no puede estar vacio",
-            },
-          },
-        },
-        marca: {
-          message: "Elija una marca ",
-          validators: {
-            notEmpty: {
-              message: "Elija una marca ",
-            },
-          },
-        },
-        nombre: {
-          message: "Porfavor digite un nombre valido",
-          validators: {
-            notEmpty: {
-              message: "ese campo no puede estar vacio",
-            },
-          },
-        },
-        tipo_equipo: {
-          message: "Elija el tipo de equipo ",
-          validators: {
-            notEmpty: {
-              message: "Elija el tipo de equipo ",
-            },
-          },
-        },
-        modelo_equipo: {
-          message: "Porfavor digite un modelo de equipo valido",
-          validators: {
-            notEmpty: {
-              message: "Este campo no puede estar vacio",
-            },
-            stringLength: {
-              min: 3,
-              max: 45,
-              message: "modelo de equipo  invalido",
-            },
-            regexp: {
-              regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
-              message: "No se aceptan números especiales en este campo",
-            },
-          },
-        },
-        contrasena: {
-          message: "Por favor digite una contraseña valida",
-          validators: {
-            notEmpty: {
-              message: "La contraseña no puede estar vacia",
-            },
-            stringLength: {
-              min: 5,
-              max: 100,
-              message: "La contraseña debe ser mayor de 5 caracteres",
-            },
-            // regexp: {
-            //   regexp: /^[a-zA-Z_]+$/,
-            //   message: "No se aceptan números especiales en este campo",
-            // },
-          },
-        },
-        estado: {
-          message: "Elija un estadp para este usuario",
-          validators: {
-            notEmpty: {
-              message: "Elija un estadp para este usuario",
-            },
+  // $(document).ready(function () {
+  $("#formregistrarequipo").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
+      serial: {
+        message: "Porfavor digite un serial valido",
+        validators: {
+          notEmpty: {
+            message: "El serial no puede estar vacio",
           },
         },
       },
-    });
+      marca: {
+        message: "Elija una marca ",
+        validators: {
+          notEmpty: {
+            message: "Elija una marca ",
+          },
+        },
+      },
+      nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      tipo_equipo: {
+        message: "Elija el tipo de equipo ",
+        validators: {
+          notEmpty: {
+            message: "Elija el tipo de equipo ",
+          },
+        },
+      },
+      modelo_equipo: {
+        message: "Porfavor digite un modelo de equipo valido",
+        validators: {
+          notEmpty: {
+            message: "Este campo no puede estar vacio",
+          },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "modelo de equipo  invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
+            message: "No se aceptan números especiales en este campo",
+          },
+        },
+      },
+      contrasena: {
+        message: "Por favor digite una contraseña valida",
+        validators: {
+          notEmpty: {
+            message: "La contraseña no puede estar vacia",
+          },
+          stringLength: {
+            min: 5,
+            max: 100,
+            message: "La contraseña debe ser mayor de 5 caracteres",
+          },
+          // regexp: {
+          //   regexp: /^[a-zA-Z_]+$/,
+          //   message: "No se aceptan números especiales en este campo",
+          // },
+        },
+      },
+      estado: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estadp para este usuario",
+          },
+        },
+      },
+    },
   });
+  // });
   //Validaciones actualizar equipo
-  $(document).ready(function () {
-    $("#formActualizarEquipo").bootstrapValidator({
-      message: "This value is not valid",
-      feedbackIcons: {
-        valid: "glyphicon glyphicon-ok",
-        invalid: "glyphicon glyphicon-remove",
-        validating: "glyphicon glyphicon-refresh",
-      },
-      fields: {
-        serial: {
-          message: "Porfavor digite un serial valido",
-          validators: {
-            notEmpty: {
-              message: "El serial no puede estar vacio",
-            },
-          },
-        },
-        marca: {
-          message: "Elija una marca ",
-          validators: {
-            notEmpty: {
-              message: "Elija una marca ",
-            },
-          },
-        },
-        nombre: {
-          message: "Porfavor digite un nombre valido",
-          validators: {
-            notEmpty: {
-              message: "ese campo no puede estar vacio",
-            },
-          },
-        },
-        tipo_equipo: {
-          message: "Elija el tipo de equipo ",
-          validators: {
-            notEmpty: {
-              message: "Elija el tipo de equipo ",
-            },
-          },
-        },
-        modelo_equipo: {
-          message: "Porfavor digite un modelo de equipo valido",
-          validators: {
-            notEmpty: {
-              message: "Este campo no puede estar vacio",
-            },
-            stringLength: {
-              min: 1,
-              max: 45,
-              message: "modelo de equipo  invalido",
-            },
-          },
-        },
-        procesador: {
-          message: "Elija un estadp para este usuario",
-          validators: {
-            notEmpty: {
-              message: "Elija un estado para este usuario",
-            },
-          },
-        },
-        disco_duro: {
-          message: "Porfavor digite un modelo de equipo valido",
-          validators: {
-            notEmpty: {
-              message: "Este campo no puede estar vacio",
-            },
-            stringLength: {
-              min: 1,
-              max: 45,
-              message: "modelo de equipo  invalido",
-            },
-          },
-        },
-        
-        sistema_operativo: {
-          message: "Elija un estadp para este usuario",
-          validators: {
-            notEmpty: {
-              message: "Elija un estado para este usuario",
-            },
-          },
-        },
-        ram: {
-          message: "Elija un estadp para este usuario",
-          validators: {
-            notEmpty: {
-              message: "Elija un estado para este usuario",
-            },
-          },
-        },
-        estado: {
-          message: "Elija un estadp para este usuario",
-          validators: {
-            notEmpty: {
-              message: "Elija un estado para este usuario",
-            },
+  // $(document).ready(function () {
+  $("#formActualizarEquipo").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
+      serial: {
+        message: "Porfavor digite un serial valido",
+        validators: {
+          notEmpty: {
+            message: "El serial no puede estar vacio",
           },
         },
       },
-    });
+      marca: {
+        message: "Elija una marca ",
+        validators: {
+          notEmpty: {
+            message: "Elija una marca ",
+          },
+        },
+      },
+      nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      tipo_equipo: {
+        message: "Elija el tipo de equipo ",
+        validators: {
+          notEmpty: {
+            message: "Elija el tipo de equipo ",
+          },
+        },
+      },
+      modelo_equipo: {
+        message: "Porfavor digite un modelo de equipo valido",
+        validators: {
+          notEmpty: {
+            message: "Este campo no puede estar vacio",
+          },
+          stringLength: {
+            min: 1,
+            max: 45,
+            message: "modelo de equipo  invalido",
+          },
+        },
+      },
+      procesador: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      disco_duro: {
+        message: "Porfavor digite un modelo de equipo valido",
+        validators: {
+          notEmpty: {
+            message: "Este campo no puede estar vacio",
+          },
+          stringLength: {
+            min: 1,
+            max: 45,
+            message: "modelo de equipo  invalido",
+          },
+        },
+      },
+
+      sistema_operativo: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      ram: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      estado: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+    },
   });
-
+  // });
 });
-
-
