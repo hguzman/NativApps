@@ -14,7 +14,7 @@ if (isset($_POST['actualizarEquipo'])) {
     $sistema_operativo = $_POST['sistema_operativo'];
     $estado = $_POST['estado'];
 
-    
+
 
 
     mysqli_query($conexion, "
@@ -108,7 +108,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevousuario.php">Crear Nuevo usuario</a>
@@ -120,7 +121,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevoequipo.php">Agregar un equipo</a>
@@ -139,55 +141,63 @@ if (!isset($sesion)) {
 
             </div>
 
-            </nav>
+        </nav>
 
-            <!-- Contenido de la pagina, lado derecho ancho  -->
-            <div id="page-wrapper">
-                <div id="page-inner">
-                    <div class="row">
-                        <div class="col-md-12">
+        <!-- Contenido de la pagina, lado derecho ancho  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
 
-                            <div class="usuarios-buscar">
-                                <h2>Datos de usuario actualizado</h2>
-                                <!-- Barra de busqueda -->
-                                <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo.php" method="GET">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Serial" aria-label="Search" id="buscar_equipo" name="buscar_equipo">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-
-                    <div id="contenedor-usuarios" class="contenedor-usuarios">
-                        <div class="row contenedor-tabla">
-
-                            <!-- Datos del equipo actualizado -->
-                            <div class="datos-user-act">
-                                <h2>serial: <span class="color-datos-act"><?php echo $serial ?> </span></h2>
-                                <h2>Marca: <span class="color-datos-act"><?php echo $marca ?> </span></h2>
-                                <h2>Nombre: <span class="color-datos-act"><?php echo $nombre ?> </span></p>
-                                <h2>Tipo equipo: <span class="color-datos-act"><?php echo $tipo_equipo?> </span></h2>
-                                <h2>Modelo equipo: <span class="color-datos-act"><?php echo $modelo_equipo?> </span></h2>
-                                <h2>procesador: <span class="color-datos-act"><?php echo $procesador?> </span></h2>
-                                <h2>Memoria Ram: <span class="color-datos-act"><?php echo $ram?> </span></h2>
-                                <h2>Sistema Operativo: <span class="color-datos-act"><?php echo $sistema_operativo?> </span></h2>
-                                <h2>Estado: <span class="color-datos-act"><?php echo $estado?> </span></h2>
-                            </div>
-
-                            <div class="botones-edi-elim">
-                                <label for="edit" class="fa">Editar: </label>
-                                <a id="edit" class="btn btn-lg fa fa-pen" href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
-                                <label for="del" class="fa">Eliminar: </label>
-                                <a id="del" class="btn btn-lg fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $serial ?>)"></a>
-                            </div>
-                            <!-- Boton Ver todos los equipos. -->
-                            <div class="col-md-4 col-sm-12">
-                                <a href="../../equipos.php" class="btn btn-success btn-lg btn-block ajustar-boton btn-verusuarios ">VER TODOS LOS Equipos</a>
-                            </div>
+                        <div class="usuarios-buscar">
+                            <h2>Datos de usuario actualizado</h2>
+                            <!-- Barra de busqueda -->
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo.php" method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Serial"
+                                    aria-label="Search" id="buscar_equipo" name="buscar_equipo">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
+                                    id="boton_buscar">Buscar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+                <hr />
+
+                <div id="contenedor-usuarios" class="contenedor-usuarios">
+                    <div class="row contenedor-tabla">
+
+                        <!-- Datos del equipo actualizado -->
+                        <div class="datos-user-act">
+                            <h2>serial: <span class="color-datos-act"><?php echo $serial ?> </span></h2>
+                            <h2>Marca: <span class="color-datos-act"><?php echo $marca ?> </span></h2>
+                            <h2>Nombre: <span class="color-datos-act"><?php echo $nombre ?> </span></p>
+                                <h2>Tipo equipo: <span class="color-datos-act"><?php echo $tipo_equipo?> </span></h2>
+                                <h2>Modelo equipo: <span class="color-datos-act"><?php echo $modelo_equipo?> </span>
+                                </h2>
+                                <h2>procesador: <span class="color-datos-act"><?php echo $procesador?> </span></h2>
+                                <h2>Memoria Ram: <span class="color-datos-act"><?php echo $ram?> </span></h2>
+                                <h2>Sistema Operativo: <span class="color-datos-act"><?php echo $sistema_operativo?>
+                                    </span></h2>
+                                <h2>Estado: <span class="color-datos-act"><?php echo $estado?> </span></h2>
+                        </div>
+
+                        <div class="botones-edi-elim">
+                            <label for="edit" class="fa">Editar: </label>
+                            <a id="edit" class="btn btn-lg fa fa-pen"
+                                href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
+                            <label for="del" class="fa">Eliminar: </label>
+                            <a id="del" class="btn fa fa-trash-alt" href="#"
+                                onclick="confirmacion_borrar(<?php echo $serial ?>)"></a>
+                        </div>
+                        <!-- Boton Ver todos los equipos. -->
+                        <div class="col-md-4 col-sm-12">
+                            <a href="../../equipos.php"
+                                class="btn btn-success btn-lg btn-block ajustar-boton btn-verusuarios ">VER TODOS LOS
+                                Equipos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <input hidden id="mostrarCC" value="<?php echo $serial ?>"></input>
             <!-- /. ROW  -->
@@ -208,7 +218,8 @@ if (!isset($sesion)) {
     <script src="../js/custom.js"></script>
 
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -220,8 +231,9 @@ if (!isset($sesion)) {
         // console.log(nombre.value);
 
         function confirmacion_borrar(serial) {
-
-            if (confirm(`¿Realmente desea eliminar el equipo con Serial ${serial}?`)) {
+            var serialstr = String(serial);
+            console.log(serial);
+            if (confirm(`¿Realmente desea eliminar el equipo con Serial ${serialstr}?`)) {
                 window.location.href = "borrar.php?serial=" + serial
 
                 toastr["warning"]("El equipo con Serial #" + serial + " ha sido eliminado.", "Usuario eliminado")
@@ -246,11 +258,13 @@ if (!isset($sesion)) {
             }
         }
     </script>
+
     <!-- Alerta equipo actualizado -->
     <script>
         var serial = document.getElementById('mostrarCC').value;
         document.readyState =
-            toastr["success"]("El equipo con Serial #" + serial + " ha sido actualizado exitosamente.", "Usuario actualizado")
+            toastr["success"]("El equipo con Serial #" + serial + " ha sido actualizado exitosamente.",
+                "Usuario actualizado")
 
         toastr.options = {
             "closeButton": false,
