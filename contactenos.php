@@ -14,64 +14,39 @@
 
 <body>
     <!-- Header -->
-    <header>
+    <header id="contenedor">
         <!-- Barra de navegacion -->
-        <nav class="navbar">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: whitesmoke;">
-                    DVLeasy
+        <div class="nav-bar site-header sticky-top ">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8e8e8; font-family: cursive;">
+                <h2><a class="navbar-brand hvr-bob dvl-titulo" href="index.php">DVLeasy</a></h2>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand hvr-bob dvl-header" href="index.php">Inicio</a>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Información de de DVLeasy</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                LOGO
-                                <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
-                                <br>
-                                <h5><strong> Nombre completo de la empresa</strong></h5>
-                                <p> DeVeLopment easy</p>
-                                <br>
-                                <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodriguez de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="productos.html">Productos<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="opiniones.html">Opinion de nuestros clientes
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="contactenos.php">Contactenos <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
                 </div>
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="productos.html">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link a-actual" href="contactenos.php">Contactenos</a>
-                </li>
-
-            </ul>
-        </nav>
+                <a href="index.php" class="hvr-bob">
+                    <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto "
+                        role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
+                </a>
+            </nav>
+        </div>
     </header>
 
 
@@ -80,7 +55,7 @@
         <div class="formulario">
 
             <form action="contactenos.php" method="POST">
-               
+
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
                     <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1"
@@ -131,7 +106,7 @@ if (isset($_REQUEST['Enviar'])) {
         </div>
 
         <div class="img" style="margin-top:2%;margin-right:6%;margin-bottom:4%; height:80%; width: 80%;">
-        <br>
+            <br>
             <img src="IMG\contactenos.jpg" heigth='80%' width='80%' alt="imagen de contacto">
             <br>
             <hr>
@@ -141,9 +116,9 @@ if (isset($_REQUEST['Enviar'])) {
             <h5>___________________________</h5>
             <h5>Direccion: Calle 94 #51b-73.</h5>
             <h5>Centro empresarial buro51 - oficina 607.</h5>
-            <h5>Barranquilla -  Colombia.</h5>
+            <h5>Barranquilla - Colombia.</h5>
         </div>
-        
+
 
     </div>
 
@@ -151,7 +126,7 @@ if (isset($_REQUEST['Enviar'])) {
     <!-- Pie de pagina -->
     <footer>
         <div class="container footer">
-            <h2><a href="index.php"> DVLeasy </a></h2>
+            <h2><a href="index.php">DVLeasy</a></h2>
 
             <ul class="footer__company">
                 <h3 class="footer__company--title">Compañia</h3>
@@ -161,49 +136,45 @@ if (isset($_REQUEST['Enviar'])) {
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <a href="https://www.facebook.com/DVLeasy-119472056341523">
+                    <a href="https://www.facebook.com/DVLeasy-119472056341523" target="_blank">
                         <i class="fab fa-facebook-square texto-iconos"></i>
                     </a>
                 </li>
                 <li class="footer__redes--item">
                     <a href="https://twitter.com/DvLeasy">
-                        <i class="fab fa-twitter-square texto-iconos"></i>
+                        <i class="fab fa-twitter-square texto-iconos" target="_blank"></i>
                     </a>
                 </li>
 
                 <li class="footer__redes--item">
-                    <a href="https://co.pinterest.com/developmenteasy/">
+                    <a href="https://co.pinterest.com/developmenteasy/" target="_blank">
                         <i class="fab fa-pinterest-square texto-iconos"></i>
                     </a>
                 </li>
 
                 <li class="footer__redes--item">
-                    <a href="https://www.instagram.com/dvleasy/">
+                    <a href="https://www.instagram.com/dvleasy/" target="_blank">
                         <i class="fab fa-instagram-square texto-iconos"></i>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="attribution">
-            Challenge by
-            <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
-            <a href="https://github.com/soadtech" target="_blank">Pepito perez</a>.
-        </div>
+
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
         integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
         crossorigin="anonymous"></script>
     </div>
-     <!--Archivos de javascript -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <!--Archivos de javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
     <!--Archivos de javascript-->
 </body>
 

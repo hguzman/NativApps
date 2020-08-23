@@ -11,84 +11,64 @@
     <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
     <script src="..\JS\bootstrap.bundle.js">
     </script>
-    <title>Compañia</title>
+    <title>Opiniones</title>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header id="contenedor">
         <!-- Barra de navegacion -->
-        <nav class="navbar">
-            <div>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: whitesmoke;">
-                    DVLeasy
+        <div class="nav-bar site-header sticky-top ">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8e8e8; font-family: cursive;">
+                <h2><a class="navbar-brand hvr-bob dvl-titulo" href="index.php">DVLeasy</a></h2>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand hvr-bob dvl-header" href="index.php">Inicio</a>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Información de de DVLeasy</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                LOGO
-                                <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
-                                <br>
-                                <h5><strong> Nombre completo de la empresa</strong></h5>
-                                <p> DeVeLopment easy</p>
-                                <br>
-                                <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodrigues de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="productos.html">Productos<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="opiniones.html">Opinion de nuestros clientes
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="contactenos.php">Contactenos <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="productos.html">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link a-actual" href="opiniones.html">Opinion de nuestros clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contactenos.php">Contactenos</a>
-                </li>
-            </ul>
-        </nav>
+                <a href="index.php" class="hvr-bob">
+                    <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto "
+                        role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
+                </a>
+            </nav>
+        </div>
     </header>
     <div class="container-fluid contenedor">
         <br>
-        <form action="opiniones.html" class="d-flex justify-content-center">
-            <div>
-                <div class="col-lg-12">
-                    <textarea name="" id="" cols="92" rows="2" placeholder="Agrega tu opinion, ¡ES GRATIS!"></textarea>
-                    <br>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">
-                        ¡Enviar mi comentario!</button>
-                </div>
+        <!-- Enviar opinion -->
+        <form>
+            <div class="form-group centrar-comentario">
+                <!-- <label for="exampleInputEmail1">Email address</label>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First name">
+                </div> -->
+                <textarea name="" cols="92" rows="2" type="textarea" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Agrega tu opinion, ¡ES GRATIS!"></textarea>
+                <small style="margin-left: 34%;" id="emailHelp" class="form-text text-muted">Tu opinion nos importa
+                    mucho by
+                    Dvleasy
+                </small>
+                <button type="submit" class="btn btn-primary  btn-block btn-enviar">¡Enviar mi comentario!</button>
             </div>
         </form>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center pb-5">
             <div style="margin-left: -37%;">
                 <h2 class="pt-5 pb-4 "> Comentarios</h2>
                 <div>
@@ -96,7 +76,7 @@
                     <p>Quedé sorprendida con esta empresa.</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -104,7 +84,7 @@
                     <p>Es un buen servicio</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -112,7 +92,7 @@
                     <p>Gracias por su ayuda</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -120,7 +100,7 @@
                     <p>Sigan así</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -128,7 +108,7 @@
                     <p>Pueden mejorar.</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -136,7 +116,7 @@
                     <p>No quedé satisfecho</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -144,7 +124,7 @@
                     <p>Que buenos instructores tienen.</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -152,7 +132,7 @@
                     <p>El SENA es bueno enseñando.</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
                 <br>
                 <div>
@@ -160,9 +140,9 @@
                     <p>Buen trabajo.</p>
                     <button class="margen-opiniones"><i class="far fa-thumbs-up"></i></button>
                     <button class="margen-opiniones"><i class="far fa-thumbs-down"></i></button>
-                    <a href="#" ><small style="color: black;">responder</small></a>
+                    <a href="#"><small style="color: black;">responder</small></a>
                 </div>
-            
+
             </div>
         </div>
 
@@ -173,6 +153,44 @@
 
 
     </div>
+    <!-- Pie de pagina -->
+    <footer>
+        <div class="container footer">
+            <h2><a href="index.php">DVLeasy</a></h2>
+
+            <ul class="footer__company">
+                <h3 class="footer__company--title">Compañia</h3>
+                <li class="footer__company--item"><a href="acerca_dvleasy.html">Acerca de DVLeasy</a></li>
+                <li class="footer__company--item"><a href="docs/nosotros.html">Nuestro equipo</a></li>
+                <li class="footer__company--item"><a href="contactenos.php">Contactenos</a> </li>
+            </ul>
+            <ul class="footer__redes d-flex justify-content-around">
+                <li class="footer__redes--item">
+                    <a href="https://www.facebook.com/DVLeasy-119472056341523" target="_blank">
+                        <i class="fab fa-facebook-square texto-iconos"></i>
+                    </a>
+                </li>
+                <li class="footer__redes--item">
+                    <a href="https://twitter.com/DvLeasy">
+                        <i class="fab fa-twitter-square texto-iconos" target="_blank"></i>
+                    </a>
+                </li>
+
+                <li class="footer__redes--item">
+                    <a href="https://co.pinterest.com/developmenteasy/" target="_blank">
+                        <i class="fab fa-pinterest-square texto-iconos"></i>
+                    </a>
+                </li>
+
+                <li class="footer__redes--item">
+                    <a href="https://www.instagram.com/dvleasy/" target="_blank">
+                        <i class="fab fa-instagram-square texto-iconos"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
     <!--Archivos de javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

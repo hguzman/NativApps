@@ -158,7 +158,7 @@ if (!isset($sesion)) {
                                 <option value="All in one">All in one</option>
                                 <option value="Portatil">Portatil</option>
                                 <option value="PC de mesa">PC de mesa</option>
-                                <option value="dispositivo movil">dispositivo movil</option>
+                                <option value="dispositivo movil">Dispositivo movil</option>
                             </select>
                         </div>
                         <!-- Modelo equipo -->
@@ -189,8 +189,8 @@ if (!isset($sesion)) {
                             <label for="registrar-contrasena">Sistema operativo</label>
                             <select class="form-control"name="sistema_operativo" id="sistema_operativo" require>
                                 <option selected disabled value=""> Seleccionar</option>
-                                <option value="windows 10">windows 10</option>
-                                <option value="ubuntu">ubuntu</option>
+                                <option value="windows 10">Windows 10</option>
+                                <option value="ubuntu">Ubuntu</option>
                                 <option value="Mac/Os">Mac/Os</option>
                                 <option value="Otros">Otros</option>
                             </select>
@@ -202,7 +202,7 @@ if (!isset($sesion)) {
                                 <option value="Bueno">Bueno</option>
                                 <option value="Funcional">Funcional</option>
                                 <option value="regular">regular</option>
-                                <option value="fuera de servicio">fuera de servicio</option>
+                                <option value="fuera de servicio">Fuera de servicio</option>
                             </select>
                         </div>
 
