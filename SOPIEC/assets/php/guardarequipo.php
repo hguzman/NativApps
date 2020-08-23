@@ -109,7 +109,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevousuario.php">Crear Nuevo usuario</a>
@@ -121,7 +122,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevoequipo.php">Agregar un equipo</a>
@@ -147,13 +149,15 @@ if (!isset($sesion)) {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        
+
                         <div class="usuarios-buscar">
                             <h2>Datos del nuevo equipo</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Serial" aria-label="Search" id="buscar_equipo" name="buscar_equipo">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                                <input class="form-control mr-sm-2" type="search" placeholder="Serial"
+                                    aria-label="Search" id="buscar_equipo" name="buscar_equipo">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
+                                    id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -168,19 +172,24 @@ if (!isset($sesion)) {
                             <h2>Serial: <span class="color-datos-act"><?php echo $serial ?> </span></h2>
                             <h2>Marca: <span class="color-datos-act"><?php echo $marca ?> </span></h2>
                             <h2>Nombre: <span class="color-datos-act"><?php echo $nombre ?> </span></p>
-                            <h2>Tipo de equipo: <span class="color-datos-act"><?php echo $tipo_equipo ?> </span></h2>
-                            <h2>Modelo de equipo: <span class="color-datos-act"><?php echo $modelo_equipo ?></span></h2>
-                            <h2>Procesador: <span class="color-datos-act"><?php echo $procesador ?></span></h2>
-                            <h2>Ram: <span class="color-datos-act"><?php echo $ram ?> </span></h2>
-                            <h2>Sistema operativo: <span class="color-datos-act"><?php echo $sistema_operativo ?> </span></h2>
-                            <h2>Estado: <span class="color-datos-act"><?php echo $estado ?> </span></h2>
+                                <h2>Tipo de equipo: <span class="color-datos-act"><?php echo $tipo_equipo ?> </span>
+                                </h2>
+                                <h2>Modelo de equipo: <span class="color-datos-act"><?php echo $modelo_equipo ?></span>
+                                </h2>
+                                <h2>Procesador: <span class="color-datos-act"><?php echo $procesador ?></span></h2>
+                                <h2>Ram: <span class="color-datos-act"><?php echo $ram ?> </span></h2>
+                                <h2>Sistema operativo: <span class="color-datos-act"><?php echo $sistema_operativo ?>
+                                    </span></h2>
+                                <h2>Estado: <span class="color-datos-act"><?php echo $estado ?> </span></h2>
                         </div>
 
                         <div class="botones-edi-elim">
                             <label for="edit" class="fa">Editar: </label>
-                            <a id="edit" class="btn btn-lg fa fa-pen" href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
+                            <a id="edit" class="btn btn-lg fa fa-pen"
+                                href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
                             <label for="del" class="fa">Eliminar: </label>
-                            <a id="del" class="btn btn-lg fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $serial ?>)"></a>
+                            <a id="del" class="btn btn-lg fa fa-trash-alt" href="#"
+                                onclick="confirmacion_borrar(<?php echo $serial ?>)"></a>
                         </div>
                         <!-- Boton Ver todos los equipos. -->
                         <div class="col-md-4 col-sm-12 botones-newUser">
@@ -190,9 +199,8 @@ if (!isset($sesion)) {
                     </div>
                 </div>
             </div>
-
-
-              <!-- /. ROW  -->
+            <input hidden id="mostrarSerial" value="<?php echo $serial ?>"></input>
+            <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->
     </div>
@@ -206,10 +214,16 @@ if (!isset($sesion)) {
     <script src="../js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="../js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="../js/custom.js"></script>
+
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="../js/validaciones.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../js/custom.js"></script>
     <script src="../js/validaciones.js"></script>
@@ -242,9 +256,10 @@ if (!isset($sesion)) {
             }
         }
     </script>
+
     <!-- Alerta usuario actualizado -->
     <script>
-        var serial = document.getElementById('mostrarCC').value;
+        var serial = document.getElementById('mostrarSerial').value;
         document.readyState =
             toastr["success"]("El equipo con Serial " + serial + " ha sido guardado exitosamente.", "Equipo guardado")
 
