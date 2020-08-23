@@ -21,78 +21,50 @@ if (isset($_SESSION['login'])) {
     <!-- Header -->
     <header id="contenedor">
         <!-- Barra de navegacion -->
-        <nav class="navbar">
-            <div>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: whitesmoke;">
-                    DVLeasy 
+        <div class="nav-bar site-header sticky-top ">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8e8e8; font-family: cursive;">
+                <h2><a class="navbar-brand hvr-bob dvl-titulo" href="index.php">DVLeasy</a></h2>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand hvr-bob dvl-header" href="index.php">Inicio</a>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Información de de DVLeasy</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                LOGO
-                                <img src="IMG\logodvl.jpeg" alt="Logo NativApps" width="100%" height="100%">
-                                <br>
-                                <h5><strong> nombre completo de la empresa</strong></h5>
-                                <p> DeVeLopment easy</p>
-                                <br>
-                                <h5>Integrantes</h5>
-                                <p><strong> Dayana Rodriguez de Arco</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Kelvin Martinez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Livan Torres</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                                <p><strong>Mario Gómez</strong> <br> Aprendiz ADSI de la ficha 1905372</p>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="productos.html">Productos<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="opiniones.html">Opinion de nuestros clientes
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-bob dvl-header" href="contactenos.php">Contactenos <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link a-actual" href="index.php">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="productos.html">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="opiniones.html">Opinion de nuestros clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contactenos.php">Contactenos</a>
-                </li>
-            </ul>
-        </nav>
+                <a href="index.php" class="hvr-bob">
+                    <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto "
+                        role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
+                </a>
+            </nav>
+        </div>
     </header>
-
-    <!-- Contenedor principal -->
-    <div class="container-fluid">
-        <!-- Banner y botones contacto, productos -->
-        <div class="banner">
-            <!-- Botones dentro del banner -->
-            <div class="imagen-banner">
-                <img src="img/1755.png" class="img-fluid img-banner" alt="Responsive image">
-            </div>
+    <!-- Banner y botones contacto, productos -->
+    <div class="banner">
+        <!-- Botones dentro del banner -->
+        <div class="imagen-banner">
+            <img src="img/1755.png" class="img-fluid img-banner" alt="Responsive image">
             <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
             <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
                 productos</a>
         </div>
-
+    </div>
+    <!-- Contenedor principal -->
+    <div class="container">
         <!-- Div Cajas (Documentacion, opinion y SOPIEC) -->
         <div class="card-deck pt-4 cajas">
             <!-- Primera caja/Documentacion -->
@@ -105,7 +77,8 @@ if (isset($_SESSION['login'])) {
                         y todo lo referente a nuestro trabajo</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="https://kelvinmr1997.github.io/NativApps/diagramas.html">Ver más
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco"
+                        href="https://kelvinmr1997.github.io/NativApps/diagramas.html">Ver más
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -129,7 +102,7 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Un software de inventariado de equipos de computo con niveles de acceso</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.php">Ver más
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.php">Ingresar
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -151,41 +124,45 @@ if (isset($_SESSION['login'])) {
             </ul>
             <ul class="footer__redes d-flex justify-content-around">
                 <li class="footer__redes--item">
-                    <a href="https://www.facebook.com/DVLeasy-119472056341523">
+                    <a href="https://www.facebook.com/DVLeasy-119472056341523" target="_blank">
                         <i class="fab fa-facebook-square texto-iconos"></i>
                     </a>
                 </li>
                 <li class="footer__redes--item">
                     <a href="https://twitter.com/DvLeasy">
-                        <i class="fab fa-twitter-square texto-iconos"></i>
+                        <i class="fab fa-twitter-square texto-iconos" target="_blank"></i>
                     </a>
                 </li>
 
                 <li class="footer__redes--item">
-                    <a href="https://co.pinterest.com/developmenteasy/">
+                    <a href="https://co.pinterest.com/developmenteasy/" target="_blank">
                         <i class="fab fa-pinterest-square texto-iconos"></i>
                     </a>
                 </li>
 
                 <li class="footer__redes--item">
-                    <a href="https://www.instagram.com/dvleasy/">
+                    <a href="https://www.instagram.com/dvleasy/" target="_blank">
                         <i class="fab fa-instagram-square texto-iconos"></i>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="attribution">
-            Challenge by
-            <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
-            <a href="#" target="_blank">Pepito peres</a>.
-        </div>
+
     </footer>
     <!-- CDN de Fontawesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
     <!--Archivos de javascript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
     <!--Archivos de javascript-->
 </body>
 
