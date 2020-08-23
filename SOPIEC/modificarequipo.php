@@ -185,7 +185,7 @@ if (!isset($sesion)) {
                                 <option value="All in one">All in one</option>
                                 <option value="Portatil">Portatil</option>
                                 <option value="PC de mesa">PC de mesa</option>
-                                <option value="dispositivo movil">dispositivo movil</option>
+                                <option value="Dispositivo movil">dispositivo movil</option>
                             </select>
                         </div>
                         <!-- Modelo equipo -->
@@ -198,7 +198,7 @@ if (!isset($sesion)) {
                         <div class="form-group col-md-6">
                             <label for="registrar-segundo-apellido">Procesador</label>
                             <input type="text" class="form-control" id="procesador" name="procesador"
-                                placeholder="Casas" require value="<?php echo $procesador ?>">
+                                placeholder="intel core ix" require value="<?php echo $procesador ?>">
                         </div>
                         <!-- Memoria Ram -->
                         <div class="form-group col-md-6">
@@ -210,7 +210,7 @@ if (!isset($sesion)) {
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">Disco_duro</label>
                             <input type="text" class="form-control" id="disco_duro" name="disco_duro"
-                                placeholder="marca del disco duro" require value="<?php echo $disco_duro ?>">
+                                placeholder="Marca del disco duro" require value="<?php echo $disco_duro ?>">
                         </div>
                         <!-- Sistema operativo-->
                         <div class="form-group col-md-6">
@@ -218,8 +218,8 @@ if (!isset($sesion)) {
                             <select class="form-control" name="sistema_operativo" id="sistema_operativo" require>
                                 <option selected value="<?php echo $sistema_operativo ?>" id="sistme_operativo"> Actual:
                                     <?php echo $sistema_operativo?> </option>
-                                <option value="windows 10">Windows 10</option>
-                                <option value="ubuntu">Ubuntu</option>
+                                <option value="Windows 10">Windows 10</option>
+                                <option value="Ubuntu">Ubuntu</option>
                                 <option value="Mac/Os">Mac/Os</option>
                                 <option value="Otros">Otros</option>
                             </select>
@@ -231,8 +231,8 @@ if (!isset($sesion)) {
                                     <?php echo $estado?> </option>
                                 <option value="Bueno">Bueno</option>
                                 <option value="Funcional">Funcional</option>
-                                <option value="regular">Regular</option>
-                                <option value="fuera de servicio">Fuera de servicio</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Fuera de servicio">Fuera de servicio</option>
                             </select>
                         </div>
 

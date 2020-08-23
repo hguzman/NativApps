@@ -231,10 +231,8 @@ if (!isset($sesion)) {
         // console.log(nombre.value);
 
         function confirmacion_borrar(serial) {
-            var serialstr = String(serial);
-            console.log(serial);
-            if (confirm(`¿Realmente desea eliminar el equipo con Serial ${serialstr}?`)) {
-                window.location.href = "borrar.php?serial=" + serial
+            if (confirm(`¿Realmente desea eliminar el equipo con Serial ${serial}?`)) {
+                window.location.href = "borrarequipo.php?serial=" + serial
 
                 toastr["warning"]("El equipo con Serial #" + serial + " ha sido eliminado.", "Usuario eliminado")
 
