@@ -196,6 +196,7 @@ if (!isset($sesion)) {
             </div>
 
             <input hidden id="mostrarCC" value="<?php echo $cedula ?>"></input>
+            <input hidden id="mostrarNombre" value="<?php echo $primer_nombre ?>"></input>
             <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->
@@ -256,8 +257,11 @@ if (!isset($sesion)) {
     <!-- Alerta usuario actualizado -->
     <script>
         var cedula = document.getElementById('mostrarCC').value;
+        var mostrarNombre = document.getElementById('mostrarNombre').value;
+
         document.readyState =
-            toastr["success"]("El usuario con C.C #" + cedula + " ha sido actualizado exitosamente.",
+            toastr["success"]("El usuario " + mostrarNombre + " con C.C #" + cedula +
+                " ha sido actualizado exitosamente.",
                 "Usuario actualizado")
 
         toastr.options = {

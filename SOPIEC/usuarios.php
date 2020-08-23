@@ -79,7 +79,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -91,7 +92,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -121,9 +123,12 @@ if (!isset($sesion)) {
                         <div class="usuarios-buscar">
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->
-                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php"
+                                method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
+                                    id="buscar_usuario" name="buscar_usuario">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
+                                    id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -159,34 +164,38 @@ if (!isset($sesion)) {
                                 <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                    <!-- Contenido de la tabla -->
-                                    <tr class="actual">
-                                        <th scope="row">
-                                            <input class="form-control" type="number" value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula" name="cedula" readonl> </th>
-                                        <td> <?php echo $reg['primer_nombre'] ?></td>
-                                        <td> <?php echo $reg['area'] ?></td>
-                                        <td> <?php echo $reg['segundo_nombre'] ?></td>
-                                        <td> <?php echo $reg['primer_apellido'] ?> </td>
-                                        <td> <?php echo $reg['segundo_apellido'] ?> </td>
-                                        <td> <?php echo $reg['email'] ?> </td>
-                                        <td> <?php echo $reg['rol'] ?> </td>
-                                        <td class="eliminar-editar">
-                                            <!-- botones editar y eliminar -->
-                                            <a id="edit" class="btn fa fa-pen" href="modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                <!-- Contenido de la tabla -->
+                                <tr class="actual">
+                                    <th scope="row">
+                                        <input class="form-control" type="number"
+                                            value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula"
+                                            name="cedula" readonl> </th>
+                                    <td> <?php echo $reg['primer_nombre'] ?></td>
+                                    <td> <?php echo $reg['area'] ?></td>
+                                    <td> <?php echo $reg['segundo_nombre'] ?></td>
+                                    <td> <?php echo $reg['primer_apellido'] ?> </td>
+                                    <td> <?php echo $reg['segundo_apellido'] ?> </td>
+                                    <td> <?php echo $reg['email'] ?> </td>
+                                    <td> <?php echo $reg['rol'] ?> </td>
+                                    <td class="eliminar-editar">
+                                        <!-- botones editar y eliminar -->
+                                        <a id="edit" class="btn fa fa-pen"
+                                            href="modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
-                                        </td>
-                                    </tr>
+                                        <a id="del" class="btn fa fa-trash-alt" href="#"
+                                            onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
+                                    </td>
+                                </tr>
 
                     </div>
                 </div>
 
-            <?php
+                <?php
                                 }
                                 mysqli_close($conexion);
             ?>
-            </tbody>
-            </table>
+                </tbody>
+                </table>
             </div>
 
             <!-- /. ROW  -->
@@ -207,16 +216,14 @@ if (!isset($sesion)) {
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/validaciones.js"></script>
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
 
     <!-- Alerta borrar -->
     <script type="text/javascript">
-        // var nombre = document.getElementById("nombre");
-        // console.log(nombre.value);
-
         function confirmacion_borrar(cedula, nombre) {
 
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
