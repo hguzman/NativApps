@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+require("assets/php/db.php");
 $sesion = $_SESSION['username'];
 if (!isset($sesion)) {
     header("location: login.php");
@@ -31,7 +31,7 @@ if (!isset($sesion)) {
 <body>
     <!-- recuperar datos de la DB -->
     <?php
-    require("assets/php/db.php");
+    
 
     $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ") or
         die("Problemas en el select:" . mysqli_error($conexion));
