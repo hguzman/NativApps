@@ -121,7 +121,7 @@ if (!isset($sesion)) {
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner" class="d-flex row ">
-                <div style="border: solid 1px green;" class="col-lg-6">
+                <div class="col-lg-6">
                     <h2>Mi usuario</h2>
                     <hr>
 
@@ -145,7 +145,7 @@ if (!isset($sesion)) {
                     ?>
                 </div>
                 <!--  $avatar  -->
-                <div style="border: solid 1px red;" class="col-lg-6">
+                <div class="col-lg-6">
                    
 
                     <center> <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a> </center>
@@ -160,12 +160,13 @@ if (!isset($sesion)) {
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel">Modificar foto de perfil</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                    <h3> Cargar imagen jpg</h3>
                                     <form enctype="multipart/form-data" action="assets\php\guardar.php" method="POST">
 
                                         <input type="text" name="nombre" id="nombre" required><br><br>
@@ -173,7 +174,47 @@ if (!isset($sesion)) {
                                         <input type="submit" value="subir archivo">
                                     </form>
  
+    <h3>Seleccionar imagen de la BD</h3>
+                                    <center>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Opciones</th>
+                </tr>
 
+            </thead>
+            <tbody>
+                <?php
+                
+                $query_b = "SELECT * from avatares";
+
+                $registros_b = mysqli_query($conexion, $query_b) or
+                    die("Problemas en el select:" . mysqli_error($conexion));
+
+                while ($reg_b = mysqli_fetch_array($registros_b)) {
+                ?>
+                    <tr>
+                        <td><?php echo $reg_b['ID'] ?></td>
+                        <td><?php echo $reg_b['nombre'] ?></td>
+                        <td><img src="data:image/jpg;base64, <?php echo base64_encode($reg_b['imagen']) ?>" height="200px"></td>
+                        <td><a id="edit" class="btn btn-success" href="assets/php/actualizar_avatar.php?id=<?php echo $reg_b['ID']; ?>"> SELECCIONAR</a>
+                        <a id="del" class="btn btn-danger" href="assets/php/eliminar_avatar.php?id=<?php echo $reg_b['ID']; ?>"> ELIMINAR</a></td>
+                    </tr>
+
+
+
+                <?php
+                };
+                mysqli_free_result($registros_b);
+                ?>
+
+
+            </tbody>
+        </table>
+    </center>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
