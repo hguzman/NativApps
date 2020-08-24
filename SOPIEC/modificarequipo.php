@@ -216,22 +216,23 @@ if (!isset($sesion)) {
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">Sistema operativo</label>
                             <select class="form-control" name="sistema_operativo" id="sistema_operativo" require>
-                                <option selected value="<?php echo $sistema_operativo ?>" id="sistme_operativo"> Actual:
+                                <option selected value="<?php echo $sistema_operativo ?>" id="sistema_operativo"> Actual:
                                     <?php echo $sistema_operativo?> </option>
                                 <option value="Windows 10">Windows 10</option>
                                 <option value="Ubuntu">Ubuntu</option>
                                 <option value="Mac/Os">Mac/Os</option>
+                                <option value="Android">Android</option>
                                 <option value="Otros">Otros</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">Estado del equipo</label>
                             <select class="form-control" name="estado" id="estado">
-                                <option selected value="<?php echo $estado ?>" id="sistme_operativo"> Actual:
+                                <option selected value="<?php echo $estado ?>" id="estado"> Actual:
                                     <?php echo $estado?> </option>
-                                <option value="Bueno">Bueno</option>
                                 <option value="Funcional">Funcional</option>
                                 <option value="Regular">Regular</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
                                 <option value="Fuera de servicio">Fuera de servicio</option>
                             </select>
                         </div>
