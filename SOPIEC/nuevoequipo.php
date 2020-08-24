@@ -192,6 +192,7 @@ if (!isset($sesion)) {
                                 <option value="windows 10">Windows 10</option>
                                 <option value="ubuntu">Ubuntu</option>
                                 <option value="Mac/Os">Mac/Os</option>
+                                <option value="Android">Android</option>
                                 <option value="Otros">Otros</option>
                             </select>
                         </div>
@@ -199,9 +200,9 @@ if (!isset($sesion)) {
                             <label for="registrar-contrasena">Estado del equipo</label>
                             <select class="form-control"name="estado" id="estado">
                                 <option selected disabled value=""> Seleccionar</option>
-                                <option value="Bueno">Bueno</option>
                                 <option value="Funcional">Funcional</option>
                                 <option value="regular">regular</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
                                 <option value="fuera de servicio">Fuera de servicio</option>
                             </select>
                         </div>
