@@ -65,31 +65,18 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
             <!--  Sidebar de opciones  -->
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <!-- Imagen de usuario -->
-                        <form action="assets/php/imagenAdmin.php" method="POST" enctype="multipart/form-data">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="foto_admin" lang="es" name="foto_admin"
-                                    require>
-                                <?php 
-                                    // $sql = "SELECT foto_admin FROM usuarios WHERE cedula='$cc'";
-                                    // // $resultado = $conexion-> query ($query);
-                                    // // while($row = $resultado ->fetch_assoc()){
-                                    //     while($res = mysqli_fetch_array($sql)){
-                                    //         echo '<img src=""
-                                    // class="img-responsive" />';
-                                    //     }
-                                    // ?>
+                <li class="text-center user-image-back">
+                <!-- recuperar imagen de la base de datos -->
+                <?php
+                require_once("assets/php/db.php");
+                $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
 
-                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-                                <!-- <img src="assets/img/find_user.png" class="img-responsive" /> -->
-
-
-
-                                <input type="submit" value="Aceptar">
-                            </div>
-
-                        </form>
+                $registros = mysqli_query($conexion, $query) or
+                    die("Problemas en el select:" . mysqli_error($conexion));
+                    $reg_a = mysqli_fetch_array($registros)
+                    ?>       
+                
+                <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" height="150px " class="rounded-circle"></td></a> 
                     </li>
                     <!-- Primero/inicio -->
                     <li>
