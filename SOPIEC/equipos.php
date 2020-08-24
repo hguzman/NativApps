@@ -163,15 +163,15 @@ if (!isset($sesion)) {
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
                                 <!-- Contenido de la tabla -->
                                 <tr class="actual">
                                     <th scope="row">
-                                        <input class="form-control" type="text" value="<?php echo $reg['serial'] ?>"
-                                            readonly id="serial" name="serial"></th>
+                                        <input id="seri" class="form-control" type="text"
+                                            value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial"
+                                            name="serial"></th>
                                     <td> <?php echo $reg['marca'] ?></td>
                                     <td> <?php echo $reg['nombre'] ?></td>
                                     <td> <?php echo $reg['tipo_equipo'] ?> </td>
@@ -181,14 +181,13 @@ if (!isset($sesion)) {
                                     <td> <?php echo $reg['disco_duro'] ?> </td>
                                     <td> <?php echo $reg['sistema_operativo'] ?> </td>
                                     <td> <?php echo $reg['estado'] ?> </td>
-
                                     <td class="eliminar-editar">
                                         <!-- botones editar y eliminar -->
                                         <a id="edit" class="btn fa fa-pen"
                                             href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
                                         <a id="del" class="btn fa fa-trash-alt" href="#"
-                                            onclick="confirmacion_borrar(<?php echo $reg['serial'] ?>)"></a>
+                                            onclick="confirmacion_borrar(<?php echo $reg['serial']; ?>)"></a>
                                     </td>
                                 </tr>
 
@@ -230,8 +229,9 @@ if (!isset($sesion)) {
     <!-- Alerta borrar -->
     <script type="text/javascript">
         function confirmacion_borrar(serial) {
-            console.log(serial).value;
-            if (confirm("¿Realmente desea eliminar el equipo con serial" + serial + "?")) {
+            console.log(serial);
+            console.log(typeof serial);
+            if (confirm(`¿Realmente desea eliminar el equipo con serial ${serial} ?`)) {
                 window.location.href = "assets/php/borrarequipo.php?serial=" + serial
                 toastr["warning"]("El equipo con serial #" + serial + " ha sido eliminado.", "Equipo eliminado")
                 toastr.options = {
