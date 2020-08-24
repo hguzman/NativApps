@@ -33,7 +33,7 @@
                     <tr>
                         <td><?php echo $reg['ID'] ?></td>
                         <td><?php echo $reg['nombre'] ?></td>
-                        <td><img src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen']) ?>"></td>
+                        <td><img src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen']) ?>" height="200px"></td>
                     </tr>
 
 
