@@ -121,7 +121,7 @@ if (!isset($sesion)) {
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner" class="d-flex row ">
-                <div style="border: solid 1px green;" class="col-lg-6">
+                <div class="col-lg-6">
                     <h2>Mi usuario</h2>
                     <hr>
 
@@ -145,7 +145,7 @@ if (!isset($sesion)) {
                     ?>
                 </div>
                 <!--  $avatar  -->
-                <div style="border: solid 1px red;" class="col-lg-6">
+                <div class="col-lg-6">
                    
 
                     <center> <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a> </center>
