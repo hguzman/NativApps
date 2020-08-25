@@ -351,44 +351,55 @@ $(document).ready(function () {
         },
       },
       modelo_equipo: {
+        message: "Porfavor digite un Modelo  valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      procesador: {
+        message: "Elija un estado para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      ram: {
+        message: "Porfavor digite una ram valida",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      disco_duro: {
         message: "Porfavor digite un modelo de equipo valido",
         validators: {
           notEmpty: {
             message: "Este campo no puede estar vacio",
           },
           stringLength: {
-            min: 3,
+            min: 1,
             max: 45,
             message: "modelo de equipo  invalido",
           },
-          regexp: {
-            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
-            message: "No se aceptan números especiales en este campo",
-          },
         },
       },
-      contrasena: {
-        message: "Por favor digite una contraseña valida",
+      sistema_operativo: {
+        message: "Elija un estadp para este usuario",
         validators: {
           notEmpty: {
-            message: "La contraseña no puede estar vacia",
+            message: "Elija un estado para este usuario",
           },
-          stringLength: {
-            min: 5,
-            max: 100,
-            message: "La contraseña debe ser mayor de 5 caracteres",
-          },
-          // regexp: {
-          //   regexp: /^[a-zA-Z_]+$/,
-          //   message: "No se aceptan números especiales en este campo",
-          // },
         },
       },
       estado: {
         message: "Elija un estadp para este usuario",
         validators: {
           notEmpty: {
-            message: "Elija un estadp para este usuario",
+            message: "Elija un estado para este usuario",
           },
         },
       },
@@ -438,23 +449,26 @@ $(document).ready(function () {
         },
       },
       modelo_equipo: {
-        message: "Porfavor digite un modelo de equipo valido",
+        message: "Porfavor digite un Modelo  valido",
         validators: {
           notEmpty: {
-            message: "Este campo no puede estar vacio",
-          },
-          stringLength: {
-            min: 1,
-            max: 45,
-            message: "modelo de equipo  invalido",
+            message: "ese campo no puede estar vacio",
           },
         },
       },
       procesador: {
-        message: "Elija un estadp para este usuario",
+        message: "Elija un estado para este usuario",
         validators: {
           notEmpty: {
             message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      ram: {
+        message: "Porfavor digite una ram valida",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
           },
         },
       },
@@ -471,16 +485,7 @@ $(document).ready(function () {
           },
         },
       },
-
       sistema_operativo: {
-        message: "Elija un estadp para este usuario",
-        validators: {
-          notEmpty: {
-            message: "Elija un estado para este usuario",
-          },
-        },
-      },
-      ram: {
         message: "Elija un estadp para este usuario",
         validators: {
           notEmpty: {
