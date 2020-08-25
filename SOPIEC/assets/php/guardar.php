@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("db.php");
 
 $nombre = $_POST['nombre'];

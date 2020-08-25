@@ -1,6 +1,6 @@
 ﻿﻿<!DOCTYPE html>
 <?php
-session_start();
+require_once("assets/php/db.php");
 $sesion = $_SESSION['username'];
 $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
@@ -68,7 +68,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 <li class="text-center user-image-back">
                 <!-- recuperar imagen de la base de datos -->
                 <?php
-                require_once("assets/php/db.php");
+                
                 $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
 
                 $registros = mysqli_query($conexion, $query) or
