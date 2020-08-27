@@ -187,7 +187,7 @@ if (!isset($sesion)) {
                                 href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
                             <label for="del" class="fa">Eliminar: </label>
                             <a id="del" class="btn fa fa-trash-alt" href="#"
-                                onclick="confirmacion_borrar(<?php echo $serial ?>)"></a>
+                                onclick="confirmacion_borrar('<?php  $serial ?>')"></a>
                         </div>
                         <!-- Boton Ver todos los equipos. -->
                         <div class="col-md-4 col-sm-12">
@@ -231,6 +231,9 @@ if (!isset($sesion)) {
         // console.log(nombre.value);
 
         function confirmacion_borrar(serial) {
+            var ser = document.getElementById('mostrarCC').value;
+            console.log(serial);
+            console.log(ser);
             if (confirm(`¿Realmente desea eliminar el equipo con Serial ${serial}?`)) {
                 window.location.href = "borrarequipo.php?serial=" + serial
 
