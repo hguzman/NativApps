@@ -31,7 +31,7 @@ if (isset($_POST['registrar'])) {
 
     
     if (!$resultado) {
-        header("location: ../../equipos.php");
+        header("location: errorEquipo.html");
         die();
     }
 }
@@ -189,7 +189,7 @@ if (!isset($sesion)) {
                                 href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
                             <label for="del" class="fa">Eliminar: </label>
                             <a id="del" class="btn btn-lg fa fa-trash-alt" href="#"
-                                onclick="confirmacion_borrar(<?php echo $serial ?>)"></a>
+                                onclick="confirmacion_borrar('<?php echo $serial ?>')"></a>
                         </div>
                         <!-- Boton Ver todos los equipos. -->
                         <div class="col-md-4 col-sm-12 botones-newUser">

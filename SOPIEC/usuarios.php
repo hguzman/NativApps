@@ -230,7 +230,6 @@ if (!isset($sesion)) {
                 window.location.href = "assets/php/borrar.php?cedula=" + cedula
 
                 toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
-
                 toastr.options = {
                     "closeButton": false,
                     "debug": false,
@@ -239,7 +238,7 @@ if (!isset($sesion)) {
                     "positionClass": "toast-top-right",
                     "preventDuplicates": true,
                     "onclick": null,
-                    "showDuration": "5000",
+                    "showDuration": "9000",
                     "hideDuration": "5000",
                     "timeOut": "5000",
                     "extendedTimeOut": "5000",
