@@ -68,9 +68,9 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 
                 $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
 
-                $registros = mysqli_query($conexion, $query) or
+                $registros_a = mysqli_query($conexion, $query) or
                     die("Problemas en el select:" . mysqli_error($conexion));
-                    $reg_a = mysqli_fetch_array($registros)
+                    $reg_a = mysqli_fetch_array($registros_a)
                     ?>
 
                         <a href="perfil.php"><img
@@ -132,7 +132,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 <div class="listas-eq-us">
                     <!-- Query Seleccionar usuarios-->
                     <?php 
-                $registros = mysqli_query($conexion,"SELECT serial, nombre,tipo_equipo,estado,primer_nombre, primer_apellido,cedula FROM usuarios,equipos") or die("Problemas en el select:" . mysqli_error($conexion));
+                $registros = mysqli_query($conexion,"SELECT * FROM usuarios") or die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                     <div class="form-group multiple" id="user-list">
                         <label for="exampleFormControlSelect2">Seleccione un usuario</label>
@@ -145,19 +145,22 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                             </option>
                             <?php
                                 }
-                                mysqli_close($conexion);
+                                
                             ?>
                         </select>
                     </div>
                     <!--Query Select Equipos  -->
+                    <?php 
+                $registros_e = mysqli_query($conexion,"SELECT * FROM equipos") or die("Problemas en el select:" . mysqli_error($conexion));
+                ?>
                     <div class="form-group multiple">
                         <label for="exampleFormControlSelect2">Seleccione un equipo</label>
                         <select multiple class="escojer-user form-control" id="exampleFormControlSelect2">
                             <?php
-                                while ($reg = mysqli_fetch_array($registros)) {
+                                while ($reg_e = mysqli_fetch_array($registros_e)) {
                                 ?>
                             <option>
-                                <?php echo $reg['serial']."   ".$reg['nombre']."   ".$reg['tipo_equipo']."   ".$reg['estado'] ?>
+                                <?php echo $reg_e['serial']."   ".$reg_e['nombre']."   ".$reg_e['tipo_equipo']."   ".$reg_e['estado'] ?>
                             </option>
                             <?php
                                 }
