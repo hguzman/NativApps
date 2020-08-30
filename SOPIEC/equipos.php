@@ -79,7 +79,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -91,7 +92,8 @@ if (!isset($sesion)) {
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
@@ -118,13 +120,16 @@ if (!isset($sesion)) {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        
+
                         <div class="usuarios-buscar">
-                        <h2>Equipos</h2>
-                         <!-- Barra de busqueda -->
-                         <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarequipo.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Serial" aria-label="Search" id="buscar_equipo" name="buscar_equipo">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                            <h2>Equipos</h2>
+                            <!-- Barra de busqueda -->
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarequipo.php"
+                                method="GET">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Serial"
+                                    aria-label="Search" id="buscar_equipo" name="buscar_equipo">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
+                                    id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -162,37 +167,41 @@ if (!isset($sesion)) {
                                 <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                    <!-- Contenido de la tabla -->
-                                    <tr class="actual">
-                                        <th scope="row">
-                                            <input class="form-control" type="text" value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial" name="serial" readonl> </th>
-                                        <td> <?php echo $reg['marca'] ?></td>
-                                        <td> <?php echo $reg['nombre'] ?></td>
-                                        <td> <?php echo $reg['tipo_equipo'] ?> </td>
-                                        <td> <?php echo $reg['modelo_equipo'] ?> </td>
-                                        <td> <?php echo $reg['procesador'] ?> </td>
-                                        <td> <?php echo $reg['ram'] ?> </td>
-                                        <td> <?php echo $reg['disco_duro'] ?> </td>
-                                        <td> <?php echo $reg['sistema_operativo'] ?> </td>
-                                        <td> <?php echo $reg['estado'] ?> </td>
-                                        
-                                        <td class="eliminar-editar">
-                                            <!-- botones editar y eliminar -->
-                                            <a id="edit" class="btn fa fa-pen" href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
+                                <!-- Contenido de la tabla -->
+                                <tr class="actual">
+                                    <th scope="row">
+                                        <input class="form-control" type="text"
+                                            value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial"
+                                            name="serial" readonl> </th>
+                                    <td> <?php echo $reg['marca'] ?></td>
+                                    <td> <?php echo $reg['nombre'] ?></td>
+                                    <td> <?php echo $reg['tipo_equipo'] ?> </td>
+                                    <td> <?php echo $reg['modelo_equipo'] ?> </td>
+                                    <td> <?php echo $reg['procesador'] ?> </td>
+                                    <td> <?php echo $reg['ram'] ?> </td>
+                                    <td> <?php echo $reg['disco_duro'] ?> </td>
+                                    <td> <?php echo $reg['sistema_operativo'] ?> </td>
+                                    <td> <?php echo $reg['estado'] ?> </td>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="assets/php/borrarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
-                                        </td>
-                                    </tr>
+                                    <td class="eliminar-editar">
+                                        <!-- botones editar y eliminar -->
+                                        <a id="edit" class="btn fa fa-pen"
+                                            href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
-                                    </div>
+                                            <a id="del" class="btn fa fa-trash-alt" href="#"
+                                            onclick="confirmacion_borrar('<?php  echo $reg['serial']; ?>')"></a>
+                                    </td>
+                                </tr>
+
+                    </div>
                 </div>
 
-            <?php
+                <?php
                                 }
                                 mysqli_close($conexion);
             ?>
-            </tbody>
-            </table>
+                </tbody>
+                </table>
             </div>
 
             <!-- /. ROW  -->
@@ -213,7 +222,8 @@ if (!isset($sesion)) {
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/validaciones.js"></script>
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
@@ -225,7 +235,7 @@ if (!isset($sesion)) {
 
         function confirmacion_borrar(serial, nombre) {
 
-            if (confirm(`¿Realmente desea eliminar el usuario con C.C ${serial}?`)) {
+            if (confirm("¿Realmente desea eliminar el equipo con serial #" + serial)) {
                 window.location.href = "assets/php/borrarequipo.php?serial=" + serial
 
                 toastr["warning"]("El usuario con C.C #" + serial + " ha sido eliminado.", "Usuario eliminado")

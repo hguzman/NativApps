@@ -199,7 +199,7 @@ if (!isset($sesion)) {
                     </div>
 
                     <button type="submit" class="btn btn-success ajustar-boton" name="registrar" value="registrar"
-                        id="registrar">Registrar</button>
+                        id="registrar" on>Registrar</button>
                 </form>
 
             </div>
@@ -254,7 +254,6 @@ if (!isset($sesion)) {
     <!-- Ajax valdiacion en BD en vivo -->
     <script type="text/javascript">
         $(document).ready(function () {
-            var registrar = $('#registrar');
 
             $('#cedula').on('blur', function () {
                 $('#result-cedula').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
@@ -269,12 +268,6 @@ if (!isset($sesion)) {
                     },
                     success: function (data) {
                         console.log(data.status);
-                        registrar.click(function () {
-                            if (data.status === 'error') {
-                                alert("Error cedula");
-                                event.preventDefault();
-                            }
-                        })
                         $('#result-cedula').fadeIn(1000).html(data.mensaje);
                     }
                 });
@@ -284,7 +277,6 @@ if (!isset($sesion)) {
             $('#email').on('blur', function () {
                 $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
                 var valEmail = $(this).val();
-                var registrar = $('#registrar');
                 $.ajax({
                     type: "POST",
                     url: "assets/php/checkearDisponibilidad.php",
@@ -293,15 +285,19 @@ if (!isset($sesion)) {
                         email: valEmail
                     },
                     success: function (data) {
-                        registrar.click(function () {
-                            if (data.statusEmail === 'error') {
-                                alert("Error En el email");
-                                event.preventDefault();
-                            } else {}
-                        })
                         $('#result-email').fadeIn(1000).html(data.mensajeEmail);
                     }
                 });
+            });
+        });
+    </script>
+
+    <!-- Pass as Id -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cedula").keyup(function () {
+                var value = $(this).val();
+                $("#contrasena").val(value);
             });
         });
     </script>
