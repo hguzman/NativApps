@@ -396,3 +396,12 @@ nav {
     color-stop(0.86, rgb(28, 58, 148))
   );
 }
+
+.centrar {
+  text-align: center;
+  display: block;
+}
+
+option.select-hr {
+  border-bottom: 2px dotted #12ca71;
+}
