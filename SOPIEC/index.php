@@ -129,20 +129,25 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 <!-- /. ROW  -->
                 <hr />
                 <h3>Asignación de equipos</h3>
+                <!-- Modal -->
+
                 <div class="listas-eq-us">
                     <!-- Query Seleccionar usuarios-->
                     <?php 
-                $registros = mysqli_query($conexion,"SELECT * FROM usuarios") or die("Problemas en el select:" . mysqli_error($conexion));
-                ?>
+                        $registros = mysqli_query($conexion,"SELECT * FROM usuarios") or die("Problemas en el select:" . mysqli_error($conexion));
+                        ?>
                     <div class="form-group multiple" id="user-list">
-                        <label for="exampleFormControlSelect2">Seleccione un usuario</label>
-                        <select multiple class="escojer-user form-control" id="exampleFormControlSelect2">
+                        <label class="centrar" for="exampleFormControlSelect2">Seleccione un usuario</label>
+                        <select id="selectUser" multiple class="escojer-user form-control"
+                            id="exampleFormControlSelect2">
                             <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                            <option>
+                            <option class="select-hr"
+                                value="<?php echo $reg['primer_nombre']."   ".$reg['primer_apellido'] ?>">
                                 <?php echo $reg['cedula']."   ".$reg['primer_nombre']."   ".$reg['primer_apellido'] ?>
                             </option>
+
                             <?php
                                 }
                                 
@@ -151,17 +156,21 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     </div>
                     <!--Query Select Equipos  -->
                     <?php 
-                $registros_e = mysqli_query($conexion,"SELECT * FROM equipos") or die("Problemas en el select:" . mysqli_error($conexion));
-                ?>
+                    $registros_e = mysqli_query($conexion,"SELECT * FROM equipos") or die("Problemas en el select:" . mysqli_error($conexion));
+                    ?>
                     <div class="form-group multiple">
-                        <label for="exampleFormControlSelect2">Seleccione un equipo</label>
-                        <select multiple class="escojer-user form-control" id="exampleFormControlSelect2">
+                        <label class="centrar" for="exampleFormControlSelect2">Seleccione un equipo</label>
+                        <select id="selectEquipo" multiple class="escojer-user form-control"
+                            id="exampleFormControlSelect2">
                             <?php
                                 while ($reg_e = mysqli_fetch_array($registros_e)) {
                                 ?>
-                            <option>
+                            <option id="eq-serial"
+                                value="<?php echo $reg_e['nombre']." con  serial #". $reg_e['serial']?>"
+                                class="select-hr">
                                 <?php echo $reg_e['serial']."   ".$reg_e['nombre']."   ".$reg_e['tipo_equipo']."   ".$reg_e['estado'] ?>
                             </option>
+                            <p>Este es el serial: </p><?php echo $reg_e['serial']?>
                             <?php
                                 }
                                 mysqli_close($conexion);
@@ -169,6 +178,40 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         </select>
                     </div>
                 </div>
+
+                <!-- Botón asignar -->
+                <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
+                    class="btn btn-primary" style="margin-left: 82%;
+                    border-radius: 5px !important;">Asignar</button>
+                <!-- Modal -->
+                <form action="assets/php/asignarEquipo.php" method="POST">
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Asignación de equipo</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h2>Se asignará el quipo :</h2>
+                                    <p class="color-datos-act" id="s_equipo"></p>
+                                    <h2> al usuario :</h2>
+                                    <p class="color-datos-act" id="n_user"></p>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Cancelar</button>
+
+                                    <button id="asignar-modal" type="button" class="btn btn-primary">Asignar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -184,6 +227,26 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+    <!-- Mostrar datos del equipo en el modal -->
+    <script>
+        $('#selectEquipo').on("change", function () {
+            var equipo = $(this).val();
+            var nombreEq =
+                $('#s_equipo').text(equipo + " ");
+            console.log(equipo);
+            if ($('#selectequipo').val() == undefined) {
+                // $('#asignar-modal').disable = true;
+                // alert("disabled")
+            }
+        })
+
+
+        $('#selectUser').on("change", function () {
+            var user = $(this).val();
+            $('#n_user').text(user);
+            console.log(user);
+        })
+    </script>
 
 
 </body>
