@@ -18,9 +18,16 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 <html>
 
 <head>
-    <meta charset="utf-8" />
+<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Crear Ticket</title>
+
+    <!-- Bootstrap validator -->
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
+    <!-- Estilos CSS Toastr -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -29,6 +36,8 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- Alertify -->
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
 </head>
 
 <body>
@@ -141,7 +150,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                                     class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-8">
                                                 <input id="nombre" name="nombre" type="text" placeholder="Nombre"
-                                                    class="form-control">
+                                                    class="form-control" value="">
                                             </div>
                                         </div>
 
@@ -183,22 +192,65 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- /. ROW  -->
+            </div>
+        <!-- /. PAGE INNER  -->
+
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+    <!-- Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
-<?php
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- Ajax Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <!-- CDN Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Script Toastr -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Bootstrap validator -->
+    <script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <script src="assets/js/validaciones.js"></script>
 
- $alerta = $_SESSION["mensaje"];
 
-if (isset($alerta) && $alerta = "finalizado") {
-    echo '<script>
-    alert("ticket registrado correctamente");
-    </script>';
+<script>
+var nombre = document.getElementById('nombre');
+var email = document.getElementById('email');
+var asunto = document.getElementById('asunto');
+var mensjae = document.getElementById('mensjae');
 
-    $alerta = "VACIO";
-} else {
-
-};
-?>
+$('#enviar').on("submit",function(){
+        if ( nombre && email && asunto && mensaje != empty){
+            alert ("Su tucket ha sido creado exitosamente, en breves recibira respuesta del admin.");
+        }
+})
+</script>
 </body>
 
 </html>
