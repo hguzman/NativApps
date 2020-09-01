@@ -18,7 +18,11 @@ require_once("db.php");
     };
     $query = "INSERT INTO ticket(`nombre`,`email`,`mensaje`,`asunto`) VALUES ('$nombre','$email','$mensaje','$asunto' )";
     $resultado = mysqli_query($conexion, $query);
-    $_session["mensaje"] = "finalizado";
+
+    //$_session["mensaje"] = "finalizado";
+    echo "<script>
+    alert('Ticket enviado'); 
+    </script>";
     header("location: ../../ticket.php");
 
 
