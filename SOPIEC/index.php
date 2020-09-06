@@ -144,7 +144,8 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
                             <option class="select-hr"
-                                value="<?php echo $reg['primer_nombre']."   ".$reg['primer_apellido'] ?>">
+                                value="<?php echo $reg['cedula']."-". $reg['primer_nombre']."   ".$reg['primer_apellido'] ?>">
+
                                 <?php echo $reg['cedula']."   ".$reg['primer_nombre']."   ".$reg['primer_apellido'] ?>
                             </option>
 
@@ -156,7 +157,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     </div>
                     <!--Query Select Equipos  -->
                     <?php 
-                    $registros_e = mysqli_query($conexion,"SELECT * FROM equipos") or die("Problemas en el select:" . mysqli_error($conexion));
+                    $registros_e = mysqli_query($conexion,"SELECT * FROM `equipos` WHERE cedula_FK = 0") or die("Problemas en el select:" . mysqli_error($conexion));
                     ?>
                     <div class="form-group multiple">
                         <label class="centrar" for="exampleFormControlSelect2">Seleccione un equipo</label>
@@ -166,8 +167,9 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 while ($reg_e = mysqli_fetch_array($registros_e)) {
                                 ?>
                             <option id="eq-serial"
-                                value="<?php echo $reg_e['nombre']." con  serial #". $reg_e['serial']?>"
+                                value="<?php echo $reg_e['serial']."separar_serial".$reg_e['nombre']." con  serial #". $reg_e['serial']?>"
                                 class="select-hr">
+
                                 <?php echo $reg_e['serial']."   ".$reg_e['nombre']."   ".$reg_e['tipo_equipo']."   ".$reg_e['estado'] ?>
                             </option>
                             <p>Este es el serial: </p><?php echo $reg_e['serial']?>
@@ -184,7 +186,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     class="btn btn-primary" style="margin-left: 82%;
                     border-radius: 5px !important;">Asignar</button>
                 <!-- Modal -->
-                <form action="assets/php/asignarEquipo.php" method="POST">
+                <form method="POST" id="formAsignar">
                     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -196,17 +198,18 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                    <div id="result-asignacion"></div>
                                     <h2>Se asignará el quipo :</h2>
                                     <p class="color-datos-act" id="s_equipo"></p>
                                     <h2> al usuario :</h2>
                                     <p class="color-datos-act" id="n_user"></p>
-
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-dismiss="modal">Cancelar</button>
 
-                                    <button id="asignar-modal" type="button" class="btn btn-primary">Asignar</button>
+                                    <!-- <button id="asignar-modal" type="button" class="btn btn-primary">Asignar</button> -->
+                                    <input type="submit" class="btn btn-primary" value="Asignar">
                                 </div>
                             </div>
                         </div>
@@ -228,9 +231,9 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     <!-- Mostrar datos del equipo en el modal -->
-    <script>
+    <!-- <script>
         $('#selectEquipo').on("change", function () {
-            var equipo = $(this).val();
+            var equipo = $(this).val().toString().split("separar_serial")[1];
             var nombreEq =
                 $('#s_equipo').text(equipo + " ");
             console.log(equipo);
@@ -240,14 +243,13 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
             }
         })
 
-
         $('#selectUser').on("change", function () {
-            var user = $(this).val();
+            var user = $(this).val().toString().split("-")[1];
             $('#n_user').text(user);
             console.log(user);
         })
-    </script>
-
+    </script> -->
+<script src="assets/js/asignacion.js"></script>
 
 </body>
 
