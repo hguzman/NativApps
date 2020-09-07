@@ -254,7 +254,6 @@ if (!isset($sesion)) {
     <!-- Ajax valdiacion en BD en vivo -->
     <script type="text/javascript">
         $(document).ready(function () {
-
             $('#cedula').on('blur', function () {
                 $('#result-cedula').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
 
