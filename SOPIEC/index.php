@@ -41,6 +41,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
+                        <li><a href="ticket.php">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -98,11 +99,10 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         </ul>
                     </li>
                     <!--  Quinto/ver tickets-->
-
                     <li>
                         <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
                     </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
+                    <!--  Sexto/A cerca de SOPIEC-->
                     <li>
                         <a href="manuales.html"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
                     </li>
@@ -179,7 +179,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
                     class="btn btn-primary" style="margin-left: 82%;
                     border-radius: 5px !important;">Asignar</button>
-                <!-- Modal -->
+                <!-- Modal asignar -->
                 <form method="POST" id="formAsignar">
                     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -201,8 +201,6 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-dismiss="modal">Cancelar</button>
-
-                                    <!-- <button id="asignar-modal" type="button" class="btn btn-primary">Asignar</button> -->
                                     <input type="submit" class="btn btn-primary" value="Asignar">
                                 </div>
                             </div>
@@ -225,25 +223,8 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     <!-- Mostrar datos del equipo en el modal -->
-    <!-- <script>
-        $('#selectEquipo').on("change", function () {
-            var equipo = $(this).val().toString().split("separar_serial")[1];
-            var nombreEq =
-                $('#s_equipo').text(equipo + " ");
-            console.log(equipo);
-            if ($('#selectequipo').val() == undefined) {
-                // $('#asignar-modal').disable = true;
-                // alert("disabled")
-            }
-        })
-
-        $('#selectUser').on("change", function () {
-            var user = $(this).val().toString().split("-")[1];
-            $('#n_user').text(user);
-            console.log(user);
-        })
-    </script> -->
-<script src="assets/js/asignacion.js"></script>
+    <!-- Asignacion script -->
+    <script src="assets/js/asignacion.js"></script>
 
 </body>
 
