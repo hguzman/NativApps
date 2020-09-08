@@ -1,12 +1,6 @@
 ﻿<!DOCTYPE html>
 <?php
-session_start();
-$sesion = $_SESSION['username'];
-if (!isset($sesion)) {
-    header("location: login.php");
-} else {
-}
-
+require_once("assets/php/val_session_user.php");
 ?>
 
 <html>
