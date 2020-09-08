@@ -34,7 +34,7 @@ function asignarEquipo(e) {
         $('#result-asignacion').fadeIn(1000).html(data.mensaje);
         setTimeout(() => {
             window.location.href = '/SOPIEC/index.php';
-        },2000);
+        },1000);
     }
 });
 }
