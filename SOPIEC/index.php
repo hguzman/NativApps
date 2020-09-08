@@ -51,7 +51,6 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
-                        <li><a href="ticket.php">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -107,6 +106,11 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                             </li>
 
                         </ul>
+                    </li>
+                    <!--  Quinto/ver tickets-->
+
+                    <li>
+                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
                     <li>
