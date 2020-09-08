@@ -6,7 +6,7 @@ $rol = $_SESSION['rol'];
 if (!isset($sesion)) {
     header("location: login.php");
 } else {
-    if ($rol == "user") {
+    if ($rol == "admin") {
     } else {
         header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
     }
@@ -41,6 +41,8 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 </head>
 
 <body>
+
+
     <!-- Contenedor principal -->
     <div id="wrapper">
         <!-- Header -->
@@ -149,7 +151,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-8">
-                                                <input id="nombre" name="nombre" type="text" placeholder="Nombre"
+                                                <input id="nombre" name="nombre" type="text" placeholder="Nombre " readonly
                                                     class="form-control" value="">
                                             </div>
                                         </div>
@@ -238,19 +240,5 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
         src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
 
-
-<script>
-var nombre = document.getElementById('nombre');
-var email = document.getElementById('email');
-var asunto = document.getElementById('asunto');
-var mensjae = document.getElementById('mensjae');
-
-$('#enviar').on("submit",function(){
-        if ( nombre && email && asunto && mensaje != empty){
-            alert ("Su tucket ha sido creado exitosamente, en breves recibira respuesta del admin.");
-        }
-})
-</script>
 </body>
 
-</html>
