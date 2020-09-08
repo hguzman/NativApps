@@ -58,9 +58,9 @@ if (isset($_SESSION['login'])) {
         <!-- Botones dentro del banner -->
         <div class="imagen-banner">
             <img src="img/1755.png" class="img-fluid img-banner" alt="Responsive image">
-            <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
+            <!-- <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
             <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
-                productos</a>
+                productos</a> -->
         </div>
     </div>
     <!-- Contenedor principal -->
