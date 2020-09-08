@@ -48,7 +48,7 @@ if (!isset($sesion)) {
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
+                        <li><a href="ticket.php">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
