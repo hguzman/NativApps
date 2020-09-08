@@ -307,9 +307,7 @@ $(document).ready(function () {
       },
     },
   });
-
   //Validaciones registrar nuevo equipo
-  // $(document).ready(function () {
   $("#formregistrarequipo").bootstrapValidator({
     message: "This value is not valid",
     feedbackIcons: {
@@ -405,9 +403,7 @@ $(document).ready(function () {
       },
     },
   });
-  // });
   //Validaciones actualizar equipo
-  // $(document).ready(function () {
   $("#formActualizarEquipo").bootstrapValidator({
     message: "This value is not valid",
     feedbackIcons: {
@@ -503,5 +499,59 @@ $(document).ready(function () {
       },
     },
   });
-  // });
+  //Validaciones  ticket
+  $("#formticket").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
+      nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          notEmpty: {
+            message: "El nombre no puede estar vacio",
+          },
+          stringLength: {
+            min: 3,
+            max: 45,
+            message: "Nombre invalido",
+          },
+          regexp: {
+            regexp: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
+            message: "No se aceptan caracterés especiales en este campo",
+          },
+        },
+      },
+      email: {
+        message: "Porfavor digite un email valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      asunto: {
+        message: "Diligencie un asunto ",
+        validators: {
+          notEmpty: {
+            message: ">Este campo no puede estar vacio ",
+          },
+        },
+      },
+      mensaje: {
+        message: "Porfavor digite un Modelo  valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+
+    },
+  });
+
 });
+

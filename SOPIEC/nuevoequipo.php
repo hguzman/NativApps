@@ -60,13 +60,11 @@ if (!isset($sesion)) {
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <!--  Sidebar de opciones  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
