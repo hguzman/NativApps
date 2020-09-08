@@ -6,7 +6,8 @@ session_start();
 
 <head>
   <!-- Toastr Style -->
-
+  
+  <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
