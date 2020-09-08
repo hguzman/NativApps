@@ -58,9 +58,9 @@ if (isset($_SESSION['login'])) {
         <!-- Botones dentro del banner -->
         <div class="imagen-banner">
             <img src="img/1755.png" class="img-fluid img-banner" alt="Responsive image">
-            <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
+            <!-- <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
             <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
-                productos</a>
+                productos</a> -->
         </div>
     </div>
     <!-- Contenedor principal -->
@@ -102,7 +102,7 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Un software de inventariado de equipos de computo con niveles de acceso</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/login.php">Ingresar
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="SOPIEC/index.php">Ingresar
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
