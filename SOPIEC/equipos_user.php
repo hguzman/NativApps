@@ -1,20 +1,10 @@
 <?php
-require_once("assets/php/db.php");
+require_once("assets/php/val_session_user.php");
 ?>
 <?php
-
-$sesion = $_SESSION['username'];
-$rol = $_SESSION['rol'];
-if (!isset($sesion)) {
-    header("location: login.php");
-} else {
-    if ($rol == "user" || $rol = "admin") {
-    } else {
-        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
-    }
-}
-
+require_once("assets/php/db.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 

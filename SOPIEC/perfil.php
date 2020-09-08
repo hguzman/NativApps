@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <?php
 require("assets/php/db.php");
-$sesion = $_SESSION['username'];
-if (!isset($sesion)) {
-    header("location: login.php");
-} else {
-}
+require_once("assets/php/val_session_admin.php");
 
 ?>
 

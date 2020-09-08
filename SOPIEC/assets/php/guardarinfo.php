@@ -1,4 +1,7 @@
 <?php
+require_once("assets/php/val_session_admin.php");
+?>
+<?php
 // Incluir archivo de base de datos
 require_once("db.php");
 // Funcion para el botón enviar
@@ -39,19 +42,7 @@ if (isset($_POST['registrar'])) {
 }
 ?>
 
-<?php
-$sesion = $_SESSION['username'];
-$rol = $_SESSION['rol'];
-if (!isset($sesion)) {
-    header("location: login.php");
-} else {
-    if ($rol == "admin") {
-    } else {
-        header("location: logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
-    }
-}
 
-?>
 <!DOCTYPE html>
 <html>
 
