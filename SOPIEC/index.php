@@ -174,11 +174,11 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         </select>
                     </div>
                 </div>
-
                 <!-- Botón asignar -->
                 <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
                     class="btn btn-primary" style="margin-left: 82%;
                     border-radius: 5px !important;">Asignar</button>
+
                 <!-- Modal asignar -->
                 <form method="POST" id="formAsignar">
                     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
@@ -207,6 +207,12 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         </div>
                     </div>
                 </form>
+                <!-- Botón ver Asignaciones -->
+                <center> <a href="equiposAsignados.php" class="btn btn-success btn-lg r cntr-btn" id="modificarUser">Ver
+                        Asignaciones
+                        de equipos.</a></center>
+
+
             </div>
             <!-- /. PAGE INNER  -->
         </div>
