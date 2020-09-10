@@ -65,7 +65,7 @@ require_once("assets/php/db.php");
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
                     <li>
-                        <a href="#"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
+                        <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
                     </li>
                     </li>
                     <!-- Tercero/Inventario de equipos -->
