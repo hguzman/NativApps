@@ -1,5 +1,5 @@
 <?php
-require_once("assets/php/val_session_admin.php");
+require_once("val_session_admin.php");
 ?>
 <?php
 require_once("db.php");
@@ -65,7 +65,8 @@ require_once("db.php");
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevousuario.php">Crear Nuevo usuario</a>
@@ -77,7 +78,8 @@ require_once("db.php");
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="../../nuevoequipo.php">Agregar un equipo</a>
@@ -108,8 +110,10 @@ require_once("db.php");
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarusuario.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
+                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
+                                    id="buscar_usuario" name="buscar_usuario">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
+                                    id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -150,33 +154,37 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
                                 <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                    <!-- Contenido de la tabla -->
-                                    <tr class="actual">
-                                        <th scope="row">
-                                            <input class="form-control" type="number" value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula" name="cedula" readonl> </th>
-                                        <td> <?php echo $reg['primer_nombre'] ?></td>
-                                        <td> <?php echo $reg['area'] ?></td>
-                                        <td> <?php echo $reg['segundo_nombre'] ?></td>
-                                        <td> <?php echo $reg['primer_apellido'] ?> </td>
-                                        <td> <?php echo $reg['segundo_apellido'] ?> </td>
-                                        <td> <?php echo $reg['email'] ?> </td>
-                                        <td class="eliminar-editar">
-                                            <!-- botones editar y eliminar -->
-                                            <a id="edit" class="btn fa fa-pen" href="../../modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                <!-- Contenido de la tabla -->
+                                <tr class="actual">
+                                    <th scope="row">
+                                        <input class="form-control" type="number"
+                                            value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula"
+                                            name="cedula" readonl> </th>
+                                    <td> <?php echo $reg['primer_nombre'] ?></td>
+                                    <td> <?php echo $reg['area'] ?></td>
+                                    <td> <?php echo $reg['segundo_nombre'] ?></td>
+                                    <td> <?php echo $reg['primer_apellido'] ?> </td>
+                                    <td> <?php echo $reg['segundo_apellido'] ?> </td>
+                                    <td> <?php echo $reg['email'] ?> </td>
+                                    <td class="eliminar-editar">
+                                        <!-- botones editar y eliminar -->
+                                        <a id="edit" class="btn fa fa-pen"
+                                            href="../../modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="borrar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
-                                        </td>
-                                    </tr>
+                                        <a id="del" class="btn fa fa-trash-alt"
+                                            href="borrar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                    </td>
+                                </tr>
 
                     </div>
                 </div>
 
-            <?php
+                <?php
                                 }
                                 mysqli_close($conexion);
             ?>
-            </tbody>
-            </table>
+                </tbody>
+                </table>
             </div>
 
             <!-- /. ROW  -->

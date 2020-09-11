@@ -10,13 +10,8 @@ $(document).ready(function () {
     $("#n_user").text(user);
     console.log(user);
   });
-
-  // console.log($("#selectequipo").val());
-  // if ($("#selectequipo").val() == undefined) {
-  //   $("#asignar").attr("disabled", true);
-  // } else {
-  //   $("#asignar").attr("disabled", false);
-  // }
+  console.log($("#selectequipo").val());
+    
   $("#formAsignar").on("submit", asignarEquipo);
 });
 
@@ -43,3 +38,20 @@ function asignarEquipo(e) {
     },
   });
 }
+
+  
+// function validar() {
+//   var valor =$("#selectequipo").val()
+//   console.log(valor);
+//   if (valor == undefined) {
+//     // $("#asignar").attr("disabled", true);
+//     console.log("if");
+//     alert("aja");
+//   } else if (valor != undefined) {
+//     // $("#asignar").attr("disabled", false);
+//     console.log("else");
+//     alert("gud");
+//   }
+// }
+
+// $("#asignar").on("click",validar);
