@@ -131,16 +131,22 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         $registros = mysqli_query($conexion,"SELECT * FROM usuarios") or die("Problemas en el select:" . mysqli_error($conexion));
                         ?>
                     <div class="form-group multiple" id="user-list">
-                        <label class="centrar" for="exampleFormControlSelect2">Seleccione un usuario</label>
+
+                        <label class="centrar" for="exampleFormControlSelect2"> Cedula | Nombre | Apellido</label>
+                        
                         <select size="2" id="selectUser" class="escojer-user form-control"
                             id="exampleFormControlSelect2" name="selectUser">
+                            
+
+
                             <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
+                                
                             <option class="select-hr"
                                 value="<?php echo $reg['cedula']."-". $reg['primer_nombre']."   ".$reg['primer_apellido'] ?>">
 
-                                <?php echo $reg['cedula']."   ".$reg['primer_nombre']."   ".$reg['primer_apellido'] ?>
+                                <?php echo $reg['cedula']." | ".$reg['primer_nombre']." | ".$reg['primer_apellido'] ?>
                             </option>
 
                             <?php
@@ -154,7 +160,9 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     $registros_e = mysqli_query($conexion,"SELECT * FROM `equipos` WHERE cedula_FK = 0") or die("Problemas en el select:" . mysqli_error($conexion));
                     ?>
                     <div class="form-group multiple">
-                        <label class="centrar" for="exampleFormControlSelect2">Seleccione un equipo</label>
+
+                        <label class="centrar" for="exampleFormControlSelect2">Serial | Nombre | Tipo | Estado </label>
+                  
                         <select size="2" id="selectEquipo" class="escojer-user form-control"
                             id="exampleFormControlSelect2">
                             <?php
@@ -164,9 +172,9 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 value="<?php echo $reg_e['serial']."separar_serial".$reg_e['nombre']." con  serial #". $reg_e['serial']?>"
                                 class="select-hr">
 
-                                <?php echo $reg_e['serial']."   ".$reg_e['nombre']."   ".$reg_e['tipo_equipo']."   ".$reg_e['estado'] ?>
+                                <?php echo $reg_e['serial']." | ".$reg_e['nombre']." | ".$reg_e['tipo_equipo']." | ".$reg_e['estado'] ?>
                             </option>
-                            <p>Este es el serial: </p><?php echo $reg_e['serial']?>
+                            <!-- <p>Este es el serial: </p><?php echo $reg_e['serial']?> -->
                             <?php
                                 }
                                 mysqli_close($conexion);

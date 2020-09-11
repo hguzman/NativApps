@@ -138,6 +138,7 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 <?php
                                 while ($regas = mysqli_fetch_array($query_asignacion)) {
                                 ?>
+
                                     <!-- Contenido de la tabla -->
                                     <tr class="actual">
                                         <th scope="row">
@@ -152,7 +153,7 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                             <a id="del" class="btn fa fa-trash-alt" href="#" onclick="confirmacion_borrar('<?php echo $regas['cedula']; ?>.<?php echo $regas['serial'] ?>')"></a>
                                         </td>
                                     </tr>
-                    </div>
+                 </div>
                 </div>
             <?php
                                 }
@@ -187,6 +188,7 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
     <!-- Alerta borrar -->
     <script type="text/javascript">
+
         function confirmacion_borrar(texto) {
 
             var separado = texto.split(".");
@@ -194,7 +196,6 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
             var serial = separado[1];
 
             if (confirm(`¿Realmente desea deshacer la asignacion de equipo del usuario C.C ${cedula}? con el serial ${serial}?`)) {
-
                 toastr["error"]("Se ha destruido la asignación de equipo al usuario C.C #" + cedula + ".",
                     "Asignación eliminada")
                 toastr.options = {
@@ -215,7 +216,9 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     "hideMethod": "fadeOut"
                 }
                 setTimeout(() => {
+
                     window.location.href = "assets/php/deshacerAsignacion.php?cedula=" + cedula + "&" + "serial=" + serial
+
                 }, 2000);
             }
         }
