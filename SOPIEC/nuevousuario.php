@@ -22,6 +22,8 @@ require_once("assets/php/val_session_admin.php");
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -169,6 +171,7 @@ require_once("assets/php/val_session_admin.php");
                             <label for="contrasena">Contraseña</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena"
                                 placeholder="*********" require>
+                                <span class="fa fa-eye" id="mostrar" style="cursor:pointer;" > <span class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar contraseña</span></span>
                             <p class="mensaje text-danger" id="errorpass"></p>
 
                         </div>
@@ -283,6 +286,20 @@ require_once("assets/php/val_session_admin.php");
     <!-- Pass as Id -->
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $('#mostrar').click(function () {
+                //Comprobamos que la cadena NO esté vacía.
+                if ($(this).hasClass('fa-eye') && ($("#contrasena").val() !="")) {
+                    $('#contrasena').removeAttr('type');
+                    $('#mostrar').addClass('fas fa-eye-slash').removeClass('fa-eye');
+                    $('.pwdtxt').html("Ocultar contraseña");
+                } else {
+                    $('#contrasena').attr('type', 'password');
+                    $('#mostrar').addClass('fa fa-eye').removeClass('fas fa-eye-slash');
+                    $('.pwdtxt').html("Mostrar contraseña");
+                }
+            });
+
             $("#cedula").keyup(function () {
                 var value = $(this).val();
                 $("#contrasena").val(value);
