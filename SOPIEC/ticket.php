@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 require_once("assets/php/db.php");
-require_once("assets/php/val_session_admin.php");
+require_once("assets/php/val_session_user.php");
 
 $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 ?>
