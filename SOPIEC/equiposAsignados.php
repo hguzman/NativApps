@@ -146,12 +146,12 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 <!-- Contenido de la tabla -->
                                 <tr class="actual">
                                     <th scope="row">
-                                        <input class="form-control" type="number"
+                                        <input name="cedula" class="form-control" type="number"
                                             value="<?php echo $cedula = $regas['cedula'] ?>" readonly id="cedula"
                                             name="cedula" readonl> </th>
                                     <td> <?php echo $regas['primer_nombre'] ?></td>
                                     <td> <?php echo $regas['primer_apellido'] ?> </td>
-                                    <td> <?php echo $regas['serial'] ?> </td>
+                                    <td id="seri"> <?php echo $regas['serial'] ?> </td>
                                     <td> <?php echo $regas['marca'] ?> </td>
                                     <td> <?php echo $regas['nombre'] ?> </td>
                                     <td class="eliminar-editar">
@@ -197,13 +197,10 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <!-- Alerta borrar -->
     <script type="text/javascript">
         function confirmacion_borrar(cedula) {
+            if (confirm(`¿Realmente desea deshacer la asignacion de equipo del usuario C.C ${cedula}?`)) {
 
-            // var mostrarSerial = document.getElementById('mostrarSerial').value;
-            // console.log(mostrarSerial);
-            if (confirm(`¿Realmente desea deshacer la asignacion del usuario C.C ${cedula}?`)) {
-                window.location.href = "assets/php/borrar.php?cedula=" + cedula
-
-                toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+                toastr["error"]("Se ha destruido la asignación de equipo al usuario C.C #" + cedula + ".",
+                    "Asignación eliminada")
                 toastr.options = {
                     "closeButton": false,
                     "debug": false,
@@ -221,6 +218,9 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
+                setTimeout(() => {
+                    window.location.href = "assets/php/deshacerAsignacion.php?cedula=" + cedula
+                }, 2000);
             }
         }
     </script>

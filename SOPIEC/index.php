@@ -125,15 +125,15 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 <h3>Asignación de equipos</h3>
                 <!-- Modal -->
 
-                <div class="listas-eq-us">
+                <div id="listas-eq-us" class="listas-eq-us">
                     <!-- Query Seleccionar usuarios-->
                     <?php 
                         $registros = mysqli_query($conexion,"SELECT * FROM usuarios") or die("Problemas en el select:" . mysqli_error($conexion));
                         ?>
                     <div class="form-group multiple" id="user-list">
                         <label class="centrar" for="exampleFormControlSelect2">Seleccione un usuario</label>
-                        <select id="selectUser" multiple class="escojer-user form-control"
-                            id="exampleFormControlSelect2">
+                        <select size="2" id="selectUser" class="escojer-user form-control"
+                            id="exampleFormControlSelect2" name="selectUser">
                             <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
@@ -155,7 +155,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     ?>
                     <div class="form-group multiple">
                         <label class="centrar" for="exampleFormControlSelect2">Seleccione un equipo</label>
-                        <select id="selectEquipo" multiple class="escojer-user form-control"
+                        <select size="2" id="selectEquipo" class="escojer-user form-control"
                             id="exampleFormControlSelect2">
                             <?php
                                 while ($reg_e = mysqli_fetch_array($registros_e)) {

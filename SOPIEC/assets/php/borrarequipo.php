@@ -1,5 +1,5 @@
 <?php
-require_once("assets/php/val_session_admin.php");
+require_once("val_session_admin.php");
 require_once("db.php");
 
 $serial = $_GET['serial'];
