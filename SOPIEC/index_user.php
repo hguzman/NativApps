@@ -34,7 +34,7 @@ require_once("assets/php/val_session_user.php");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="index_user.php"><img src="assets/img/SOPIEC.ico" alt="" width="10%"> SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
