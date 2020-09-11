@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <?php
 require_once("assets/php/db.php");
-$sesion = $_SESSION['username'];
-$rol = $_SESSION['rol'];
-if (!isset($sesion)) {
-    header("location: login.php");
-} else {
-    if ($rol == "admin") {
-    } else {
-        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
-    }
-}
+require_once("assets/php/val_session_admin.php");
 
 $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 ?>
@@ -141,7 +132,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-11">
                             <div class="well well-sm">
                                 <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
                                     method="POST">

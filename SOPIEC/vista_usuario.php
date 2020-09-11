@@ -107,14 +107,14 @@ require("assets/php/db.php");
                 <h2>Mi usuario</h2>
                 <hr>
 
-                <p> <strong> ID/Cedula: </strong> <?php echo $reg['cedula'] ?> </p>
-                <p> <strong>Area:</strong> </strong> <?php echo $reg['area'] ?> </p>
-                <p><strong> Primer nombre: </strong> <?php echo $reg['primer_nombre'] ?> </p>
-                <p><strong> Segundo nombre: </strong> <?php echo $reg['segundo_nombre'] ?> </p>
-                <p><strong> Primer Apellido: </strong> <?php echo $reg['primer_apellido'] ?> </p>
-                <p><strong> Segundo Apellido: </strong> <?php echo $reg['segundo_apellido'] ?> </p>
-                <p><strong> Correo:</strong> <?php echo $reg['email'] ?></p>
-                <p><strong> Rol: </strong><?php echo $reg['rol'] ?></p>
+                <p> <strong> ID/Cedula: </strong> <span class="color-datos-act"><?php echo $reg['cedula'] ?></span> </p>
+                <p> <strong>Area:</strong> </strong> <span class="color-datos-act"><?php echo $reg['area'] ?></span> </p>
+                <p><strong> Primer nombre: </strong> <span class="color-datos-act"><?php echo $reg['primer_nombre'] ?></span> </p>
+                <p><strong> Segundo nombre: </strong> <span class="color-datos-act"><?php echo $reg['segundo_nombre'] ?></span> </p>
+                <p><strong> Primer Apellido: </strong> <span class="color-datos-act"><?php echo $reg['primer_apellido'] ?></span> </p>
+                <p><strong> Segundo Apellido: </strong> <span class="color-datos-act"><?php echo $reg['segundo_apellido'] ?></span> </p>
+                <p><strong> Correo:</strong> <span class="color-datos-act"><?php echo $reg['email'] ?></span></p>
+                <p><strong> Rol: </strong><span class="color-datos-act"><?php echo $reg['rol'] ?></span></p>
 
 
 
