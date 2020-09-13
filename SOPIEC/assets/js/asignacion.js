@@ -1,18 +1,19 @@
 $(document).ready(function () {
   $("#selectEquipo").on("change", function () {
-    var equipo = $(this).val().toString().split("separar_serial")[1];
-    var nombreEq = $("#s_equipo").text(equipo + " ");
-    console.log(equipo);
+    validar();
+    const equipo = $(this).val().toString().split("separar_serial")[1];
+    $("#s_equipo").text(equipo + " ");
   });
 
   $("#selectUser").on("change", function () {
-    var user = $(this).val().toString().split("-")[1];
+    validar();
+    const user = $(this).val().toString().split("-")[1];
     $("#n_user").text(user);
-    console.log(user);
   });
-  console.log($("#selectequipo").val());
-    
+
   $("#formAsignar").on("submit", asignarEquipo);
+
+  document.getElementById("asignar").disabled = true;
 });
 
 function asignarEquipo(e) {
@@ -39,7 +40,14 @@ function asignarEquipo(e) {
   });
 }
 
-  
+function validar() {
+  const serial = document.getElementById("selectEquipo").value;
+  const cedula = document.getElementById("selectUser").value;
+  if (serial !== "" && cedula !== "") {
+    document.getElementById("asignar").disabled = false;
+  }
+}
+
 // function validar() {
 //   var valor =$("#selectequipo").val()
 //   console.log(valor);

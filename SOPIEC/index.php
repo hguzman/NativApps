@@ -201,7 +201,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 </div>
                                 <div class="modal-body">
                                     <div id="result-asignacion"></div>
-                                    <h2>Se asignará el quipo :</h2>
+                                    <h2>Se asignará el equipo :</h2>
                                     <p class="color-datos-act" id="s_equipo"></p>
                                     <h2> al usuario :</h2>
                                     <p class="color-datos-act" id="n_user"></p>
