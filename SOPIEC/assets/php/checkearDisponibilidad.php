@@ -16,7 +16,7 @@ if (isset($_POST['cedula'])) {
     } else {
         //En caso de que no esté registrada
         $data ['status'] = 'ok';
-        $data ['mensaje'] = '<div class="alert alert-success" ><strong>Enhorabuena!</strong>Esta cedual está disponible.</div>';
+        $data ['mensaje'] = '<div class="alert alert-success" ><strong>Enhorabuena!</strong>Esta cedula está disponible.</div>';
     }
     // Conversión a Json
     echo json_encode($data);

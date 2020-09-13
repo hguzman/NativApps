@@ -220,7 +220,7 @@ where cedula='$cedula'") or
         function confirmacion_borrar(cedula) {
 
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
-                window.location.href = "borrar.php?cedula=" + cedula
+
 
                 toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
 
@@ -241,6 +241,10 @@ where cedula='$cedula'") or
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
+
+                setTimeout(() => {
+                    window.location.href = "borrar.php?cedula=" + cedula
+                }, 1000);
             }
         }
     </script>
