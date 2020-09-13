@@ -224,9 +224,7 @@ require_once("assets/php/db.php");
         function confirmacion_borrar(serial, nombre) {
 
             if (confirm("¿Realmente desea eliminar el equipo con serial #" + serial)) {
-                window.location.href = "assets/php/borrarequipo.php?serial=" + serial
-
-                toastr["warning"]("El usuario con C.C #" + serial + " ha sido eliminado.", "Usuario eliminado")
+                toastr["error"]("El equipo con serial #" + serial + " ha sido eliminado.", "Equipo eliminado")
 
                 toastr.options = {
                     "closeButton": false,
@@ -245,6 +243,10 @@ require_once("assets/php/db.php");
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
+
+                setTimeout(() => {
+                    window.location.href = "assets/php/borrarequipo.php?serial=" + serial 
+                }, 1500);
             }
         }
     </script>

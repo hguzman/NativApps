@@ -215,9 +215,8 @@ require_once("assets/php/val_session_admin.php");
         function confirmacion_borrar(cedula, nombre) {
 
             if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
-                window.location.href = "assets/php/borrar.php?cedula=" + cedula
 
-                toastr["warning"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+                toastr["error"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
                 toastr.options = {
                     "closeButton": false,
                     "debug": false,
@@ -235,6 +234,10 @@ require_once("assets/php/val_session_admin.php");
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
+
+                setTimeout(() => {
+                    window.location.href = "assets/php/borrar.php?cedula=" + cedula 
+                }, 1500);
             }
         }
     </script>

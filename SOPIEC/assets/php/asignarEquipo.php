@@ -5,8 +5,7 @@ if (isset($_POST['cedula']) && isset($_POST['serial'])) {
     $serial = (string)$_POST['serial'];
     $result = $conexion->query(
         "UPDATE equipos
-    SET cedula_FK = '$cedula' 
-    WHERE serial = '$serial'");
+    SET cedula_FK = '$cedula' WHERE serial = '$serial'");
     if ($result) {
         $data ['status'] = 'ok';
         $data ['mensaje'] = '<div class="alert alert-success" ><strong>Enhorabuena! </strong>Asignacion completada</div>';

@@ -405,3 +405,9 @@ nav {
 option.select-hr {
   border-bottom: 2px dotted #12ca71;
 }
+
+.cntr-btn {
+  display: block;
+  margin-top: 4rem;
+  width: 50%;
+}

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once("assets/php/val_session_user.php");
 require("assets/php/db.php");
 ?>
@@ -13,7 +13,8 @@ require("assets/php/db.php");
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -24,16 +25,6 @@ require("assets/php/db.php");
 
 
 <body>
-    <!-- recuperar datos de la DB -->
-    <?php
-    
-
-    $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ") or
-        die("Problemas en el select:" . mysqli_error($conexion));
-    $reg = mysqli_fetch_array($registros);
-    ?>
-
-
     <!-- Contenedor principal -->
     <div id="wrapper">
         <!-- Header -->
@@ -104,28 +95,43 @@ require("assets/php/db.php");
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <h2>Mi usuario</h2>
+                <h2>Mi Equipo</h2>
                 <hr>
+                <!-- recuperar datos de la DB -->
+                <?php
 
-                <p> <strong> ID/Cedula: </strong> <span class="color-datos-act"><?php echo $reg['cedula'] ?></span> </p>
-                <p> <strong>Area:</strong> </strong> <span class="color-datos-act"><?php echo $reg['area'] ?></span> </p>
-                <p><strong> Primer nombre: </strong> <span class="color-datos-act"><?php echo $reg['primer_nombre'] ?></span> </p>
-                <p><strong> Segundo nombre: </strong> <span class="color-datos-act"><?php echo $reg['segundo_nombre'] ?></span> </p>
-                <p><strong> Primer Apellido: </strong> <span class="color-datos-act"><?php echo $reg['primer_apellido'] ?></span> </p>
-                <p><strong> Segundo Apellido: </strong> <span class="color-datos-act"><?php echo $reg['segundo_apellido'] ?></span> </p>
-                <p><strong> Correo:</strong> <span class="color-datos-act"><?php echo $reg['email'] ?></span></p>
-                <p><strong> Rol: </strong><span class="color-datos-act"><?php echo $reg['rol'] ?></span></p>
+                 $registros = mysqli_query($conexion, "select * from equipos WHERE cedula_FK = '$sesion' ") or
+                  die("Problemas en el select:" . mysqli_error($conexion));
+                   $reg = mysqli_fetch_array($registros);
+                    
+                //    while ($reg = mysqli_fetch_array($registros)){
+                //        echo $reg['marca'];
+                //    }
+                
+                ?>
+                <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span> </p>
 
-
-
-
+                <p><strong> Marca: </strong> <span class="color-datos-act"><?php echo $reg['marca'] ?></span>
+                </p>
+                <p><strong> Tipo de equipo: </strong> <span
+                        class="color-datos-act"><?php echo $reg['tipo_equipo'] ?></span> </p>
+                <p><strong> Procesador: </strong> <span class="color-datos-act"><?php echo $reg['procesador'] ?></span>
+                </p>
+                <p><strong> Memoria RAM: </strong> <span class="color-datos-act"><?php echo $reg['ram'] ?></span> </p>
+                <p><strong> Disco duro:</strong> <span class="color-datos-act"><?php echo $reg['disco_duro'] ?></span>
+                </p>
+                <p><strong> Sistema operativo: </strong><span
+                        class="color-datos-act"><?php echo $reg['sistema_operativo'] ?></span></p>
+                <p><strong> Estado: </strong><span class="color-datos-act"><?php echo $reg['estado'] ?></span></p>
 
                 <br>
                 <?php
+                if (!$reg){
+                    echo "<div class='alert alert-danger' role='alert'>No tiene ningún equipo asignado</div>";
+                }
                 mysqli_free_result($registros);
                 mysqli_close($conexion);
                 ?>
-
 
             </div>
             <!-- /. PAGE INNER  -->
