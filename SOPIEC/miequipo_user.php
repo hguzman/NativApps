@@ -1,6 +1,21 @@
 <?php
 require_once("assets/php/val_session_user.php");
 require("assets/php/db.php");
+
+ $registros = mysqli_query($conexion, "select * from equipos WHERE cedula_FK = '$sesion' ") or
+  die("Problemas en el select:" . mysqli_error($conexion));
+  
+  $filas = mysqli_num_rows($registros);
+
+  if($filas < 2 ){
+        $cantidad  = "Mi equipo";
+  } else{
+      if($filas >= 2){
+          $cantidad = "Mis equipos";
+      };
+  };
+
+   $reg = mysqli_fetch_array($registros);
 ?>
 <!DOCTYPE html>
 
@@ -95,20 +110,15 @@ require("assets/php/db.php");
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <h2>Mi Equipo</h2>
+                <h2><?php echo $cantidad ?></h2>
                 <hr>
-                <!-- recuperar datos de la DB -->
-                <?php
-
-                 $registros = mysqli_query($conexion, "select * from equipos WHERE cedula_FK = '$sesion' ") or
-                  die("Problemas en el select:" . mysqli_error($conexion));
-                   $reg = mysqli_fetch_array($registros);
+<?php
                     
-                //    while ($reg = mysqli_fetch_array($registros)){
-                //        echo $reg['marca'];
-                //    }
+                    while ($reg = mysqli_fetch_array($registros)){
+                    
                 
                 ?>
+                <div class="col-lg-3 well col-md-offset-1">
                 <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span> </p>
 
                 <p><strong> Marca: </strong> <span class="color-datos-act"><?php echo $reg['marca'] ?></span>
@@ -124,11 +134,15 @@ require("assets/php/db.php");
                         class="color-datos-act"><?php echo $reg['sistema_operativo'] ?></span></p>
                 <p><strong> Estado: </strong><span class="color-datos-act"><?php echo $reg['estado'] ?></span></p>
 
-                <br>
+                </div>
+               
+                
                 <?php
-                if (!$reg){
+               
+            } 
+            if ($filas < 1){
                     echo "<div class='alert alert-danger' role='alert'>No tiene ningún equipo asignado</div>";
-                }
+                };
                 mysqli_free_result($registros);
                 mysqli_close($conexion);
                 ?>
