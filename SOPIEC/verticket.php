@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <?php
-require_once("assets/php/db.php");
-require_once("assets/php/val_session_admin.php");
-
-$cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
+include("assets/php/db.php");
+?>
+<?php
+require_once("assets/php/val_session_admin.php")
 ?>
 
 <html>
 
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear Ticket</title>
 
@@ -33,7 +33,21 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
 <body>
 
-
+    <?php
+    $id = $_REQUEST['id'];
+    require_once("assets/php/db.php");
+    $registros = mysqli_query($conexion, "select * from ticket
+                        where id= '$id' ") or
+        die("Problemas en el select:" . mysqli_error($conexion));
+        $reg = mysqli_fetch_array($registros);
+        
+     $id = $reg['id'];
+        $nombre = $reg['nombre'];
+        $correo = $Reg['email'];
+        $asunto = $reg['asunto'];
+        $mensaje = $reg['mensaje'];
+         
+    ?>
     <!-- Contenedor principal -->
     <div id="wrapper">
         <!-- Header -->
@@ -125,14 +139,14 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Area de ticket</h2>
+                        <h2>ticket no# <?php echo $id; ?></h2>
                     </div>
                 </div>
                 <hr />
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-11">
+                        <div class="col-md-12">
                             <div class="well well-sm">
                                 <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
                                     method="POST">
@@ -142,41 +156,37 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-8">
-                                                <input id="nombre" name="nombre" type="text" placeholder="Nombre " readonly
-                                                    class="form-control" value="">
+                                                <input id="nombre" name="nombre" type="text"
+                                                    value="<?php echo $nombre; ?> " readonly class="form-control">
                                             </div>
                                         </div>
-
+                                        <legend class="text-center header"></legend>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-envelope-o bigicon"></i></span>
+                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-8">
-                                                <input id="email" name="email" type="email" placeholder="Email "
-                                                    class="form-control">
+                                                <input id="email" name="email" type="email"
+                                                    value="<?php echo $reg['email'] ?>" readonly class="form-control">
                                             </div>
+                                            
                                         </div>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-comment"></i></span>
                                             <div class="col-md-8">
-                                                <input id="asunto" name="asunto" type="text" placeholder="Asunto"
-                                                    class="form-control">
+                                                <input id="asunto" name="asunto" type="text"
+                                                    value="<?php echo $asunto; ?>" readonly class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-pencil-square-o bigicon"></i></span>
                                             <div class="col-md-8">
-                                                <textarea class="form-control" id="mensaje" name="mensaje"
-                                                    placeholder="Enter your massage for us here. We will get back to you within 2 business days."
-                                                    rows="7"></textarea>
+                                                <textarea class="form-control" id="mensaje" name="mensaje" readonly require
+                                                     rows="7"> <?php echo $mensaje; ?></textarea>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <div class="col-md-12 text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg" name="Enviar"
-                                                    id="enviar">Enviar</button>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -188,7 +198,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
             </div>
 
             <!-- /. ROW  -->
-            </div>
+        </div>
         <!-- /. PAGE INNER  -->
 
     </div>
@@ -233,3 +243,4 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
 </body>
 
+</html>
