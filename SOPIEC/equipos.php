@@ -139,15 +139,15 @@ require_once("assets/php/db.php");
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">Serial</th>
-                                    <th scope="col">marca</th>
-                                    <th scope="col">nombre</th>
+                                    <th scope="col">Marca</th>
+                                    <th scope="col">Nombre</th>
                                     <th scope="col">Tipo de equipo</th>
                                     <th scope="col">Modelo de equipo</th>
-                                    <th scope="col">procesador</th>
-                                    <th scope="col">ram</th>
-                                    <th scope="col">disco duro</th>
-                                    <th scope="col">sistema operativo</th>
-                                    <th scope="col">estado</th>
+                                    <th scope="col">Procesador</th>
+                                    <th scope="col">Ram</th>
+                                    <th scope="col">Disco duro</th>
+                                    <th scope="col">Sistema operativo</th>
+                                    <th scope="col">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -224,9 +224,7 @@ require_once("assets/php/db.php");
         function confirmacion_borrar(serial, nombre) {
 
             if (confirm("¿Realmente desea eliminar el equipo con serial #" + serial)) {
-                window.location.href = "assets/php/borrarequipo.php?serial=" + serial
-
-                toastr["warning"]("El usuario con C.C #" + serial + " ha sido eliminado.", "Usuario eliminado")
+                toastr["error"]("El equipo con serial #" + serial + " ha sido eliminado.", "Equipo eliminado")
 
                 toastr.options = {
                     "closeButton": false,
@@ -245,6 +243,10 @@ require_once("assets/php/db.php");
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
+
+                setTimeout(() => {
+                    window.location.href = "assets/php/borrarequipo.php?serial=" + serial 
+                }, 1500);
             }
         }
     </script>

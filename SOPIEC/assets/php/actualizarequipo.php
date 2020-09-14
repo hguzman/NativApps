@@ -1,5 +1,5 @@
 <?php
-require_once("assets/php/val_session_admin.php");
+require_once("val_session_admin.php");
 ?>
 <?php
 // Incluir archivo de base de datos
@@ -158,13 +158,13 @@ where serial='$serial'") or
 
                         <!-- Datos del equipo actualizado -->
                         <div class="datos-user-act">
-                            <h2>serial: <span class="color-datos-act"><?php echo $serial ?> </span></h2>
+                            <h2>Serial: <span class="color-datos-act"><?php echo $serial ?> </span></h2>
                             <h2>Marca: <span class="color-datos-act"><?php echo $marca ?> </span></h2>
                             <h2>Nombre: <span class="color-datos-act"><?php echo $nombre ?> </span></p>
                                 <h2>Tipo equipo: <span class="color-datos-act"><?php echo $tipo_equipo?> </span></h2>
                                 <h2>Modelo equipo: <span class="color-datos-act"><?php echo $modelo_equipo?> </span>
                                 </h2>
-                                <h2>procesador: <span class="color-datos-act"><?php echo $procesador?> </span></h2>
+                                <h2>Procesador: <span class="color-datos-act"><?php echo $procesador?> </span></h2>
                                 <h2>Memoria Ram: <span class="color-datos-act"><?php echo $ram?> </span></h2>
                                 <h2>Sistema Operativo: <span class="color-datos-act"><?php echo $sistema_operativo?>
                                     </span></h2>
@@ -177,7 +177,7 @@ where serial='$serial'") or
                                 href="../../modificarequipo.php?serial=<?php echo $serial ?>"></a>
                             <label for="del" class="fa">Eliminar: </label>
                             <a id="del" class="btn fa fa-trash-alt" href="#"
-                                onclick="confirmacion_borrar('<?php  $serial ?>')"></a>
+                                onclick="confirmacion_borrar('<?php  echo $serial ; ?>')"></a>
                         </div>
                         <!-- Boton Ver todos los equipos. -->
                         <div class="col-md-4 col-sm-12">
@@ -217,17 +217,10 @@ where serial='$serial'") or
 
     <!-- Alerta borrar -->
     <script type="text/javascript">
-        // var nombre = document.getElementById("nombre");
-        // console.log(nombre.value);
+        function confirmacion_borrar(serial, nombre) {
 
-        function confirmacion_borrar(serial) {
-            var ser = document.getElementById('mostrarCC').value;
-            console.log(serial);
-            console.log(ser);
-            if (confirm(`¿Realmente desea eliminar el equipo con Serial ${serial}?`)) {
-                window.location.href = "borrarequipo.php?serial=" + serial
-
-                toastr["warning"]("El equipo con Serial #" + serial + " ha sido eliminado.", "Usuario eliminado")
+            if (confirm("¿Realmente desea eliminar el equipo con serial #" + serial)) {
+                toastr["error"]("El equipo con serial #" + serial + " ha sido eliminado.", "Equipo eliminado")
 
                 toastr.options = {
                     "closeButton": false,
@@ -246,8 +239,13 @@ where serial='$serial'") or
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
+
+                setTimeout(() => {
+                    window.location.href = "borrarequipo.php?serial=" + serial
+                }, 1500);
             }
         }
+    </script>
     </script>
 
     <!-- Alerta equipo actualizado -->

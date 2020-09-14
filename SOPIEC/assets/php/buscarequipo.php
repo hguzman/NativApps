@@ -1,5 +1,5 @@
 <?php
-require_once("assets/php/val_session_admin.php");
+require_once("val_session_admin.php");
 ?>
 <?php
 require_once("db.php");
@@ -104,7 +104,7 @@ require_once("db.php");
                     <div class="col-md-12">
 
                         <div class="equipos-buscar">
-                            <h2>equipos</h2>
+                            <h2>Equipos</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo.php" method="GET">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Serial" aria-label="Search" id="buscar_equipo" name="buscar_equipo">
@@ -118,7 +118,16 @@ require_once("db.php");
                 <!-- Busqueda por distintos criterios -->
                 <?php
                 $registros = mysqli_query($conexion, "select serial,marca,nombre,tipo_equipo,modelo_equipo,procesador,ram,disco_duro,sistema_operativo
-                    from equipos where serial ='$_REQUEST[buscar_equipo]' 
+                    from equipos where 
+                    serial ='$_REQUEST[buscar_equipo]'
+                    or marca ='$_REQUEST[buscar_equipo]' 
+                    or nombre ='$_REQUEST[buscar_equipo]'
+                    or tipo_equipo ='$_REQUEST[buscar_equipo]'
+                    or modelo_equipo ='$_REQUEST[buscar_equipo]'
+                    or procesador ='$_REQUEST[buscar_equipo]'
+                    or ram ='$_REQUEST[buscar_equipo]'
+                    or disco_duro ='$_REQUEST[buscar_equipo]'
+                    or sistema_operativo ='$_REQUEST[buscar_equipo]'
 ")
                     or
                     die("Problemas en el select:" . mysqli_error($conexion));
@@ -131,7 +140,7 @@ require_once("db.php");
                 // }
                 
                 ?>
-                <div id="contenedor-equipos" class="contenedor-equipos">
+                <div id="contenedor-equipos" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
                         <!-- Tabla de valores en base de datos -->
                         <table class="table">

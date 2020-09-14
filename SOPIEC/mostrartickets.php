@@ -1,18 +1,6 @@
 <?php
 require_once("assets/php/db.php");
-?>
-<?php
-
-$sesion = $_SESSION['username'];
-$rol = $_SESSION['rol'];
-if (!isset($sesion)) {
-    header("location: login.php");
-} else {
-    if ($rol == "admin") {
-    } else {
-        header("location: assets\php\logout.php"); //Esta ruta hay que cambairla cuando se suba al hosting
-    }
-}
+require_once("assets/php/val_session_admin.php");
 
 ?>
 
@@ -119,10 +107,10 @@ if (!isset($sesion)) {
         </nav>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
-        
+
         <div id="page-wrapper">
             <div id="page-inner">
-                        <h2>Tickets pendientes</h2>
+                <h2>Tickets pendientes</h2>
                 <hr />
 
                 <!-- query -->
@@ -151,9 +139,8 @@ if (!isset($sesion)) {
                                 <!-- Contenido de la tabla -->
                                 <tr class="actual">
                                     <th scope="row">
-                                        <input class="form-control" type="number"
-                                            value="<?php echo $id = $reg['id'] ?>" readonly id="id"
-                                            name="id" readonl> </th>
+                                        <input class="form-control" type="number" value="<?php echo $id = $reg['id'] ?>"
+                                            readonly id="id" name="id" readonl> </th>
                                     <td> <?php echo $reg['nombre'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
@@ -163,7 +150,7 @@ if (!isset($sesion)) {
                                             href="verticket.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
 
                                     </td>
-                                       
+
                                 </tr>
 
                     </div>
@@ -201,7 +188,7 @@ if (!isset($sesion)) {
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
 
-  
+
 </body>
 
 </html>
