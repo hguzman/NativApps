@@ -139,15 +139,15 @@ require_once("assets/php/db.php");
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">Serial</th>
-                                    <th scope="col">marca</th>
-                                    <th scope="col">nombre</th>
+                                    <th scope="col">Marca</th>
+                                    <th scope="col">Nombre</th>
                                     <th scope="col">Tipo de equipo</th>
                                     <th scope="col">Modelo de equipo</th>
-                                    <th scope="col">procesador</th>
-                                    <th scope="col">ram</th>
-                                    <th scope="col">disco duro</th>
-                                    <th scope="col">sistema operativo</th>
-                                    <th scope="col">estado</th>
+                                    <th scope="col">Procesador</th>
+                                    <th scope="col">Ram</th>
+                                    <th scope="col">Disco duro</th>
+                                    <th scope="col">Sistema operativo</th>
+                                    <th scope="col">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
