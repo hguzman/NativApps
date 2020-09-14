@@ -117,7 +117,7 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 </div>
                 <hr />
                 <?php
-                $query_asignacion = mysqli_query($conexion, "select cedula,primer_nombre,primer_apellido,serial,marca,nombre from equipos,usuarios where cedula=cedula_FK") or die("Problemas en el select:" . mysqli_error($conexion));
+                $query_asignacion = mysqli_query($conexion, "SELECT u.cedula,u.primer_nombre,u.primer_apellido,e.serial,e.marca,e.nombre FROM equipos e INNER JOIN usuarios u ON e.cedula_FK = u.cedula") or die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
