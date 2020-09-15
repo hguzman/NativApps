@@ -91,6 +91,9 @@ require_once("assets/php/db.php");
                             </li>
 
                         </ul>
+                    <li>
+                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
+                    </li>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
                     <li>
