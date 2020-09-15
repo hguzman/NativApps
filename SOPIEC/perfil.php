@@ -27,7 +27,7 @@ require_once("assets/php/val_session_admin.php");
 <body>
     <!-- recuperar datos de la DB -->
     <?php
-    
+
 
     $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ") or
         die("Problemas en el select:" . mysqli_error($conexion));
@@ -66,14 +66,14 @@ require_once("assets/php/val_session_admin.php");
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
-                    <?php
-                    $query_a = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
+                        <?php
+                        $query_a = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
 
-                    $registros_a = mysqli_query($conexion, $query_a) or
-                        die("Problemas en el select:" . mysqli_error($conexion));
-                    $reg_a = mysqli_fetch_array($registros_a)
-                    ?>
-                        <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a>
+                        $registros_a = mysqli_query($conexion, $query_a) or
+                            die("Problemas en el select:" . mysqli_error($conexion));
+                        $reg_a = mysqli_fetch_array($registros_a)
+                        ?>
+                        <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="150px" width="100%"></td></a>
                     </li>
                     <!-- Primero/inicio -->
                     <li>
@@ -142,7 +142,7 @@ require_once("assets/php/val_session_admin.php");
                 </div>
                 <!--  $avatar  -->
                 <div class="col-lg-6">
-                   
+
 
                     <center> <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a> </center>
                     <!-- Button trigger modal -->
@@ -162,59 +162,17 @@ require_once("assets/php/val_session_admin.php");
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <h3> Cargar imagen jpg</h3>
-                                    <form enctype="multipart/form-data" action="assets\php\guardar.php" method="POST">
-
-                                        <input type="text" name="nombre" id="nombre" required><br><br>
-                                        <input type="file" name="imagen" id="imagen" required><br>
-                                        <input type="submit" value="subir archivo">
-                                    </form>
- 
-    <h3>Seleccionar imagen de la BD</h3>
                                     <center>
-        <table border="2">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Imagen</th>
-                    <th>Opciones</th>
-                </tr>
-
-            </thead>
-            <tbody>
-                <?php
-                
-                $query_b = "SELECT * from avatares";
-
-                $registros_b = mysqli_query($conexion, $query_b) or
-                    die("Problemas en el select:" . mysqli_error($conexion));
-
-                while ($reg_b = mysqli_fetch_array($registros_b)) {
-                ?>
-                    <tr>
-                        <td><?php echo $reg_b['ID'] ?></td>
-                        <td><?php echo $reg_b['nombre'] ?></td>
-                        <td><img src="data:image/jpg;base64, <?php echo base64_encode($reg_b['imagen']) ?>" height="200px"></td>
-                        <td><a id="edit" class="btn btn-success" href="assets/php/actualizar_avatar.php?id=<?php echo $reg_b['ID']; ?>"> SELECCIONAR</a>
-                        <a id="del" class="btn btn-danger" href="assets/php/eliminar_avatar.php?id=<?php echo $reg_b['ID']; ?>"> ELIMINAR</a></td>
-                    </tr>
-
-
-
-                <?php
-                };
-                mysqli_free_result($registros_b);
-                ?>
-
-
-            </tbody>
-        </table>
-    </center>
+                                        <h3> Cargar imagen jpg</h3>
+                                        <form enctype="multipart/form-data" action="assets\php\guardar.php" method="POST">
+                                            <input class="form-control" type="file" name="imagen" id="imagen" required><br>
+                                            <input class="form-control btn btn-success" type="submit" value="subir archivo">
+                                        </form>
+                                    </center>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Understood</button>
+                                    <a href="assets\php\eliminar_avatar.php" class="btn btn-danger">Eliminar</a>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">ACEPTAR</button>
                                 </div>
                             </div>
                         </div>

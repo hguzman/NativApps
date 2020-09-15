@@ -411,3 +411,15 @@ option.select-hr {
   margin-top: 4rem;
   width: 50%;
 }
+
+/*PANEL DE ESTILOS DEL INPUT TYPE FILE */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/*PANEL DE ESTILOS DEL INPUT TYPE FILE FIN*/
