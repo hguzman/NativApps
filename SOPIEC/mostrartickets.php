@@ -92,7 +92,7 @@ require_once("assets/php/val_session_admin.php");
                     </li>
                     <!--  Quinto/A tickets-->
                     <li>
-                        <a href="mostrarticket.php"><i class="fa fa-qrcode "></i>Tickets</a>
+                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
                     </li>
                     <!--  Sexto/A cerca de SOPIEC-->
                     <li>
@@ -113,7 +113,7 @@ require_once("assets/php/val_session_admin.php");
 
                 <!-- query -->
                 <?php
-                $registros = mysqli_query($conexion, "select id,nombre,email,asunto  from ticket") or
+                $registros = mysqli_query($conexion, "select id,fecha,nombre,email,asunto  from ticket") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
@@ -124,9 +124,11 @@ require_once("assets/php/val_session_admin.php");
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">ID</th>
-                                    <th scope="col">nombre</th>
-                                    <th scope="col">email</th>
-                                    <th scope="col"> asunto</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Asunto</th>
+                                    <th scope="col">Detalle</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -140,11 +142,12 @@ require_once("assets/php/val_session_admin.php");
                                         <input class="form-control" type="number" value="<?php echo $id = $reg['id'] ?>"
                                             readonly id="id" name="id" readonl> </th>
                                     <td> <?php echo $reg['nombre'] ?></td>
+                                    <td> <?php echo $reg['fecha'] ?></td>   
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
-                                        <a id="edit" class="btn btn-info"
+                                        <a id="edit" class="btn fa fa-search"
                                             href="verticket.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
 
                                     </td>

@@ -29,7 +29,19 @@ body {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
-
+@media (min-width: 768px) {
+  .texto-modal > * {
+    
+   text-align: justify;
+    margin: auto;
+    width: 90%;
+    border: solid;
+   border-color: #ffffffa4;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    
+  }
+}  
 .card-header {
   cursor: pointer;
 }
@@ -56,15 +68,19 @@ body {
     rgba(183, 205, 202, 0.15) 35%,
     rgba(116, 194, 185, 0.4) 100%
   );
+
+  
 }
+
 
 .imagen {
   height: 22rem;
   overflow: hidden;
 }
 
+
 .alto_login {
-  height: 30rem;
+  height: 15rem;
   object-fit: scale-down;
 }
 
