@@ -41,7 +41,7 @@ require_once("assets/php/val_session_admin.php")
         die("Problemas en el select:" . mysqli_error($conexion));
         $reg = mysqli_fetch_array($registros);
         
-     $id = $reg['id'];
+        $id = $reg['id'];
         $nombre = $reg['nombre'];
         $correo = $Reg['email'];
         $asunto = $reg['asunto'];
@@ -121,8 +121,10 @@ require_once("assets/php/val_session_admin.php")
                             <li>
                                 <a href="equipos.php">Gestionar equipo</a>
                             </li>
-
                         </ul>
+                        <li>
+                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
+                    </li>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
                     <li>
@@ -148,31 +150,63 @@ require_once("assets/php/val_session_admin.php")
                     <div class="row">
                         <div class="col-md-12">
                             <div class="well well-sm">
-                                <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
+                                <form id="formticket" class="form-horizontal" action="assets/php/guardarsolucion.php"
                                     method="POST">
                                     <fieldset>
                                         <legend class="text-center header"></legend>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
+                                                    class="fa fa-info bigicon"> id</i></span>
                                             <div class="col-md-8">
-                                                <input id="nombre" name="nombre" type="text"
-                                                    value="<?php echo $nombre; ?> " readonly class="form-control">
+                                                <input id="id" name="id" type="text"
+                                                    value="<?php echo $id; ?> " readonly class="form-control"></input>
                                             </div>
                                         </div>
-                                        <legend class="text-center header"></legend>
+                                        
+
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
+                                                    class="fa fa-user bigicon"> nombre</i></span>
+                                            <div class="col-md-8">
+                                                <input id="nombre" name="nombre" type="text"
+                                                    value="<?php echo $nombre; ?> " readonly class="form-control"></input>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                    class="fa fa-calendar bigicon"> fecha</i></span>
+                                            <div class="col-md-8">
+                                                <input id="fecha" name="fecha" type=""
+                                                    value="<?php echo $reg['fecha'] ?> " readonly class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                    class="fa fa-envelope bigicon"> correo</i></span>
                                             <div class="col-md-8">
                                                 <input id="email" name="email" type="email"
                                                     value="<?php echo $reg['email'] ?>" readonly class="form-control">
                                             </div>
-                                            
+                                        </div>
+                                        <div>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                        class="fa fa-refresh bigicon"> Estado</i></span>
+                                                <div class="col-md-8">
+                                                    <select class="form-control" id="estado" name="estado">
+                                                        <option selected value="pendiente"> pendiente</option>
+                                                        <option value="Resuelto"> Resuelto</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-comment"></i></span>
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-comment">
+                                                    asunto</i></span>
                                             <div class="col-md-8">
                                                 <input id="asunto" name="asunto" type="text"
                                                     value="<?php echo $asunto; ?>" readonly class="form-control">
@@ -180,13 +214,24 @@ require_once("assets/php/val_session_admin.php")
                                         </div>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-pencil-square-o bigicon"></i></span>
+                                                    class="fa fa-pencil-square-o bigicon"> detalle </i></span>
                                             <div class="col-md-8">
-                                                <textarea class="form-control" id="mensaje" name="mensaje" readonly require
-                                                     rows="7"> <?php echo $mensaje; ?></textarea>
+                                                <textarea class="form-control" id="mensaje" name="mensaje" readonly
+                                                    require rows="7"> <?php echo $mensaje; ?></textarea>
                                             </div>
                                         </div>
-
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                    class="fa fa-check-circle bigicon">Respuesta </i></span>
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" id="solucion" name="solucion"
+                                                    rows="7"> </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12 text-center">
+                                                <button type="submit" class="btn btn-primary btn-lg" name="responder"
+                                                    id="responder">Responder</button>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -196,10 +241,13 @@ require_once("assets/php/val_session_admin.php")
                     </div>
                 </div>
             </div>
-
-            <!-- /. ROW  -->
         </div>
-        <!-- /. PAGE INNER  -->
+    </div>
+    </div>
+
+    <!-- /. ROW  -->
+    </div>
+    <!-- /. PAGE INNER  -->
 
     </div>
     <!-- /. PAGE WRAPPER  -->
@@ -237,9 +285,7 @@ require_once("assets/php/val_session_admin.php")
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Bootstrap validator -->
-    <script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-    <script src="assets/js/validaciones.js"></script>
+
 
 </body>
 
