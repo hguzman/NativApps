@@ -10,10 +10,23 @@ require("assets/php/db.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOPIEC</title>
+    <!-- Bootstrap validator -->
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
+    <!-- Estilos CSS Toastr -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -106,19 +119,130 @@ require("assets/php/db.php");
             <div id="page-inner">
                 <h2>Mi usuario</h2>
                 <hr>
+                <div class="col-lg-3 well col-md-offset-1">
+                    <p> <strong> ID/Cedula: </strong> <span class="color-datos-act"><?php echo $reg['cedula'] ?></span>
+                    </p>
+                    <p> <strong>Area:</strong> </strong> <span class="color-datos-act"><?php echo $reg['area'] ?></span>
+                    </p>
+                    <p><strong> Primer nombre: </strong> <span
+                            class="color-datos-act"><?php echo $reg['primer_nombre'] ?></span> </p>
+                    <p><strong> Segundo nombre: </strong> <span
+                            class="color-datos-act"><?php echo $reg['segundo_nombre'] ?></span> </p>
+                    <p><strong> Primer Apellido: </strong> <span
+                            class="color-datos-act"><?php echo $reg['primer_apellido'] ?></span> </p>
+                    <p><strong> Segundo Apellido: </strong> <span
+                            class="color-datos-act"><?php echo $reg['segundo_apellido'] ?></span> </p>
+                    <p><strong> Correo:</strong> <span class="color-datos-act"><?php echo $reg['email'] ?></span></p>
+                    <p><strong> Rol: </strong><span class="color-datos-act"><?php echo $reg['rol'] ?></span></p>
+                    <hr>
 
-                <p> <strong> ID/Cedula: </strong> <span class="color-datos-act"><?php echo $reg['cedula'] ?></span> </p>
-                <p> <strong>Area:</strong> </strong> <span class="color-datos-act"><?php echo $reg['area'] ?></span> </p>
-                <p><strong> Primer nombre: </strong> <span class="color-datos-act"><?php echo $reg['primer_nombre'] ?></span> </p>
-                <p><strong> Segundo nombre: </strong> <span class="color-datos-act"><?php echo $reg['segundo_nombre'] ?></span> </p>
-                <p><strong> Primer Apellido: </strong> <span class="color-datos-act"><?php echo $reg['primer_apellido'] ?></span> </p>
-                <p><strong> Segundo Apellido: </strong> <span class="color-datos-act"><?php echo $reg['segundo_apellido'] ?></span> </p>
-                <p><strong> Correo:</strong> <span class="color-datos-act"><?php echo $reg['email'] ?></span></p>
-                <p><strong> Rol: </strong><span class="color-datos-act"><?php echo $reg['rol'] ?></span></p>
+                    <!-- Botón asignar -->
+                    <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
+                        class="btn btn-success btn-lg r" name="modificarUser" style="margin-left: 4%;
+                    border-radius: 5px !important;">Actualizar mis datos</button>
 
+                    <!-- Modal actualizar -->
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Actualizar mis datos</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="POST" id="actualizarDatos" name="actualizarDatos"
+                                        action="assets/php/actualizarDatosUser.php">
+                                        <div class="form-row">
+                                            <!-- Cedula de ciudadania -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-primer-nombre">Cedula de ciudadania</label>
+                                                <input type="number" class="form-control" id="cedula" name="cedula"
+                                                    placeholder="112223344556" require
+                                                    value="<?php echo $reg['cedula'] ?>" readonly>
+                                            </div>
+                                            <!-- Area de trabajo -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-segundo-nombre">Area de trabajo</label>
+                                                <input type="number" class="form-control" id="area" name="area"
+                                                    placeholder="5" require value="<?php echo $reg['area'] ?>">
+                                            </div>
+                                            <!-- Primer nombre -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-primer-nombre">Primer nombre</label>
+                                                <input type="text" class="form-control" id="primer_nombre"
+                                                    name="primer_nombre" placeholder="Andrés" require
+                                                    value="<?php echo $reg['primer_nombre']?>">
+                                            </div>
+                                            <!-- Segundo nombre -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-segundo-nombre">Segundo nombre</label>
+                                                <input type="text" class="form-control" id="segundo_nombre"
+                                                    name="segundo_nombre" placeholder="José"
+                                                    value="<?php echo $reg['segundo_nombre']  ?>">
+                                            </div>
+                                            <!-- Primer apellido -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-primer-apellido">Primer apellido</label>
+                                                <input type="text" class="form-control" id="primer_apellido"
+                                                    name="primer_apellido" placeholder="Salas" require
+                                                    value="<?php echo $reg['primer_apellido'] ?>">
+                                            </div>
+                                            <!-- Segundo apellido -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-segundo-apellido">Segundo apellido</label>
+                                                <input type="text" class="form-control" id="segundo_apellido"
+                                                    name="segundo_apellido" placeholder="Casas"
+                                                    value="<?php echo $reg['segundo_apellido'] ?>">
+                                            </div>
+                                            <!-- Email -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-email">Email</label>
+                                                <input type="email" class="form-control" id="email" name="email"
+                                                    placeholder="correo_143@correo.com" require
+                                                    value="<?php echo $reg['email'] ?>">
+                                                <!-- Div de carga -->
+                                                <div id="result-email"></div>
+                                            </div>
+                                            <!-- Contraseña -->
+                                            <div class="form-group col-md-6">
+                                                <label for="registrar-contrasena">Contraseña</label>
+                                                <input type="password" class="form-control" id="contrasena"
+                                                    name="contrasena" placeholder="*********" require
+                                                    value="<?php echo $reg['contrasena'] ?>"
+                                                    style="margin-bottom: 1rem;">
+                                                <!-- confirmContraseña -->
+                                                <input type="password" class="form-control" id="confirmContrasena"
+                                                    name="confirmContrasena" placeholder="*********" require
+                                                    value="<?php echo $reg['contrasena'] ?>">
 
+                                                <span class="fa fa-eye" id="mostrar" style="cursor:pointer;"> <span
+                                                        class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar
+                                                        contraseñas</span></span>
+                                                <p class="mensaje text-danger" id="errorpass"></p>
 
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cancelar</button>
+                                            <input type="submit" class="btn btn-primary" value="Actualizar datos"
+                                                name="actualizarDatosUser">
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Cancelar</button>
+                                    <input type="submit" class="btn btn-primary" value="Asignar">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <br>
                 <?php
@@ -140,8 +264,55 @@ require("assets/php/db.php");
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
+
+    <!-- CDN Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Script Toastr -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Bootstrap validator -->
+    <script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/custom.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.0.0.js"></script> -->
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script> -->
+
+    <!-- Mostrar pass-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#email').on('blur', function () {
+                $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
+
+                var email = $(this).val();
+                var dataString = 'email=' + email;
+                $.ajax({
+                    type: "POST",
+                    url: "assets/php/checkearDisponibilidad.php",
+                    data: dataString,
+                    success: function (data) {
+                        $('#result-email').fadeIn(1000).html(data);
+                    }
+                });
+            });
+
+            $('#mostrar').click(function () {
+                //Comprobamos que la cadena NO esté vacía.
+                if ($(this).hasClass('fa-eye') && ($("#contrasena").val() != "")) {
+                    $('#contrasena').removeAttr('type');
+                    $('#confirmContrasena').removeAttr('type');
+                    $('#mostrar').addClass('fas fa-eye-slash').removeClass('fa-eye');
+                    $('.pwdtxt').html("Ocultar contraseñas");
+                } else {
+                    $('#contrasena').attr('type', 'password');
+                    $('#confirmContrasena').attr('type', 'password');
+                    $('#mostrar').addClass('fa fa-eye').removeClass('fas fa-eye-slash');
+                    $('.pwdtxt').html("Mostrar contraseñas");
+                }
+            });
+        });
+    </script>
 
 
 </body>

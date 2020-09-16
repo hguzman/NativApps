@@ -188,6 +188,10 @@ include("assets/php/db.php");
                             <label for="registrar-contrasena">Contraseña</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena"
                                 placeholder="*********" require value="<?php echo $contrasena ?>">
+                            <span class="fa fa-eye" id="mostrar" style="cursor:pointer;"> <span
+                                    class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar
+                                    contraseña</span></span>
+                            <p class="mensaje text-danger" id="errorpass"></p>
 
                         </div>
                         <!-- Rol -->
@@ -278,6 +282,19 @@ include("assets/php/db.php");
                         $('#result-email').fadeIn(1000).html(data);
                     }
                 });
+            });
+
+            $('#mostrar').click(function () {
+                //Comprobamos que la cadena NO esté vacía.
+                if ($(this).hasClass('fa-eye') && ($("#contrasena").val() != "")) {
+                    $('#contrasena').removeAttr('type');
+                    $('#mostrar').addClass('fas fa-eye-slash').removeClass('fa-eye');
+                    $('.pwdtxt').html("Ocultar contraseña");
+                } else {
+                    $('#contrasena').attr('type', 'password');
+                    $('#mostrar').addClass('fa fa-eye').removeClass('fas fa-eye-slash');
+                    $('.pwdtxt').html("Mostrar contraseña");
+                }
             });
         });
     </script>
