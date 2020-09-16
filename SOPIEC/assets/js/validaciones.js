@@ -549,9 +549,108 @@ $(document).ready(function () {
           },
         },
       },
-
     },
   });
 
-});
+  $("#actualizarDatos").bootstrapValidator({});
 
+  $("#actualizarDatos").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
+      serial: {
+        message: "Porfavor digite un serial valido",
+        validators: {
+          notEmpty: {
+            message: "El serial no puede estar vacio",
+          },
+        },
+      },
+      marca: {
+        message: "Elija una marca ",
+        validators: {
+          notEmpty: {
+            message: "Elija una marca ",
+          },
+        },
+      },
+      nombre: {
+        message: "Porfavor digite un nombre valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      tipo_equipo: {
+        message: "Elija el tipo de equipo ",
+        validators: {
+          notEmpty: {
+            message: "Elija el tipo de equipo ",
+          },
+        },
+      },
+      modelo_equipo: {
+        message: "Porfavor digite un Modelo  valido",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      procesador: {
+        message: "Elija un estado para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      ram: {
+        message: "Porfavor digite una ram valida",
+        validators: {
+          notEmpty: {
+            message: "ese campo no puede estar vacio",
+          },
+        },
+      },
+      disco_duro: {
+        message: "Porfavor digite un modelo de equipo valido",
+        validators: {
+          notEmpty: {
+            message: "Este campo no puede estar vacio",
+          },
+          stringLength: {
+            min: 1,
+            max: 45,
+            message: "modelo de equipo  invalido",
+          },
+        },
+      },
+      sistema_operativo: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+      estado: {
+        message: "Elija un estadp para este usuario",
+        validators: {
+          notEmpty: {
+            message: "Elija un estado para este usuario",
+          },
+        },
+      },
+    },
+
+    //   identical: {
+    //     'default': 'Please enter the same value'
+    // }
+  });
+});

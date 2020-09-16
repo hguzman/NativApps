@@ -33,15 +33,15 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="index.php"><img src="assets/img/SOPIEC.ico" alt="logo" width="10%"> SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="ticket.php">Open Ticket</a></li>
+                        <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
+                        <!-- <li><a href="ticket.php">Open Ticket</a></li> -->
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
