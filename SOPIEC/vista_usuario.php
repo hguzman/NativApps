@@ -142,19 +142,20 @@ require("assets/php/db.php");
                     border-radius: 5px !important;">Actualizar mis datos</button>
 
                     <!-- Modal actualizar -->
-                    <form method="POST" id="actualizarDatos" name="actualizarDatos">
-                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar mis datos</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Actualizar mis datos</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="POST" id="actualizarDatos" name="actualizarDatos"
+                                        action="assets/php/actualizarDatosUser.php">
                                         <div class="form-row">
                                             <!-- Cedula de ciudadania -->
                                             <div class="form-group col-md-6">
@@ -211,34 +212,36 @@ require("assets/php/db.php");
                                                 <label for="registrar-contrasena">Contraseña</label>
                                                 <input type="password" class="form-control" id="contrasena"
                                                     name="contrasena" placeholder="*********" require
+                                                    value="<?php echo $reg['contrasena'] ?>"
+                                                    style="margin-bottom: 1rem;">
+                                                <!-- confirmContraseña -->
+                                                <input type="password" class="form-control" id="confirmContrasena"
+                                                    name="confirmContrasena" placeholder="*********" require
                                                     value="<?php echo $reg['contrasena'] ?>">
 
                                                 <span class="fa fa-eye" id="mostrar" style="cursor:pointer;"> <span
                                                         class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar
-                                                        contraseña</span></span>
-                                                <p class="mensaje text-danger" id="errorpass"></p>
-
-                                                <input type="password" class="form-control" id="contrasena1"
-                                                    name="contrasena" placeholder="*********" require
-                                                    value="<?php echo $reg['contrasena'] ?>">
-
-                                                <span class="fa fa-eye" id="mostrar" style="cursor:pointer;"> <span
-                                                        class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar
-                                                        contraseña</span></span>
+                                                        contraseñas</span></span>
                                                 <p class="mensaje text-danger" id="errorpass"></p>
 
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Cancelar</button>
-                                        <input type="submit" class="btn btn-primary" value="Asignar">
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cancelar</button>
+                                            <input type="submit" class="btn btn-primary" value="Actualizar datos"
+                                                name="actualizarDatosUser">
+                                        </div>
+                                    </form>
                                 </div>
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Cancelar</button>
+                                    <input type="submit" class="btn btn-primary" value="Asignar">
+                                </div> -->
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
 
                 <br>
@@ -261,10 +264,7 @@ require("assets/php/db.php");
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- Ajax Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
+
     <!-- CDN Jquery-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -276,26 +276,45 @@ require("assets/php/db.php");
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.0.0.js"></script> -->
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script> -->
+
     <!-- Mostrar pass-->
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#email').on('blur', function () {
+                $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
+
+                var email = $(this).val();
+                var dataString = 'email=' + email;
+                $.ajax({
+                    type: "POST",
+                    url: "assets/php/checkearDisponibilidad.php",
+                    data: dataString,
+                    success: function (data) {
+                        $('#result-email').fadeIn(1000).html(data);
+                    }
+                });
+            });
 
             $('#mostrar').click(function () {
                 //Comprobamos que la cadena NO esté vacía.
                 if ($(this).hasClass('fa-eye') && ($("#contrasena").val() != "")) {
                     $('#contrasena').removeAttr('type');
+                    $('#confirmContrasena').removeAttr('type');
                     $('#mostrar').addClass('fas fa-eye-slash').removeClass('fa-eye');
-                    $('.pwdtxt').html("Ocultar contraseña");
+                    $('.pwdtxt').html("Ocultar contraseñas");
                 } else {
                     $('#contrasena').attr('type', 'password');
+                    $('#confirmContrasena').attr('type', 'password');
                     $('#mostrar').addClass('fa fa-eye').removeClass('fas fa-eye-slash');
-                    $('.pwdtxt').html("Mostrar contraseña");
+                    $('.pwdtxt').html("Mostrar contraseñas");
                 }
             });
         });
     </script>
+
+
 </body>
 
 </html>
