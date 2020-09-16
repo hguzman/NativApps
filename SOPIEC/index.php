@@ -52,21 +52,8 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
                         <!-- recuperar imagen de la base de datos -->
-                        <?php
-                
-                $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
-
-                $registros_a = mysqli_query($conexion, $query) or
-                    die("Problemas en el select:" . mysqli_error($conexion));
-                    $reg_a = mysqli_fetch_array($registros_a)
-                    ?>
-
-                        <a href="perfil.php"><img
-                                src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
-                                height="150px " class="rounded-circle"></td></a>
-                    </li>
+                        <?php include_once("assets/modelos/avatar_admin.php"); ?> 
                     <!-- Primero/inicio -->
                     <li>
                         <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>

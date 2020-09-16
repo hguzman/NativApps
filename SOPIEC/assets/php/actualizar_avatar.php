@@ -4,7 +4,7 @@ require_once("db.php");
 $sesion = $_SESSION['username'];
 $id =  $_GET['id'];
 
-$update = "UPDATE usuarios,avatares SET avatar_id = '$id' WHERE ID = avatar_id AND cedula = $sesion";
+$update = "UPDATE usuarios,avatares SET avatar_id = '$id' WHERE ID = avatar_id";
 
 
 $resultado = mysqli_query($conexion, $update);

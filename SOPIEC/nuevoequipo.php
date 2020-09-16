@@ -58,9 +58,7 @@ require_once("assets/php/val_session_admin.php");
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
-                    </li>
+                <?php include_once("assets/modelos/avatar_admin.php"); ?> 
                     <!-- Primero/inicio -->
                     <li>
                         <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
@@ -91,6 +89,9 @@ require_once("assets/php/val_session_admin.php");
                             </li>
 
                         </ul>
+                    <li>
+                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
+                    </li>
                     </li>
                     <!--  Quinto/A cerca de SOPIEC-->
                     <li>
