@@ -15,7 +15,6 @@ require("assets/php/db.php");
       };
   };
 
-   $reg = mysqli_fetch_array($registros);
 ?>
 <!DOCTYPE html>
 
@@ -112,36 +111,40 @@ require("assets/php/db.php");
             <div id="page-inner">
                 <h2><?php echo $cantidad ?></h2>
                 <hr>
-<?php
+                <?php
                     
                     while ($reg = mysqli_fetch_array($registros)){
                     
                 
                 ?>
                 <div class="col-lg-3 well col-md-offset-1">
-                <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span> </p>
+                    <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span>
+                    </p>
 
-                <p><strong> Marca: </strong> <span class="color-datos-act"><?php echo $reg['marca'] ?></span>
-                </p>
-                <p><strong> Tipo de equipo: </strong> <span
-                        class="color-datos-act"><?php echo $reg['tipo_equipo'] ?></span> </p>
-                <p><strong> Procesador: </strong> <span class="color-datos-act"><?php echo $reg['procesador'] ?></span>
-                </p>
-                <p><strong> Memoria RAM: </strong> <span class="color-datos-act"><?php echo $reg['ram'] ?></span> </p>
-                <p><strong> Disco duro:</strong> <span class="color-datos-act"><?php echo $reg['disco_duro'] ?></span>
-                </p>
-                <p><strong> Sistema operativo: </strong><span
-                        class="color-datos-act"><?php echo $reg['sistema_operativo'] ?></span></p>
-                <p><strong> Estado: </strong><span class="color-datos-act"><?php echo $reg['estado'] ?></span></p>
+                    <p><strong> Marca: </strong> <span class="color-datos-act"><?php echo $reg['marca'] ?></span>
+                    </p>
+                    <p><strong> Tipo de equipo: </strong> <span
+                            class="color-datos-act"><?php echo $reg['tipo_equipo'] ?></span> </p>
+                    <p><strong> Procesador: </strong> <span
+                            class="color-datos-act"><?php echo $reg['procesador'] ?></span>
+                    </p>
+                    <p><strong> Memoria RAM: </strong> <span class="color-datos-act"><?php echo $reg['ram'] ?></span>
+                    </p>
+                    <p><strong> Disco duro:</strong> <span
+                            class="color-datos-act"><?php echo $reg['disco_duro'] ?></span>
+                    </p>
+                    <p><strong> Sistema operativo: </strong><span
+                            class="color-datos-act"><?php echo $reg['sistema_operativo'] ?></span></p>
+                    <p><strong> Estado: </strong><span class="color-datos-act"><?php echo $reg['estado'] ?></span></p>
 
                 </div>
-               
-                
+
+
                 <?php
                
             } 
             if ($filas < 1){
-                    echo "<div class='alert alert-danger' role='alert'>No tiene ningún equipo asignado</div>";
+                    echo "<div class='alert alert-danger' role='alert'>Usted no tiene ningún equipo asignado</div>";
                 };
                 mysqli_free_result($registros);
                 mysqli_close($conexion);
