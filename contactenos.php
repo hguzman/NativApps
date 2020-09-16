@@ -59,22 +59,22 @@
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
                     <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Juancho">
+                        placeholder="Escriba aqui sus Nombres">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Apellido</label>
                     <input name="Apellido" type="text" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Juancho">
+                        placeholder="Escriba aqui sus apellidos">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telefono</label>
                     <input name="Telefono" type="text" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Juancho">
+                        placeholder="Escriba aqui su Telefono">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dirección e-mail</label>
                     <input name="Email" type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Jancho_perez@correo.com">
+                        placeholder="Escriba aqui su Correo de contacto">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Mensaje</label>
