@@ -37,7 +37,8 @@ require("assets/php/db.php");
 <body>
     <!-- recuperar datos de la DB -->
     <?php
-    
+
+
     $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ") or
         die("Problemas en el select:" . mysqli_error($conexion));
     $reg = mysqli_fetch_array($registros);
@@ -74,7 +75,14 @@ require("assets/php/db.php");
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
+                        <?php
+                        $query_a = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
+
+                        $registros_a = mysqli_query($conexion, $query_a) or
+                            die("Problemas en el select:" . mysqli_error($conexion));
+                        $reg_a = mysqli_fetch_array($registros_a)
+                        ?>
+                        <a href="vista_usuario.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="150px" width="100%"></td></a>
                     </li>
                     <!-- Primero/inicio -->
                     <li>
@@ -116,7 +124,7 @@ require("assets/php/db.php");
                 <h2>Mi usuario</h2>
                 <div class="mostrar-datos">
                     <!-- Mostrar datos usuario -->
-                    <div class="col-lg-3 well col-md-offset-1 caja-mostrar-datos" style="margin-top: 20px;">
+                    <div class="col-lg-3 well caja-mostrar-datos" style="margin-top: 20px;">
                         <center>
                             <h3>Mis datos</h3>
                         </center>
@@ -190,7 +198,7 @@ require("assets/php/db.php");
                             </div>
                         </form>
                     </div>
-                </div>
+                
 
                 <!-- Modal actualizar datos-->
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -285,10 +293,52 @@ require("assets/php/db.php");
                         </div>
                     </div>
                 </div>
-                <?php
-                mysqli_free_result($registros);
-                mysqli_close($conexion);
-                ?>
+
+                    <br>
+                    <?php
+                    mysqli_free_result($registros);
+                    mysqli_close($conexion);
+                    ?>
+                <!--  $avatar  -->
+                <div class="col-lg-3 well caja-mostrar-datos" style="margin-top: 20px;">
+
+
+                    <center> <a href="vista_usuario.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a> </center>
+                    <!-- Button trigger modal -->
+                    <br>
+                    <button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#avatar">
+                        Modificar foto de perfil
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="avatar" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="avatarLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="avatar">Modificar foto de perfil</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <center>
+                                        <h3> Cargar imagen jpg</h3>
+                                        <form enctype="multipart/form-data" action="assets\php\guardar.php" method="POST">
+                                            <input class="form-control" type="file" name="imagen" id="imagen" required><br>
+                                            <input class="form-control btn btn-success" type="submit" value="subir archivo">
+                                        </form>
+                                    </center>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="assets\php\eliminar_avatar.php" class="btn btn-danger">Eliminar</a>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">ACEPTAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
             </div>
             <!-- /. PAGE INNER  -->
         </div>

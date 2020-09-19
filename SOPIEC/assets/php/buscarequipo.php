@@ -29,73 +29,7 @@ require_once("db.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../../index.php"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <img src="../img/find_user.png" class="img-responsive" />
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="../../index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de equipos<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="../../nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="../../equipos.php">Ver equipos registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="../../nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="../../equipos.php">Gestionar equipo</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
+    <?php include_once("../modelos/navbar_header_admin_vs.php"); ?> 
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
