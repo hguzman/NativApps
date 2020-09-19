@@ -421,5 +421,12 @@ option.select-hr {
   box-sizing: border-box;
 }
 
+.mostrar-datos{
+  display: flex;
+}
+.caja-mostrar-datos{
+  width: 38%;
+}
+
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE FIN*/
