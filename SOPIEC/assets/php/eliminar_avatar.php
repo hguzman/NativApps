@@ -13,14 +13,13 @@ $update = "UPDATE usuarios,avatares SET avatar_id = 1 WHERE avatar_id = ID AND c
 mysqli_query($conexion, $update);
 $resultado = mysqli_query($conexion, $delete);
 
-if ($rol = "user") {
+if ($rol == "user") {
     header("location: ../../vista_usuario.php");
-}
-
-if ($rol = "admin") {
+} else{
+if ($rol == "admin") {
         header("location: ../../perfil.php");        
     }
-
+};
 
 
 ?>
