@@ -38,7 +38,7 @@ $resultado2 = mysqli_query($conexion, $update2);
 /* Actualizar la imagen guardada como avatar FIN */
 
 
- if ($rol == "user") {
+if ($rol == "user") {
     header("location: ../../vista_usuario.php");
 } else{
 if ($rol == "admin") {
