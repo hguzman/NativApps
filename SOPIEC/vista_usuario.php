@@ -270,41 +270,7 @@ require("assets/php/db.php");
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!--  $avatar  -->
-                <div class="col-lg-6">
-
-                    <center> <a href="vista_usuario.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a> </center>
-                    <!-- Button trigger modal -->
-                    <br>
-                    <button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#avatar">
-                        Modificar foto de perfil
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="avatar" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="avatarlabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="avatarlabel">Modificar foto de perfil</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <center>
-                                        <h3> Cargar imagen jpg</h3>
-                                        <form enctype="multipart/form-data" action="assets\php\guardar.php" method="POST">
-                                            <input class="form-control" type="file" name="imagen" id="imagen" required><br>
-                                            <input class="form-control btn btn-success" type="submit" value="subir archivo">
-                                        </form>
-                                    </center>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="assets\php\eliminar_avatar.php" class="btn btn-danger">Eliminar</a>
-                                    <button type="button" class="btn btn-info" data-dismiss="modal">ACEPTAR</button>
-
+                
                     <br>
                     <?php
                     mysqli_free_result($registros);
@@ -348,6 +314,7 @@ require("assets/php/db.php");
                             </div>
                         </div>
                     </div>
+                
                 </div>
                  <!-- /. $avatar  -->
 
