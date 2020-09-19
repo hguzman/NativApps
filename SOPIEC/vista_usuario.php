@@ -241,23 +241,22 @@ require("assets/php/db.php");
                     </div>
                 </div>
 
-                </div>
                 <!--  $avatar  -->
                 <div class="col-lg-6">
 
                     <center> <a href="vista_usuario.php"><img src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>" class="rounded-circle" height="200px"></td></a> </center>
                     <!-- Button trigger modal -->
                     <br>
-                    <button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#staticBackdrop">
+                    <button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#avatar">
                         Modificar foto de perfil
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="avatar" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="avatarlabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Modificar foto de perfil</h5>
+                                    <h5 class="modal-title" id="avatarlabel">Modificar foto de perfil</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -280,6 +279,7 @@ require("assets/php/db.php");
                     </div>
 
                 </div>
+                 <!-- /. $avatar  -->
 
             </div>
             <!-- /. PAGE INNER  -->
