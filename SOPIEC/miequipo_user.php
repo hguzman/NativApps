@@ -15,7 +15,6 @@ require("assets/php/db.php");
       };
   };
 
-   $reg = mysqli_fetch_array($registros);
 ?>
 <!DOCTYPE html>
 
@@ -42,106 +41,47 @@ require("assets/php/db.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index_user.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                    <li>
-                        <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
-                    </li>
-                    </li>
-                    <!-- Tercero/Inventario de equipos -->
-                    <li>
-                        <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                    </li>
-
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-
-                    <li>
-                        <a href="miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
-                    </li>
-
-
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
+    <?php include_once("assets/modelos/navbar_header_user.php");?> 
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <h2><?php echo $cantidad ?></h2>
                 <hr>
-<?php
+                <?php
                     
                     while ($reg = mysqli_fetch_array($registros)){
                     
                 
                 ?>
                 <div class="col-lg-3 well col-md-offset-1">
-                <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span> </p>
+                    <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span>
+                    </p>
 
-                <p><strong> Marca: </strong> <span class="color-datos-act"><?php echo $reg['marca'] ?></span>
-                </p>
-                <p><strong> Tipo de equipo: </strong> <span
-                        class="color-datos-act"><?php echo $reg['tipo_equipo'] ?></span> </p>
-                <p><strong> Procesador: </strong> <span class="color-datos-act"><?php echo $reg['procesador'] ?></span>
-                </p>
-                <p><strong> Memoria RAM: </strong> <span class="color-datos-act"><?php echo $reg['ram'] ?></span> </p>
-                <p><strong> Disco duro:</strong> <span class="color-datos-act"><?php echo $reg['disco_duro'] ?></span>
-                </p>
-                <p><strong> Sistema operativo: </strong><span
-                        class="color-datos-act"><?php echo $reg['sistema_operativo'] ?></span></p>
-                <p><strong> Estado: </strong><span class="color-datos-act"><?php echo $reg['estado'] ?></span></p>
+                    <p><strong> Marca: </strong> <span class="color-datos-act"><?php echo $reg['marca'] ?></span>
+                    </p>
+                    <p><strong> Tipo de equipo: </strong> <span
+                            class="color-datos-act"><?php echo $reg['tipo_equipo'] ?></span> </p>
+                    <p><strong> Procesador: </strong> <span
+                            class="color-datos-act"><?php echo $reg['procesador'] ?></span>
+                    </p>
+                    <p><strong> Memoria RAM: </strong> <span class="color-datos-act"><?php echo $reg['ram'] ?></span>
+                    </p>
+                    <p><strong> Disco duro:</strong> <span
+                            class="color-datos-act"><?php echo $reg['disco_duro'] ?></span>
+                    </p>
+                    <p><strong> Sistema operativo: </strong><span
+                            class="color-datos-act"><?php echo $reg['sistema_operativo'] ?></span></p>
+                    <p><strong> Estado: </strong><span class="color-datos-act"><?php echo $reg['estado'] ?></span></p>
 
                 </div>
-               
-                
+
+
                 <?php
                
             } 
             if ($filas < 1){
-                    echo "<div class='alert alert-danger' role='alert'>No tiene ningún equipo asignado</div>";
+                    echo "<div class='alert alert-danger' role='alert'>Usted no tiene ningún equipo asignado</div>";
                 };
                 mysqli_free_result($registros);
                 mysqli_close($conexion);
