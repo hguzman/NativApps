@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-require_once("assets/php/db.php");
 require_once("assets/php/val_session_user.php");
-
-$cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
+?>
+<?php
+require_once("assets/php/db.php");
 ?>
 
 <html>
@@ -60,63 +60,43 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
         <!--  Sidebar de opciones  -->
         <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <!-- recuperar imagen de la base de datos -->
-                        <?php
-                
-                $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+            <!-- recuperar imagen de la base de datos -->
+            <?php include("assets/modelos/avatar_user.php"); ?>
+            <!-- Primero/inicio -->
+            <li>
+                <a href="index_user.php"><i class="fa fa-desktop "></i>Inicio</a>
+            </li>
+            <!-- Segundo/Administracion de usuarios -->
+            <li>
+            <li>
+                <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
+            </li>
+            </li>
+            <!-- Tercero/Inventario de equipos -->
+            <li>
+                <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
+            </li>
 
-                $registros_a = mysqli_query($conexion, $query) or
-                    die("Problemas en el select:" . mysqli_error($conexion));
-                    $reg_a = mysqli_fetch_array($registros_a)
-                    ?>
+            <!-- Cuarto/Administracion de equipos -->
+            <li>
 
-                        <a href="perfil.php"><img
-                                src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
-                                height="150px " class="rounded-circle"></td></a>
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="equipos.php">Gestionar equipo</a>
-                            </li>
+            <li>
+                <a href="miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
+            </li>
 
-                        </ul>
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
 
-            </div>
+            </li>
+            <!--  Quinto/A cerca de SOPIEC-->
+            <li>
+                <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
+            </li>
+        </ul>
 
-        </nav>
+    </div>
+
+</nav>
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
         <div id="page-wrapper">

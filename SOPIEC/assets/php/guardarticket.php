@@ -6,7 +6,6 @@ require_once("db.php");
     $email = $_POST['email'];
     $asunto = $_POST['asunto'];
     $mensaje = $_POST['mensaje'];
-    
 
     // Validaciones
     if ($nombre == "" || $email == "" || $asunto == "" || $mensaje == "" ) {
@@ -23,7 +22,7 @@ require_once("db.php");
     echo "<script>
     alert('Ticket enviado'); 
     </script>";
-    header("location: ../../ticket.php");
+    header("location: ../../index_user.php");
 
 
 ?>
