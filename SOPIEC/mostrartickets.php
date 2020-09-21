@@ -43,7 +43,7 @@ require_once("assets/php/val_session_admin.php");
 
                 <!-- query -->
                 <?php
-                $registros = mysqli_query($conexion, "select id,fecha,nombre,email,asunto  from ticket") or
+                $registros = mysqli_query($conexion, "select id,fecha,nombre,email,asunto,estado  from ticket ORDER BY estado") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
@@ -58,6 +58,7 @@ require_once("assets/php/val_session_admin.php");
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Asunto</th>
+                                    <th scope="col">Estado</th>
                                     <th scope="col">Detalle</th>
                                 </tr>
                             </thead>
@@ -75,6 +76,7 @@ require_once("assets/php/val_session_admin.php");
                                     <td> <?php echo $reg['fecha'] ?></td>   
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
+                                    <td> <?php echo $reg['estado'] ?> </td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"

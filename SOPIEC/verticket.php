@@ -141,7 +141,7 @@ require_once("assets/php/val_session_admin.php")
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>ticket no# <?php echo $id; ?></h2>
+                        <h2>Ticket # <?php echo $id; ?></h2>
                     </div>
                 </div>
                 <hr />
@@ -156,7 +156,7 @@ require_once("assets/php/val_session_admin.php")
                                         <legend class="text-center header"></legend>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-info bigicon"> id</i></span>
+                                                    class="fa fa-info bigicon"> Id</i></span>
                                             <div class="col-md-8">
                                                 <input id="id" name="id" type="text"
                                                     value="<?php echo $id; ?> " readonly class="form-control"></input>
@@ -166,7 +166,7 @@ require_once("assets/php/val_session_admin.php")
 
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"> nombre</i></span>
+                                                    class="fa fa-user bigicon"> Nombre</i></span>
                                             <div class="col-md-8">
                                                 <input id="nombre" name="nombre" type="text"
                                                     value="<?php echo $nombre; ?> " readonly class="form-control"></input>
@@ -175,7 +175,7 @@ require_once("assets/php/val_session_admin.php")
 
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-calendar bigicon"> fecha</i></span>
+                                                    class="fa fa-calendar bigicon"> Fecha</i></span>
                                             <div class="col-md-8">
                                                 <input id="fecha" name="fecha" type=""
                                                     value="<?php echo $reg['fecha'] ?> " readonly class="form-control">
@@ -184,7 +184,7 @@ require_once("assets/php/val_session_admin.php")
 
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-envelope bigicon"> correo</i></span>
+                                                    class="fa fa-envelope bigicon"> Correo</i></span>
                                             <div class="col-md-8">
                                                 <input id="email" name="email" type="email"
                                                     value="<?php echo $reg['email'] ?>" readonly class="form-control">
@@ -206,7 +206,7 @@ require_once("assets/php/val_session_admin.php")
                                         </div>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-comment">
-                                                    asunto</i></span>
+                                                    Asunto</i></span>
                                             <div class="col-md-8">
                                                 <input id="asunto" name="asunto" type="text"
                                                     value="<?php echo $asunto; ?>" readonly class="form-control">
@@ -214,7 +214,7 @@ require_once("assets/php/val_session_admin.php")
                                         </div>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-pencil-square-o bigicon"> detalle </i></span>
+                                                    class="fa fa-pencil-square-o bigicon"> Detalle </i></span>
                                             <div class="col-md-8">
                                                 <textarea class="form-control" id="mensaje" name="mensaje" readonly
                                                     require rows="7"> <?php echo $mensaje; ?></textarea>
