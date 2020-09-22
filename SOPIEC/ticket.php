@@ -115,6 +115,15 @@ require_once("assets/php/db.php");
                                 <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
                                     method="POST">
                                     <fieldset>
+                                    <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                    class="fa fa-credit-card bigicon"></i></span>
+                                            <div class="col-md-8">
+                                                <input id="cedula" name="cedula" type="text" placeholder="cedula" readonly
+                                                    class="form-control" value="<?php echo $sesion = $_SESSION['username']; ?>">
+                                        
+                                            </div>
+                                        </div>
                                         <legend class="text-center header"></legend>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
