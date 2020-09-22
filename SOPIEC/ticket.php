@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <?php
-require_once("assets/php/db.php");
 require_once("assets/php/val_session_user.php");
-
-$cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
+?>
+<?php
+require_once("assets/php/db.php");
 ?>
 
 <html>
 
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear Ticket</title>
 
@@ -33,163 +33,90 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
 <body>
     <!-- Contenedor principal -->
-    <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
+    <?php include_once("assets/modelos/navbar_header_user.php");?>
+    <!-- Contenido de la pagina, lado derecho ancho  -->
+
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Area de ticket</h2>
                 </div>
             </div>
-        </div>
+            <hr />
 
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <!-- recuperar imagen de la base de datos -->
-                        <?php
-                
-                $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
-
-                $registros_a = mysqli_query($conexion, $query) or
-                    die("Problemas en el select:" . mysqli_error($conexion));
-                    $reg_a = mysqli_fetch_array($registros_a)
-                    ?>
-
-                        <a href="perfil.php"><img
-                                src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
-                                height="150px " class="rounded-circle"></td></a>
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="equipos.php">Gestionar equipo</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
-        <!-- Contenido de la pagina, lado derecho ancho  -->
-
-        <div id="page-wrapper">
-            <div id="page-inner">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Area de ticket</h2>
-                    </div>
-                </div>
-                <hr />
+                        <div class="well well-sm">
+                            <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
+                                method="POST">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-credit-card bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="cedula" name="cedula" type="text" placeholder="cedula" readonly
+                                                class="form-control"
+                                                value="<?php echo $sesion = $_SESSION['username']; ?>">
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well well-sm">
-                                <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
-                                    method="POST">
-                                    <fieldset>
-                                        <legend class="text-center header"></legend>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="nombre" name="nombre" type="text" placeholder="Nombre"
-                                                    class="form-control" value="">
-                                            </div>
                                         </div>
+                                    </div>
+                                    <legend class="text-center header"></legend>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="nombre" name="nombre" type="text" placeholder="Nombre"
+                                                class="form-control" value="">
+                                        </div>
+                                    </div>
 
 
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-envelope-o bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="email" name="email" type="email" placeholder="Email "
-                                                    class="form-control">
-                                            </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-envelope-o bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="email" name="email" type="email" placeholder="Email "
+                                                class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-comment"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="asunto" name="asunto" type="text" placeholder="Asunto"
-                                                    class="form-control">
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-comment"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="asunto" name="asunto" type="text" placeholder="Asunto"
+                                                class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-pencil-square-o bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" id="mensaje" name="mensaje"
-                                                    placeholder="Enter your massage for us here. We will get back to you within 2 business days."
-                                                    rows="7"></textarea>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-pencil-square-o bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="mensaje" name="mensaje"
+                                                placeholder="Enter your massage for us here. We will get back to you within 2 business days."
+                                                rows="7"></textarea>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <div class="col-md-12 text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg" name="Enviar"
-                                                    id="enviar">Enviar</button>
-                                            </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg" name="Enviar"
+                                                id="enviar">Enviar</button>
                                         </div>
-                                        
-                                    </fieldset>
-                                </form>
-                            </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- /. ROW  -->
-            </div>
-        <!-- /. PAGE INNER  -->
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. PAGE INNER  -->
 
     </div>
     <!-- /. PAGE WRAPPER  -->
@@ -232,18 +159,18 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <script src="assets/js/validaciones.js"></script>
 
 
-<script>
-var nombre = document.getElementById('nombre');
-var email = document.getElementById('email');
-var asunto = document.getElementById('asunto');
-var mensjae = document.getElementById('mensjae');
+    <script>
+        var nombre = document.getElementById('nombre');
+        var email = document.getElementById('email');
+        var asunto = document.getElementById('asunto');
+        var mensjae = document.getElementById('mensjae');
 
-$('#enviar').on("submit",function(){
-        if ( nombre && email && asunto && mensaje != empty){
-            alert ("Su tucket ha sido creado exitosamente, en breves recibira respuesta del admin.");
-        }
-})
-</script>
+        $('#enviar').on("submit", function () {
+            if (nombre && email && asunto && mensaje != empty) {
+                alert("Su tucket ha sido creado exitosamente, en breves recibira respuesta del admin.");
+            }
+        })
+    </script>
 </body>
 
 </html>

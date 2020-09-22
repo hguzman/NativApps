@@ -3,7 +3,7 @@
 include("assets/php/db.php");
 ?>
 <?php
-require_once("assets/php/val_session_admin.php")
+require_once("assets/php/val_session_user.php");
 ?>
 
 <html>
@@ -40,101 +40,18 @@ require_once("assets/php/val_session_admin.php")
                         where id= '$id' ") or
         die("Problemas en el select:" . mysqli_error($conexion));
         $reg = mysqli_fetch_array($registros);
-        
         $id = $reg['id'];
+        $cedula = $reg['cedula'];
         $nombre = $reg['nombre'];
-        $correo = $Reg['email'];
+        $estado = $reg['estado'];
         $asunto = $reg['asunto'];
         $mensaje = $reg['mensaje'];
+        $solucion = $reg['solucion'];
          
     ?>
-    <!-- Contenedor principal -->
-    <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <!-- recuperar imagen de la base de datos -->
-                        <?php
-                
-                $query = "SELECT imagen from avatares, usuarios where avatar_id = ID and cedula = $sesion";
-
-                $registros_a = mysqli_query($conexion, $query) or
-                    die("Problemas en el select:" . mysqli_error($conexion));
-                    $reg_a = mysqli_fetch_array($registros_a)
-                    ?>
-
-                        <a href="perfil.php"><img
-                                src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
-                                height="150px " class="rounded-circle"></td></a>
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="equipos.php">Gestionar equipo</a>
-                            </li>
-                        </ul>
-                        <li>
-                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
-                    </li>
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
+       <div id="wrapper">
+        <?php include_once("assets/modelos/navbar_header_user.php");?>
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
         <div id="page-wrapper">
@@ -150,8 +67,7 @@ require_once("assets/php/val_session_admin.php")
                     <div class="row">
                         <div class="col-md-12">
                             <div class="well well-sm">
-                                <form id="formticket" class="form-horizontal" action="assets/php/guardarsolucion.php"
-                                    method="POST">
+                                <form id="formticket" class="form-horizontal">
                                     <fieldset>
                                         <legend class="text-center header"></legend>
                                         <div class="form-group">
@@ -160,6 +76,14 @@ require_once("assets/php/val_session_admin.php")
                                             <div class="col-md-8">
                                                 <input id="id" name="id" type="text"
                                                     value="<?php echo $id; ?> " readonly class="form-control"></input>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                    class="fa fa-user bigicon"> cedula</i></span>
+                                            <div class="col-md-8">
+                                                <input id="cedula" name="cedula" type="text"
+                                                    value="<?php echo $cedula; ?> " readonly class="form-control"></input>
                                             </div>
                                         </div>
                                         
@@ -195,10 +119,8 @@ require_once("assets/php/val_session_admin.php")
                                                 <span class="col-md-1 col-md-offset-2 text-center"><i
                                                         class="fa fa-refresh bigicon"> Estado</i></span>
                                                 <div class="col-md-8">
-                                                    <select class="form-control" id="estado" name="estado">
-                                                        <option selected value="pendiente"> pendiente</option>
-                                                        <option value="Resuelto"> Resuelto</option>
-                                                    </select>
+                                                <input id="estado" name="estado" type="text"
+                                                    value="<?php echo $estado; ?>" readonly class="form-control">
                                                 </div>
                                             </div>
 
@@ -224,14 +146,13 @@ require_once("assets/php/val_session_admin.php")
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-check-circle bigicon">Respuesta </i></span>
                                             <div class="col-md-8">
-                                                <textarea class="form-control" id="solucion" name="solucion"
-                                                    rows="7"> </textarea>
+                                                <textarea class="form-control" id="solucion" name="solucion" readonly
+                                                    rows="7"> <?php echo $solucion; ?> </textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-12 text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg" name="responder"
-                                                    id="responder">Responder</button>
+                                            <a href="ticketsenviados.php" class="btn btn-primary btn-lg r">Regresar</a>
                                             </div>
                                         </div>
                                     </fieldset>

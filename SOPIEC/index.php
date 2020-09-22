@@ -9,6 +9,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets/img/SOPIEC.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOPIEC</title>
     <!-- BOOTSTRAP STYLES-->
@@ -24,80 +25,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php"><img src="assets/img/SOPIEC.ico" alt="logo" width="10%"> SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
-                        <!-- <li><a href="ticket.php">Open Ticket</a></li> -->
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                        <!-- recuperar imagen de la base de datos -->
-                        <?php include_once("assets/modelos/avatar_admin.php"); ?> 
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="equipos.php">Gestionar equipo</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <!--  Quinto/ver tickets-->
-                    <li>
-                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
-                    </li>
-                    <!--  Sexto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="manuales.html"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
+        <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
@@ -120,16 +48,16 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     <div class="form-group multiple" id="user-list">
 
                         <label class="centrar" for="exampleFormControlSelect2"> Cedula | Nombre | Apellido</label>
-                        
+
                         <select size="2" id="selectUser" class="escojer-user form-control"
                             id="exampleFormControlSelect2" name="selectUser">
-                            
+
 
 
                             <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                
+
                             <option class="select-hr"
                                 value="<?php echo $reg['cedula']."-". $reg['primer_nombre']."   ".$reg['primer_apellido'] ?>">
 
@@ -149,7 +77,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     <div class="form-group multiple">
 
                         <label class="centrar" for="exampleFormControlSelect2">Serial | Nombre | Tipo | Estado </label>
-                  
+
                         <select size="2" id="selectEquipo" class="escojer-user form-control"
                             id="exampleFormControlSelect2">
                             <?php

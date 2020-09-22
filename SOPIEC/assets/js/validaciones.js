@@ -672,6 +672,30 @@ $(document).ready(function () {
           },
         },
       },
+      contrasenaActual: {
+        message: "Por favor digite una contraseña valida",
+        validators: {
+          notEmpty: {
+            message: "Escriba su contraseña.",
+          },
+          stringLength: {
+            min: 5,
+            max: 100,
+            message: "La contraseña debe ser mayor de 5 caracteres",
+          },
+        },
+      },
+    },
+  });
+  // Validaciones para cambiar la contraseña usuario/vista usuario
+  $("#cambiarContrasena").bootstrapValidator({
+    message: "This value is not valid",
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh",
+    },
+    fields: {
       contrasena: {
         message: "Por favor digite una contraseña valida",
         validators: {
@@ -690,25 +714,35 @@ $(document).ready(function () {
         },
       },
       confirmContrasena: {
+        message: "Por favor digite una contraseña valida",
         validators: {
+          notEmpty: {
+            message: "La contraseña no puede estar vacia",
+          },
+          stringLength: {
+            min: 5,
+            max: 100,
+            message: "La contraseña debe ser mayor de 5 caracteres",
+          },
           identical: {
             field: "contrasena",
             message: "Las contraseñas deben coincidir.",
           },
         },
       },
-      addrol: {
-        message: "Elija un rol para este usuario",
+      contrasenaActual1: {
+        message: "Por favor digite una contraseña valida",
         validators: {
           notEmpty: {
-            message: "Elija un rol para este usuario",
+            message: "Escriba su contraseña.",
+          },
+          stringLength: {
+            min: 5,
+            max: 100,
+            message: "La contraseña debe ser mayor de 5 caracteres",
           },
         },
       },
     },
-
-    //   identical: {
-    //     'default': 'Please enter the same value'
-    // }
   });
 });

@@ -34,114 +34,105 @@ require("assets/php/db.php");
 
 </head>
 
-
-
 <body>
     <!-- recuperar datos de la DB -->
     <?php
-    
+
 
     $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ") or
         die("Problemas en el select:" . mysqli_error($conexion));
     $reg = mysqli_fetch_array($registros);
     ?>
 
-
     <!-- Contenedor principal -->
     <div id="wrapper">
         <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center user-image-back">
-                        <img src="assets/img/find_user.png" class="img-responsive" />
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index_user.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                    <li>
-                        <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
-                    </li>
-                    </li>
-                    <!-- Tercero/Inventario de equipos -->
-                    <li>
-                        <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-                    </li>
-
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-
-                    <li>
-                        <a href="miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
-                    </li>
-
-
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
+        <?php include_once("assets/modelos/navbar_header_user.php");?> 
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <h2>Mi usuario</h2>
                 <hr>
-                <div class="col-lg-3 well col-md-offset-1">
-                    <p> <strong> ID/Cedula: </strong> <span class="color-datos-act"><?php echo $reg['cedula'] ?></span>
-                    </p>
-                    <p> <strong>Area:</strong> </strong> <span class="color-datos-act"><?php echo $reg['area'] ?></span>
-                    </p>
-                    <p><strong> Primer nombre: </strong> <span
-                            class="color-datos-act"><?php echo $reg['primer_nombre'] ?></span> </p>
-                    <p><strong> Segundo nombre: </strong> <span
-                            class="color-datos-act"><?php echo $reg['segundo_nombre'] ?></span> </p>
-                    <p><strong> Primer Apellido: </strong> <span
-                            class="color-datos-act"><?php echo $reg['primer_apellido'] ?></span> </p>
-                    <p><strong> Segundo Apellido: </strong> <span
-                            class="color-datos-act"><?php echo $reg['segundo_apellido'] ?></span> </p>
-                    <p><strong> Correo:</strong> <span class="color-datos-act"><?php echo $reg['email'] ?></span></p>
-                    <p><strong> Rol: </strong><span class="color-datos-act"><?php echo $reg['rol'] ?></span></p>
-                    <hr>
+                <div class="mostrar-datos">
+                    <!-- Mostrar datos usuario -->
+                    <div class="col-lg-3 well caja-mostrar-datos" style="margin-top: 20px;">
+                        <center>
+                            <h3>Mis datos</h3>
+                        </center>
+                        <hr>
+                        <p> <strong> ID/Cedula: </strong> <span
+                                class="color-datos-act"><?php echo $reg['cedula'] ?></span>
+                        </p>
+                        <p> <strong>Area:</strong> </strong> <span
+                                class="color-datos-act"><?php echo $reg['area'] ?></span>
+                        </p>
+                        <p><strong> Primer nombre: </strong> <span
+                                class="color-datos-act"><?php echo $reg['primer_nombre'] ?></span> </p>
+                        <p><strong> Segundo nombre: </strong> <span
+                                class="color-datos-act"><?php echo $reg['segundo_nombre'] ?></span> </p>
+                        <p><strong> Primer Apellido: </strong> <span
+                                class="color-datos-act"><?php echo $reg['primer_apellido'] ?></span> </p>
+                        <p><strong> Segundo Apellido: </strong> <span
+                                class="color-datos-act"><?php echo $reg['segundo_apellido'] ?></span> </p>
+                        <p><strong> Correo:</strong> <span class="color-datos-act"><?php echo $reg['email'] ?></span>
+                        </p>
+                        <p><strong> Rol: </strong><span class="color-datos-act"><?php echo $reg['rol'] ?></span></p>
+                        <hr>
+                        <!-- Botón Actualizar mis datos -->
+                        <center>
+                            <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
+                                class="btn btn-success btn-lg r" name="modificarUser"
+                                style="border-radius: 5px !important;">Actualizar mis datos</button></center>
+                    </div>
 
-                    <!-- Botón asignar -->
-                    <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
-                        class="btn btn-success btn-lg r" name="modificarUser" style="margin-left: 4%;
-                    border-radius: 5px !important;">Actualizar mis datos</button>
+                    <!-- Form Actualizar contraseña -->
+                    <div class="col-lg-3 well col-md-offset-1 caja-mostrar-datos" style="margin-top: 20px;">
+                        <center>
+                            <h3>Actualizar contraseña</h3>
+                        </center>
 
-                    <!-- Modal actualizar -->
+                        <form method="POST" id="cambiarContrasena" name="cambiarContrasena"
+                            action="assets/php/actualizarDatosUser.php">
+                            <div class="form-row">
+                                <!-- Contraseña a cambiar-->
+                                <div class="form-group col-md-12">
+                                    <label for="registrar-contrasena">Nueva contraseña</label>
+                                    <input type="password" class="form-control" id="contrasena" name="contrasena"
+                                        placeholder="*********" require value="" style="margin-bottom: 1rem;">
+                                    <label for="registrar-contrasena">Confirmar contraseña</label>
+                                    <input type="password" class="form-control" id="confirmContrasena"
+                                        name="confirmContrasena" placeholder="*********">
+
+                                    <span class="fa fa-eye" id="mostrar" style="cursor:pointer;"> <span
+                                            class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar
+                                            contraseñas</span></span>
+                                    <p class="mensaje text-danger" id="errorpass"></p>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="contrasenaActual">Contraseña actual</label>
+                                    <br>
+                                    <div class="alert alert-warning" role="alert">
+                                        Este campo es obligatorio para efecuar los
+                                        cambios.</div>
+                                    <input type="password" class="form-control" id="contrasenaActual1"
+                                        name="contrasenaActual1" placeholder="*********" require value=""
+                                        style="margin-bottom: 1rem;">
+                                </div>
+                            </div>
+                            <!-- Botones -->
+                            <div class="modal-footer">
+                                <center>
+                                    <button type="submit" class="btn btn-primary btn-lg r"
+                                        name="cambiarContrasena">Actualizar mi
+                                        contraseña</button></center>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <!-- Modal actualizar datos-->
                     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
@@ -153,6 +144,7 @@ require("assets/php/db.php");
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+                                <!-- Contenido del modal -->
                                 <div class="modal-body">
                                     <form method="POST" id="actualizarDatos" name="actualizarDatos"
                                         action="assets/php/actualizarDatosUser.php">
@@ -175,7 +167,7 @@ require("assets/php/db.php");
                                                 <label for="registrar-primer-nombre">Primer nombre</label>
                                                 <input type="text" class="form-control" id="primer_nombre"
                                                     name="primer_nombre" placeholder="Andrés" require
-                                                    value="<?php echo $reg['primer_nombre']?>">
+                                                    value="<?php echo $reg['primer_nombre'] ?>">
                                             </div>
                                             <!-- Segundo nombre -->
                                             <div class="form-group col-md-6">
@@ -207,7 +199,8 @@ require("assets/php/db.php");
                                                 <!-- Div de carga -->
                                                 <div id="result-email"></div>
                                             </div>
-                                            <!-- Contraseña -->
+
+
                                             <div class="form-group col-md-6">
                                                 <label for="registrar-contrasena">Contraseña</label>
                                                 <input type="password" class="form-control" id="contrasena"
@@ -224,8 +217,17 @@ require("assets/php/db.php");
                                                         contraseñas</span></span>
                                                 <p class="mensaje text-danger" id="errorpass"></p>
 
+                                                <label for="contrasenaActual">Contraseña actual</label>
+                                                <br>
+                                                <div class="alert alert-warning" role="alert">
+                                                    Este campo es obligatorio para efecuar los
+                                                    cambios.</div>
+                                                <input type="password" class="form-control" id="contrasenaActual"
+                                                    name="contrasenaActual" placeholder="*********" require value=""
+                                                    style="margin-bottom: 1rem;">
                                             </div>
                                         </div>
+                                        <!-- Botones -->
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Cancelar</button>
@@ -233,23 +235,65 @@ require("assets/php/db.php");
                                                 name="actualizarDatosUser">
                                         </div>
                                     </form>
+
                                 </div>
-                                <!-- <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Cancelar</button>
-                                    <input type="submit" class="btn btn-primary" value="Asignar">
-                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <?php
+                    mysqli_free_result($registros);
+                    mysqli_close($conexion);
+                    ?>
+                </div>
+
+                <!--  $avatar  -->
+                <div class="col-lg-12 well" style="margin-top: 20px;">
+
+
+                    <center> <a href="vista_usuario.php"><img
+                                src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
+                                class="rounded-circle" height="200px"></td></a> </center>
+                    <!-- Button trigger modal -->
+                    <br>
+                    <button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal"
+                        data-target="#avatar">
+                        Modificar foto de perfil
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="avatar" data-backdrop="static" tabindex="-1" role="dialog"
+                        aria-labelledby="avatarLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="avatar">Modificar foto de perfil</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <center>
+                                        <h3> Cargar imagen jpg</h3>
+                                        <form enctype="multipart/form-data" action="assets\php\guardar.php"
+                                            method="POST">
+                                            <input class="form-control" type="file" name="imagen" id="imagen"
+                                                required><br>
+                                            <input class="form-control btn btn-success" type="submit"
+                                                value="subir archivo">
+                                        </form>
+                                    </center>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="assets\php\eliminar_avatar.php" class="btn btn-danger">Eliminar</a>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">ACEPTAR</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <br>
-                <?php
-                mysqli_free_result($registros);
-                mysqli_close($conexion);
-                ?>
-
+                <!-- /. $avatar  -->
 
             </div>
             <!-- /. PAGE INNER  -->
@@ -272,27 +316,28 @@ require("assets/php/db.php");
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Bootstrap validator -->
     <script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js">
+    </script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.0.0.js"></script> -->
-    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script> -->
+
 
     <!-- Mostrar pass-->
     <script type="text/javascript">
         $(document).ready(function () {
             $('#email').on('blur', function () {
                 $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
-
-                var email = $(this).val();
-                var dataString = 'email=' + email;
+                var valEmail = $(this).val();
                 $.ajax({
                     type: "POST",
                     url: "assets/php/checkearDisponibilidad.php",
-                    data: dataString,
+                    dataType: "json",
+                    data: {
+                        email: valEmail
+                    },
                     success: function (data) {
-                        $('#result-email').fadeIn(1000).html(data);
+                        $('#result-email').fadeIn(1000).html(data.mensajeEmail);
                     }
                 });
             });

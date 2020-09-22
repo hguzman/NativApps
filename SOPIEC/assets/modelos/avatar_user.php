@@ -1,3 +1,4 @@
+
 <li class="text-center user-image-back">
     <!-- recuperar imagen de la base de datos -->
     <?php
@@ -8,12 +9,12 @@
         die("Problemas en el select:" . mysqli_error($conexion));
     $reg_a = mysqli_fetch_array($registros_a)
     ?>
-    <?php
+    <?php 
 
 
-    $_SESSION["imagen"] = base64_encode($reg_a['imagen']);
-    $imagen =  $_SESSION["imagen"];
-    ?>
+$_SESSION["imagen"] = base64_encode($reg_a['imagen']);
+$imagen =  $_SESSION["imagen"];
+?>
 
-    <a href="perfil.php"><img src="data:image/jpg;base64, <?php echo  $imagen ?>" height="150px" width="100%" class="rounded-circle"></td></a>
+<a href="vista_usuario.php"><img src="data:image/jpg;base64, <?php echo  $imagen ?>" height="150px" width="100%" class="rounded-circle"></td></a>
 </li>
