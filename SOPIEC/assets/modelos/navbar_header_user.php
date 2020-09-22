@@ -56,6 +56,9 @@
             <li>
                 <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
             </li>
+            <li>
+                <a href="ticketsenviados.php"><i class="fa fa-table "></i>Estado de tickets</a>
+            </li>
         </ul>
 
     </div>
