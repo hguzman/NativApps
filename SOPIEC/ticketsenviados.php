@@ -1,30 +1,25 @@
+﻿<!DOCTYPE html>
 <?php
+require_once("assets/php/val_session_user.php");
 require_once("assets/php/db.php");
-require_once("assets/php/val_session_admin.php");
-
 ?>
 
-
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tickets</title>
-
-    <!-- Estilos CSS Toastr -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <title>SOPIEC</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- FONTAWESOME CDN -->
-    <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 
 
@@ -32,7 +27,7 @@ require_once("assets/php/val_session_admin.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
+        <?php include_once("assets/modelos/navbar_header_user.php");?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
@@ -43,7 +38,8 @@ require_once("assets/php/val_session_admin.php");
 
                 <!-- query -->
                 <?php
-                $registros = mysqli_query($conexion, "select id,cedula,fecha,nombre,email,asunto,estado  from ticket ORDER BY estado") or
+                $registros = mysqli_query($conexion, "select id,fecha,nombre,email,asunto,estado  from ticket WHERE cedula 
+                = $sesion order by estado ") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
@@ -54,7 +50,6 @@ require_once("assets/php/val_session_admin.php");
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">ID</th>
-                                    <th scope="col">Cedula</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Email</th>
@@ -73,7 +68,6 @@ require_once("assets/php/val_session_admin.php");
                                     <th scope="row">
                                         <input class="form-control" type="number" value="<?php echo $id = $reg['id'] ?>"
                                             readonly id="id" name="id" readonl> </th>
-                                    <td> <?php echo $reg['cedula'] ?></td>
                                     <td> <?php echo $reg['nombre'] ?></td>
                                     <td> <?php echo $reg['fecha'] ?></td>   
                                     <td> <?php echo $reg['email'] ?></td>
@@ -82,7 +76,7 @@ require_once("assets/php/val_session_admin.php");
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
-                                            href="verticket.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
+                                            href="verticketUser.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
 
                                     </td>
 
@@ -99,9 +93,8 @@ require_once("assets/php/val_session_admin.php");
                 </table>
             </div>
 
-            <!-- /. ROW  -->
-        </div>
-        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE INNER  -->
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>
@@ -115,13 +108,6 @@ require_once("assets/php/val_session_admin.php");
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/validaciones.js"></script>
-    <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- Script Toastr -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="assets/js/validaciones.js"></script>
 
 
 </body>

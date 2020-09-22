@@ -7,15 +7,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="index.php"><img src="assets/img/SOPIEC.ico" alt="" width="10%">
+                        SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="../../ticket.php">Open Ticket</a></li>
+                        <li><a href="#">Ir al sitio web</a></li>
+                        <!-- <li><a href="../../ticket.php">Open Ticket</a></li> -->
                         <li><a href="../php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -26,8 +27,8 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                        <!-- recuperar imagen de la base de datos -->
-                        <?php include_once("../modelos/avatar_admin_vs.php"); ?> 
+                    <!-- recuperar imagen de la base de datos -->
+                    <?php include_once("../modelos/avatar_admin_vs.php"); ?>
                     <!-- Primero/inicio -->
                     <li>
                         <a href="../../index.php"><i class="fa fa-desktop "></i>Inicio</a>

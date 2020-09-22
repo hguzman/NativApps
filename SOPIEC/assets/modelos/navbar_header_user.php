@@ -14,8 +14,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                 <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                <li><a href="#">See Website</a></li>
-                <li><a href="ticket.php">Open Ticket</a></li>
+                <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
+                <li><a href="ticket.php">Abrir Ticket</a></li>
                 <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
             </ul>
         </div>
@@ -52,10 +52,14 @@
 
 
             </li>
+            <li>
+                <a href="ticketsenviados.php"><i class="fas fa-check-double"></i>Mis tickets</a>
+            </li>
             <!--  Quinto/A cerca de SOPIEC-->
             <li>
                 <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
             </li>
+            
         </ul>
 
     </div>
