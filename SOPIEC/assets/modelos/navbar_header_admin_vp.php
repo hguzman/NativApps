@@ -7,16 +7,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
+                    <a class="navbar-brand" href="index.php"><img src="assets/img/SOPIEC.ico" alt="" width="10%">
+                        SOPIEC</a>
                 </div>
                 <!-- Lista opciones -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="ticket.php">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
+                        <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
+                        <!-- <li><a href="../../ticket.php">Open Ticket</a></li> -->
+                        <li><a href="../php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,7 +35,8 @@
                     </li>
                     <!-- Segundo/Administracion de usuarios -->
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevousuario.php">Crear Nuevo usuario</a>
@@ -46,7 +48,8 @@
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="nuevoequipo.php">Agregar un equipo</a>
