@@ -1,4 +1,5 @@
 <head>
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <?php

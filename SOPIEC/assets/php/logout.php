@@ -5,23 +5,37 @@ session_destroy();
 ?>
 
 <head>
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
-<center> <h1 class="align-self-center">SESION FINALIZADA, REDIRECCIONANDO AL LOGIN</h1> </center>
 
 <body>
-    
-<div class="container">
 
-</div>
+    <div class='container'>
+        <div class='alert alert-info' role='alert'>
+            <center>
+                <h1>SESIÓN FINALIZADA</h1>
+            </center>
+            <center>
+                <h4>Su sesión ha finalizado</h4>
+            </center>
+            <center>
+                <p>Serás redireccionado en <span id='counter'>10</span> segundo(s).</p>
+            </center>
+        </div>
+    </div>
 
 </body>
-
-<script language="javascript">
-
-    // Usando setTimeout para ejecutar una función después de 5 segundos.
-    setTimeout(function() {
-        // Redirigir con JavaScript
-        window.location.href = '../../login.php';
-    }, 2000);
-</script>
+<!-- Script Redirección -->
+<script type='text/javascript'>
+    function countdown() {
+        var i = document.getElementById('counter');
+        if (parseInt(i.innerHTML) <= 0) {
+            location.href = '../../login.php';
+        }
+        i.innerHTML = parseInt(i.innerHTML) - 1;
+    }
+    setInterval(function () {
+        countdown();
+    }, 300);
+</script>";

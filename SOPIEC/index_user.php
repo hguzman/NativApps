@@ -8,8 +8,9 @@ require_once("assets/php/db.php");
 
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Inicio</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
