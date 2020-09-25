@@ -14,9 +14,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                 <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
-                <li><a href="ticket.php">Abrir Ticket</a></li>
-                <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
+                <li><a href="../../../index.php" target="_blank">Ir al sitio web</a></li>
+                <li><a href="../../ticket.php">Abrir Ticket</a></li>
+                <li><a href="../php/logout.php">Cerrar sesión</a></li>
             </ul>
         </div>
     </div>
@@ -30,30 +30,30 @@
             <?php include("avatar_user.php"); ?>
             <!-- Primero/inicio -->
             <li>
-                <a href="index_user.php"><i class="fa fa-desktop "></i>Inicio</a>
+                <a href="../../index_user.php"><i class="fa fa-desktop "></i>Inicio</a>
             </li>
             <!-- Segundo/Administracion de usuarios -->
             <li>
             <li>
-                <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
+                <a href="../../vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
             </li>
             </li>
             <!-- Tercero/Inventario de equipos -->
             <li>
-                <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
+                <a href="../../equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
             </li>
 
             <!-- Cuarto/Administracion de equipos -->
             <li>
 
             <li>
-                <a href="miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
+                <a href="../../miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
             </li>
 
 
             </li>
             <li>
-                <a href="ticketsenviados.php"><i class="fas fa-check-double"></i>Mis tickets</a>
+                <a href="../../ticketsenviados.php"><i class="fas fa-check-double"></i>Mis tickets</a>
             </li>
             <!--  Quinto/A cerca de SOPIEC-->
             <li>

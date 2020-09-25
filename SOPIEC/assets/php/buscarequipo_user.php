@@ -1,52 +1,48 @@
 <?php
-require_once("assets/php/val_session_user.php");
+require_once("val_session_user.php");
 ?>
 <?php
-require_once("assets/php/db.php");
+require_once("db.php");
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inventario de equipos</title>
+    <title>Busqueda de equipos</title>
     <!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <!-- FONTAWESOME CDN -->
+    <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
     <!-- CUSTOM STYLES-->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
+
+
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-        <?php include_once("assets/modelos/navbar_header_user.php");?>
+        <?php include_once("../modelos/navbar_header_user_vs.php"); ?>
+
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- Alerta -->
-                        <?php if (isset($_SESSION['mensaje'])) : ?>
-                        <div class="container ancho100 bg-<?php echo $_SESSION['tipo_mensaje']; ?>">
-                            <?php echo $_SESSION['mensaje']; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
 
-                        <?php endif; ?>
                         <div class="usuarios-buscar">
                             <h2>Equipos</h2>
                             <!-- Barra de busqueda -->
-                            <form class="form-inline my-2 my-lg-0 barra-buscar"
-                                action="assets/php/buscarequipo_user.php" method="GET">
+                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo_user.php"
+                                method="GET">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Serial"
                                     aria-label="Search" id="buscar_equipo" name="buscar_equipo">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
@@ -57,29 +53,47 @@ require_once("assets/php/db.php");
                 </div>
                 <hr />
 
-                <!-- query -->
+                <!-- Busqueda por distintos criterios -->
                 <?php
-                require_once("assets/php/db.php");
-                $registros = mysqli_query($conexion, "select `serial`, `marca`, `nombre`, `tipo_equipo`, `modelo_equipo`, `procesador`, `ram`, `disco_duro`, `sistema_operativo`
-                                      from equipos") or
+                $registros = mysqli_query($conexion, "select serial,marca,nombre,tipo_equipo,modelo_equipo,procesador,ram,disco_duro,sistema_operativo
+                    from equipos where 
+                    serial ='$_REQUEST[buscar_equipo]'
+                    or marca ='$_REQUEST[buscar_equipo]' 
+                    or nombre ='$_REQUEST[buscar_equipo]'
+                    or tipo_equipo ='$_REQUEST[buscar_equipo]'
+                    or modelo_equipo ='$_REQUEST[buscar_equipo]'
+                    or procesador ='$_REQUEST[buscar_equipo]'
+                    or ram ='$_REQUEST[buscar_equipo]'
+                    or disco_duro ='$_REQUEST[buscar_equipo]'
+                    or sistema_operativo ='$_REQUEST[buscar_equipo]'
+")
+                    or
                     die("Problemas en el select:" . mysqli_error($conexion));
+                // // Alerta de criterio no encontrado NO SIRVE 
+                // if (empty($registros)) {
+                //     //mostrar mensaje
+                //     $_SESSION['mensaje'] = 'El criterio de busqueda indicado no existe en la base de datos';
+                //     $_SESSION['tipo_mensaje'] = 'danger';
+                //     header('Location: ../../equipos.php');
+                // }
+                
                 ?>
-                <div id="contenedor-usuarios" class="contenedor-usuarios">
-                    <div class="row">
+                <div id="contenedor-equipos" class="contenedor-usuarios">
+                    <div class="row contenedor-tabla">
                         <!-- Tabla de valores en base de datos -->
                         <table class="table">
                             <thead class="thead-light ">
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">Serial</th>
-                                    <th scope="col">Marca</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Tipo de equipo</th>
-                                    <th scope="col">Modelo de equipo</th>
-                                    <th scope="col">Procesador</th>
-                                    <th scope="col">RAM</th>
-                                    <th scope="col">Disco duro</th>
-                                    <th scope="col">Sistema operativo</th>
+                                    <th scope="col">marca </th>
+                                    <th scope="col">nombre</th>
+                                    <th scope="col">tipo de equipo</th>
+                                    <th scope="col">modelo de equipo</th>
+                                    <th scope="col">procesador</th>
+                                    <th scope="col">ram</th>
+                                    <th scope="col">disco duro</th>
+                                    <th scope="col">sistema operativo</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,16 +106,15 @@ require_once("assets/php/db.php");
                                     <th scope="row">
                                         <input class="form-control" type="text"
                                             value="<?php echo $serial = $reg['serial'] ?>" readonly id="serial"
-                                            name="serial" readonl> </th>
+                                            name="serial" readonly> </th>
                                     <td> <?php echo $reg['marca'] ?></td>
                                     <td> <?php echo $reg['nombre'] ?></td>
-                                    <td> <?php echo $reg['tipo_equipo'] ?> </td>
+                                    <td> <?php echo $reg['tipo_equipo'] ?></td>
                                     <td> <?php echo $reg['modelo_equipo'] ?> </td>
                                     <td> <?php echo $reg['procesador'] ?> </td>
                                     <td> <?php echo $reg['ram'] ?> </td>
                                     <td> <?php echo $reg['disco_duro'] ?> </td>
                                     <td> <?php echo $reg['sistema_operativo'] ?> </td>
-
                                 </tr>
 
                     </div>
@@ -122,21 +135,16 @@ require_once("assets/php/db.php");
     <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
-
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="../js/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="../js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/validaciones.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/validaciones.js"></script>
+    <script src="../js/custom.js"></script>
 
-    <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

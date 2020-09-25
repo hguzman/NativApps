@@ -9,10 +9,10 @@ require_once("assets/php/val_session_admin.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tickets</title>
-
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- BOOTSTRAP STYLES-->
@@ -32,7 +32,7 @@ require_once("assets/php/val_session_admin.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
+        <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
@@ -75,7 +75,7 @@ require_once("assets/php/val_session_admin.php");
                                             readonly id="id" name="id" readonl> </th>
                                     <td> <?php echo $reg['cedula'] ?></td>
                                     <td> <?php echo $reg['nombre'] ?></td>
-                                    <td> <?php echo $reg['fecha'] ?></td>   
+                                    <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
                                     <td> <?php echo $reg['estado'] ?> </td>

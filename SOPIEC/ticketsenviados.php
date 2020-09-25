@@ -7,9 +7,10 @@ require_once("assets/php/db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Tickets</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -69,7 +70,7 @@ require_once("assets/php/db.php");
                                         <input class="form-control" type="number" value="<?php echo $id = $reg['id'] ?>"
                                             readonly id="id" name="id" readonl> </th>
                                     <td> <?php echo $reg['nombre'] ?></td>
-                                    <td> <?php echo $reg['fecha'] ?></td>   
+                                    <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
                                     <td> <?php echo $reg['estado'] ?> </td>
@@ -93,8 +94,8 @@ require_once("assets/php/db.php");
                 </table>
             </div>
 
-    </div>
-    <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE INNER  -->
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>
