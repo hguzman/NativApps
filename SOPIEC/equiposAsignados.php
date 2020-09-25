@@ -137,7 +137,7 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
             if (confirm(
                     `¿Realmente desea deshacer la asignacion de equipo del usuario C.C ${cedula}? con el serial ${serial}?`
-                    )) {
+                )) {
                 toastr["error"]("Se ha destruido la asignación de equipo al usuario C.C #" + cedula + ".",
                     "Asignación eliminada")
                 toastr.options = {

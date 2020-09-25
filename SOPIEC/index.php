@@ -11,6 +11,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     
     <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets/img/SOPIEC.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
     <!-- BOOTSTRAP STYLES-->
