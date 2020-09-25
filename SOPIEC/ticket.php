@@ -9,7 +9,8 @@ require_once("assets/php/db.php");
 <html>
 
 <head>
-<meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear Ticket</title>
 
@@ -33,152 +34,90 @@ require_once("assets/php/db.php");
 
 <body>
     <!-- Contenedor principal -->
-    <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
+    <?php include_once("assets/modelos/navbar_header_user.php");?>
+    <!-- Contenido de la pagina, lado derecho ancho  -->
+
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Area de ticket</h2>
                 </div>
             </div>
-        </div>
+            <hr />
 
-        <!--  Sidebar de opciones  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav" id="main-menu">
-            <!-- recuperar imagen de la base de datos -->
-            <?php include("assets/modelos/avatar_user.php"); ?>
-            <!-- Primero/inicio -->
-            <li>
-                <a href="index_user.php"><i class="fa fa-desktop "></i>Inicio</a>
-            </li>
-            <!-- Segundo/Administracion de usuarios -->
-            <li>
-            <li>
-                <a href="vista_usuario.php"><i class="fas fa-user"></i>Ver mi usuario registrado</a>
-            </li>
-            </li>
-            <!-- Tercero/Inventario de equipos -->
-            <li>
-                <a href="equipos_user.php"><i class="fa fa-table "></i>Ver Inventario de equipos</a>
-            </li>
-
-            <!-- Cuarto/Administracion de equipos -->
-            <li>
-
-            <li>
-                <a href="miequipo_user.php"><i class="fas fa-laptop-code"></i>Gestionar mi equipo</a>
-            </li>
-
-
-            </li>
-            <!--  Quinto/A cerca de SOPIEC-->
-            <li>
-                <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-            </li>
-        </ul>
-
-    </div>
-
-</nav>
-        <!-- Contenido de la pagina, lado derecho ancho  -->
-
-        <div id="page-wrapper">
-            <div id="page-inner">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Area de ticket</h2>
-                    </div>
-                </div>
-                <hr />
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well well-sm">
-                                <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
-                                    method="POST">
-                                    <fieldset>
+                        <div class="well well-sm">
+                            <form id="formticket" class="form-horizontal" action="assets/php/guardarticket.php"
+                                method="POST">
+                                <fieldset>
                                     <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-credit-card bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="cedula" name="cedula" type="text" placeholder="cedula" readonly
-                                                    class="form-control" value="<?php echo $sesion = $_SESSION['username']; ?>">
-                                        
-                                            </div>
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-credit-card bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="cedula" name="cedula" type="text" placeholder="cedula" readonly
+                                                class="form-control"
+                                                value="<?php echo $sesion = $_SESSION['username']; ?>">
+
                                         </div>
-                                        <legend class="text-center header"></legend>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="nombre" name="nombre" type="text" placeholder="Nombre"
-                                                    class="form-control" value="">
-                                            </div>
+                                    </div>
+                                    <legend class="text-center header"></legend>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="nombre" name="nombre" type="text" placeholder="Nombre"
+                                                class="form-control" value="">
                                         </div>
+                                    </div>
 
 
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-envelope-o bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="email" name="email" type="email" placeholder="Email "
-                                                    class="form-control">
-                                            </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-envelope-o bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="email" name="email" type="email" placeholder="Email "
+                                                class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-comment"></i></span>
-                                            <div class="col-md-8">
-                                                <input id="asunto" name="asunto" type="text" placeholder="Asunto"
-                                                    class="form-control">
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-comment"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="asunto" name="asunto" type="text" placeholder="Asunto"
+                                                class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-pencil-square-o bigicon"></i></span>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" id="mensaje" name="mensaje"
-                                                    placeholder="Enter your massage for us here. We will get back to you within 2 business days."
-                                                    rows="7"></textarea>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-pencil-square-o bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="mensaje" name="mensaje"
+                                                placeholder="Enter your massage for us here. We will get back to you within 2 business days."
+                                                rows="7"></textarea>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <div class="col-md-12 text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg" name="Enviar"
-                                                    id="enviar">Enviar</button>
-                                            </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg" name="Enviar"
+                                                id="enviar">Enviar</button>
                                         </div>
-                                        
-                                    </fieldset>
-                                </form>
-                            </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- /. ROW  -->
-            </div>
-        <!-- /. PAGE INNER  -->
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. PAGE INNER  -->
 
     </div>
     <!-- /. PAGE WRAPPER  -->
@@ -221,18 +160,18 @@ require_once("assets/php/db.php");
     <script src="assets/js/validaciones.js"></script>
 
 
-<script>
-var nombre = document.getElementById('nombre');
-var email = document.getElementById('email');
-var asunto = document.getElementById('asunto');
-var mensjae = document.getElementById('mensjae');
+    <script>
+        var nombre = document.getElementById('nombre');
+        var email = document.getElementById('email');
+        var asunto = document.getElementById('asunto');
+        var mensjae = document.getElementById('mensjae');
 
-$('#enviar').on("submit",function(){
-        if ( nombre && email && asunto && mensaje != empty){
-            alert ("Su tucket ha sido creado exitosamente, en breves recibira respuesta del admin.");
-        }
-})
-</script>
+        $('#enviar').on("submit", function () {
+            if (nombre && email && asunto && mensaje != empty) {
+                alert("Su tucket ha sido creado exitosamente, en breves recibira respuesta del admin.");
+            }
+        })
+    </script>
 </body>
 
 </html>

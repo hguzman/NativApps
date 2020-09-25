@@ -9,9 +9,10 @@ require_once("assets/php/val_session_admin.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Usuarios</title>
 
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -32,7 +33,7 @@ require_once("assets/php/val_session_admin.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
+        <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
@@ -168,7 +169,7 @@ require_once("assets/php/val_session_admin.php");
                 }
 
                 setTimeout(() => {
-                    window.location.href = "assets/php/borrar.php?cedula=" + cedula 
+                    window.location.href = "assets/php/borrar.php?cedula=" + cedula
                 }, 1500);
             }
         }

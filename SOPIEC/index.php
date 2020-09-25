@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 require_once("assets/php/db.php");
 require_once("assets/php/val_session_admin.php");
@@ -8,9 +8,11 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 <html>
 
 <head>
+    
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Inicio</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -24,7 +26,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-       <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
+        <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
@@ -47,16 +49,16 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     <div class="form-group multiple" id="user-list">
 
                         <label class="centrar" for="exampleFormControlSelect2"> Cedula | Nombre | Apellido</label>
-                        
+
                         <select size="2" id="selectUser" class="escojer-user form-control"
                             id="exampleFormControlSelect2" name="selectUser">
-                            
+
 
 
                             <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                
+
                             <option class="select-hr"
                                 value="<?php echo $reg['cedula']."-". $reg['primer_nombre']."   ".$reg['primer_apellido'] ?>">
 
@@ -76,7 +78,7 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     <div class="form-group multiple">
 
                         <label class="centrar" for="exampleFormControlSelect2">Serial | Nombre | Tipo | Estado </label>
-                  
+
                         <select size="2" id="selectEquipo" class="escojer-user form-control"
                             id="exampleFormControlSelect2">
                             <?php

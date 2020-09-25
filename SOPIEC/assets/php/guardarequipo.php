@@ -43,10 +43,10 @@ if (isset($_POST['registrar'])) {
 <!DOCTYPE html>
 <html>
 
-<head>
+<head><link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuevo Equipo</title>
+    <title>Datos del nuevo equipo</title>
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- BOOTSTRAP STYLES-->

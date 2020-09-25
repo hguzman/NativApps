@@ -10,9 +10,10 @@ include("assets/php/db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editar usuario</title>
+    <title>Editar equipo</title>
 
     <!-- Bootstrap validator -->
     <link rel="stylesheet"
@@ -206,7 +207,8 @@ include("assets/php/db.php");
                         <div class="form-group col-md-6">
                             <label for="registrar-contrasena">Sistema operativo</label>
                             <select class="form-control" name="sistema_operativo" id="sistema_operativo" require>
-                                <option selected value="<?php echo $sistema_operativo ?>" id="sistema_operativo"> Actual:
+                                <option selected value="<?php echo $sistema_operativo ?>" id="sistema_operativo">
+                                    Actual:
                                     <?php echo $sistema_operativo?> </option>
                                 <option value="Windows 10">Windows 10</option>
                                 <option value="Ubuntu">Ubuntu</option>

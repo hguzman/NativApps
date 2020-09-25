@@ -41,9 +41,10 @@ where serial='$serial'") or
 <html>
 
 <head>
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Equipos</title>
+    <title>Datos de equipo actualizado</title>
 
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -63,7 +64,7 @@ where serial='$serial'") or
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include_once("../modelos/navbar_header_admin_vs.php"); ?> 
+        <?php include_once("../modelos/navbar_header_admin_vs.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
@@ -72,7 +73,7 @@ where serial='$serial'") or
                     <div class="col-md-12">
 
                         <div class="usuarios-buscar">
-                            <h2>Datos de usuario actualizado</h2>
+                            <h2>Datos de equipo actualizado</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarequipo.php" method="GET">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Serial"

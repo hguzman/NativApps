@@ -10,9 +10,10 @@ require_once("db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Busqueda de usuarios</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -30,7 +31,7 @@ require_once("db.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include_once("../modelos/navbar_header_admin_vs.php"); ?> 
+        <?php include_once("../modelos/navbar_header_admin_vs.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
