@@ -9,6 +9,7 @@ require_once("assets/php/val_session_admin.php");
 <html>
 
 <head>
+<link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear nuevo usuario</title>

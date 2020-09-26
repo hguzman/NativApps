@@ -7,9 +7,10 @@ require("assets/php/db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Mi usuario</title>
     <!-- Bootstrap validator -->
     <link rel="stylesheet"
         href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
@@ -37,8 +38,6 @@ require("assets/php/db.php");
 <body>
     <!-- recuperar datos de la DB -->
     <?php
-
-
     $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ") or
         die("Problemas en el select:" . mysqli_error($conexion));
     $reg = mysqli_fetch_array($registros);
@@ -47,7 +46,7 @@ require("assets/php/db.php");
     <!-- Contenedor principal -->
     <div id="wrapper">
         <!-- Header -->
-        <?php include_once("assets/modelos/navbar_header_user.php");?> 
+        <?php include_once("assets/modelos/navbar_header_user.php");?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
@@ -201,22 +200,7 @@ require("assets/php/db.php");
                                             </div>
 
 
-                                            <div class="form-group col-md-6">
-                                                <label for="registrar-contrasena">Contraseña</label>
-                                                <input type="password" class="form-control" id="contrasena"
-                                                    name="contrasena" placeholder="*********" require
-                                                    value="<?php echo $reg['contrasena'] ?>"
-                                                    style="margin-bottom: 1rem;">
-                                                <!-- confirmContraseña -->
-                                                <input type="password" class="form-control" id="confirmContrasena"
-                                                    name="confirmContrasena" placeholder="*********" require
-                                                    value="<?php echo $reg['contrasena'] ?>">
-
-                                                <span class="fa fa-eye" id="mostrar" style="cursor:pointer;"> <span
-                                                        class="pwdtxt color-datos-act" style="cursor:pointer;">Mostrar
-                                                        contraseñas</span></span>
-                                                <p class="mensaje text-danger" id="errorpass"></p>
-
+                                            <div class="form-group col-md-12">
                                                 <label for="contrasenaActual">Contraseña actual</label>
                                                 <br>
                                                 <div class="alert alert-warning" role="alert">

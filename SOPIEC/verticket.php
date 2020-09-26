@@ -9,9 +9,10 @@ require_once("assets/php/val_session_admin.php")
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crear Ticket</title>
+    <title>Ver ticket</title>
 
     <!-- Bootstrap validator -->
     <link rel="stylesheet"
@@ -122,7 +123,7 @@ require_once("assets/php/val_session_admin.php")
                                 <a href="equipos.php">Gestionar equipo</a>
                             </li>
                         </ul>
-                        <li>
+                    <li>
                         <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
                     </li>
                     </li>
@@ -158,18 +159,19 @@ require_once("assets/php/val_session_admin.php")
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-info bigicon"> Id</i></span>
                                             <div class="col-md-8">
-                                                <input id="id" name="id" type="text"
-                                                    value="<?php echo $id; ?> " readonly class="form-control"></input>
+                                                <input id="id" name="id" type="text" value="<?php echo $id; ?> "
+                                                    readonly class="form-control"></input>
                                             </div>
                                         </div>
-                                        
+
 
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-user bigicon"> Nombre</i></span>
                                             <div class="col-md-8">
                                                 <input id="nombre" name="nombre" type="text"
-                                                    value="<?php echo $nombre; ?> " readonly class="form-control"></input>
+                                                    value="<?php echo $nombre; ?> " readonly
+                                                    class="form-control"></input>
                                             </div>
                                         </div>
 
