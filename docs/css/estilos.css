@@ -285,3 +285,17 @@ body {
   background-color: #a3e0d9;
 }
 
+/*PANEL DE ESTILOS DEL DOWNLOADS FILE */
+.btn-downloads{
+  width: 150px;
+  height: 150px;
+    margin-left: 5%;
+    font-size:100px;
+    color: #b40101;
+    
+  }
+  .font-downloads{
+      font-size:25px;
+    }
+  /*PANEL DE ESTILOS DEL DOWNLOADS FILE FIN*/
+  
