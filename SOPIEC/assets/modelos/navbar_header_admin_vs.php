@@ -66,7 +66,7 @@
                     </li>
                     <!--  Sexto/A cerca de SOPIEC-->
                     <li>
-                        <a href="../../manuales.html"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
+                        <a href="../../manuales.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
                     </li>
                 </ul>
 

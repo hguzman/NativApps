@@ -43,6 +43,9 @@
                   class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
+              <a class="nav-link hvr-bob" href="manuales.html">Manuales<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link hvr-bob" href="dvleasy.html">A cerca de Dvleasy <span
                   class="sr-only">(current)</span></a>
             </li>
@@ -56,826 +59,835 @@
       </nav>
     </div>
 
-  
 
-  <!-- Banner -->
-  <div class="card bg-dark text-white">
-    <img src="img/banner.jpg" class="card-img" alt="..." style="
+
+    <!-- Banner -->
+    <div class="card bg-dark text-white">
+      <img src="img/banner.jpg" class="card-img" alt="..." style="
     height: 190rem;
 ">
-    <div class="card-img-overlay">
-      <h5 class="card-title">DVLeasy</h5>
-      <!-- <p class="card-text">Aqui podrás encontrar toda la documentación referente al software SOPIEC.</p> -->
-      <!-- Banner -->
-      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-transparent">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-          <h1 class="display-4font-weight-normal"> Documentación y diagramas</h1>
-          <p class="lead font-weight-normal">Aqui podrás encontrar toda la documentación referente al software SOPIEC.
-          </p>
-          <a class="btn btn-info scroll" href="#accordion">¡Desliza!</a>
+      <div class="card-img-overlay">
+        <h5 class="card-title">DVLeasy</h5>
+        <!-- <p class="card-text">Aqui podrás encontrar toda la documentación referente al software SOPIEC.</p> -->
+        <!-- Banner -->
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-transparent">
+          <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4font-weight-normal"> Documentación y diagramas</h1>
+            <p class="lead font-weight-normal">Aqui podrás encontrar toda la documentación referente al software SOPIEC.
+            </p>
+            <a class="btn btn-info scroll" href="#accordion">¡Desliza!</a>
+          </div>
         </div>
+
+        <!-- Contenedor collapsible -->
+        <div class="col-12 col-md-12  mt-5" id="accordion">
+          <!-- ============= Caso de uso login============= -->
+          <div class="card opacity mb-3">
+            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="true" aria-controls="collapseThree">
+              <h5 class="text-center mb-0">
+                <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                  Casos de uso login
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <!-- Contenido -->
+                <div class="card-group ">
+                  <div class="card altura_card">
+                    <img src="img/Login.jpeg" alt="Registro de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto_login">
+                    <!-- cuerpo del collapsible -->
+
+                    <div class="card-body">
+                      <h1 class="card-title fw-500 centrar p-4">Ingresar a SOPIEC y cerrar sesión</h1>
+                      <p class="card-text fw-500">En este caso de uso se muestr la interacción del usuario con el
+                        sistema
+                        y la secuencia de pasos para poder ingresar y salir de manera correcta al software.</p>
+
+
+                      <!-- Boton ver -->
+                      <button type="button" class="btn btn-dark botones centrar-boton fw-500" data-toggle="modal"
+                        data-target=".caso05ingresar">Ver</button>
+                      <!-- Extra large modal -->
+                      <div class="modal fade caso05ingresar" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4"> Caso 05 LOGUEARSE Y CERRAR SESIÓN</h1>
+                              <hr>
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+                              <hr>
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+                              <hr>
+                              <h3>Descripcion</h3>
+                              <p> El usuario accederá al sistema de información y posteriormente de hacer los cambios
+                                cerrará sesión.</p>
+                              <hr>
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado en la base de datos, debe acceder al sitio web del
+                                sotware, por tanto debe tener un navegador y conexion a internet.</p>
+                              <hr>
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar cedula y contraseña en el formulario.
+                                </li>
+                                <li>Verificar campos vacíos.
+                                </li>
+                                <li>Comprobar que los datos ingresados sean iguales a los de la base de datos
+                                </li>
+                                <li>Dar acceso al software.
+                                </li>
+                                <li>Presionar "cerrar sesión".</li>
+                                <li>Destruir la sesión actual y sacar al usuario del software.</li>
+                              </ol>
+                              <hr>
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Campos vacíos o credenciales.</li>
+                                <li>Datos no encontrados en la base de datos. </li>
+                                <li>...</li>
+                              </ol>
+                              <hr>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario accede correctamente al software y posterior a realizar cambios cierra
+                                sesión.
+                              </p>
+                            </div>
+                            <img src="img/Login.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--============== Card Casos de uso usuarios===========-->
+          <div class="card opacity mb-3">
+            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <h5 class="text-center mb-0">
+                <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Casos de uso usuarios
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <!-- Contenido -->
+                <div class="card-group ">
+
+
+                  <!-- Primera tarjeta-Registrar Usuario-->
+                  <div class="card">
+                    <img src="img/Registrar usuario.png" alt="Registro de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto-250 ver">
+                    <div class="card-body">
+                      <h5 class="card-title">Registrar un Usuario</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        realizar el registro de un nuevo usuario.</p>
+                      <!-- Boton ver -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".caso01">Ver</button>
+                      <!-- Extra large modal -->
+                      <div class="modal fade caso01" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4"> Caso 01 REGISTRAR UN NUEVO USUARIO</h1>
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario accederá al sistema de información para registrar un usuario con sus
+                                características</p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener
+                                un
+                                navegador y conexion a internet.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li>El usuario procede a registrar el nuevo usuario con sus características
+                                </li>
+                                <li>El sistema registra el nuevo usuario en la BD
+                                </li>
+                              </ol>
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>Usuario con número de cedula repetido</li>
+                                <li>...</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario registra un nuevo usuario</p>
+                            </div>
+                            <img src="img/Registrar usuario.png" alt="Imagen registrar"
+                              class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                  <!-- Segunda tarjeta-Buscar Usuario-->
+                  <div class="card">
+                    <img src="img/Buscarusuario.png" alt="Busqueda de un equipo"
+                      class="rounded img-thumbnail card-img-top alto-250">
+                    <div class="card-body">
+                      <h5 class="card-title">Busqueda de un usuario</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        realizar la busqueda de un usuario.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".caso02">Ver</button>
+
+                      <div class="modal fade caso02" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4"> Caso 02 BUSCAR UN USUARIO</h1>
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario accederá al sistema de información para realizar la busqueda de un usuario
+                                registrado</p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener
+                                un
+                                navegador y conexion a internet.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li>Digitar el numero de cedula en el apartado de busqueda.
+                                </li>
+                                <li>El sistema realiza la búsqueda y entrega los resultados.
+                                </li>
+                              </ol>
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>...</li>
+                                <li>Objeto de busqueda inexistente.</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario obtiene los datos del equipo del cual realizó la búsqueda.</p>
+                            </div>
+                            <img src="img/Buscarusuario.png" alt="Imagen registrar"
+                              class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                  <!-- Tercera tarjeta-Editar usuario -->
+                  <div class="card">
+                    <img src="img/Editar usuario.jpeg" alt="Editar datos de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto-250">
+                    <div class="card-body">
+                      <h5 class="card-title">Editar datos de un usuario</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        realizar la edición de un usuario.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".caso03">Ver</button>
+
+                      <div class="modal fade caso03" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4">Caso 03 EDITAR DATOS DE UN USUARIO</h1>
+
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p> El usuario accederá al sistema de información para editar un usuario con sus
+                                características </p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule
+                                debe
+                                tener un navegador y conexion a internet.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li> El usuario ingresa a la interfaz de ver ususarios.
+                                </li>
+                                <li>El sistema consulta la a base de datos y muestra lista de usuarios.
+                                </li>
+                                <li>El usuario selecciona el usuario de la lista que desea editar.
+                                </li>
+                                <li>sistema muestra nueva vista con los datos de la persona a editar
+                                </li>
+                                <li>El usuario edita los datos en la interfaz desplegada y guarda los cambios</li>
+                              </ol>
+
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>...</li>
+                                <li>El usuario no encuentre el usuario a editar</li>
+                                <li> El usuario no completa los campos al editar el usuario.</li>
+                                <li></li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario edita un usuario registrado</p>
+                            </div>
+                            <img src="img/Editar usuario.jpeg" alt="Imagen registrar"
+                              class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                  <!-- Cuarta tarjeta-Eliminar -->
+                  <div class="card">
+                    <img src="img/Eliminar usuario.jpeg" alt="Eliminar datos de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto-250">
+                    <div class="card-body">
+                      <h5 class="card-title">Eliminar datos de un usuario</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        eliminar datos de un usuario.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".caso04">Ver</button>
+
+                      <div class="modal fade caso04" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4">Caso 04 ELIMINAR DATOS DE UN USUARIO</h1>
+
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario accederá al sistema de información para eliminar un usuario </p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule
+                                debe
+                                tener un navegador y conexion a internet.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li> El usuario ingresa a la interfaz de ver ususarios.
+                                </li>
+                                <li>El sistema consulta la a base de datos y muestra lista de usuarios.
+                                </li>
+                                <li>El usuario hace click sobre el botón eliminar.
+                                </li>
+                                <li> El sistema muestra una alerta de confirmacion para eliminar.
+                                </li>
+                                <li>El usuario selecciona confirmar .</li>
+                                <li>El Sistema elimina el usuario seleccionado.</li>
+                              </ol>
+
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>Campos vacios.</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>...</li>
+                                <li>...</li>
+                                <li>...</li>
+                                <li>...</li>
+                                <li>El usuario hace click sobre la opcion cancelar.</li>
+                                <li>...</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario elimina correctamente el equipo con todas sus características de la BD.</p>
+                            </div>
+                            <img src="img/Eliminar usuario.jpeg" alt="Imagen registrar"
+                              class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =============CASOS DE USO EQUIPOS============= -->
+          <div class="card opacity">
+            <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo">
+              <h5 class="text-center mb-0">
+                <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Casos de uso equipos
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <div class="card-group ">
+
+                  <!-- Primera tarjeta-Registrar un equipo-->
+                  <div class="card">
+                    <img src="img/registrar.jpeg" alt="Registro de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto-250 ver">
+                    <div class="card-body">
+                      <h5 class="card-title">Registrar un equipo</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        realizar el registro de un equipo.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".casoequipo01">Ver</button>
+
+                      <div class="modal fade casoequipo01" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4"> Caso 01 REGISTRAR UN EQUIPO</h1>
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
+                                inventariado previamente instalado.</p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
+                                inventariado previamente instalado.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li>El usuario procede a registrar el equipo con sus características
+                                </li>
+                                <li>El sistema registra el nuevo equipo en la BD
+                                </li>
+                              </ol>
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>Equipo con número de serie repetido</li>
+                                <li>...</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario registra satisfactoriamente el un equipo.</p>
+                            </div>
+                            <img src="img/registrar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                  <!-- Segunda tarjeta-Buscar -->
+                  <div class="card">
+                    <img src="img/buscar.jpeg" alt="Busqueda de un equipo"
+                      class="rounded img-thumbnail card-img-top alto-250">
+                    <div class="card-body">
+                      <h5 class="card-title">Busqueda de un equipo</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        realizar la busqueda de un equipo.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".casoequipo02">Ver</button>
+
+                      <div class="modal fade casoequipo02" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4"> Caso 02 BUSCAR UN EQUIPO</h1>
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario accederá al sistema de información para realizar la búsqueda de un equipo
+                              </p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
+                                inventariado previamente instalado, el equipo que será objeto de búsqueda debe estar
+                                previamente registrado en el sistema de inventariado.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li>Digitar el nombre o serial del equipo en el apartado de búsqueda.
+                                </li>
+                                <li>El sistema realiza la búsqueda y entrega los resultados.
+                                </li>
+                              </ol>
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>...</li>
+                                <li>El nombre o serial de la maquina no se encuentra en la BD</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario obtiene los datos del equipo del cual realizó la búsqueda.</p>
+                            </div>
+                            <img src="img/buscar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                  <!-- Tercera tarjeta-Editar -->
+                  <div class="card">
+                    <img src="img/editar.jpeg" alt="Editar datos de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto-250">
+                    <div class="card-body">
+                      <h5 class="card-title">Editar datos de un equipo</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        realizar la edición de un equipo.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".casoequipo03">Ver</button>
+
+                      <div class="modal fade casoequipo03" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4">Caso 03 EDITAR DATOS DE UN EQUIPO</h1>
+
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario accederá al sistema de información para hacer la búsqueda y posterior
+                                modificación de un equipo.</p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
+                                inventariado previamente instalado, el equipo que será objeto de búsqueda y modificación
+                                debe estar previamente registrado en el sistema de inventariado.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li>Digitar el nombre o serial del equipo en el apartado de búsqueda.
+                                </li>
+                                <li>El sistema realiza la búsqueda y entrega los resultados.
+                                </li>
+                                <li>El usuario elige el equipo que modificará
+                                </li>
+                                <li>El sistema guarda los datos modificados en la BD
+                                </li>
+                              </ol>
+
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>...</li>
+                                <li>El nombre o serial de la maquina no se encuentra en la BD</li>
+                                <li>...</li>
+                                <li>El serial del equipo es el mismo que el de otro equipo ya registrado</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario modifica y actualiza correctamente los datos de un equipo de computo.</p>
+                            </div>
+                            <img src="img/editar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                  <!-- Cuarta tarjeta-Eliminar -->
+                  <div class="card">
+                    <img src="img/eliminar.jpeg" alt="Eliminar datos de un equipo"
+                      class="rounded img-thumbnail img-responsive card-img-top alto-250">
+                    <div class="card-body">
+                      <h5 class="card-title">Eliminar datos de un equipo</h5>
+                      <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
+                        eliminar datos de un equipo.</p>
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-dark botones" data-toggle="modal"
+                        data-target=".casoequipo04">Ver</button>
+
+                      <div class="modal fade casoequipo04" tabindex="-1" role="dialog"
+                        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+
+                            <div class="texto-modal col-12 col-md-12">
+                              <h1 class="text-center pt-5 pb-4">Caso 04 ELIMINAR DATOS DE UN EQUIPO</h1>
+
+                              <h2>Autores</h2>
+                              <ul>
+                                <li>Kelvin Martinez</li>
+                                <li>Livan Torres </li>
+                                <li>Mario Carrillo</li>
+                                <li>Dayana Gonzales</li>
+                              </ul>
+
+                              <h2>Actores:</h2>
+                              <p>Sistema, Usuario</p>
+
+                              <h3>Descripcion</h3>
+                              <p>El usuario accederá al sistema de información para hacer la búsqueda y posterior
+                                eliminación de un equipo.</p>
+
+                              <h3>Precondicion</h3>
+                              <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
+                                inventariado previamente instalado, el equipo que será objeto de búsqueda y eliminación
+                                debe
+                                estar previamente registrado en el sistema de inventariado.</p>
+
+                              <h4>Secuencia normal</h4>
+                              <ol>
+                                <li>Ingresar credenciales de login.
+                                </li>
+                                <li>El sistema verifica sus credenciales y le da acceso.
+                                </li>
+                                <li>Digitar el nombre o serial del equipo en el apartado de búsqueda.
+                                </li>
+                                <li>El sistema realiza la búsqueda y entrega los resultados.
+                                </li>
+                                <li>El usuario elige el equipo que eliminará
+                                </li>
+                                <li>El sistema elimina el equipo de la BD y guarda los cambios.
+                                </li>
+                              </ol>
+
+                              <h5>Secuencia alternativa</h5>
+                              <ol>
+                                <li>...</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>...</li>
+                                <li>El nombre o serial de la maquina no se encuentra en la BD</li>
+                                <li>...</li>
+                                <li>...</li>
+                              </ol>
+                              <h5>Post-condicion</h5>
+                              <p>El usuario elimina correctamente el equipo con todas sus características de la BD.</p>
+                            </div>
+                            <img src="img/eliminar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Fecha de publicacion -->
+                      <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="card-text pt-4">Ultima actualizacion 6/18/2020</p>
       </div>
-
-      <!-- Contenedor collapsible -->
-      <div class="col-12 col-md-12  mt-5" id="accordion">
-        <!-- ============= Caso de uso login============= -->
-        <div class="card opacity mb-3">
-          <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
-            aria-expanded="true" aria-controls="collapseThree">
-            <h5 class="text-center mb-0">
-              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
-                data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                Casos de uso login
-              </button>
-            </h5>
+      <!-- Footer  -->
+      <footer class="container py-5">
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="index.html" class="hvr-bob">
+              <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto " role="img"
+                viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
+            </a>
+            <small class="d-block mb-3 text-muted">&copy; 2019-2021</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>DVLeasy</a></h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="www.devleasy.com" target="_blank">Nuestro sitio web</a></li>
+              <li><a class="text-muted" href="#">Equipo de desarrollo</a></li>
+              <li><a class="text-muted" href="https://github.com/hguzman/NativApps" target="_blank">Proyecto en
+                  GitHub</a>
+              </li>
+              <li><a class="text-muted" href="#">A cerca de nosotros</a></li>
+            </ul>
           </div>
 
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body">
-              <!-- Contenido -->
-              <div class="card-group ">
-                <div class="card altura_card">
-                  <img src="img/Login.jpeg" alt="Registro de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto_login">
-                  <!-- cuerpo del collapsible -->
+          <div class="col-6 col-md">
+            <h5>Contactenos</h5>
+            <ul class="list-unstyled text-small">
+              <li class="text-muted">
+                <h6>Tel: 3651234</h6>
+              </li>
+              <li class="text-muted">
+                <h6>Cel: 3002881234</h6>
+              </li>
+              <li class="text-muted">
+                <h6>Direccion: Calle 94 #51b-73. <br> Centro empresarial buro51 - oficina 607</h6>
+              </li>
+            </ul>
+          </div>
 
-                  <div class="card-body">
-                    <h1 class="card-title fw-500 centrar p-4">Ingresar a SOPIEC y cerrar sesión</h1>
-                    <p class="card-text fw-500">En este caso de uso se muestr la interacción del usuario con el sistema
-                      y la secuencia de pasos para poder ingresar y salir de manera correcta al software.</p>
-
-
-                    <!-- Boton ver -->
-                    <button type="button" class="btn btn-dark botones centrar-boton fw-500" data-toggle="modal"
-                      data-target=".caso05ingresar">Ver</button>
-                    <!-- Extra large modal -->
-                    <div class="modal fade caso05ingresar" tabindex="-1" role="dialog"
-                      aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4"> Caso 05 LOGUEARSE Y CERRAR SESIÓN</h1>
-                            <hr>
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-                            <hr>
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-                            <hr>
-                            <h3>Descripcion</h3>
-                            <p> El usuario accederá al sistema de información y posteriormente de hacer los cambios
-                              cerrará sesión.</p>
-                            <hr>
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado en la base de datos, debe acceder al sitio web del
-                              sotware, por tanto debe tener un navegador y conexion a internet.</p>
-                            <hr>
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar cedula y contraseña en el formulario.
-                              </li>
-                              <li>Verificar campos vacíos.
-                              </li>
-                              <li>Comprobar que los datos ingresados sean iguales a los de la base de datos
-                              </li>
-                              <li>Dar acceso al software.
-                              </li>
-                              <li>Presionar "cerrar sesión".</li>
-                              <li>Destruir la sesión actual y sacar al usuario del software.</li>
-                            </ol>
-                            <hr>
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Campos vacíos o credenciales.</li>
-                              <li>Datos no encontrados en la base de datos. </li>
-                              <li>...</li>
-                            </ol>
-                            <hr>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario accede correctamente al software y posterior a realizar cambios cierra sesión.
-                            </p>
-                          </div>
-                          <img src="img/Login.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
+          <div class="col-6 col-md">
+            <h5>Redes Sociales</h5>
+            <ul class="list-unstyled text-small">
+              <li><a href="https://www.facebook.com/DVLeasy-119472056341523" target="_blank">
+                  <i class="fab fa-facebook-square texto-iconos"></i> Facebook
+                </a></li>
+              <li><a href="https://twitter.com/DvLeasy">
+                  <i class="fab fa-twitter-square texto-iconos" target="_blank"></i> Twitter
+                </a></li>
+              <li><a href="https://co.pinterest.com/developmenteasy/" target="_blank">
+                  <i class="fab fa-pinterest-square texto-iconos"></i> Pinterest
+                </a></li>
+              <li><a href="https://www.instagram.com/dvleasy/" target="_blank">
+                  <i class="fab fa-instagram-square texto-iconos"></i> Instagram
+                </a></li>
+            </ul>
           </div>
         </div>
+      </footer>
+      <!-- CDN de Fontawesome -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
+      <!--Archivos de javascript -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
 
-        <!--============== Card Casos de uso usuarios===========-->
-        <div class="card opacity mb-3">
-          <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            <h5 class="text-center mb-0">
-              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
-                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Casos de uso usuarios
-              </button>
-            </h5>
-          </div>
 
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-              <!-- Contenido -->
-              <div class="card-group ">
 
-
-                <!-- Primera tarjeta-Registrar Usuario-->
-                <div class="card">
-                  <img src="img/Registrar usuario.png" alt="Registro de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto-250 ver">
-                  <div class="card-body">
-                    <h5 class="card-title">Registrar un Usuario</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      realizar el registro de un nuevo usuario.</p>
-                    <!-- Boton ver -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".caso01">Ver</button>
-                    <!-- Extra large modal -->
-                    <div class="modal fade caso01" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4"> Caso 01 REGISTRAR UN NUEVO USUARIO</h1>
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para registrar un usuario con sus
-                              características</p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener un
-                              navegador y conexion a internet.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li>El usuario procede a registrar el nuevo usuario con sus características
-                              </li>
-                              <li>El sistema registra el nuevo usuario en la BD
-                              </li>
-                            </ol>
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>Usuario con número de cedula repetido</li>
-                              <li>...</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario registra un nuevo usuario</p>
-                          </div>
-                          <img src="img/Registrar usuario.png" alt="Imagen registrar"
-                            class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-                <!-- Segunda tarjeta-Buscar Usuario-->
-                <div class="card">
-                  <img src="img/Buscarusuario.png" alt="Busqueda de un equipo"
-                    class="rounded img-thumbnail card-img-top alto-250">
-                  <div class="card-body">
-                    <h5 class="card-title">Busqueda de un usuario</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      realizar la busqueda de un usuario.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".caso02">Ver</button>
-
-                    <div class="modal fade caso02" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4"> Caso 02 BUSCAR UN USUARIO</h1>
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para realizar la busqueda de un usuario
-                              registrado</p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado y tener rol admin, el equipo que manipule debe tener un
-                              navegador y conexion a internet.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li>Digitar el numero de cedula en el apartado de busqueda.
-                              </li>
-                              <li>El sistema realiza la búsqueda y entrega los resultados.
-                              </li>
-                            </ol>
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>...</li>
-                              <li>Objeto de busqueda inexistente.</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario obtiene los datos del equipo del cual realizó la búsqueda.</p>
-                          </div>
-                          <img src="img/Buscarusuario.png" alt="Imagen registrar" class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-                <!-- Tercera tarjeta-Editar usuario -->
-                <div class="card">
-                  <img src="img/Editar usuario.jpeg" alt="Editar datos de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto-250">
-                  <div class="card-body">
-                    <h5 class="card-title">Editar datos de un usuario</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      realizar la edición de un usuario.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".caso03">Ver</button>
-
-                    <div class="modal fade caso03" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4">Caso 03 EDITAR DATOS DE UN USUARIO</h1>
-
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p> El usuario accederá al sistema de información para editar un usuario con sus
-                              características </p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule debe
-                              tener un navegador y conexion a internet.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li> El usuario ingresa a la interfaz de ver ususarios.
-                              </li>
-                              <li>El sistema consulta la a base de datos y muestra lista de usuarios.
-                              </li>
-                              <li>El usuario selecciona el usuario de la lista que desea editar.
-                              </li>
-                              <li>sistema muestra nueva vista con los datos de la persona a editar
-                              </li>
-                              <li>El usuario edita los datos en la interfaz desplegada y guarda los cambios</li>
-                            </ol>
-
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>...</li>
-                              <li>El usuario no encuentre el usuario a editar</li>
-                              <li> El usuario no completa los campos al editar el usuario.</li>
-                              <li></li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario edita un usuario registrado</p>
-                          </div>
-                          <img src="img/Editar usuario.jpeg" alt="Imagen registrar"
-                            class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-                <!-- Cuarta tarjeta-Eliminar -->
-                <div class="card">
-                  <img src="img/Eliminar usuario.jpeg" alt="Eliminar datos de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto-250">
-                  <div class="card-body">
-                    <h5 class="card-title">Eliminar datos de un usuario</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      eliminar datos de un usuario.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".caso04">Ver</button>
-
-                    <div class="modal fade caso04" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4">Caso 04 ELIMINAR DATOS DE UN USUARIO</h1>
-
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para eliminar un usuario </p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado dentro de la base de datos , el equipo que manipule debe
-                              tener un navegador y conexion a internet.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li> El usuario ingresa a la interfaz de ver ususarios.
-                              </li>
-                              <li>El sistema consulta la a base de datos y muestra lista de usuarios.
-                              </li>
-                              <li>El usuario hace click sobre el botón eliminar.
-                              </li>
-                              <li> El sistema muestra una alerta de confirmacion para eliminar.
-                              </li>
-                              <li>El usuario selecciona confirmar .</li>
-                              <li>El Sistema elimina el usuario seleccionado.</li>
-                            </ol>
-
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>Campos vacios.</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>...</li>
-                              <li>...</li>
-                              <li>...</li>
-                              <li>...</li>
-                              <li>El usuario hace click sobre la opcion cancelar.</li>
-                              <li>...</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario elimina correctamente el equipo con todas sus características de la BD.</p>
-                          </div>
-                          <img src="img/Eliminar usuario.jpeg" alt="Imagen registrar"
-                            class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- =============CASOS DE USO EQUIPOS============= -->
-        <div class="card opacity">
-          <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo">
-            <h5 class="text-center mb-0">
-              <button class="btn btn-link collapsed no-decoration fw-500 tittle-color" data-toggle="collapse"
-                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Casos de uso equipos
-              </button>
-            </h5>
-          </div>
-
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body">
-              <div class="card-group ">
-
-                <!-- Primera tarjeta-Registrar un equipo-->
-                <div class="card">
-                  <img src="img/registrar.jpeg" alt="Registro de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto-250 ver">
-                  <div class="card-body">
-                    <h5 class="card-title">Registrar un equipo</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      realizar el registro de un equipo.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".casoequipo01">Ver</button>
-
-                    <div class="modal fade casoequipo01" tabindex="-1" role="dialog"
-                      aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4"> Caso 01 REGISTRAR UN EQUIPO</h1>
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
-                              inventariado previamente instalado.</p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
-                              inventariado previamente instalado.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li>El usuario procede a registrar el equipo con sus características
-                              </li>
-                              <li>El sistema registra el nuevo equipo en la BD
-                              </li>
-                            </ol>
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>Equipo con número de serie repetido</li>
-                              <li>...</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario registra satisfactoriamente el un equipo.</p>
-                          </div>
-                          <img src="img/registrar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-                <!-- Segunda tarjeta-Buscar -->
-                <div class="card">
-                  <img src="img/buscar.jpeg" alt="Busqueda de un equipo"
-                    class="rounded img-thumbnail card-img-top alto-250">
-                  <div class="card-body">
-                    <h5 class="card-title">Busqueda de un equipo</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      realizar la busqueda de un equipo.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".casoequipo02">Ver</button>
-
-                    <div class="modal fade casoequipo02" tabindex="-1" role="dialog"
-                      aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4"> Caso 02 BUSCAR UN EQUIPO</h1>
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para realizar la búsqueda de un equipo</p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
-                              inventariado previamente instalado, el equipo que será objeto de búsqueda debe estar
-                              previamente registrado en el sistema de inventariado.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li>Digitar el nombre o serial del equipo en el apartado de búsqueda.
-                              </li>
-                              <li>El sistema realiza la búsqueda y entrega los resultados.
-                              </li>
-                            </ol>
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>...</li>
-                              <li>El nombre o serial de la maquina no se encuentra en la BD</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario obtiene los datos del equipo del cual realizó la búsqueda.</p>
-                          </div>
-                          <img src="img/buscar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-                <!-- Tercera tarjeta-Editar -->
-                <div class="card">
-                  <img src="img/editar.jpeg" alt="Editar datos de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto-250">
-                  <div class="card-body">
-                    <h5 class="card-title">Editar datos de un equipo</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      realizar la edición de un equipo.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".casoequipo03">Ver</button>
-
-                    <div class="modal fade casoequipo03" tabindex="-1" role="dialog"
-                      aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4">Caso 03 EDITAR DATOS DE UN EQUIPO</h1>
-
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para hacer la búsqueda y posterior
-                              modificación de un equipo.</p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
-                              inventariado previamente instalado, el equipo que será objeto de búsqueda y modificación
-                              debe estar previamente registrado en el sistema de inventariado.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li>Digitar el nombre o serial del equipo en el apartado de búsqueda.
-                              </li>
-                              <li>El sistema realiza la búsqueda y entrega los resultados.
-                              </li>
-                              <li>El usuario elige el equipo que modificará
-                              </li>
-                              <li>El sistema guarda los datos modificados en la BD
-                              </li>
-                            </ol>
-
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>...</li>
-                              <li>El nombre o serial de la maquina no se encuentra en la BD</li>
-                              <li>...</li>
-                              <li>El serial del equipo es el mismo que el de otro equipo ya registrado</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario modifica y actualiza correctamente los datos de un equipo de computo.</p>
-                          </div>
-                          <img src="img/editar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-                <!-- Cuarta tarjeta-Eliminar -->
-                <div class="card">
-                  <img src="img/eliminar.jpeg" alt="Eliminar datos de un equipo"
-                    class="rounded img-thumbnail img-responsive card-img-top alto-250">
-                  <div class="card-body">
-                    <h5 class="card-title">Eliminar datos de un equipo</h5>
-                    <p class="card-text">En este caso de uso se muestra la interaccion del usuario con el sistema para
-                      eliminar datos de un equipo.</p>
-                    <!-- Extra large modal -->
-                    <button type="button" class="btn btn-dark botones" data-toggle="modal"
-                      data-target=".casoequipo04">Ver</button>
-
-                    <div class="modal fade casoequipo04" tabindex="-1" role="dialog"
-                      aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-
-                          <div class="texto-modal col-12 col-md-12">
-                            <h1 class="text-center pt-5 pb-4">Caso 04 ELIMINAR DATOS DE UN EQUIPO</h1>
-
-                            <h2>Autores</h2>
-                            <ul>
-                              <li>Kelvin Martinez</li>
-                              <li>Livan Torres </li>
-                              <li>Mario Carrillo</li>
-                              <li>Dayana Gonzales</li>
-                            </ul>
-
-                            <h2>Actores:</h2>
-                            <p>Sistema, Usuario</p>
-
-                            <h3>Descripcion</h3>
-                            <p>El usuario accederá al sistema de información para hacer la búsqueda y posterior
-                              eliminación de un equipo.</p>
-
-                            <h3>Precondicion</h3>
-                            <p>El usuario debe estar registrado, el equipo que manipule debe tener el software de
-                              inventariado previamente instalado, el equipo que será objeto de búsqueda y eliminación
-                              debe
-                              estar previamente registrado en el sistema de inventariado.</p>
-
-                            <h4>Secuencia normal</h4>
-                            <ol>
-                              <li>Ingresar credenciales de login.
-                              </li>
-                              <li>El sistema verifica sus credenciales y le da acceso.
-                              </li>
-                              <li>Digitar el nombre o serial del equipo en el apartado de búsqueda.
-                              </li>
-                              <li>El sistema realiza la búsqueda y entrega los resultados.
-                              </li>
-                              <li>El usuario elige el equipo que eliminará
-                              </li>
-                              <li>El sistema elimina el equipo de la BD y guarda los cambios.
-                              </li>
-                            </ol>
-
-                            <h5>Secuencia alternativa</h5>
-                            <ol>
-                              <li>...</li>
-                              <li>Credenciales incorrectas</li>
-                              <li>...</li>
-                              <li>El nombre o serial de la maquina no se encuentra en la BD</li>
-                              <li>...</li>
-                              <li>...</li>
-                            </ol>
-                            <h5>Post-condicion</h5>
-                            <p>El usuario elimina correctamente el equipo con todas sus características de la BD.</p>
-                          </div>
-                          <img src="img/eliminar.jpeg" alt="Imagen registrar" class="img-responsive img-thumbnail">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Fecha de publicacion -->
-                    <p class="card-text"><small class="text-muted">Fecha de publicación: 6/5/2020</small></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="card-text pt-4">Ultima actualizacion 6/18/2020</p>
     </div>
-     <!-- Footer  -->
-     <footer class="container py-5">
-      <div class="row">
-        <div class="col-12 col-md">
-          <a href="index.html" class="hvr-bob">
-            <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="2" class="d-block mx-auto " role="img" viewBox="0 0 24 24"
-              focusable="false" style="border-radius: 20px;">
-          </a>
-          <small class="d-block mb-3 text-muted">&copy; 2019-2021</small>
-        </div>
-        <div class="col-6 col-md">
-          <h5>DVLeasy</a></h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="www.devleasy.com" target="_blank">Nuestro sitio web</a></li>
-            <li><a class="text-muted" href="#">Equipo de desarrollo</a></li>
-            <li><a class="text-muted" href="https://github.com/hguzman/NativApps" target="_blank">Proyecto en GitHub</a>
-            </li>
-            <li><a class="text-muted" href="#">A cerca de nosotros</a></li>
-          </ul>
-        </div>
-
-        <div class="col-6 col-md">
-          <h5>Contactenos</h5>
-          <ul class="list-unstyled text-small">
-            <li class="text-muted">
-              <h6>Tel: 3651234</h6>
-            </li>
-            <li class="text-muted">
-              <h6>Cel: 3002881234</h6>
-            </li>
-            <li class="text-muted">
-              <h6>Direccion: Calle 94 #51b-73. <br> Centro empresarial buro51 - oficina 607</h6>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-6 col-md">
-          <h5>Redes Sociales</h5>
-          <ul class="list-unstyled text-small">
-            <li><a href="https://www.facebook.com/DVLeasy-119472056341523" target="_blank">
-                <i class="fab fa-facebook-square texto-iconos"></i> Facebook
-              </a></li>
-            <li><a href="https://twitter.com/DvLeasy">
-                <i class="fab fa-twitter-square texto-iconos" target="_blank"></i> Twitter
-              </a></li>
-            <li><a href="https://co.pinterest.com/developmenteasy/" target="_blank">
-                <i class="fab fa-pinterest-square texto-iconos"></i> Pinterest
-              </a></li>
-            <li><a href="https://www.instagram.com/dvleasy/" target="_blank">
-                <i class="fab fa-instagram-square texto-iconos"></i> Instagram
-              </a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  <!-- CDN de Fontawesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
-      integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
-      crossorigin="anonymous"></script>
-  <!--Archivos de javascript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  
-
-    
   </div>
-</div>
 </body>
 
 </html>
