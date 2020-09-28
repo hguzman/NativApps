@@ -413,20 +413,24 @@ option.select-hr {
 }
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.mostrar-datos{
-  display: flex;
-}
-.caja-mostrar-datos{
-  width: 46%;
+.uploadManual{
+  width: 50px;
 }
 
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE FIN*/
+
+/*PANEL DE ESTILOS DEL DOWNLOADS FILE */
+.btn-downloads{
+width: 150px;
+height: 150px;
+  margin-left: 5%;
+  font-size:100px;
+  color: #b40101;
+  
+}
+.font-downloads{
+    font-size:25px;
+  }
+/*PANEL DE ESTILOS DEL DOWNLOADS FILE FIN*/
+
