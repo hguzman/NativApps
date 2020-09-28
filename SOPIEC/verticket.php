@@ -9,10 +9,9 @@ require_once("assets/php/val_session_admin.php")
 <html>
 
 <head>
-    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ver ticket</title>
+    <title>Crear Ticket</title>
 
     <!-- Bootstrap validator -->
     <link rel="stylesheet"
@@ -33,7 +32,8 @@ require_once("assets/php/val_session_admin.php")
 </head>
 
 <body>
-
+<div id="wrapper">
+        <?php include_once("assets/modelos/navbar_header_user.php");?>
     <?php
     $id = $_REQUEST['id'];
     require_once("assets/php/db.php");
@@ -49,32 +49,6 @@ require_once("assets/php/val_session_admin.php")
         $mensaje = $reg['mensaje'];
          
     ?>
-    <!-- Contenedor principal -->
-    <div id="wrapper">
-        <!-- Header -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="adjust-nav">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;SOPIEC</a>
-                </div>
-                <!-- Lista opciones -->
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
-                        <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
-                        <li><a href="#">See Website</a></li>
-                        <li><a href="#">Open Ticket</a></li>
-                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
         <!--  Sidebar de opciones  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
@@ -89,51 +63,6 @@ require_once("assets/php/val_session_admin.php")
                     die("Problemas en el select:" . mysqli_error($conexion));
                     $reg_a = mysqli_fetch_array($registros_a)
                     ?>
-
-                        <a href="perfil.php"><img
-                                src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
-                                height="150px " class="rounded-circle"></td></a>
-                    </li>
-                    <!-- Primero/inicio -->
-                    <li>
-                        <a href="index.php"><i class="fa fa-desktop "></i>Inicio</a>
-                    </li>
-                    <!-- Segundo/Administracion de usuarios -->
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>Administración de usuarios<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevousuario.php">Crear Nuevo usuario</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Ver usuarios registrados</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Cuarto/Administracion de equipos -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Administración de equipos<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="nuevoequipo.php">Agregar un equipo</a>
-                            </li>
-                            <li>
-                                <a href="equipos.php">Gestionar equipo</a>
-                            </li>
-                        </ul>
-                    <li>
-                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
-                    </li>
-                    </li>
-                    <!--  Quinto/A cerca de SOPIEC-->
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
-                    </li>
-                </ul>
-
-            </div>
 
         </nav>
         <!-- Contenido de la pagina, lado derecho ancho  -->
@@ -159,19 +88,18 @@ require_once("assets/php/val_session_admin.php")
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-info bigicon"> Id</i></span>
                                             <div class="col-md-8">
-                                                <input id="id" name="id" type="text" value="<?php echo $id; ?> "
-                                                    readonly class="form-control"></input>
+                                                <input id="id" name="id" type="text"
+                                                    value="<?php echo $id; ?> " readonly class="form-control"></input>
                                             </div>
                                         </div>
-
+                                        
 
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                                     class="fa fa-user bigicon"> Nombre</i></span>
                                             <div class="col-md-8">
                                                 <input id="nombre" name="nombre" type="text"
-                                                    value="<?php echo $nombre; ?> " readonly
-                                                    class="form-control"></input>
+                                                    value="<?php echo $nombre; ?> " readonly class="form-control"></input>
                                             </div>
                                         </div>
 
