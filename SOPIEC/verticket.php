@@ -11,7 +11,7 @@ require_once("assets/php/val_session_admin.php")
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crear Ticket</title>
+    <title>Ver Ticket</title>
 
     <!-- Bootstrap validator -->
     <link rel="stylesheet"
@@ -32,9 +32,9 @@ require_once("assets/php/val_session_admin.php")
 </head>
 
 <body>
-<div id="wrapper">
+    <div id="wrapper">
         <?php include_once("assets/modelos/navbar_header_user.php");?>
-    <?php
+        <?php
     $id = $_REQUEST['id'];
     require_once("assets/php/db.php");
     $registros = mysqli_query($conexion, "select * from ticket
@@ -75,107 +75,100 @@ require_once("assets/php/val_session_admin.php")
                     </div>
                 </div>
                 <hr />
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well well-sm">
-                                <form id="formticket" class="form-horizontal" action="assets/php/guardarsolucion.php"
-                                    method="POST">
-                                    <fieldset>
-                                        <legend class="text-center header"></legend>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-info bigicon"> Id</i></span>
-                                            <div class="col-md-8">
-                                                <input id="id" name="id" type="text"
-                                                    value="<?php echo $id; ?> " readonly class="form-control"></input>
-                                            </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="well well-sm">
+                            <form id="formticket" class="form-horizontal" action="assets/php/guardarsolucion.php"
+                                method="POST">
+                                <fieldset>
+                                    <legend class="text-center header"></legend>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-info bigicon"> Id</i></span>
+                                        <div class="col-md-8">
+                                            <input id="id" name="id" type="text" value="<?php echo $id; ?> " readonly
+                                                class="form-control"></input>
                                         </div>
-                                        
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"> Nombre</i></span>
-                                            <div class="col-md-8">
-                                                <input id="nombre" name="nombre" type="text"
-                                                    value="<?php echo $nombre; ?> " readonly class="form-control"></input>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-calendar bigicon"> Fecha</i></span>
-                                            <div class="col-md-8">
-                                                <input id="fecha" name="fecha" type=""
-                                                    value="<?php echo $reg['fecha'] ?> " readonly class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-envelope bigicon"> Correo</i></span>
-                                            <div class="col-md-8">
-                                                <input id="email" name="email" type="email"
-                                                    value="<?php echo $reg['email'] ?>" readonly class="form-control">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group">
-                                                <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                        class="fa fa-refresh bigicon"> Estado</i></span>
-                                                <div class="col-md-8">
-                                                    <select class="form-control" id="estado" name="estado">
-                                                        <option selected value="pendiente"> pendiente</option>
-                                                        <option value="Resuelto"> Resuelto</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                    </div>
 
 
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-user bigicon"> Nombre</i></span>
+                                        <div class="col-md-8">
+                                            <input id="nombre" name="nombre" type="text" value="<?php echo $nombre; ?> "
+                                                readonly class="form-control"></input>
                                         </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-comment">
-                                                    Asunto</i></span>
-                                            <div class="col-md-8">
-                                                <input id="asunto" name="asunto" type="text"
-                                                    value="<?php echo $asunto; ?>" readonly class="form-control">
-                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-calendar bigicon"> Fecha</i></span>
+                                        <div class="col-md-8">
+                                            <input id="fecha" name="fecha" type="" value="<?php echo $reg['fecha'] ?> "
+                                                readonly class="form-control">
                                         </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-envelope bigicon"> Correo</i></span>
+                                        <div class="col-md-8">
+                                            <input id="email" name="email" type="email"
+                                                value="<?php echo $reg['email'] ?>" readonly class="form-control">
+                                        </div>
+                                    </div>
+                                    <div>
                                         <div class="form-group">
                                             <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-pencil-square-o bigicon"> Detalle </i></span>
+                                                    class="fa fa-refresh bigicon"> Estado</i></span>
                                             <div class="col-md-8">
-                                                <textarea class="form-control" id="mensaje" name="mensaje" readonly
-                                                    require rows="7"> <?php echo $mensaje; ?></textarea>
+                                                <select class="form-control" id="estado" name="estado">
+                                                    <option selected value="pendiente"> pendiente</option>
+                                                    <option value="Resuelto"> Resuelto</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-check-circle bigicon">Respuesta </i></span>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" id="solucion" name="solucion"
-                                                    rows="7"> </textarea>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-comment">
+                                                Asunto</i></span>
+                                        <div class="col-md-8">
+                                            <input id="asunto" name="asunto" type="text" value="<?php echo $asunto; ?>"
+                                                readonly class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-md-12 text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg" name="responder"
-                                                    id="responder">Responder</button>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-pencil-square-o bigicon"> Detalle </i></span>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="mensaje" name="mensaje" readonly require
+                                                rows="7"> <?php echo $mensaje; ?></textarea>
                                         </div>
-                                    </fieldset>
-                                </form>
-                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i
+                                                class="fa fa-check-circle bigicon">Respuesta </i></span>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="solucion" name="solucion"
+                                                rows="7"> </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg" name="responder"
+                                                id="responder">Responder</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 
-    <!-- /. ROW  -->
+        <!-- /. ROW  -->
     </div>
     <!-- /. PAGE INNER  -->
 
