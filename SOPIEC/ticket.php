@@ -4,12 +4,15 @@ require_once("assets/php/val_session_user.php");
 ?>
 <?php
 require_once("assets/php/db.php");
+
+ $consulta = "SELECT * FROM usuarios WHERE cedula = $sesion";
+ $resultado = mysqli_query($conexion,$consulta);
+ $res = mysqli_fetch_array($resultado); mysqli_query($conexion, "select nombre from usuarios where usuarios cedula = $sesion");
 ?>
 
 <html>
 
 <head>
-    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear Ticket</title>
@@ -68,8 +71,8 @@ require_once("assets/php/db.php");
                                         <span class="col-md-1 col-md-offset-2 text-center"><i
                                                 class="fa fa-user bigicon"></i></span>
                                         <div class="col-md-8">
-                                            <input id="nombre" name="nombre" type="text" placeholder="Nombre"
-                                                class="form-control" value="">
+                                            <input id="nombre" name="nombre" type="text" placeholder="Nombre"readonly
+                                            class="form-control" value="<?php echo $res['primer_nombre'],$res['primer_apellido']; ?>">
                                         </div>
                                     </div>
 
@@ -78,8 +81,8 @@ require_once("assets/php/db.php");
                                         <span class="col-md-1 col-md-offset-2 text-center"><i
                                                 class="fa fa-envelope-o bigicon"></i></span>
                                         <div class="col-md-8">
-                                            <input id="email" name="email" type="email" placeholder="Email "
-                                                class="form-control">
+                                            <input id="email" name="email" type="email" placeholder="Email " readonly
+                                                class="form-control" value="<?php echo $res['email'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
