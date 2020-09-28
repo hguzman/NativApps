@@ -44,7 +44,7 @@ require_once("assets/php/val_session_admin.php")
         
         $id = $reg['id'];
         $nombre = $reg['nombre'];
-        $correo = $Reg['email'];
+        $correo = $reg['email'];
         $asunto = $reg['asunto'];
         $mensaje = $reg['mensaje'];
          
