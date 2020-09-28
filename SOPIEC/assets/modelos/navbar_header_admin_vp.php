@@ -16,7 +16,7 @@
                         <li><a>Rol: <?php echo $rol = $_SESSION['rol']; ?> </a></li>
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
-                        <!-- <li><a href="../../ticket.php">Open Ticket</a></li> -->
+                        <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
                         <li><a href="../php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -66,7 +66,7 @@
                     </li>
                     <!--  Sexto/A cerca de SOPIEC-->
                     <li>
-                        <a href="manuales.html"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
+                        <a href="manuales.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
                     </li>
                 </ul>
 

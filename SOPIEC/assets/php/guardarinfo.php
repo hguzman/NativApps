@@ -47,9 +47,11 @@ if (isset($_POST['registrar'])) {
 <html>
 
 <head>
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuevo Usuario</title>
+    <title>Datos del nuevo Usuario
+    </title>
 
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -68,7 +70,7 @@ if (isset($_POST['registrar'])) {
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include_once("../modelos/navbar_header_admin_vs.php"); ?> 
+        <?php include_once("../modelos/navbar_header_admin_vs.php"); ?>
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">

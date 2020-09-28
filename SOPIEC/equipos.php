@@ -8,9 +8,10 @@ require_once("assets/php/db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Equipos</title>
 
     <!-- Estilos CSS Toastr -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -26,15 +27,11 @@ require_once("assets/php/db.php");
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
-
-
 <body>
     <!-- Contenedor principal -->
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
-
-
+        <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
@@ -108,7 +105,7 @@ require_once("assets/php/db.php");
                                         <a id="edit" class="btn fa fa-pen"
                                             href="modificarequipo.php?serial=<?php echo $reg['serial']; ?>"></a>
 
-                                            <a id="del" class="btn fa fa-trash-alt" href="#"
+                                        <a id="del" class="btn fa fa-trash-alt" href="#"
                                             onclick="confirmacion_borrar('<?php  echo $reg['serial']; ?>')"></a>
                                     </td>
                                 </tr>
@@ -177,7 +174,7 @@ require_once("assets/php/db.php");
                 }
 
                 setTimeout(() => {
-                    window.location.href = "assets/php/borrarequipo.php?serial=" + serial 
+                    window.location.href = "assets/php/borrarequipo.php?serial=" + serial
                 }, 1500);
             }
         }

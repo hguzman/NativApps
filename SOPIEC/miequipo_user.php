@@ -21,9 +21,10 @@ require("assets/php/db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Mi equipo</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -41,7 +42,7 @@ require("assets/php/db.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-    <?php include_once("assets/modelos/navbar_header_user.php");?> 
+        <?php include_once("assets/modelos/navbar_header_user.php");?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">

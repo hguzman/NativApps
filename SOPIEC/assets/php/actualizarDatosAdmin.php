@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <?php
-require_once("val_session_user.php");
+require_once("val_session_admin.php");
 ?>
 <?php
 // Incluir archivo de base de datos
@@ -13,7 +13,7 @@ require_once("db.php");
 $registros = mysqli_query($conexion, "select * from usuarios WHERE cedula = '$sesion' ");
 $reg = mysqli_fetch_array($registros);
 
-if (isset($_POST['actualizarDatosUser'])) {
+if (isset($_POST['actualizarDatosAdmin'])) {
     $contrasenaActual = $_POST['contrasenaActual'];
     $cedula = $_POST['cedula'];
     $area = $_POST['area'];
@@ -37,7 +37,7 @@ if (isset($_POST['actualizarDatosUser'])) {
         function countdown() {
             var i = document.getElementById('counter');
             if (parseInt(i.innerHTML) <= 0) {
-                location.href = '../../vista_usuario.php';
+                location.href = '../../perfil.php';
             }
             i.innerHTML = parseInt(i.innerHTML) - 1;
         }
@@ -67,7 +67,7 @@ if (isset($_POST['actualizarDatosUser'])) {
                     function countdown() {
                         var i = document.getElementById('counter');
                         if (parseInt(i.innerHTML) <= 0) {
-                            location.href = '../../vista_usuario.php';
+                            location.href = '../../perfil.php';
                         }
                         i.innerHTML = parseInt(i.innerHTML) - 1;
                     }
@@ -99,7 +99,7 @@ if (isset($_POST['cambiarContrasena'])) {
         function countdown() {
             var i = document.getElementById('counter');
             if (parseInt(i.innerHTML) <= 0) {
-                location.href = '../../vista_usuario.php';
+                location.href = '../../perfil.php';
             }
             i.innerHTML = parseInt(i.innerHTML) - 1;
         }
@@ -125,7 +125,7 @@ if (isset($_POST['cambiarContrasena'])) {
                     function countdown() {
                         var i = document.getElementById('counter');
                         if (parseInt(i.innerHTML) <= 0) {
-                            location.href = '../../vista_usuario.php';
+                            location.href = '../../perfil.php';
                         }
                         i.innerHTML = parseInt(i.innerHTML) - 1;
                     }
