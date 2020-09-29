@@ -33,7 +33,7 @@ require_once("assets/php/val_session_admin.php")
 
 <body>
     <div id="wrapper">
-        <?php include_once("assets/modelos/navbar_header_user.php");?>
+        <?php include_once("assets/modelos/navbar_header_admin_vp.php");?>
         <?php
     $id = $_REQUEST['id'];
     require_once("assets/php/db.php");
@@ -124,7 +124,7 @@ require_once("assets/php/val_session_admin.php")
                                                     class="fa fa-refresh bigicon"> Estado</i></span>
                                             <div class="col-md-8">
                                                 <select class="form-control" id="estado" name="estado">
-                                                    <option selected value="pendiente"> pendiente</option>
+                                                    <option selected value="pendiente"> Pendiente</option>
                                                     <option value="Resuelto"> Resuelto</option>
                                                 </select>
                                             </div>
