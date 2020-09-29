@@ -73,7 +73,18 @@ require_once("assets/php/db.php");
                                     <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
-                                    <td> <?php echo $reg['estado'] ?> </td>
+                                    <!-- Cambiar estado de color según solución -->
+                                    <?php
+                                    $color ="";
+                                       if($reg['estado'] == "Pendiente"){
+                                        $color = "color: red;";
+                                     }else{
+                                         $color = "color: green;";
+                                     }
+                                    ?>
+                                    <td style="<?php echo $color ?>" id="estado" value="<?php echo $reg['estado'] ?> ">
+                                        <?php echo $reg['estado'] ?>
+                                    </td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
@@ -110,6 +121,10 @@ require_once("assets/php/db.php");
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
 
+    <!-- <script>
+        var estado = document.getElementById('estado');
+        console.log(estado);
+    </script> -->
 
 </body>
 

@@ -78,7 +78,16 @@ require_once("assets/php/val_session_admin.php");
                                     <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
-                                    <td> <?php echo $reg['estado'] ?> </td>
+                                    <!-- Cambiar estado de color según solución -->
+                                    <?php
+                                    $color ="";
+                                       if($reg['estado'] == "Pendiente"){
+                                        $color = "color: red;";
+                                     }else{
+                                         $color = "color: green;";
+                                     }
+                                    ?>
+                                    <td style="<?php echo $color ?>"><?php echo $reg['estado'] ?> </td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
@@ -94,6 +103,7 @@ require_once("assets/php/val_session_admin.php");
                 <?php
                                 }
                                 mysqli_close($conexion);
+
             ?>
                 </tbody>
                 </table>

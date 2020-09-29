@@ -3,12 +3,14 @@
 include("assets/php/db.php");
 ?>
 <?php
-require_once("assets/php/val_session_admin.php")
+require_once("assets/php/val_session_admin.php");
+
 ?>
 
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ver Ticket</title>
@@ -47,6 +49,7 @@ require_once("assets/php/val_session_admin.php")
         $correo = $reg['email'];
         $asunto = $reg['asunto'];
         $mensaje = $reg['mensaje'];
+        $estado = $reg['estado'];
          
     ?>
         <!--  Sidebar de opciones  -->
@@ -124,7 +127,11 @@ require_once("assets/php/val_session_admin.php")
                                                     class="fa fa-refresh bigicon"> Estado</i></span>
                                             <div class="col-md-8">
                                                 <select class="form-control" id="estado" name="estado">
-                                                    <option selected value="pendiente"> Pendiente</option>
+                                                    <option value="<?php echo $estado;?>" style="color: #4fb17f;">
+                                                        Estado actual: <?php echo $estado; ?>
+                                                    </option>
+
+                                                    <option value="Pendiente"> Pendiente</option>
                                                     <option value="Resuelto"> Resuelto</option>
                                                 </select>
                                             </div>
@@ -156,7 +163,7 @@ require_once("assets/php/val_session_admin.php")
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary btn-lg" name="responder"
+                                            <button type="submit" class="btn btn-primary btn-lg r" name="responder"
                                                 id="responder">Responder</button>
                                         </div>
                                     </div>
@@ -209,6 +216,35 @@ require_once("assets/php/val_session_admin.php")
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Bootstrap validator -->
 
+    <script>
+        $("#responder").on("click", function () {
+            console.log("Si entra");
+
+            // alert("HOla");
+
+            toastr["success"]("Se ha enviado la respuesta del ticket",
+                "Ticket respondido");
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "5000",
+                "hideDuration": "5000",
+                "timeOut": "5000",
+                "extendedTimeOut": "5000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+
+        });
+    </script>
 
 </body>
 
