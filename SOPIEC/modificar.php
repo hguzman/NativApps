@@ -131,7 +131,8 @@ include("assets/php/db.php");
                         <!-- Rol -->
                         <div class="form-group input-group mb-3 rol-derecha">
                             <select name="addrol_select" id="addrol_select">
-                                <option selected value="<?php echo $addrol ?>" id="seleccionado">Rol actual:
+                                <option style="color: #4fb17f;" selected value="<?php echo $addrol ?>"
+                                    id="seleccionado">Rol actual:
                                     <?php echo $addrol ?></option>
                                 <option value="user">User</option>
                                 <option value="admin" id="user">Admin</option>

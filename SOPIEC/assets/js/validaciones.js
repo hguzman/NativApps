@@ -536,7 +536,7 @@ $(document).ready(function () {
         message: "Diligencie un asunto ",
         validators: {
           notEmpty: {
-            message: ">Este campo no puede estar vacio ",
+            message: "Este campo no puede estar vacio ",
           },
         },
       },
@@ -544,7 +544,7 @@ $(document).ready(function () {
         message: "Porfavor digite un Modelo  valido",
         validators: {
           notEmpty: {
-            message: "ese campo no puede estar vacio",
+            message: "Por favor escriba los detalles de su ticket",
           },
         },
       },
