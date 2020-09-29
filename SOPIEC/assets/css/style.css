@@ -397,10 +397,23 @@ nav {
   );
 }
 
+.mostrar-datos {
+  display: flex;
+}
+.caja-mostrar-datos {
+  width: 46%;
+}
+.titulos-ticket {
+  color: #477957;
+  font-size: x-large;
+  font-family: cursive;
+}
+
 .centrar {
   text-align: center;
   display: block;
 }
+
 
 option.select-hr {
   border-bottom: 2px dotted #12ca71;
@@ -413,24 +426,21 @@ option.select-hr {
 }
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE */
-.uploadManual{
+.uploadManual {
   width: 50px;
 }
-
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE FIN*/
 
 /*PANEL DE ESTILOS DEL DOWNLOADS FILE */
-.btn-downloads{
-width: 150px;
-height: 150px;
+.btn-downloads {
+  width: 150px;
+  height: 150px;
   margin-left: 5%;
-  font-size:100px;
+  font-size: 100px;
   color: #b40101;
-  
 }
-.font-downloads{
-    font-size:25px;
-  }
+.font-downloads {
+  font-size: 25px;
+}
 /*PANEL DE ESTILOS DEL DOWNLOADS FILE FIN*/
-
