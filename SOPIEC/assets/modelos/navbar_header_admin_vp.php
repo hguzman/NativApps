@@ -17,7 +17,6 @@
                         <li><a>Sesion: <?php echo $sesion = $_SESSION['username']; ?> </a></li>
                         <li><a href="../index.php" target="_blank">Ir al sitio web</a></li>
                         <li><a href="assets/php/logout.php">Cerrar sesión</a></li>
-                        <li><a href="../php/logout.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
