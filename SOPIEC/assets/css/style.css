@@ -413,14 +413,30 @@ option.select-hr {
 }
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE */
-.uploadManual{
-  width: 50px;
-}
+
+  *:before,	 
+  *:after {	
+    -webkit-box-sizing: border-box;	
+    -moz-box-sizing: border-box;	
+    box-sizing: border-box;	
+  }	
+  
+  .mostrar-datos{	
+    display: flex;	
+  }	
+  .caja-mostrar-datos{	
+    width: 46%;	
+  }
+
+
 
 
 /*PANEL DE ESTILOS DEL INPUT TYPE FILE FIN*/
 
 /*PANEL DE ESTILOS DEL DOWNLOADS FILE */
+.uploadManual{
+  width: 50px;
+}
 .btn-downloads{
 width: 150px;
 height: 150px;
