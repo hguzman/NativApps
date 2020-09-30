@@ -15,7 +15,8 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -43,9 +44,10 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     Descargar manuales
                 </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="downloadModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
-                    <div class="modal-dialog " role="document" >
+                <!-- Modal Descargar manuales-->
+                <div class="modal fade" id="downloadModal" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="downloadModalLabel" aria-hidden="true">
+                    <div class="modal-dialog " role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="downloadModalLabel">Descargar manuales</h3>
@@ -57,20 +59,22 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 <center>
 
 
-                                    <div class="row">
+                                    <div class="row grd">
 
                                         <h3></h3>
                                         <div class=" col-lg-3">
-                                            <a class="btn-downloads" href="assets/downloads/manual_tecnico.pdf"><i class="far fa-file-pdf"></i></a>
+                                            <a class="btn-downloads" href="assets/downloads/manual_tecnico.pdf"><i
+                                                    class="far fa-file-pdf"></i></a>
                                             <div class="font-downloads">
-                                                Tecnico
+                                                Manual tecnico
                                             </div>
                                         </div>
 
                                         <div class=" col-lg-3">
-                                            <a class="btn-downloads" href="assets/downloads/manual_usuario.pdf"><i class="far fa-file-pdf"></i></a>
+                                            <a class="btn-downloads" href="assets/downloads/manual_usuario.pdf"><i
+                                                    class="far fa-file-pdf"></i></a>
                                             <div class="font-downloads">
-                                                Usuario
+                                                Manual de usuario
                                             </div>
                                         </div>
                                     </div>
@@ -81,15 +85,15 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" >Aceptar</button>
+                                <button type="button" class="btn btn-secondary r" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary r" data-dismiss="modal">Aceptar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                <!-- Modal -->
+                <!-- Modal Actualizar manuales-->
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-warning r" data-toggle="modal" data-target="#updateModal">
@@ -97,11 +101,12 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="updateModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
-                    <div class="modal-dialog " role="document" >
+                <div class="modal fade" id="updateModal" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="updateModalLabel" aria-hidden="true">
+                    <div class="modal-dialog " role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title" id="updateModalLabel">Descargar manuales</h3>
+                                <h3 class="modal-title" id="updateModalLabel">Actualizar manuales</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -110,21 +115,25 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                                 <center>
 
                                     <h3>Actualizar manuales</h3>
-                                    <form action="assets/php/actualizar_manuales.php" enctype="multipart/form-data" method="POST">
-                                        <strong> Manual de usuario: </strong><input name="manualu" class="form-control" type="file">
+                                    <form action="assets/php/actualizar_manuales.php" enctype="multipart/form-data"
+                                        method="POST">
+                                        <strong> Manual de usuario: </strong><input name="manualu" class="form-control"
+                                            type="file">
                                         <br>
-                                        <strong>Manual tecnico: </strong><input name="manualt" class="form-control" type="file">
+                                        <strong>Manual tecnico: </strong><input name="manualt" class="form-control"
+                                            type="file">
                                         <br>
-                                        <strong>Verificacíon contraseña:</strong><input name="passw" class="form-control" type="password" required>
+                                        <strong>Verificacíon contraseña:</strong><input name="passw"
+                                            class="form-control" type="password" required>
                                         <br>
-                                        <input class="btn-success" type="submit" value="Acualizar">
+                                        <input class="btn-success r" type="submit" value="Acualizar">
                                     </form>
                                 </center>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" > Aceptar</button>
+                                <button type="button" class="btn btn-secondary r" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary r" data-dismiss="modal"> Aceptar</button>
                             </div>
                         </div>
                     </div>
