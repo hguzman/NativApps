@@ -7,6 +7,7 @@ require_once("assets/php/db.php");
 <html>
 
 <head>
+    <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOPIEC</title>
@@ -31,7 +32,7 @@ require_once("assets/php/db.php");
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
-        <div id="page-inner">
+            <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Manuales</h2>
@@ -46,8 +47,9 @@ require_once("assets/php/db.php");
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="downloadModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
-                    <div class="modal-dialog " role="document" >
+                <div class="modal fade" id="downloadModal" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="downloadModalLabel" aria-hidden="true">
+                    <div class="modal-dialog " role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="downloadModalLabel">Descargar manuales</h3>
@@ -56,44 +58,36 @@ require_once("assets/php/db.php");
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <center>
 
+                                <div class="row grd">
 
-                                    <div class="row">
-
-                                        <h3></h3>
-                                        <div class=" col-lg-3">
-                                            <a class="btn-downloads" href="assets/downloads/manual_tecnico.pdf"><i class="far fa-file-pdf"></i></a>
-                                            <div class="font-downloads">
-                                                Tecnico
-                                            </div>
-                                        </div>
-
-                                        <div class=" col-lg-3">
-                                            <a class="btn-downloads" href="assets/downloads/manual_usuario.pdf"><i class="far fa-file-pdf"></i></a>
-                                            <div class="font-downloads">
-                                                Usuario
-                                            </div>
+                                    <h3></h3>
+                                    <div class=" col-lg-3">
+                                        <a class="btn-downloads" href="assets/downloads/manual_tecnico.pdf"><i
+                                                class="far fa-file-pdf"></i></a>
+                                        <div class="font-downloads">
+                                            Manual tecnico
                                         </div>
                                     </div>
 
-
-                                    </form>
-                                </center>
+                                    <div class=" col-lg-3">
+                                        <a class="btn-downloads" href="assets/downloads/manual_usuario.pdf"><i
+                                                class="far fa-file-pdf"></i></a>
+                                        <div class="font-downloads">
+                                            Manual de usuario
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" >Aceptar</button>
+                                <button type="button" class="btn btn-secondary r" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary r" data-dismiss="modal">Aceptar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Modal -->
-
-
 
 
             </div>
