@@ -55,7 +55,9 @@ require("assets/php/db.php");
                     
                 
                 ?>
-                <div class="col-lg-3 well col-md-offset-1">
+                <div class="col-lg-3 well col-md-offset-1 text-center">
+                    <center><i class="fa fa-desktop fa-5x"></i></center>
+                    <hr style="border-top: 1px solid #291d1d;">
                     <p> <strong> Serial: </strong> <span class="color-datos-act"><?php echo $reg['serial'] ?></span>
                     </p>
 

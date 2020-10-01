@@ -14,8 +14,9 @@ require_once("assets/php/db.php");
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- FONTAWESOME CDN -->
+    <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -73,7 +74,21 @@ require_once("assets/php/db.php");
                                     <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
-                                    <td> <?php echo $reg['estado'] ?> </td>
+                                    <!-- Cambiar estado de color según solución -->
+                                    <?php
+                                    $color ="";
+                                    $icono ="";
+                                       if($reg['estado'] == "Pendiente"){
+                                        $color = "color: red;";
+                                        $icono = "<i class='far fa-times-circle'></i>";
+                                     }else{
+                                         $color = "color: green;";
+                                         $icono = "<i class='fas fa-check'></i>";
+                                     }
+                                    ?>
+                                    <td style="<?php echo $color ?>" id="estado" value="<?php echo $reg['estado']?> ">
+                                        <?php echo $reg['estado']." ".$icono?>
+                                    </td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
@@ -110,6 +125,10 @@ require_once("assets/php/db.php");
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
 
+    <!-- <script>
+        var estado = document.getElementById('estado');
+        console.log(estado);
+    </script> -->
 
 </body>
 

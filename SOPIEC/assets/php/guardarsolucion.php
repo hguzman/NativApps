@@ -2,6 +2,7 @@
 // Incluir archivo de base de datos
 require_once("db.php");
 // Funcion para el botón enviar
+sleep(1);
 if (isset($_POST['responder'])) {
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
@@ -23,10 +24,11 @@ where id='$id'") or
         die("Problemas en el select:" . mysqli_error($conexion));
 }
     //$_session["mensaje"] = "finalizado";
-    echo "<script>
-    alert('Ticket enviado'); 
-    </script>";
+    // echo "<script>
+    // alert('Ticket enviado'); 
+    // </script>";
     header("location: ../../mostrartickets.php");
+    
 
 
 ?>

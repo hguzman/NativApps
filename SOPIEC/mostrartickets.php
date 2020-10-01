@@ -78,7 +78,20 @@ require_once("assets/php/val_session_admin.php");
                                     <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
                                     <td> <?php echo $reg['asunto'] ?> </td>
-                                    <td> <?php echo $reg['estado'] ?> </td>
+                                    <!-- Cambiar estado de color según solución -->
+                                    <?php
+                                    $color ="";
+                                    $icono ="";
+                                       if($reg['estado'] == "Pendiente"){
+                                        $color = "color: red;";
+                                        $icono = "<i class='far fa-times-circle'></i>";
+                                     }else{
+                                         $color = "color: green;";
+                                         $icono = "<i class='fas fa-check'></i>";
+                                     }
+                                    ?>
+                                    <td style="<?php echo $color?>">
+                                        <?php echo $reg['estado']." ".$icono?></td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
@@ -94,6 +107,7 @@ require_once("assets/php/val_session_admin.php");
                 <?php
                                 }
                                 mysqli_close($conexion);
+
             ?>
                 </tbody>
                 </table>

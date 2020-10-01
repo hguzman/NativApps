@@ -47,7 +47,7 @@ require_once("assets/php/val_session_admin.php");
                 <hr>
                 <div class="mostrar-datos">
                     <!-- Mostrar datos usuario -->
-                    <div class="col-lg-3 well caja-mostrar-datos" style="margin-top: 20px;">
+                    <div class="col-lg-3 col-md-6 col-sm-12 well caja-mostrar-datos" style="margin-top: 20px;">
                         <center>
                             <h3>Mis datos</h3>
                         </center>
@@ -78,7 +78,8 @@ require_once("assets/php/val_session_admin.php");
                     </div>
 
                     <!-- Form Actualizar contraseña -->
-                    <div class="col-lg-3 well col-md-offset-1 caja-mostrar-datos" style="margin-top: 20px;">
+                    <div class="col-lg-3 col-md-6 col-sm-12 well col-md-offset-1 caja-mostrar-datos"
+                        style="margin-top: 20px;">
                         <center>
                             <h3>Actualizar contraseña</h3>
                         </center>
@@ -131,7 +132,7 @@ require_once("assets/php/val_session_admin.php");
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="staticBackdropLabel">Actualizar mis datos</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close r" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -205,9 +206,9 @@ require_once("assets/php/val_session_admin.php");
                                         </div>
                                         <!-- Botones -->
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
+                                            <button type="button" class="btn btn-secondary r"
                                                 data-dismiss="modal">Cancelar</button>
-                                            <input type="submit" class="btn btn-primary" value="Actualizar datos"
+                                            <input type="submit" class="btn btn-primary r" value="Actualizar datos"
                                                 name="actualizarDatosAdmin">
                                         </div>
                                     </form>
@@ -225,7 +226,7 @@ require_once("assets/php/val_session_admin.php");
                 </div>
 
                 <!--  $avatar  -->
-                <div class="col-lg-12 well" style="margin-top: 20px;">
+                <div class="col-lg-12 col-md-6 col-sm-12 well" style="margin-top: 20px;">
 
 
                     <center> <a href="vista_usuario.php"><img
@@ -233,7 +234,7 @@ require_once("assets/php/val_session_admin.php");
                                 class="rounded-circle" height="200px"></td></a> </center>
                     <!-- Button trigger modal -->
                     <br>
-                    <button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal"
+                    <button type="button" class="btn btn-primary btn-block btn-lg r" data-toggle="modal"
                         data-target="#avatar">
                         Modificar foto de perfil
                     </button>
@@ -256,14 +257,14 @@ require_once("assets/php/val_session_admin.php");
                                             method="POST">
                                             <input class="form-control" type="file" name="imagen" id="imagen"
                                                 required><br>
-                                            <input class="form-control btn btn-success" type="submit"
+                                            <input class="form-control btn btn-success r" type="submit"
                                                 value="subir archivo">
                                         </form>
                                     </center>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="assets\php\eliminar_avatar.php" class="btn btn-danger">Eliminar</a>
-                                    <button type="button" class="btn btn-info" data-dismiss="modal">ACEPTAR</button>
+                                    <a href="assets\php\eliminar_avatar.php" class="btn btn-danger r">ELIMINAR</a>
+                                    <button type="button" class="btn btn-info r" data-dismiss="modal">ACEPTAR</button>
                                 </div>
                             </div>
                         </div>
