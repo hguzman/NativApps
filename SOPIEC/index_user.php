@@ -23,8 +23,6 @@ require_once("assets/php/db.php");
 
 </head>
 
-
-
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">

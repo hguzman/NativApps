@@ -400,9 +400,6 @@ nav {
 .mostrar-datos {
   display: flex;
 }
-.caja-mostrar-datos {
-  width: 46%;
-}
 .titulos-ticket {
   color: #477957;
   font-size: x-large;
@@ -447,3 +444,10 @@ option.select-hr {
   font-size: 25px;
 }
 /*PANEL DE ESTILOS DEL DOWNLOADS FILE FIN*/
+/*  MEDIA QUERYS RESPONSIVE */
+
+@media (max-width: 720px) {
+  .cuadros-responsive {
+    display: block;
+  }
+}
