@@ -229,7 +229,7 @@ require_once("assets/php/val_session_admin.php");
                 <div class="col-lg-12 col-md-6 col-sm-12 well" style="margin-top: 20px;">
 
 
-                    <center> <a href="vista_usuario.php"><img
+                    <center> <a href="perfil.php"><img
                                 src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
                                 class="rounded-circle" height="200px"></td></a> </center>
                     <!-- Button trigger modal -->
