@@ -218,10 +218,6 @@ require_once("assets/php/val_session_admin.php");
 
     <script>
         $("#responder").on("click", function () {
-            console.log("Si entra");
-
-            // alert("HOla");
-
             toastr["success"]("Se ha enviado la respuesta del ticket",
                 "Ticket respondido");
 
