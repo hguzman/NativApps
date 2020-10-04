@@ -45,9 +45,9 @@ require_once("assets/php/val_session_admin.php");
             <div id="page-inner">
                 <h2>Mi usuario</h2>
                 <hr>
-                <div class="mostrar-datos">
+                <div class="mostrar-datos col-lg-12 col-md-2 col-sm-12 cuadros-responsive">
                     <!-- Mostrar datos usuario -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 well caja-mostrar-datos" style="margin-top: 20px;">
+                    <div class="col-lg-6 col-md-12 col-sm-12 well" style="margin-top: 20px;">
                         <center>
                             <h3>Mis datos</h3>
                         </center>
@@ -73,13 +73,12 @@ require_once("assets/php/val_session_admin.php");
                         <!-- Botón Actualizar mis datos -->
                         <center>
                             <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
-                                class="btn btn-success btn-lg r" name="modificarUser"
+                                class="btn btn-success btn-sm r" name="modificarUser"
                                 style="border-radius: 5px !important;">Actualizar mis datos</button></center>
                     </div>
 
                     <!-- Form Actualizar contraseña -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 well col-md-offset-1 caja-mostrar-datos"
-                        style="margin-top: 20px;">
+                    <div class="col-lg-6 col-md-12 col-sm-12 well col-md-offset-1" style="margin-top: 20px;">
                         <center>
                             <h3>Actualizar contraseña</h3>
                         </center>
@@ -114,12 +113,10 @@ require_once("assets/php/val_session_admin.php");
                                 </div>
                             </div>
                             <!-- Botones -->
-                            <div class="modal-footer">
-                                <center>
-                                    <button type="submit" class="btn btn-primary btn-lg r"
-                                        name="cambiarContrasena">Actualizar mi
-                                        contraseña</button></center>
-                            </div>
+                            <center>
+                                <button type="submit" class="btn btn-primary btn-block btn-sm r
+                                " name=" cambiarContrasena">Actualizar mi
+                                    contraseña</button></center>
                         </form>
                     </div>
 
@@ -224,12 +221,11 @@ require_once("assets/php/val_session_admin.php");
                     mysqli_close($conexion);
                     ?>
                 </div>
-
                 <!--  $avatar  -->
                 <div class="col-lg-12 col-md-6 col-sm-12 well" style="margin-top: 20px;">
 
 
-                    <center> <a href="vista_usuario.php"><img
+                    <center> <a href="perfil.php"><img
                                 src="data:image/jpg;base64, <?php echo base64_encode($reg_a['imagen']) ?>"
                                 class="rounded-circle" height="200px"></td></a> </center>
                     <!-- Button trigger modal -->

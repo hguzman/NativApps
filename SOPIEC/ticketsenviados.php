@@ -14,8 +14,9 @@ require_once("assets/php/db.php");
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- FONTAWESOME CDN -->
+    <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -43,11 +44,12 @@ require_once("assets/php/db.php");
                 = $sesion order by estado ") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
+
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
                         <!-- Tabla de valores en base de datos -->
-                        <table class="table">
-                            <thead class="thead-light ">
+                        <table class="table col-md-12 col-sm-2 col-xs-2">
+                            <thead class="thead-light">
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">ID</th>
@@ -76,14 +78,17 @@ require_once("assets/php/db.php");
                                     <!-- Cambiar estado de color según solución -->
                                     <?php
                                     $color ="";
+                                    $icono ="";
                                        if($reg['estado'] == "Pendiente"){
                                         $color = "color: red;";
+                                        $icono = "<i class='far fa-times-circle'></i>";
                                      }else{
                                          $color = "color: green;";
+                                         $icono = "<i class='fas fa-check'></i>";
                                      }
                                     ?>
-                                    <td style="<?php echo $color ?>" id="estado" value="<?php echo $reg['estado'] ?> ">
-                                        <?php echo $reg['estado'] ?>
+                                    <td style="<?php echo $color ?>" id="estado" value="<?php echo $reg['estado']?> ">
+                                        <?php echo $reg['estado']." ".$icono?>
                                     </td>
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->

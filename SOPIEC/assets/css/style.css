@@ -400,20 +400,20 @@ nav {
 .mostrar-datos {
   display: flex;
 }
-.caja-mostrar-datos {
-  width: 46%;
-}
 .titulos-ticket {
   color: #477957;
   font-size: x-large;
   font-family: cursive;
 }
-
+.grd {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-left: 11rem;
+}
 .centrar {
   text-align: center;
   display: block;
 }
-
 
 option.select-hr {
   border-bottom: 2px dotted #12ca71;
@@ -444,3 +444,10 @@ option.select-hr {
   font-size: 25px;
 }
 /*PANEL DE ESTILOS DEL DOWNLOADS FILE FIN*/
+/*  MEDIA QUERYS RESPONSIVE */
+
+@media (max-width: 720px) {
+  .cuadros-responsive {
+    display: block;
+  }
+}
