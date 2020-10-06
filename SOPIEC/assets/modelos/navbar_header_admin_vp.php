@@ -61,7 +61,17 @@
                     </li>
                     <!--  Quinto/ver tickets-->
                     <li>
-                        <a href="mostrartickets.php"><i class="fa fa-qrcode "></i>Tickets</a>
+                        <a href="#"><i class="fa fa-sitemap "></i>Tickets<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                        <li>
+                        <a href="mostrartickets.php">Mostrar tickets pendientes </a>
+                    </li>
+                            <li>
+                                <a href="historialdetickets.php">Historial de tickets</a>
+                            </li>
+
+                        </ul>
                     </li>
                     <!--  Sexto/A cerca de SOPIEC-->
                     <li>
