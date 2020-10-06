@@ -38,12 +38,12 @@ require_once("assets/php/val_session_admin.php");
 
         <div id="page-wrapper">
             <div id="page-inner">
-                <h2>Tickets pendientes</h2>
+                <h2>Historial de tickets</h2>
                 <hr />
 
                 <!-- query -->
                 <?php
-                $registros = mysqli_query($conexion, "select id,cedula,fecha,nombre,email,asunto,estado  from ticket WHERE estado='Pendiente'") or
+                $registros = mysqli_query($conexion, "select id,cedula,fecha,nombre,email,asunto,estado  from ticket WHERE estado='Resuelto'") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
@@ -95,7 +95,7 @@ require_once("assets/php/val_session_admin.php");
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
-                                            href="verticket.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
+                                            href="vistahistorial.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
 
                                     </td>
 
