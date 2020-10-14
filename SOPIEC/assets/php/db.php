@@ -1,12 +1,10 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$DB = 'sopiecdb';
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$conexion= mysqli_connect($host,$user,$password,$DB);
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-// if (isset($conexion)){
-//     echo "conectada";
-// }
+$conn = new mysqli($server, $username, $password, $db);
 ?>
