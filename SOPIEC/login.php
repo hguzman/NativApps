@@ -39,6 +39,7 @@ session_start();
 </head>
 
 <body>
+  <a style="position: absolute; top:5%; left: 3%;" href="../index.php" class="btn btn-success r">Ir a DVLeasy</a>
   <form class="form-signin" method="POST" action="assets/php/validacion.php">
     <div class="text-center mb-4">
       <img class="mb-4" src="assets/img/NativApps logo.png" alt="" width="72" height="72">
@@ -55,12 +56,6 @@ session_start();
     <div class="form-label-group">
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <label for="inputPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
     </div>
     <div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
