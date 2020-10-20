@@ -10,6 +10,7 @@ if (isset($_SESSION['login'])) {
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="img\empresa-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS\bootstrap.css">
     <link rel="stylesheet" href="CSS\style.css">
     <meta charset="UTF-8">
@@ -46,7 +47,7 @@ if (isset($_SESSION['login'])) {
                     </ul>
                 </div>
                 <a href="index.php" class="hvr-bob">
-                    <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor"
+                    <img src="img\empresa-logo.png" width="30" height="30" fill="none" stroke="currentColor"
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto "
                         role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
                 </a>
@@ -57,7 +58,7 @@ if (isset($_SESSION['login'])) {
     <div class="banner">
         <!-- Botones dentro del banner -->
         <div class="imagen-banner">
-            <img src="img/1755.png" class="img-fluid img-banner" alt="Responsive image">
+            <img src="img/1755.webp" class="img-fluid img-banner" alt="Responsive image">
             <!-- <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
             <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
                 productos</a> -->
