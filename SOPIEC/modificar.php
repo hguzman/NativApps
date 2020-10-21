@@ -153,10 +153,12 @@ include("assets/php/db.php");
 
             </div>
 
-            <!-- /. ROW  -->
+            <!-- /. ROW  -->    <?php 
+    include('assets/modelos/footer.php')
+    ?>
         </div>
         <!-- /. PAGE INNER  -->
-
+    
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>
@@ -204,20 +206,7 @@ include("assets/php/db.php");
     <!-- Ajax valdiacion en BD en vivo -->
     <script type="text/javascript">
         $(document).ready(function () {
-            // $('#email').on('blur', function () {
-            //     $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
-
-            //     var email = $(this).val();
-            //     var dataString = 'email=' + email;
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "assets/php/checkearDisponibilidad.php",
-            //         data: dataString,
-            //         success: function (data) {
-            //             $('#result-email').fadeIn(1000).html(data);
-            //         }
-            //     });
-            // });
+        
             $('#email').on('blur', function () {
                 $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
                 var valEmail = $(this).val();

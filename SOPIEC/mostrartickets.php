@@ -49,7 +49,7 @@ require_once("assets/php/val_session_admin.php");
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
                         <!-- Tabla de valores en base de datos -->
-                        <table class="table">
+                        <table class="table table-striped table-bordered table-hover">
                             <thead class="thead-light ">
                                 <!-- Header de la tabla -->
                                 <tr class="">
@@ -114,10 +114,13 @@ require_once("assets/php/val_session_admin.php");
             </div>
 
             <!-- /. ROW  -->
+
         </div>
         <!-- /. PAGE INNER  -->
     </div>
-    <!-- /. PAGE WRAPPER  -->
+    <!-- /. PAGE WRAPPER  --> <?php 
+    include('assets/modelos/footer.php')
+    ?>
     </div>
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

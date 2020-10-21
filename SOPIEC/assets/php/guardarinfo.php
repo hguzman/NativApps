@@ -129,7 +129,9 @@ if (isset($_POST['registrar'])) {
             <input hidden id="mostrarCC" value="<?php echo $cedula ?>"></input>
             <input hidden id="mostrarNombre" value="<?php echo $primer_nombre ?>"></input>
 
-
+            <?php 
+    include('../modelos/footer.php')
+    ?>
             <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->

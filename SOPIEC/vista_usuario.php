@@ -275,6 +275,9 @@ require("assets/php/db.php");
                 </div>
             </div>
             <!-- /. PAGE INNER  -->
+            <?php 
+    include('assets/modelos/footer.php')
+    ?>
         </div>
         <!-- /. PAGE WRAPPER  -->
 

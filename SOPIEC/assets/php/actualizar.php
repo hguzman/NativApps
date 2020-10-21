@@ -121,8 +121,11 @@ where cedula='$cedula'") or
 
             <input hidden id="mostrarCC" value="<?php echo $cedula ?>"></input>
             <input hidden id="mostrarNombre" value="<?php echo $primer_nombre ?>"></input>
-            <!-- /. ROW  -->
+            <!-- /. ROW  -->    <?php 
+    include('../modelos/footer.php')
+    ?>
         </div>
+    
         <!-- /. PAGE INNER  -->
     </div>
     <!-- /. PAGE WRAPPER  -->

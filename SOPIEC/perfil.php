@@ -267,6 +267,9 @@ require_once("assets/php/val_session_admin.php");
                     </div>
                 </div>
             </div>
+            <?php 
+    include('assets/modelos/footer.php')
+    ?>
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->

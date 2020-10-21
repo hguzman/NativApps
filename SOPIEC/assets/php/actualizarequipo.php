@@ -123,9 +123,12 @@ where serial='$serial'") or
             </div>
 
             <input hidden id="mostrarCC" value="<?php echo $serial ?>"></input>
-            <!-- /. ROW  -->
+            <!-- /. ROW  -->     <?php 
+    include('../modelos/footer.php')
+    ?>
         </div>
         <!-- /. PAGE INNER  -->
+   
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>
