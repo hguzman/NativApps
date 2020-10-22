@@ -67,7 +67,7 @@ require_once("assets/php/db.php");
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row">
                         <!-- Tabla de valores en base de datos -->
-                        <table class="table">
+                        <table class="table table-striped table-bordered table-hover">
                             <thead class="thead-light ">
                                 <!-- Header de la tabla -->
                                 <tr class="">
@@ -115,10 +115,15 @@ require_once("assets/php/db.php");
                 </table>
             </div>
 
-            <!-- /. ROW  -->
+
         </div>
+
         <!-- /. PAGE INNER  -->
     </div>
+
+    <?php 
+    include('assets/modelos/footer.php')
+    ?>
     <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->

@@ -130,11 +130,13 @@ require_once("assets/php/val_session_admin.php");
             </div>
 
 
-
+   <?php 
+    include('assets/modelos/footer.php')
+    ?>
             <!-- /. ROW  -->
         </div>
         <!-- /. PAGE INNER  -->
-
+     
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>

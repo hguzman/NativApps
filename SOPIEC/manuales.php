@@ -137,16 +137,14 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                     </div>
                 </div>
 
-
-                <!-- Modal -->
-
-
-
-
+                <!-- /. PAGE INNER  -->
             </div>
-            <!-- /. PAGE INNER  -->
+            <?php 
+                    include('assets/modelos/footer.php')
+                    ?>
         </div>
         <!-- /. PAGE WRAPPER  -->
+
     </div>
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
