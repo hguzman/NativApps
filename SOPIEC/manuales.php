@@ -85,8 +85,7 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary r" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary r" data-dismiss="modal">Aceptar</button>
+                                <button type="button" class="btn btn-danger r" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
@@ -132,23 +131,20 @@ $cc = "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary r" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary r" data-dismiss="modal"> Aceptar</button>
+                                <button type="button" class="btn btn-danger r" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-                <!-- Modal -->
-
-
-
-
+                <!-- /. PAGE INNER  -->
             </div>
-            <!-- /. PAGE INNER  -->
+            <?php 
+                    include('assets/modelos/footer.php')
+                    ?>
         </div>
         <!-- /. PAGE WRAPPER  -->
+
     </div>
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

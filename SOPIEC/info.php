@@ -10,7 +10,7 @@ require_once("assets/php/db.php");
     <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPIEC</title>
+    <title>Manuales</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -91,8 +91,12 @@ require_once("assets/php/db.php");
 
 
             </div>
+            <?php 
+    include('assets/modelos/footer.php')
+    ?>
             <!-- /. PAGE INNER  -->
         </div>
+
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="img\empresa-logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.css">
@@ -41,7 +42,7 @@
                     </ul>
                 </div>
                 <a href="index.php" class="hvr-bob">
-                    <img src="img/logodvl.jpeg" width="30" height="30" fill="none" stroke="currentColor"
+                    <img src="img\empresa-logo.png" width="30" height="30" fill="none" stroke="currentColor"
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto "
                         role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
                 </a>
