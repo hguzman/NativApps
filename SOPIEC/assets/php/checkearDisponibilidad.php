@@ -12,11 +12,15 @@ if (isset($_POST['cedula'])) {
     if ($result->num_rows > 0) {
     //   En caso de que la cedula esté registrada
         $data ['status'] = 'error';
-        $data ['mensaje'] = '<div class="alert alert-danger"><strong>Cedula registrada!</strong> Esta cedula ya se encuentra registrada.</div>';
+        $data ['mensaje'] = '<div class=" alert-danger" style=" margin-top: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px"><strong>Cedula registrada!</strong> Esta cedula ya se encuentra registrada.</div>';
     } else {
         //En caso de que no esté registrada
         $data ['status'] = 'ok';
-        $data ['mensaje'] = '<div class="alert alert-success" ><strong>Enhorabuena!</strong>Esta cedula está disponible.</div>';
+        $data ['mensaje'] = '<div class=" alert-success" style=" margin-top: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px"><strong>Enhorabuena!</strong>Esta cedula está disponible.</div>';
     }
     // Conversión a Json
     echo json_encode($data);
@@ -30,11 +34,15 @@ if (isset($_POST['email'])) {
     if ($result->num_rows > 0) {
         // echo '<div id="disponibilidad" class="alert alert-danger" value="no"><strong>Correo registrado!</strong> Este correo ya se encuentra registrado.</div>';
         $data ['statusEmail'] = 'error';
-        $data ['mensajeEmail'] = '<div  class="alert alert-danger"><strong>Correo registrado!</strong> Este correo ya se encuentra registrado.</div>';
+        $data ['mensajeEmail'] = '<div  class=" alert-danger" style=" margin-top: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px" ><strong>Correo registrado!</strong> Este correo ya se encuentra registrado.</div>';
     } else {
         // echo '<div id="disponibilidad" class="alert alert-success" value="si"><strong>Enhorabuena!</strong>Este correo está disponible.</div>';
         $data ['statusEmail'] = 'ok';
-        $data ['mensajeEmail'] = '<div class="alert alert-success" ><strong>Enhorabuena!</strong>Este correo está disponible.</div>';
+        $data ['mensajeEmail'] = '<div class=" alert-success" style=" margin-top: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px" ><strong>Enhorabuena!</strong>Este correo está disponible.</div>';
     }
     echo json_encode($data);
 }
@@ -48,8 +56,12 @@ if (isset($_POST['serial'])) {
     );
 
     if ($result->num_rows > 0) {
-        echo '<div id="disponibilidad" class="alert alert-danger" value="no"><strong>Serial registrado!</strong> Este serial ya se encuentra registrado.</div>';
+        echo '<div id="disponibilidad" class="alert-danger" value="no" style=" margin-top: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px" ><strong>Serial registrado!</strong> Este serial ya se encuentra registrado.</div>';
     } else {
-        echo '<div id="disponibilidad" class="alert alert-success" value="si"><strong>Enhorabuena!</strong>Este serial está disponible.</div>';
+        echo '<div id="disponibilidad" class="alert-success" value="si" style=" margin-top: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px" ><strong>Enhorabuena!</strong>Este serial está disponible.</div>';
     }
 }

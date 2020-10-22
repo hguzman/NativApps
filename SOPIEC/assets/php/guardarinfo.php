@@ -17,29 +17,35 @@ if (isset($_POST['registrar'])) {
     $addrol = $_POST['addrol'];
     $avatar_id = 1;
 
-    // Validaciones
-    if ($cedula == "" || $primer_nombre == "" || $area == "" || $email == "" || $contrasena == "" || $primer_nombre == "") {
-        $_POST['registrar'];
-        echo ("se está metiendo en el condicional de validacion en php");
-        // header('Location: ../../nuevousuario.php');
-        // echo ("<script src='../js/validaciones.js'></script>"); 
-    }
+  
+        $consulta ="SELECT * from usuarios WHERE  email = '$email'";
+        $res = mysqli_query($conexion, $consulta); 
+        $reg = mysqli_fetch_array($res);
+        $filas = mysqli_num_rows($res);
 
-    // Query
-    $query = "INSERT INTO usuarios(cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,contrasena,rol,avatar_id) VALUES ('$cedula','$area','$primer_nombre','$segundo_nombre','$primer_apellido','$segundo_apellido','$email','$contrasena','$addrol','$avatar_id')";
+        if ($filas> 0){
+            die(header("location: error.html")."Error". mysqli_error($conexion));
+        }else{
+ // Query
+ $query = "INSERT INTO usuarios(cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,contrasena,rol,avatar_id) VALUES ('$cedula','$area','$primer_nombre','$segundo_nombre','$primer_apellido','$segundo_apellido','$email','$contrasena','$addrol','$avatar_id')"; 
 
-    //realizas la consulta en al base de datos
-    $resultado = mysqli_query($conexion, $query);
+ // realizas la consulta en al base de datos
+ $resultado = mysqli_query($conexion, $query);
 
 
-    if (!$resultado) {
-        // header("location: ../../usuarios.php");
-        
-        die(header("location: error.html")."Error". mysqli_error($conexion));
+ if (!$resultado) {
+     // header("location: ../../usuarios.php");
+     
+     die(header("location: error.html")."Error". mysqli_error($conexion));
 
 // echo '';
-    }
+ }
 }
+        }
+        
+    
+
+   
 ?>
 
 
