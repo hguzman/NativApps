@@ -52,10 +52,21 @@
 
 
             </li>
-            <li>
-                <a href="ticketsenviados.php"><i class="fas fa-check-double"></i>Mis tickets</a>
-            </li>
-            <!--  Quinto/A cerca de SOPIEC-->
+             <!--  Quinto/ver tickets-->
+             <li>
+                        <a href="#"><i class="fa fa-sitemap "></i>Tickets<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                        <li>
+                        <a href="ticketsenviados.php">Mostrar tickets Enviados </a>
+                    </li>
+                            <li>
+                                <a href="historialdeticketsUser.php">Historial de tickets</a>
+                            </li>
+
+                        </ul>
+                    </li>
+            <!--  Sexto/A cerca de SOPIEC-->
             <li>
                 <a href="info.php"><i class="fa fa-qrcode "></i>A cerca de SOPIEC</a>
             </li>
