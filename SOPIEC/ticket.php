@@ -116,6 +116,9 @@ require_once("assets/php/db.php");
                     </div>
                 </div>
             </div>
+            <?php 
+    include('assets/modelos/footer.php')
+    ?>
         </div>
     </div>
     <!-- /. WRAPPER  -->

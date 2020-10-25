@@ -28,7 +28,7 @@ require_once("assets/php/db.php");
 </head>
 
 <body>
-    <!-- Contenedor principal -->
+    
     <!-- Contenedor principal -->
     <div id="wrapper">
         <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
@@ -63,7 +63,7 @@ require_once("assets/php/db.php");
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row">
                         <!-- Tabla de valores en base de datos -->
-                        <table class="table">
+                        <table class="table table-striped table-bordered table-hover">
                             <thead class="thead-light ">
                                 <!-- Header de la tabla -->
                                 <tr class="">
@@ -77,6 +77,7 @@ require_once("assets/php/db.php");
                                     <th scope="col">Disco duro</th>
                                     <th scope="col">Sistema operativo</th>
                                     <th scope="col">Estado</th>
+                                    <th scope="col">Acciónes</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -125,6 +126,9 @@ require_once("assets/php/db.php");
         </div>
         <!-- /. PAGE INNER  -->
     </div>
+    <?php 
+    include('assets/modelos/footer.php')
+    ?>
     <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->

@@ -1,6 +1,6 @@
 <?php
 require_once("assets/php/db.php");
-require_once("assets/php/val_session_admin.php");
+require_once("assets/php/val_session_user.php");
 
 ?>
 
@@ -38,12 +38,13 @@ require_once("assets/php/val_session_admin.php");
 
         <div id="page-wrapper">
             <div id="page-inner">
-                <h2>Tickets pendientes</h2>
+                <h2>Historial de tickets</h2>
                 <hr />
 
-                <!-- query -->
-                <?php
-                $registros = mysqli_query($conexion, "select id,cedula,fecha,nombre,email,asunto,estado  from ticket WHERE estado='Pendiente'") or
+               <!-- query -->
+               <?php
+                $registros = mysqli_query($conexion, "select id,fecha,nombre,email,asunto,estado  from ticket WHERE cedula 
+                = $sesion AND  estado='resuelto' ") or
                     die("Problemas en el select:" . mysqli_error($conexion));
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
@@ -54,7 +55,6 @@ require_once("assets/php/val_session_admin.php");
                                 <!-- Header de la tabla -->
                                 <tr class="">
                                     <th scope="col">ID</th>
-                                    <th scope="col">Cedula</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Email</th>
@@ -73,7 +73,6 @@ require_once("assets/php/val_session_admin.php");
                                     <th scope="row">
                                         <input class="form-control" type="number" value="<?php echo $id = $reg['id'] ?>"
                                             readonly id="id" name="id" readonl> </th>
-                                    <td> <?php echo $reg['cedula'] ?></td>
                                     <td> <?php echo $reg['nombre'] ?></td>
                                     <td> <?php echo $reg['fecha'] ?></td>
                                     <td> <?php echo $reg['email'] ?></td>
@@ -95,7 +94,7 @@ require_once("assets/php/val_session_admin.php");
                                     <td class="eliminar-editar">
                                         <!-- boton ver caso -->
                                         <a id="edit" class="btn fa fa-search"
-                                            href="verticket.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
+                                            href="vistahistorial.php?id=<?php echo $reg['id']; ?>"> Ver Caso</a>
 
                                     </td>
 
@@ -117,10 +116,10 @@ require_once("assets/php/val_session_admin.php");
 
         </div>
         <!-- /. PAGE INNER  -->
-    </div>
-    <!-- /. PAGE WRAPPER  --> <?php 
+    </div><?php 
     include('assets/modelos/footer.php')
     ?>
+    <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

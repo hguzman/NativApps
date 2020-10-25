@@ -123,6 +123,9 @@ if (isset($_POST['registrar'])) {
             </div>
             <input hidden id="mostrarSerial" value="<?php echo $serial ?>"></input>
             <!-- /. ROW  -->
+            <?php 
+    include('../modelos/footer.php')
+    ?>
         </div>
         <!-- /. PAGE INNER  -->
     </div>
