@@ -30,7 +30,7 @@ session_destroy();
 <script type='text/javascript'>
     function countdown() {
         var i = document.getElementById('counter');
-        if (parseInt(i.innerHTML) <= 0) {
+        if (parseInt(i.innerHTML) <= 1) {
             location.href = '../../login.php';
         }
         i.innerHTML = parseInt(i.innerHTML) - 1;
