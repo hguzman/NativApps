@@ -139,8 +139,12 @@ $cc= "SELECT cedula FROM usuarios WHERE cedula='$sesion'";
 
 
             </div>
+            <?php 
+    include('assets/modelos/footer.php')
+    ?>
             <!-- /. PAGE INNER  -->
         </div>
+        
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->

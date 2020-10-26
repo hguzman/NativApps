@@ -1,5 +1,5 @@
 <?php
-require_once("assets/php/val_session_user.php");
+require_once("assets/php/val_session_admin.php");
 require("assets/php/db.php");
 
  $registros = mysqli_query($conexion, "select * from equipos WHERE cedula_FK = '$sesion' ") or
@@ -42,7 +42,7 @@ require("assets/php/db.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-        <?php include_once("assets/modelos/navbar_header_user.php");?>
+        <?php include_once("assets/modelos/navbar_header_admin_vp.php");?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">

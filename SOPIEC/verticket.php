@@ -173,6 +173,9 @@ require_once("assets/php/val_session_admin.php");
                     </div>
                 </div>
             </div>
+            <?php 
+    include('assets/modelos/footer.php')
+    ?>
         </div>
 
         <!-- /. ROW  -->
@@ -181,6 +184,7 @@ require_once("assets/php/val_session_admin.php");
 
     </div>
     <!-- /. PAGE WRAPPER  -->
+
     </div>
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

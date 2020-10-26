@@ -43,6 +43,9 @@
                             <li>
                                 <a href="usuarios.php">Ver usuarios registrados</a>
                             </li>
+                            <li>
+                                <a href="perfil.php">Mi usuario</a>
+                            </li>
                         </ul>
                     </li>
                     <!-- Cuarto/Administracion de equipos -->
@@ -56,7 +59,9 @@
                             <li>
                                 <a href="equipos.php">Gestionar equipo</a>
                             </li>
-
+                            <li>
+                                <a href="miequipo_admin.php">Mi equipo</a>
+                            </li>
                         </ul>
                     </li>
                     <!--  Quinto/ver tickets-->
