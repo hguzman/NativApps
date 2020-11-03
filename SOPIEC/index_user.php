@@ -40,7 +40,7 @@ require_once("assets/php/db.php");
                 <hr />
                 <div class="row">
                     <!-- MI EQUIPO -->
-                    <div class="col-md-4 col-sm-3 col-xs-6">
+                    <div class="col-md-5 col-sm-12 col-xs-12">
                         <h5>MI EQUIPO</h5>
                         <div class="alert alert-info text-center">
                             <i class="fa fa-desktop fa-5x"></i>
@@ -81,45 +81,8 @@ require_once("assets/php/db.php");
                     </div>
 
                     <!-- Tabla de pre-visualizacion de equipos -->
-                    <div class="col-md-6">
-                        <h5>Table Sample One</h5>
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                    <div class="col-md-7 col-sm-12 col-xs-12">
+                        <img src="assets/img/sopiec.png" alt="" style="width: 100%; padding-top: 3rem;">
                     </div>
                     <!-- Imagen redireccion a tickets -->
                     <div class="col-md-12 col-sm-12 col-lg-12">
