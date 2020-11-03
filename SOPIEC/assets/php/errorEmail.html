@@ -1,0 +1,385 @@
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Error de registro</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+    <!-- Custom stlylesheet -->
+    <!-- <link type="text/css" rel="stylesheet" href="css/style.css" /> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+
+    <div id="notfound">
+        <div class="notfound">
+            <div class="notfound-404"></div>
+            <h1>Error de registro</h1>
+            <h2>Oops! no hemos podido actualizar tu email</h2>
+            <p>El e-mail que intentas registrar ya se encuentra en nuestra base de datos</p>
+            <a onclick="history.back()" style="cursor: pointer;">Volver</a>
+        </div>
+    </div>
+
+    <div class="gears">
+        <div class="gear one">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="gear two">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="gear three">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+<style>
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    #notfound {
+        position: relative;
+        height: 80vh;
+    }
+
+    #notfound .notfound {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .notfound {
+        max-width: 560px;
+        width: 100%;
+        padding-left: 160px;
+        line-height: 1.1;
+    }
+
+    .notfound .notfound-404 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        width: 140px;
+        height: 140px;
+        background-image: url('../img/emoji.png');
+        background-size: cover;
+    }
+
+    .notfound .notfound-404:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: scale(2.4);
+        -ms-transform: scale(2.4);
+        transform: scale(2.4);
+        border-radius: 50%;
+        background-color: #f2f5f8;
+        z-index: -1;
+    }
+
+    .notfound h1 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 65px;
+        font-weight: 700;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        color: #151723;
+        text-transform: uppercase;
+    }
+
+    .notfound h2 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 21px;
+        font-weight: 400;
+        margin: 0;
+        text-transform: uppercase;
+        color: #151723;
+    }
+
+    .notfound p {
+        font-family: 'Nunito', sans-serif;
+        color: #999fa5;
+        font-weight: 400;
+    }
+
+    .notfound a {
+        font-family: 'Nunito', sans-serif;
+        display: inline-block;
+        font-weight: 700;
+        border-radius: 40px;
+        text-decoration: none;
+        color: #388dbc;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .notfound .notfound-404 {
+            width: 110px;
+            height: 110px;
+        }
+
+        .notfound {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 110px;
+        }
+    }
+
+
+    /* ============GEARS=================== */
+
+    :root {
+        --main-color: #eaeaea;
+        --stroke-color: black;
+
+    }
+
+    /**/
+    body {
+        background: var(--main-color);
+    }
+
+    h1,
+    h2 {
+        -webkit-transition: opacity 0.5s linear, margin-top 0.5s linear;
+        /* Safari */
+        transition: opacity 0.5s linear, margin-top 0.5s linear;
+    }
+
+    .loading h1,
+    .loading h2 {
+        margin-top: 0px;
+        opacity: 0;
+    }
+
+    .gears {
+        position: relative;
+        margin: 0 auto;
+        width: auto;
+        height: 0;
+    }
+
+    .gear {
+        position: relative;
+        z-index: 0;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: var(--stroke-color);
+    }
+
+    .gear:before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        z-index: 2;
+        content: "";
+        border-radius: 50%;
+        background: var(--main-color);
+    }
+
+    .gear:after {
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        z-index: 3;
+        content: "";
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 5px solid var(--stroke-color);
+        box-sizing: border-box;
+        background: var(--main-color);
+    }
+
+    .gear.one {
+        left: -130px;
+    }
+
+    .gear.two {
+        top: -75px;
+    }
+
+    .gear.three {
+        top: -235px;
+        left: 130px;
+    }
+
+    .gear .bar {
+        position: absolute;
+        left: -15px;
+        top: 50%;
+        z-index: 0;
+        width: 150px;
+        height: 30px;
+        margin-top: -15px;
+        border-radius: 5px;
+        background: var(--stroke-color);
+    }
+
+    .gear .bar:before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        z-index: 1;
+        content: "";
+        border-radius: 2px;
+        background: var(--main-color);
+    }
+
+    .gear .bar:nth-child(2) {
+        transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+    }
+
+    .gear .bar:nth-child(3) {
+        transform: rotate(120deg);
+        -webkit-transform: rotate(120deg);
+    }
+
+    @-webkit-keyframes clockwise {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes anticlockwise {
+        0% {
+            -webkit-transform: rotate(360deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+
+    @-webkit-keyframes clockwiseError {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        20% {
+            -webkit-transform: rotate(30deg);
+        }
+
+        40% {
+            -webkit-transform: rotate(25deg);
+        }
+
+        60% {
+            -webkit-transform: rotate(30deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+
+    @-webkit-keyframes anticlockwiseErrorStop {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        20% {
+            -webkit-transform: rotate(-30deg);
+        }
+
+        60% {
+            -webkit-transform: rotate(-30deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+
+    @-webkit-keyframes anticlockwiseError {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        20% {
+            -webkit-transform: rotate(-30deg);
+        }
+
+        40% {
+            -webkit-transform: rotate(-25deg);
+        }
+
+        60% {
+            -webkit-transform: rotate(-30deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+
+    .gear.one {
+        -webkit-animation: anticlockwiseErrorStop 2s linear infinite;
+    }
+
+    .gear.two {
+        -webkit-animation: anticlockwiseError 2s linear infinite;
+    }
+
+    .gear.three {
+        -webkit-animation: clockwiseError 2s linear infinite;
+    }
+
+    .loading .gear.one,
+    .loading .gear.three {
+        -webkit-animation: clockwise 3s linear infinite;
+    }
+
+    .loading .gear.two {
+        -webkit-animation: anticlockwise 3s linear infinite;
+    }
+</style>
+
+</html>
