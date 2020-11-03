@@ -82,7 +82,12 @@ require("assets/php/db.php");
                         <center>
                             <button id="asignar" data-toggle="modal" data-target="#staticBackdrop" href="modal"
                                 class="btn btn-success btn-sm r" name="modificarUser"
-                                style="border-radius: 5px !important;">Actualizar mis datos</button></center>
+                                style="border-radius: 5px !important;">Actualizar mis datos</button>
+                            <!-- btn Cambiar Email -->
+                            <button id="asignar" data-toggle="modal" data-target="#cambiarEmailUser" href="modal"
+                                class="btn btn-info btn-sm r" name="cambiarEmailUser"
+                                style="border-radius: 5px !important;">Cambiar E-mail</button>
+                        </center>
                     </div>
 
                     <!-- Form Actualizar contraseña -->
@@ -187,16 +192,6 @@ require("assets/php/db.php");
                                                     name="segundo_apellido" placeholder="Casas"
                                                     value="<?php echo $reg['segundo_apellido'] ?>">
                                             </div>
-                                            <!-- Email -->
-                                            <div class="form-group col-md-6">
-                                                <label for="registrar-email">Email</label>
-                                                <input type="email" class="form-control" id="email" name="email"
-                                                    placeholder="correo_143@correo.com" require
-                                                    value="<?php echo $reg['email'] ?>">
-                                                <!-- Div de carga -->
-                                                <div id="result-email"></div>
-                                            </div>
-
 
                                             <div class="form-group col-md-12">
                                                 <label for="contrasenaActual">Contraseña actual</label>
@@ -215,6 +210,66 @@ require("assets/php/db.php");
                                                 data-dismiss="modal">Cancelar</button>
                                             <input type="submit" class="btn btn-primary" value="Actualizar datos"
                                                 name="actualizarDatosUser">
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Modal actualizar Email-->
+                    <div class="modal fade" id="cambiarEmailUser" data-backdrop="static" data-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Cambiar E-mail</h5>
+                                    <button type="button" class="close r" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!-- Contenido del modal -->
+                                <div class="modal-body">
+                                    <form method="POST" id="cambiarEmailUser" name="cambiarEmailUser"
+                                        action="assets/php/actualizarDatosUser.php">
+                                        <div class="form-row">
+
+                                            <!-- Email actual-->
+                                            <div class="form-group col-md-12">
+                                                <label for="registrar-email">Email actual</label>
+                                                <input readonly type="email" class="form-control" id="actual" name=""
+                                                    placeholder="" value="<?php echo $reg['email'] ?>">
+                                            </div>
+                                            <!-- Nuevo Email -->
+                                            <div class="form-group col-md-12">
+                                                <label for="registrar-email">Nuevo Email</label>
+                                                <input type="email" class="form-control" id="nuevoEmail"
+                                                    name="nuevoEmail" placeholder="correo_143@correo.com" required
+                                                    value="">
+                                                <!-- Div de carga -->
+                                                <div id="result-email"></div>
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <label for="contrasenaActual">Contraseña actual</label>
+                                                <br>
+                                                <div class="alert alert-warning" role="alert">
+                                                    Este campo es obligatorio para efecuar los
+                                                    cambios.</div>
+                                                <input type="password" class="form-control" id=""
+                                                    name="contrasenaActual" placeholder="*********" required value=""
+                                                    style="margin-bottom: 1rem;">
+                                            </div>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary r"
+                                                data-dismiss="modal">Cancelar</button>
+                                            <input type="submit" class="btn btn-primary r" value="Actualizar datos"
+                                                name="cambiarEmailUser" id="cambiarEmailUser">
                                         </div>
                                     </form>
 
@@ -308,7 +363,7 @@ require("assets/php/db.php");
     <!-- Mostrar pass-->
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#email').on('blur', function () {
+            $('#nuevoEmail').on('blur', function () {
                 $('#result-email').html('<img src="assets/img/loader.gif" />').fadeOut(1000);
                 var valEmail = $(this).val();
                 $.ajax({
