@@ -32,7 +32,7 @@ require_once("assets/php/val_session_user.php");
 <body>
     <!-- Contenedor principal -->
     <div id="wrapper">
-        <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
+        <?php include("assets/modelos/navbar_header_user.php"); ?>
 
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
@@ -41,8 +41,8 @@ require_once("assets/php/val_session_user.php");
                 <h2>Historial de tickets</h2>
                 <hr />
 
-               <!-- query -->
-               <?php
+                <!-- query -->
+                <?php
                 $registros = mysqli_query($conexion, "select id,fecha,nombre,email,asunto,estado  from ticket WHERE cedula 
                 = $sesion AND  estado='resuelto' ") or
                     die("Problemas en el select:" . mysqli_error($conexion));
