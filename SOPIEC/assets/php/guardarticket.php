@@ -31,14 +31,14 @@ if(isset($_POST['enviarTicket'])){
 
      
  // Notificaciones
- $consulta = mysqli_query($conexion, "SELECT primer_nombre,rol FROM usuarios WHERE cedula ='$sesion'");
+ $consulta = mysqli_query($conexion, "SELECT cedula,primer_nombre,rol FROM usuarios WHERE cedula ='$sesion'");
  $co = mysqli_fetch_array($consulta);
   $usuario1=$co['primer_nombre'];
   $usuario2= $nombre;
   $rol_not = $co['rol'];
-
+  $email_user = $co['cedula'];
  $id = $reg['id'];
- $notificacion = mysqli_query($conexion, "INSERT INTO notificaciones (usuario1,usuario2,rol_not,tipo,leido,fecha, id_pub)VALUES ('$usuario1','$usuario2','$rol_not','Ha creado un ticket con id \#',0,now(),'$id')") or  die("Error notifiacaion".mysqli_error($conexion));
+ $notificacion = mysqli_query($conexion, "INSERT INTO notificaciones (usuario1,usuario2,rol_not,email_user,tipo,leido,fecha, id_pub)VALUES ('$usuario1','$usuario2','$rol_not',' $email_user','Ha creado un ticket con id \#',0,now(),'$id')") or  die("Error notifiacaion".mysqli_error($conexion));
     
         
         echo "<div class='container'>

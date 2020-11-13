@@ -54,6 +54,7 @@ require_once("assets/php/val_session_admin.php");
         $asunto = $reg['asunto'];
         $mensaje = $reg['mensaje'];
         $estado = $reg['estado'];
+        $cedula = $reg['cedula'];
          
     ?>
         <!--  Sidebar de opciones  -->

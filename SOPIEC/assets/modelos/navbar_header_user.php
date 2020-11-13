@@ -15,7 +15,12 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- Notifiacaiones -->
-                <?php $noti =mysqli_query($conexion,"SELECT * FROM notificaciones WHERE  leido= 0 AND  rol_not= 'admin' ORDER BY id_not DESC " );
+
+                <?php 
+                $emaQuery = mysqli_query($conexion,"SELECT email FROM usuarios WHERE cedula = '$sesion'");
+                $emaArr = mysqli_fetch_array($emaQuery);
+                $emaLimpio = $emaArr['email'];
+                $noti =mysqli_query($conexion,"SELECT * FROM notificaciones WHERE leido= 0 AND rol_not= 'admin' AND email_user= '$emaLimpio' ORDER BY id_not DESC " );
                           $cuantas = mysqli_num_rows($noti);
                         ?>
                 <li class="dropdown notifications-menu">
@@ -30,7 +35,7 @@
                             <ul class="menu">
                                 <?php 
                                     while($not = mysqli_fetch_array($noti)){
-                                        $users = mysqli_query($conexion,"SELECT primer_nombre,primer_apellido FROM usuarios WHERE primer_nombre = '".$not['usuario1']."' ");
+                                        $users = mysqli_query($conexion,"SELECT primer_nombre,primer_apellido,email FROM usuarios WHERE primer_nombre = '".$not['usuario1']."' ");
                                         $nombre_admin = mysqli_fetch_array($users);
                                       
                                     ?>

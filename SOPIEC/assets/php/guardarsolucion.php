@@ -12,6 +12,7 @@ if (isset($_POST['responder'])) {
     $asunto = $_POST['asunto'];
     $solucion = $_POST['solucion'];
     $estado = $_POST['estado'];
+    
 
     //notificaciones
     $consulta = mysqli_query($conexion, "SELECT primer_nombre,rol FROM usuarios WHERE cedula ='$sesion'");
@@ -19,7 +20,7 @@ if (isset($_POST['responder'])) {
      $usuario1=$co['primer_nombre'];
      $usuario2= $nombre;
      $rol_not = $co['rol'];
-     
+     $email_user = $email;
     mysqli_query($conexion, "
 update ticket set 
 nombre='$nombre', 
@@ -31,7 +32,7 @@ estado='$estado'
 where id='$id'") or
         die("Problemas en el select:" . mysqli_error($conexion));
 
-        $notificacion= mysqli_query($conexion, "INSERT INTO notificaciones (usuario1,usuario2,rol_not,tipo,leido,fecha,id_pub)VALUES ('$usuario1','$usuario2','$rol_not','ha respondido tu ticket \# ',0,now(),'$id') "); 
+        $notificacion= mysqli_query($conexion, "INSERT INTO notificaciones (usuario1,usuario2,rol_not,email_user,tipo,leido,fecha,id_pub)VALUES ('$usuario1','$usuario2','$rol_not','$email_user','ha respondido tu ticket \# ',0,now(),'$id')"); 
 
         //  die("Problemas en el select:" . mysqli_error($conexion));
 }
