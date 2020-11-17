@@ -6,6 +6,7 @@
 <?php
 // Incluir archivo de base de datos
 require_once("db.php");
+require_once("../php/val_session_user.php");
 // Funcion para el botón enviar
 if(isset($_POST['enviarTicket'])){
     $cedula = $_POST['cedula']; 
@@ -14,7 +15,11 @@ if(isset($_POST['enviarTicket'])){
     $asunto = $_POST['asunto'];
     $mensaje = $_POST['mensaje'];
 
+    
+ 
+
     $query = "INSERT INTO ticket(`cedula`,`nombre`,`email`,`mensaje`,`asunto`) VALUES ('$cedula','$nombre','$email','$mensaje','$asunto' )";
+
     $resultado = mysqli_query($conexion, $query);
 
     if(!$resultado){
@@ -23,6 +28,18 @@ if(isset($_POST['enviarTicket'])){
         $registros = mysqli_query($conexion,"select id from ticket where mensaje='$mensaje'");
         // echo $registros;
         $reg= mysqli_fetch_array($registros);
+
+     
+ // Notificaciones
+ $consulta = mysqli_query($conexion, "SELECT cedula,primer_nombre,rol FROM usuarios WHERE cedula ='$sesion'");
+ $co = mysqli_fetch_array($consulta);
+  $usuario1=$co['primer_nombre'];
+  $usuario2= $nombre;
+  $rol_not = $co['rol'];
+  $email_user = $co['cedula'];
+ $id = $reg['id'];
+ $notificacion = mysqli_query($conexion, "INSERT INTO notificaciones (usuario1,usuario2,rol_not,email_user,tipo,leido,fecha, id_pub)VALUES ('$usuario1','$usuario2','$rol_not',' $email_user','Ha creado un ticket con id \#',0,now(),'$id')") or  die("Error notifiacaion".mysqli_error($conexion));
+    
         
         echo "<div class='container'>
         <div class='alert alert-success' role='alert'>
@@ -56,6 +73,10 @@ if(isset($_POST['enviarTicket'])){
             countdown();
         }, 1000);
     </script>";
+
+    
+
+    
     }
 }
 

@@ -36,6 +36,9 @@ require_once("assets/php/val_session_user.php");
 
     <?php
         $id = $_REQUEST['id'];
+        mysqli_query($conexion,"
+         update notificaciones set leido = 1 where id_pub = '$id'
+          ");
         require_once("assets/php/db.php");
         $registros = mysqli_query($conexion, "select * from ticket
                             where id= '$id' ") or
@@ -160,7 +163,7 @@ require_once("assets/php/val_session_user.php");
     </div>
     </div>
 
-    <!-- /. ROW  --> 
+    <!-- /. ROW  -->
     </div>
     <!-- /. PAGE INNER  -->
 
