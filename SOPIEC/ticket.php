@@ -41,7 +41,7 @@ require_once("assets/php/db.php");
 
 <body>
     <div id="wrapper">
-        <?php include_once("assets/modelos/navbar_header_user.php");?>
+        <?php include_once("assets/modelos/navbar_header_user.php")?>
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
         <div id="page-wrapper">
