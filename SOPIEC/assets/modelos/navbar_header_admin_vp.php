@@ -16,14 +16,14 @@
 
                         <!-- Notifiacaiones -->
                         <?php $noti =mysqli_query($conexion,"SELECT * FROM notificaciones WHERE  leido= 0 AND  rol_not= 'user' ORDER BY id_not DESC " );
-                          $cuantas = mysqli_num_rows($noti);
+                          $cuantas = mysqli_num_rows($noti); 
                         ?>
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-bell-o"></i>
                                 <span class="label label-warning"><?php echo $cuantas; ?></span>
                             </a>
-                            <ul class="dropdown-menu not-modal table table-hover">
+                            <ul class="dropdown-menu not-modal">
                                 <li class="header head-not-modal letras-not">Tienes <?php echo $cuantas; ?>
                                     notifiaciones</li>
                                 <hr>
@@ -37,7 +37,8 @@
                                       
                                     ?>
                                         <li class="separacion-not">
-                                            <a href="<?php echo "verticket.php?id=".$not['id_pub']?>">
+                                            <a style="text-decoration: none;"
+                                                href="<?php echo "verticket.php?id=".$not['id_pub']?>">
                                                 <!-- Contenido de la notificacion -->
                                                 <i class="fa fa-users text-aqua"></i>
 
