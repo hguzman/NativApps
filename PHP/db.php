@@ -3,7 +3,7 @@ $conexion= mysqli_connect(
     'localhost',
     'root',
     '',
-    'sopiecdb'
+    'pagpre'
 );
 
 // if (isset($conexion)){
