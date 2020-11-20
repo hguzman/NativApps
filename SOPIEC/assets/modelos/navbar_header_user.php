@@ -28,10 +28,8 @@
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-warning"><?php echo $cuantas; ?></span>
                     </a>
-                    <ul class="dropdown-menu not-modal">
-                        <li class="header head-not-modal letras-not">Tienes <?php echo $cuantas; ?>
-                            notifiaciones</li>
-                        <hr>
+                    <ul class="dropdown-menu">
+                        <li class="header">Tienes <?php echo $cuantas; ?> notifiaciones</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
@@ -42,9 +40,8 @@
                                       
                                     ?>
 
-                                <li class="separacion-not">
-                                    <a style="text-decoration: none;"
-                                        href="<?php echo "verticketUser.php?id=".$not['id_pub']?>">
+                                <li>
+                                    <a href="<?php echo "verticketUser.php?id=".$not['id_pub']?>">
                                         <!-- Contenido de la notificacion -->
                                         <i class="fa fa-users text-aqua"></i>
 
@@ -52,7 +49,6 @@
                                         <?php echo $not['tipo'] ?><?php echo $not['id_pub'] ?>
                                         <?php $not['leido'] = 1 ?>
                                     </a>
-                                    <hr>
                                 </li>
 
                                 <?php } ?>

@@ -55,14 +55,15 @@ if (isset($_SESSION['login'])) {
         </div>
     </header>
     <!-- Banner y botones contacto, productos -->
-
-    <div class="row" style="width: 100%;">
-        <img src="img/landing-code.svg" class="img-fluid img-banner  col-lg-6 col-md-12 col-sm-12"
-            alt="Responsive image">
-        <img src="img/landing-laptop.svg" class="img-fluid img-banner  col-lg-6 col-md-12 col-sm-12"
-            alt="Responsive image">
+    <div class="banner">
+        <!-- Botones dentro del banner -->
+        <div class="imagen-banner">
+            <img src="img/1755.jpg" class="img-fluid img-banner" alt="Responsive image">
+            <!-- <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
+            <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
+                productos</a> -->
+        </div>
     </div>
-
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Div Cajas (Documentacion, opinion y SOPIEC) -->
