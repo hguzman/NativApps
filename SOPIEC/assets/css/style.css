@@ -451,3 +451,27 @@ option.select-hr {
     display: block;
   }
 }
+
+.not-modal {
+  padding: 1rem;
+  width: 39.7rem;
+  border-color: #fdfdfd00;
+  border-radius: 9px;
+  right: auto !important;
+}
+
+.head-not-modal {
+  padding: 1rem;
+}
+.separacion-not {
+  padding-bottom: 1rem;
+  
+}
+
+.letras-not{
+  font-family: 'Open Sans';
+  text-align: center;
+  font-size: large;
+  /* padding-bottom: 3rem; */
+  color: #50b3b3;
+}
