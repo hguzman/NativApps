@@ -32,9 +32,7 @@ body {
   );
 }
 /* Imagenes */
-.banner {
-  position: relative;
-}
+
 .img-logo {
   border-radius: 50px;
 }

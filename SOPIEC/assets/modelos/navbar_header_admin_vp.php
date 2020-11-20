@@ -16,15 +16,17 @@
 
                         <!-- Notifiacaiones -->
                         <?php $noti =mysqli_query($conexion,"SELECT * FROM notificaciones WHERE  leido= 0 AND  rol_not= 'user' ORDER BY id_not DESC " );
-                          $cuantas = mysqli_num_rows($noti);
+                          $cuantas = mysqli_num_rows($noti); 
                         ?>
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-bell-o"></i>
                                 <span class="label label-warning"><?php echo $cuantas; ?></span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">Tienes <?php echo $cuantas; ?> notifiaciones</li>
+                            <ul class="dropdown-menu not-modal">
+                                <li class="header head-not-modal letras-not">Tienes <?php echo $cuantas; ?>
+                                    notifiaciones</li>
+                                <hr>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -34,8 +36,9 @@
                                         $nombre_user = mysqli_fetch_array($users);
                                       
                                     ?>
-                                        <li>
-                                            <a href="<?php echo "verticket.php?id=".$not['id_pub']?>">
+                                        <li class="separacion-not">
+                                            <a style="text-decoration: none;"
+                                                href="<?php echo "verticket.php?id=".$not['id_pub']?>">
                                                 <!-- Contenido de la notificacion -->
                                                 <i class="fa fa-users text-aqua"></i>
 
@@ -44,6 +47,7 @@
                                                 <?php echo $not['id_pub'] ?>
                                                 <?php $not['leido'] = 1 ?>
                                             </a>
+                                            <hr>
                                         </li>
                                         <?php } ?>
 
