@@ -90,14 +90,15 @@ require_once("PHP/db.php")
                 if (empty($resultado)) {
                 } else {
                     $contar = mysqli_fetch_row($resultado);
-                    if ($contar >= 1) {
+                    
+                    if ($contar > 0) {
                         while ($res = mysqli_fetch_array($resultado)) {
-
+                            
 
                 ?>
                             <div>
-                                <h6><strong><?php echo $res['nombre'] . " " . $res['apellido']; ?></strong></h6>
-                                <p><?php echo $res['comentario']; ?> </p>
+                                <h6><strong><?php echo $res['1'] . " " . $res['2']; ?></strong></h6>
+                                <p><?php echo $res['3']; ?> </p>
                             </div>
                             <br>
 
@@ -109,18 +110,7 @@ require_once("PHP/db.php")
 
                     }
                 };
-
-
                 ?>
-
-
-
-
-
-
-
-
-
 
             </div>
         </div>
