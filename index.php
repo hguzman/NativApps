@@ -37,7 +37,7 @@ if (isset($_SESSION['login'])) {
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link hvr-bob dvl-header" href="opiniones.html">Opinion de nuestros clientes
+                            <a class="nav-link hvr-bob dvl-header" href="opiniones.php">Opinion de nuestros clientes
                                 <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
@@ -55,15 +55,14 @@ if (isset($_SESSION['login'])) {
         </div>
     </header>
     <!-- Banner y botones contacto, productos -->
-    <div class="banner">
-        <!-- Botones dentro del banner -->
-        <div class="imagen-banner">
-            <img src="img/1755.webp" class="img-fluid img-banner" alt="Responsive image">
-            <!-- <a type="button" class="btn btn-outline-dark contactanos-btn pt-2" href="contactenos.html">Contactenos!</a>
-            <a type="button" class="btn btn-outline-dark boton-productos pt-2" href="productos.html">Nuestros
-                productos</a> -->
-        </div>
+
+    <div class="row" style="width: 100%;">
+        <img src="img/landing-code.svg" class="img-fluid img-banner  col-lg-6 col-md-12 col-sm-12"
+            alt="Responsive image">
+        <img src="img/landing-laptop.svg" class="img-fluid img-banner  col-lg-6 col-md-12 col-sm-12"
+            alt="Responsive image">
     </div>
+
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Div Cajas (Documentacion, opinion y SOPIEC) -->
@@ -91,7 +90,7 @@ if (isset($_SESSION['login'])) {
                     <p class="card-text">Nos gustaria saber que piensas a cerca de nuestro trabajo</p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="opiniones.html">Ver más
+                    <a class="btn btn-secondary btn-lg boton-largo color-blanco" href="opiniones.php">Ver más
                         <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>

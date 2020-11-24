@@ -27,6 +27,9 @@ require_once("assets/php/db.php");
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!-- FONTAWESOME STYLES-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -38,7 +41,7 @@ require_once("assets/php/db.php");
 
 <body>
     <div id="wrapper">
-        <?php include_once("assets/modelos/navbar_header_user.php");?>
+        <?php include_once("assets/modelos/navbar_header_user.php")?>
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
         <div id="page-wrapper">

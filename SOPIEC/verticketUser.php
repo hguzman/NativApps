@@ -23,6 +23,9 @@ require_once("assets/php/val_session_user.php");
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!-- FONTAWESOME STYLES-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -36,6 +39,9 @@ require_once("assets/php/val_session_user.php");
 
     <?php
         $id = $_REQUEST['id'];
+        mysqli_query($conexion,"
+         update notificaciones set leido = 1 where id_pub = '$id'
+          ");
         require_once("assets/php/db.php");
         $registros = mysqli_query($conexion, "select * from ticket
                             where id= '$id' ") or
@@ -160,7 +166,7 @@ require_once("assets/php/val_session_user.php");
     </div>
     </div>
 
-    <!-- /. ROW  --> 
+    <!-- /. ROW  -->
     </div>
     <!-- /. PAGE INNER  -->
 
