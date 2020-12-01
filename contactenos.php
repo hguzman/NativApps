@@ -28,7 +28,7 @@
                             <a class="nav-link hvr-bob dvl-header" href="productos.html">Productos<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link hvr-bob dvl-header" href="opiniones.html">Opinion de nuestros clientes
+                            <a class="nav-link hvr-bob dvl-header" href="opiniones.php">Opinion de nuestros clientes
                                 <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
