@@ -14,6 +14,9 @@ require_once("db.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Busqueda de usuarios</title>
+    <!-- Estilos CSS Toastr -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- BOOTSTRAP STYLES-->
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -103,9 +106,8 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
                                         <!-- botones editar y eliminar -->
                                         <a id="edit" class="btn fa fa-pen"
                                             href="../../modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
-
-                                        <a id="del" class="btn fa fa-trash-alt"
-                                            href="borrar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                        <a id="del" class="btn btn-lg fa fa-trash-alt" href="#"
+                                            onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
                                     </td>
                                 </tr>
 
@@ -137,6 +139,50 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
     <!-- CUSTOM SCRIPTS -->
     <script src="../js/custom.js"></script>
 
+    <!-- CDN Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Script Toastr -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="../js/validaciones.js"></script>
+
+    <!-- Alerta borrar -->
+    <script type="text/javascript">
+        // var nombre = document.getElementById("nombre");
+        // console.log(nombre.value);
+
+        function confirmacion_borrar(cedula) {
+
+            if (confirm(`¿Realmente desea eliminar el usuario con C.C ${cedula}?`)) {
+
+
+                toastr["error"]("El usuario con C.C #" + cedula + " ha sido eliminado.", "Usuario eliminado")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "5000",
+                    "hideDuration": "5000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "5000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+
+                setTimeout(() => {
+                    window.location.href = "borrar.php?cedula=" + cedula
+                }, 1500);
+            }
+        }
+    </script>
 </body>
 
 </html>
