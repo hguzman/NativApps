@@ -1,5 +1,4 @@
 <?php
-session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,7 +10,7 @@ session_start();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>Sing in</title>
+  <title>Recover password</title>
 
 
   <!-- Bootstrap core CSS -->
@@ -45,24 +44,24 @@ session_start();
   
   <form class="form-signin" method="POST" action="assets/php/validacion.php">
     <div class="text-center mb-4">
-      <img class="mb-4" src="assets/img/NativApps logo.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">NativApps</h1>
-      <p>Login to you account</p>
+      <img class="mb-4" src="assets/img/SOPIEC.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Recover password</h1>
+      
+
+      <p>Before continuing, we must verify that it is you. 
+        <br>
+        Please enter the email registered in SOPIEC
+      </p>
     </div>
 
     <div class="form-label-group">
-      <input type="text" name="username" id="inputCC" class="form-control" placeholder="CC" required 
-      pattern="[0-9!?-]{1,15}" title="Sólo puedes ingresar numeros del 0-9">
-      <label for="inputCC">C.C.</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
+      <label for="inputCC">Email</label>
     </div>
 
-    <div class="form-label-group">
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <label for="inputPassword">Password</label>
-    </div>
     <div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted text-center"><a href="forgotpass.php">Forgot password?</a> </p>
+      <p class="mt-5 mb-3 text-muted text-center"><a href="login.php">I remenber the password</a> </p>
     </div>
 
     <div class="invisible" style="border: solid 1px #000;" ;>
@@ -89,36 +88,6 @@ session_start();
 
   </div>
   <!--Archivos de javascript-->
-  <?php
-
-  if (isset($_SESSION['alerta']) && $_SESSION['alerta'] == "empty") {
-    echo '<script>
-    $(document).ready(function(){
-        $("#alerta-login").val("vacio");
-
-    });
-</script>';
-
-    echo '<script src="assets/js/alertas-login.js"></script>';
-
-    $_SESSION['alerta'] = "";
-  } else {
-    if (isset($_SESSION['alerta']) && $_SESSION['alerta'] == "incorrect") {
-      echo '<script>
-        $(document).ready(function(){
-            $("#alerta-login").val("incorrecto");
-    
-        });
-    </script>';
-
-      echo '<script src="assets/js/alertas-login.js"></script>';
-
-      $_SESSION['alerta'] = "";
-    }
-  }
-
-
-  ?>
 </body>
 
 </html>
