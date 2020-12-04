@@ -377,3 +377,21 @@ footer {
     transparent
   );
 }
+
+.titulos {
+  font-family: cursive;
+  font-size: xx-large;
+  color: #6c63ff80;
+}
+
+.nombres {
+  font-family: monospace;
+  font-size: x-large;
+  color: white;
+}
+
+.comment{
+  font-family: inherit;
+  font-size: larger;
+  color: black;
+}
