@@ -2,6 +2,8 @@
 <?php
 require_once("assets/php/val_session_user.php");
 require_once("assets/php/db.php");
+
+include("assets/modelos/vpa_user.php");
 ?>
 
 <html>
@@ -47,7 +49,7 @@ require_once("assets/php/db.php");
                         <div class="alert alert-info text-center">
                             <i class="fa fa-desktop fa-5x"></i>
                             <h3>Información de mis equipos.</h3>
-
+               
                             <?php
                      $registros = mysqli_query($conexion, "select * from equipos WHERE cedula_FK = '$sesion' ") or
                      die("Problemas en el select:" . mysqli_error($conexion));

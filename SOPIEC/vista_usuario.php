@@ -1,6 +1,7 @@
 ﻿<?php
 require_once("assets/php/val_session_user.php");
 require("assets/php/db.php");
+include("assets/modelos/vpa_user.php");
 ?>
 <!DOCTYPE html>
 

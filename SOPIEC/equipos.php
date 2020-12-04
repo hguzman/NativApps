@@ -43,8 +43,10 @@ require_once("assets/php/db.php");
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarequipo.php"
                                 method="GET">
+                                <a href="excel.php?tipo=equipo" target="_blank"><i style="font-size: 35px; margin-right: 5px; color: green;" class="far fa-file-excel"></i> </a>
                                 <input class="form-control mr-sm-2" type="search" placeholder="Serial"
                                     aria-label="Search" id="buscar_equipo" name="buscar_equipo">
+                                    
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
                                     id="boton_buscar">Buscar</button>
                             </form>
