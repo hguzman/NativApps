@@ -2,7 +2,7 @@
 <?php
 require("assets/php/db.php");
 require_once("assets/php/val_session_admin.php");
-
+include("assets/modelos/vpa_admin.php");
 ?>
 
 <html>
