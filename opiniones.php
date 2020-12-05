@@ -62,21 +62,23 @@ require_once("PHP/db.php")
             <div class="col-lg-4 col-md-6 col-sm-12" style="text-align: center;">
                 <h2 class="pt-5 pb-4 titulos"> Comentarios</h2>
                 <?php
-                $seleccion = "SELECT * FROM opinion";
+                $seleccion = "SELECT * FROM opinion ORDER BY fecha DESC";
                 $resultado = mysqli_query($conexion, $seleccion);
                 if (empty($resultado)) {
                 } else {
                     $contar = mysqli_fetch_row($resultado);
                     
                     if ($contar > 0) {
+
                         while ($res = mysqli_fetch_array($resultado)) {
-                            
+                            $fechacre = explode("-", $res['fecha']);
 
                 ?>
                 <div class=" border-white border-top " style="padding: 1rem;">
                     <h6 class="border-bottom border-white pb-2 nombres">
-                        <strong><?php echo $res['1'] . " " . $res['2'].":" ?></strong></h6>
+                        <strong><?php echo $res['1'] . " " . $res['2'].":"?> </strong> </h6>
                     <p class="comment" ><?php echo $res['3']; ?> </p>
+                    <small class="col-6"><?php echo $fechacre[2]."/".$fechacre[1]."/".$fechacre[0]   ?></small>
                 </div>
                 <br>
 
