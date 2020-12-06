@@ -46,10 +46,8 @@ require_once("db.php");
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->
                             <form class="form-inline my-2 my-lg-0 barra-buscar" action="buscarusuario.php" method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
-                                    id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
-                                    id="boton_buscar">Buscar</button>
+                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search" id="buscar_usuario" name="buscar_usuario">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar" id="boton_buscar">Buscar</button>
                             </form>
                         </div>
                     </div>
@@ -58,15 +56,15 @@ require_once("db.php");
 
                 <!-- Busqueda por distintos criterios -->
                 <?php
-                $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email
-from usuarios where cedula ='$_REQUEST[buscar_usuario]' 
-or primer_nombre='$_REQUEST[buscar_usuario]' 
-or area='$_REQUEST[buscar_usuario]' 
-or email='$_REQUEST[buscar_usuario]'
-or primer_apellido='$_REQUEST[buscar_usuario]'")
+                $registros = mysqli_query($conexion, "select *
+from usuarios where cedula LIKE '%$_REQUEST[buscar_usuario]%' 
+or primer_nombre LIKE '%$_REQUEST[buscar_usuario]%' 
+or area LIKE '%$_REQUEST[buscar_usuario]%' 
+or email LIKE'%$_REQUEST[buscar_usuario]%'
+or primer_apellido LIKE '%$_REQUEST[buscar_usuario]%'")
                     or
                     die("Problemas en el select:" . mysqli_error($conexion));
-             
+
                 ?>
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
                     <div class="row contenedor-tabla">
@@ -90,36 +88,32 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
                                 <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                <!-- Contenido de la tabla -->
-                                <tr class="actual">
-                                    <th scope="row">
-                                        <input class="form-control" type="number"
-                                            value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula"
-                                            name="cedula" readonl> </th>
-                                    <td> <?php echo $reg['primer_nombre'] ?></td>
-                                    <td> <?php echo $reg['area'] ?></td>
-                                    <td> <?php echo $reg['segundo_nombre'] ?></td>
-                                    <td> <?php echo $reg['primer_apellido'] ?> </td>
-                                    <td> <?php echo $reg['segundo_apellido'] ?> </td>
-                                    <td> <?php echo $reg['email'] ?> </td>
-                                    <td class="eliminar-editar">
-                                        <!-- botones editar y eliminar -->
-                                        <a id="edit" class="btn fa fa-pen"
-                                            href="../../modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
-                                        <a id="del" class="btn btn-lg fa fa-trash-alt" href="#"
-                                            onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
-                                    </td>
-                                </tr>
+                                    <!-- Contenido de la tabla -->
+                                    <tr class="actual">
+                                        <th scope="row">
+                                            <input class="form-control" type="number" value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula" name="cedula" readonl> </th>
+                                        <td> <?php echo $reg['primer_nombre'] ?></td>
+                                        <td> <?php echo $reg['area'] ?></td>
+                                        <td> <?php echo $reg['segundo_nombre'] ?></td>
+                                        <td> <?php echo $reg['primer_apellido'] ?> </td>
+                                        <td> <?php echo $reg['segundo_apellido'] ?> </td>
+                                        <td> <?php echo $reg['email'] ?> </td>
+                                        <td class="eliminar-editar">
+                                            <!-- botones editar y eliminar -->
+                                            <a id="edit" class="btn fa fa-pen" href="../../modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
+                                            <a id="del" class="btn btn-lg fa fa-trash-alt" href="#" onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
+                                        </td>
+                                    </tr>
 
                     </div>
                 </div>
 
-                <?php
+            <?php
                                 }
                                 mysqli_close($conexion);
             ?>
-                </tbody>
-                </table>
+            </tbody>
+            </table>
             </div>
 
             <!-- /. ROW  -->
@@ -140,8 +134,7 @@ or primer_apellido='$_REQUEST[buscar_usuario]'")
     <script src="../js/custom.js"></script>
 
     <!-- CDN Jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
