@@ -57,17 +57,17 @@ require_once("db.php");
 
                 <!-- Busqueda por distintos criterios -->
                 <?php
-                $registros = mysqli_query($conexion, "select *
+                $registros = mysqli_query($conexion, "select serial,marca,nombre,tipo_equipo,modelo_equipo,procesador,ram,disco_duro,sistema_operativo
                     from equipos where 
-                    serial LIKE '%$_REQUEST[buscar_equipo]%'
-                    or marca LIKE '%$_REQUEST[buscar_equipo]%' 
-                    or nombre LIKE '%$_REQUEST[buscar_equipo]%'
-                    or tipo_equipo LIKE '%$_REQUEST[buscar_equipo]%'
-                    or modelo_equipo LIKE '%$_REQUEST[buscar_equipo]%'
-                    or procesador LIKE '%$_REQUEST[buscar_equipo]%'
-                    or ram LIKE '%$_REQUEST[buscar_equipo]%'
-                    or disco_duro LIKE '%$_REQUEST[buscar_equipo]%'
-                    or sistema_operativo LIKE '%$_REQUEST[buscar_equipo]%'
+                    serial ='$_REQUEST[buscar_equipo]'
+                    or marca ='$_REQUEST[buscar_equipo]' 
+                    or nombre ='$_REQUEST[buscar_equipo]'
+                    or tipo_equipo ='$_REQUEST[buscar_equipo]'
+                    or modelo_equipo ='$_REQUEST[buscar_equipo]'
+                    or procesador ='$_REQUEST[buscar_equipo]'
+                    or ram ='$_REQUEST[buscar_equipo]'
+                    or disco_duro ='$_REQUEST[buscar_equipo]'
+                    or sistema_operativo ='$_REQUEST[buscar_equipo]'
 ")
                     or
                     die("Problemas en el select:" . mysqli_error($conexion));
