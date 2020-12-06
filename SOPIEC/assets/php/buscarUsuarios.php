@@ -1,12 +1,12 @@
 <?php 
 include("db.php");
-
+// Busqueda de usuarios
 $salida ="";
 $query = "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,rol
 from usuarios";
-// $query = "select * from usuarios";
-if(isset($_POST['consulta'])){
-    $q = $conexion->real_escape_string($_POST['consulta']);
+
+if(isset($_POST['consultaUsuarios'])){
+    $q = $conexion->real_escape_string($_POST['consultaUsuarios']);
     $query = "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,rol
     from usuarios WHERE cedula LIKE '%".$q."%' OR primer_nombre like '%".$q."%' OR primer_apellido LIKE '%".$q."%' OR email LIKE '%".$q."%' OR area LIKE '%".$q."%' OR segundo_nombre LIKE '%".$q."%'";
     
@@ -55,7 +55,9 @@ if ( $resultado->num_rows > 0){
 $salida.="<tbody></tbody>";
 }
 else{
-$salida.= "No hay datos :(";
+$salida.= "
+<div class='alert alert-info' role='alert'>No se encotró ninguna coincidencia 🥺</div>
+";
 }
 
 echo $salida;
@@ -63,7 +65,10 @@ echo $salida;
 mysqli_close($conexion);
 ?>
 
+
+
+
 <!-- <a href=""></a>
-<td class='eliminar-editar'>
-    <a id='edit' class='btn fa fa-pen' href='modificar.php?cedula=' . $reg['cedula'] .'</a>''
-</td> -->
+// <td class='eliminar-editar'>
+//     <a id='edit' class='btn fa fa-pen' href='modificar.php?cedula=' . $reg['cedula'] .'</a>''
+// </td> -->
