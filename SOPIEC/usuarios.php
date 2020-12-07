@@ -44,84 +44,33 @@ require_once("assets/php/val_session_admin.php");
                         <div class="usuarios-buscar">
                             <h2>Usuarios</h2>
                             <!-- Barra de busqueda -->
-                            <form class="form-inline my-2 my-lg-0 barra-buscar" action="assets/php/buscarusuario.php"
-                                method="GET">
-                                <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
-                                    id="buscar_usuario" name="buscar_usuario">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="boton_buscar"
-                                    id="boton_buscar">Buscar</button>
-                            </form>
+                            <div class="form-inline my-2 my-lg-0 barra-buscar">
+                                <!-- <input class="form-control mr-sm-2" type="search" placeholder="C.C" aria-label="Search"
+                                    id="buscar_usuario" name="buscar_usuario"> -->
+                                <input class="form-control mr-sm-2 " type="search" type="text" id="buscar_usuario"
+                                    name="buscar_usuario" placeholder="Nombre">
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <hr />
 
-                <!-- query -->
-                <?php
-                $registros = mysqli_query($conexion, "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,rol
-                                      from usuarios") or
-                    die("Problemas en el select:" . mysqli_error($conexion));
-                ?>
+
+
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
-                    <div class="row contenedor-tabla">
+                    <div class="row contenedor-tabla" id="datos">
                         <!-- Tabla de valores en base de datos -->
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead class="thead-light ">
-                                <!-- Header de la tabla -->
-                                <tr class="">
-                                    <th scope="col">ID/Cedula</th>
-                                    <th scope="col">Primer nombre</th>
-                                    <th scope="col">Area</th>
-                                    <th scope="col">Segundo nombre</th>
-                                    <th scope="col">Primer apellido</th>
-                                    <th scope="col">Segundo apellido</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Rol</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php
-                                while ($reg = mysqli_fetch_array($registros)) {
-                                ?>
-                                <!-- Contenido de la tabla -->
-                                <tr class="actual">
-                                    <th scope="row">
-                                        <input class="form-control" type="number"
-                                            value="<?php echo $cedula = $reg['cedula'] ?>" readonly id="cedula"
-                                            name="cedula" readonl> </th>
-                                    <td> <?php echo $reg['primer_nombre'] ?></td>
-                                    <td> <?php echo $reg['area'] ?></td>
-                                    <td> <?php echo $reg['segundo_nombre'] ?></td>
-                                    <td> <?php echo $reg['primer_apellido'] ?> </td>
-                                    <td> <?php echo $reg['segundo_apellido'] ?> </td>
-                                    <td> <?php echo $reg['email'] ?> </td>
-                                    <td> <?php echo $reg['rol'] ?> </td>
-                                    <td class="eliminar-editar">
-                                        <!-- botones editar y eliminar -->
-                                        <a id="edit" class="btn fa fa-pen"
-                                            href="modificar.php?cedula=<?php echo $reg['cedula']; ?>"></a>
-
-                                        <a id="del" class="btn fa fa-trash-alt" href="#"
-                                            onclick="confirmacion_borrar(<?php echo $reg['cedula']; ?>)"></a>
-                                    </td>
-                                </tr>
-
                     </div>
                 </div>
 
-                <?php
-                                }
-                                mysqli_close($conexion);
-            ?>
                 </tbody>
                 </table>
             </div>
 
             <!-- /. ROW  -->
         </div>
-  
+
         <!-- /. PAGE INNER  -->
     </div>
     <!-- /. PAGE WRAPPER  -->
@@ -145,7 +94,8 @@ require_once("assets/php/val_session_admin.php");
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="assets/js/validaciones.js"></script>
+    <!-- <script src="assets/js/validaciones.js"></script> -->
+    <script src="assets/js/consulta.js"></script>
 
     <!-- Alerta borrar -->
     <script type="text/javascript">
