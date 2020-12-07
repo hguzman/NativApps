@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include("db.php");
 $salidaEquipos ="";
 // $query = "select cedula,area,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,email,rol
@@ -49,7 +50,7 @@ if ( $resultadoEquipos->num_rows > 0){
     <td>".$reg['sistema_operativo']."</td>
     <td class='eliminar-editar'> 
     <a id='edit' class='btn fa fa-pen' href='modificarequipo.php?serial=".$serial."'></a> 
-    <a id='del' class='btn fa fa-trash-alt' href='#' onclick='confirmacion_borrar($serial)' '></a>
+    <a id='del' class='btn fa fa-trash-alt' href='#' onclick='confirmacion_borrar(`$serial`)' '></a>
     </td>
 </tr>";
 
