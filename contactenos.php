@@ -53,27 +53,27 @@
               </button>
 <p id ="estado"></p>
 </div>
-            <form action="contactenos.php" method="POST">
+            <form id="formContactenos" action="contactenos.php" method="POST">
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre</label>
-                    <input name="Nombre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escriba aqui sus Nombres">
+                    <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Escriba aqui sus Nombres" required> 
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Apellido</label>
-                    <input name="Apellido" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escriba aqui sus apellidos">
+                    <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Escriba aqui sus apellidos"required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telefono</label>
-                    <input name="Telefono" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escriba aqui su Telefono">
+                    <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Escriba aqui su Telefono"required >
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dirección e-mail</label>
-                    <input name="Email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Escriba aqui su Correo de contacto">
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Escriba aqui su Correo de contacto"required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea name="Mensaje" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea name="mensaje" class="form-control" id="mensaje" rows="3"></textarea>
                 </div>
                 <button type="submit" id="enviar" name="Enviar" class="btn btn-outline-info enviar boton-largo color-blanco">Enviar
                     datos</button>
@@ -148,7 +148,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+<script src="JS\validacioncontacto.js"></script>
 
 
 <!--Archivos de javascript-->
