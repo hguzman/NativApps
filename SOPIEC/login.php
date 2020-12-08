@@ -62,6 +62,7 @@ session_start();
     </div>
     <div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted text-center"><a href="forgotpass.php">Forgot password?</a> </p>
     </div>
 
     <div class="invisible" style="border: solid 1px #000;" ;>

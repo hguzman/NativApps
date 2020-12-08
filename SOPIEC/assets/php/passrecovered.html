@@ -1,39 +1,21 @@
-<?php
-?>
 <!doctype html>
 <html lang="en">
 
 <head>
   <!-- Toastr Style -->
   
-  <link rel="shortcut icon" href="assets\img\SOPIEC.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="..\img\SOPIEC.ico" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>Recover password</title>
+  <title>Password recovered</title>
 
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="assets\css\bootstrap.min.css">
+  <link rel="stylesheet" href="..\css\bootstrap.min.css">
 
-  <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="assets/css/floating-labels.css">
+  <link rel="stylesheet" href="../css/floating-labels.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
@@ -42,28 +24,21 @@
   <div class="container-fluid"> 
     
   
-  <form class="form-signin" method="POST" action="assets/php/rebootpass.php">
+  <form class="form-signin" method="POST" action="assets/php/validacion.php">
     <div class="text-center mb-4">
-      <img class="mb-4" src="assets/img/SOPIEC.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Recover password</h1>
-      
-
-      <p class="text-justify">Before continuing, we must verify that it is you. 
-        <br>
-        Please enter the email registered in SOPIEC
-      </p>
+      <img class="mb-4" src="../img/SOPIEC.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Password recovered</h1>
+      <p class="text-justify">We have sent you an email in which there is a temporary password, you can change it or keep it, however we recommend you change it due to its randomness.</p>
     </div>
 
     <div class="form-label-group">
-      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
-      <label for="inputCC">Email</label>
+
     </div>
+
 
     <div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Continue</button>
-      <p class="mt-5 mb-3 text-muted text-center"><a href="login.php">I remenber the password</a> </p>
+      <a class="btn btn-lg btn-primary btn-block" href="../../login.php" >¡THANK YOU VERY MUCH!</a>
     </div>
-
 
   </form>
 
