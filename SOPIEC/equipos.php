@@ -34,10 +34,6 @@ require_once("assets/php/db.php");
         <?php include("assets/modelos/navbar_header_admin_vp.php"); ?>
         <!-- Contenido de la pagina, lado derecho ancho  -->
 
-        <!-- <a href="excel.php?tipo=equipo" target="_blank"><i style="font-size: 35px; margin-right: 5px; color: green;"
-                class="far fa-file-excel"></i> </a> -->
-
-        <!-- Contenido de la pagina, lado derecho ancho  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
@@ -45,20 +41,30 @@ require_once("assets/php/db.php");
 
                         <div class="usuarios-buscar">
                             <h2>Equipos</h2>
+                      
                             <!-- Barra de busqueda -->
                             <div class="form-inline my-2 my-lg-0 barra-buscar">
+                              
+                                 
+                                 <a href="excel.php?tipo=equipo" target="_blank"><i
+                                        style="font-size: 35px; margin-right: 5px; color: green;"
+                                        class="far fa-file-excel"></i> </a>
+                                       
+
                                 <input class="form-control mr-sm-2 " type="search" type="text" id="buscarEquipos"
                                     name="buscarEquipos" placeholder="Serial">
                             </div>
 
                         </div>
+                        <a class="" href="nuevoequipo.php"><i style="font-size: 35px; color: blue;" class="far fa-plus-square"></i></a>
                     </div>
                 </div>
                 <hr />
 
 
                 <div id="contenedor-usuarios" class="contenedor-usuarios">
-                    <div class="row contenedor-tabla" id="datosEquipos">
+                    
+                <div class="row contenedor-tabla" id="datosEquipos">
 
                     </div>
                 </div>
@@ -93,8 +99,6 @@ require_once("assets/php/db.php");
     <script src="assets/js/consulta.js"></script>
     <!-- Alerta borrar -->
     <script type="text/javascript">
-    
-
         function confirmacion_borrar(serial) {
             if (confirm("¿Realmente desea eliminar el equipo con serial #" + serial)) {
                 toastr["error"]("El equipo con serial #" + serial + " ha sido eliminado.", "Equipo eliminado")
