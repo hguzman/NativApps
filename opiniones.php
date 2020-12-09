@@ -11,8 +11,7 @@ require_once("PHP/db.php")
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/763b114892.js" crossorigin="anonymous"></script>
     <script src="..\JS\bootstrap.bundle.js">
     </script>
@@ -26,31 +25,26 @@ require_once("PHP/db.php")
         <div class="nav-bar site-header sticky-top ">
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8e8e8; font-family: cursive;">
                 <h2><a class="navbar-brand hvr-bob dvl-titulo" href="index.php">DVLeasy</a></h2>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <a class="navbar-brand hvr-bob dvl-header" href="index.php">Inicio</a>
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link hvr-bob dvl-header" href="productos.html">Productos<span
-                                    class="sr-only">(current)</span></a>
+                            <a class="nav-link hvr-bob dvl-header" href="productos.html">Productos<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link hvr-bob dvl-header" href="opiniones.php">Opinion de nuestros clientes
                                 <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link hvr-bob dvl-header" href="contactenos.php">Contactenos <span
-                                    class="sr-only">(current)</span></a>
+                            <a class="nav-link hvr-bob dvl-header" href="contactenos.php">Contactenos <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
                 <a href="index.php" class="hvr-bob">
-                    <img src="img\empresa-logo.png" width="30" height="30" fill="none" stroke="currentColor"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto "
-                        role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
+                    <img src="img\empresa-logo.png" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto " role="img" viewBox="0 0 24 24" focusable="false" style="border-radius: 20px;">
                 </a>
             </nav>
         </div>
@@ -64,32 +58,28 @@ require_once("PHP/db.php")
                 <?php
                 $seleccion = "SELECT * FROM opinion ORDER BY fecha DESC";
                 $resultado = mysqli_query($conexion, $seleccion);
-                if (empty($resultado)) {
-                } else {
-                    $contar = mysqli_fetch_row($resultado);
-                    
-                    if ($contar > 0) {
+                
+                if (isset($resultado)) {
 
-                        while ($res = mysqli_fetch_array($resultado)) {
-                            $fechacre = explode("-", $res['fecha']);
+                    while ($res = mysqli_fetch_array($resultado)) {
+                        $fechacre = explode("-", $res['fecha']);
 
                 ?>
-                <div class=" border-white border-top " style="padding: 1rem;">
-                    <h6 class="border-bottom border-white pb-2 nombres">
-                        <strong><?php echo $res['1'] . " " . $res['2'].":"?> </strong> </h6>
-                    <p class="comment" ><?php echo $res['3']; ?> </p>
-                    <small class="col-6"><?php echo $fechacre[2]."/".$fechacre[1]."/".$fechacre[0]   ?></small>
-                </div>
-                <br>
+                        <div class=" border-white border-top " style="padding: 1rem;">
+                            <h6 class="border-bottom border-white pb-2 nombres">
+                                <strong><?php echo $res['1'] . " " . $res['2'] . ":" ?> </strong> </h6>
+                            <p class="comment"><?php echo $res['3']; ?> </p>
+                            <small class="col-6"><?php echo $fechacre[2] . "/" . $fechacre[1] . "/" . $fechacre[0]   ?></small>
+                        </div>
+                        <br>
 
                 <?php
-
-                        }
-                    }else{
-                        echo "¡Nada por aquí!";
-
                     }
+                } else {
+                    echo "¡Nada por aquí!";
                 };
+
+
                 ?>
 
             </div>
@@ -104,7 +94,7 @@ require_once("PHP/db.php")
 
             <div class="form-group centrar-comentario">
                 <center>
-                    <h3 class="titulos" style="margin: 0;" >Escribe tu comentario</h3>
+                    <h3 class="titulos" style="margin: 0;">Escribe tu comentario</h3>
                 </center>
                 <div id="alerta" class="alert invisible">
                     <a class="btn close" href="opiniones.php">
@@ -115,15 +105,11 @@ require_once("PHP/db.php")
                 </div>
                 <div class="row d-flex justify-content-lg-around">
 
-                    <input type="text" name="nombre" class="form-control col-5 mb-3" placeholder="Nombre" required
-                        pattern="[A-Za-z!?-]{3,45}" title="Sólo puedes ingresar letras de la A-Z a-z">
+                    <input type="text" name="nombre" class="form-control col-5 mb-3" placeholder="Nombre" required pattern="[A-Za-z!?-]{3,45}" title="Sólo puedes ingresar letras de la A-Z a-z">
 
-                    <input type="text" name="apellido" class="form-control col-5 mb-3" placeholder="Apellido" required
-                        pattern="[A-Za-z!?-]{3,45}" title="Sólo puedes ingresar letras de la A-Z a-z">
+                    <input type="text" name="apellido" class="form-control col-5 mb-3" placeholder="Apellido" required pattern="[A-Za-z!?-]{3,45}" title="Sólo puedes ingresar letras de la A-Z a-z">
 
-                    <textarea name="comentario" cols="92" rows="2" type="textarea" class="form-control col-11"
-                        id="exampleInputEmail1" required aria-describedby="emailHelp"
-                        placeholder="Agrega tu opinion, ¡ES GRATIS!"></textarea>
+                    <textarea name="comentario" cols="92" rows="2" type="textarea" class="form-control col-11" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Agrega tu opinion, ¡ES GRATIS!"></textarea>
                 </div>
 
                 <small style="margin-left: 34%;" id="emailHelp" class="form-text text-muted">Tu opinion nos importa
@@ -173,30 +159,25 @@ require_once("PHP/db.php")
 
     </footer>
     <!--Archivos de javascript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
     <!--Archivos de javascript-->
 
-    <?php 
-                    if (isset($_GET['validado']) && $_GET['validado'] == "yes") {
-                        $_GET['validado'] = "no";
-                        echo '<script>$(document).ready(function (){
+    <?php
+    if (isset($_GET['validado']) && $_GET['validado'] == "yes") {
+        $_GET['validado'] = "no";
+        echo '<script>$(document).ready(function (){
                             $("#alerta").addClass("alert-success");
                             $("#alerta").removeClass("invisible");
                             $("#msm").text("Mensaje enviado correctamente")});
                             </script>';
-                            
-                    } else {
-                        
-                    }
-    
+    } else {
+    }
+
     ?>
 </body>
 </body>
