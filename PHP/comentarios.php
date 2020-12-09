@@ -16,7 +16,7 @@ $resultado =  mysqli_query($conexion, $ingresar);
 if (empty($resultado)) {
     echo "error";
 } else {
-   header("location: ../opiniones?validado=yes");
+   header("location: ../opiniones.php?validado=yes");
 };
 
 
